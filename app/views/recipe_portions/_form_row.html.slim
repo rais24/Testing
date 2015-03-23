@@ -1,0 +1,12 @@
+tr.portion id=dom_id(portion)
+  = simple_form_for @recipe, remote: true do |f|
+    td
+      img.thumb-img-circle src=portion.photo(:medium) alt=portion.name
+    td
+      = portion.name.titleize
+    td
+      = f.input :name, label: false
+    td
+      = f.submit '✓', class: 'button-action button-small js-click-lock'
+    td
+      = link_to 'x', recipe_portion_path(@recipe, portion), remote: true, method: :delete, class: 'button-danger button-small js-click-lock'

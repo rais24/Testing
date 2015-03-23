@@ -1,0 +1,94 @@
+/* - Printer styling
+  ------------------------------------------ */
+
+@media print {
+  body {
+    font-size: 12pt; 
+    line-height: 120%; 
+    background: white;
+    color: #000;
+  }
+
+  .ie6, .ie7, .ie8, .ie9, .ie10 {
+    .fill {
+      width: 100%;
+    }
+  }
+
+  //hide unnecessary elements
+  #header, #footer, #nutrition, #categories, .recipe-back-btn, .print-hide, .span4 {
+    display: none !important;
+  }
+
+  img.print-show {
+    display: inline;
+
+  }
+
+  .recipe-description {
+    margin-bottom: 60px;
+
+    img {
+      width: 20%;
+      float:left;
+    }
+
+    h2, p {
+      width: 70%;
+      float:left;
+      margin-left:5%;
+    }
+
+    h2 {
+      font-size: 20pt;
+    }
+    p {
+      font-size: 10pt;
+      margin-bottom: 0em;
+    }
+    span {
+      color: #333;
+    }
+  }
+
+  .nav.nav-tabs {
+    display: none;
+  }
+
+  .tab-content > .tab-pane {
+    display: block;
+    width: 50%;
+    float: left;
+  }
+
+  p.step {
+    font-size: 10pt;
+    padding: 5px;
+    line-height: 1em;
+  }
+
+  .tab-content {
+    display: table;
+  }
+
+  .recipe-tabs {
+    font-size: 12pt;
+  }
+
+  img.thumb.img-circle {
+    width: 20px;
+  }
+
+  td {
+    border-top: 0 !important;
+  }
+
+}
+
+.print-show {
+  display: none;
+}
+
+.hide {
+  display: none !important;
+}

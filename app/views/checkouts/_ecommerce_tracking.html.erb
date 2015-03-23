@@ -1,0 +1,54 @@
+<% content_for :header do %>
+
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol ) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try
+    {
+      var pageTracker = _gat._createTracker("UA-40727299-2");
+      pageTracker._trackPageview();
+      pageTracker._addTrans(
+        "<%=@order.id%>",                    // transaction ID - required
+        "Fitly, Inc.",                       // Affiliation
+        "<%=@order.price%>",                 // Total
+        "0.00",                              // Tax
+        "0",                                 // Shipping
+        "<%=@order.address.city%>",          // City
+        "<%=@order.address.state.upcase%>",  // State
+        "USA"                                // Country
+      );
+
+      <% @order.servings.each do |serving| %>
+
+        pageTracker._addItem(
+          "<%=@order.id%>",                                                    // Order ID
+          "<%= serving.recipe.slug %>",                                        // SKU
+          "<%= serving.recipe.name %>",                                        // Product Name
+          "<%= serving.recipe.taggings.map(&:tag).map(&:name).join(', ') %>",  // Category
+          "<%= display_price_per_serving(serving.quantity.to_i) %>",           // Price
+          "<%= serving.quantity.to_i %>"                                       // Quantity
+        );
+
+      <% end %>
+
+      <% @order.order_products.each do |pantry| %>
+
+        pageTracker._addItem(
+          "<%=@order.id%>",                                                    // Order ID
+          "<%= pantry.product.sku %>",                                         // SKU
+          "<%= pantry.product.confirmation_name %>",                           // Product Name
+          "<%= pantry.product.name %>",                                        // Category
+          "<%= number_to_currency(pantry.product.price) %>",                   // Price
+          "<%= pantry.quantity.to_i %>"                                        // Quantity
+        );
+
+      <% end %>
+      pageTracker._trackTrans();
+    }
+    catch(err) {}
+  </script>
+
+<% end %>

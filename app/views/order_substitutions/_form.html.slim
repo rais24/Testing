@@ -1,0 +1,19 @@
+= simple_form_for @order_substitution, html: {class: 'order_substitutions'} do |f|
+  = render 'layouts/form_errors', resource: @order_substitution
+
+  fieldset
+    ul.data
+      li.input.order.required
+        = f.input :order_id, placeholder: "Order"
+      li.input.requested_sku
+        = f.input :original_sku, placeholder: "Requested SKU"
+      li.input.substituted_sku.required
+        = f.input :substituted_sku, placeholder: "Substituted SKU"
+      li.input.substituted_confirmation_name.required
+        = f.input :substituted_confirmation_name, placeholder: "Substituted Product Name"
+      li.input.quantity.required
+        = f.input :quantity, placeholder: "Substituted Quantity"
+
+    ul.actions
+      li.primary
+        = f.submit class: "button-action"

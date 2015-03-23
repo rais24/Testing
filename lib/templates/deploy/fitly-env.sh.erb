@@ -1,0 +1,24 @@
+<% %w(
+      FITLY_MAIL_USERNAME
+      FITLY_MAIL_PASSWORD
+      AWS_ACCT_NUM
+      AWS_BUCKET
+      AWS_ACCESS_KEY
+      AWS_SECRET_ACCESS_KEY
+      DB_HOST
+      DB_PORT
+      DB_NAME
+      DB_POOL
+      DB_USERNAME
+      DB_PASSWORD
+      REDISTOGO_URL
+      GITHUB_TOKEN
+      NEW_RELIC_KEY
+      FITLY_APPLICATION_TOKEN
+      
+      STRIPE_SECRET
+      STRIPE_PUBLIC
+    ).each do |var| %>
+# from the deployer's ENV['<%= var %>']
+export <%= "#{var}=#{ENV[var]}" %>
+<% end %>

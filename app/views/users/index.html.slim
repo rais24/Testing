@@ -1,0 +1,17 @@
+
+.pre-content.constraint
+  .container-fluid
+    .row-fluid
+      .span12
+        h3.center
+            | Registered Users #{User.registered.count} | Guest Users #{User.guest.count} | #{User.count} Total Users
+
+.pre-content.constraint
+  .container-fluid
+    .row-fluid
+      .span4.pull-right
+        h3
+          = form_tag users_path, method: :get do
+            = text_field_tag "search", params[:search], autocomplete: false, placeholder: "Search..."
+            = select_tag "search_by", options_for_select(user_attributes.unshift(" "))
+            = submit_tag "Search"

@@ -1,0 +1,69 @@
+#how-it-works
+  .container.marketing
+    h1.section-heading How it Works
+    .how-it-wrapper
+      = image_tag "signup/promo-vector-art.svg", alt: "How it works", class: "how-it-works", "data-svg-fallback" => "#{image_path('signup/promo-vector-art.png')}"
+
+    hr.featurette-divider
+    .featurette
+      = image_tag "signup/600-mobile.png", alt:"Fitly Works on all devices", class: "featurette-image pull-right"
+      h2.featurette-heading Never worry about meal planning again.
+      p.lead
+        | We take the headache of meal planning away for good. Get 
+        | started with our weekly healthy meal planner and/or FREE 
+        | delivery service and begin receiving super nutritious 
+        | kid-friendly recipes for your family.
+
+    hr.featurette-divider
+    .featurette
+      = image_tag "signup/600-food.png", alt:"Fresh, whole foods", class: "featurette-image pull-left"
+      h2.featurette-heading Guaranteed fresh &amp; healthy meals.
+      p.lead
+        | Our staff carefully selects the freshest, healthiest and 
+        | most delicious ingredients your kids will love. 
+        | All our meals are thoroughly examined by our registered 
+        | dietitian and promote a 50% plant-based diet in accordance 
+        | with the new 
+        = usda_link_to "USDA \"My Plate\""
+        |  and 
+        = harvard_link_to "Harvard's \"Healthy Eating Plate\""
+        |  guidelines.
+
+    hr.featurette-divider
+    .featurette
+      = image_tag "signup/600-truck.png", alt:"Fitly's refrigerated trucks", class: "featurette-image pull-right"
+      h2.featurette-heading We bring it to you for FREE.
+      p.lead
+        | For the same price you pay at your local supermarket, we 
+        | do all your grocery shopping for you and deliver it to your 
+        | workplace, kids' school, or fitness center - for free. Never 
+        | wait in long dreadful lines again! Stop stressing about 
+        | what to make for dinner every night &amp; start getting 
+        | quick &amp; healthy food on the table for your loved ones.
+
+    hr.featurette-divider
+    .featurette
+      = image_tag "signup/600-store.png", alt:"Busy moms will love Fitly", class: "featurette-image pull-left"
+      h2.featurette-heading Save time, energy, &amp; reduce stress.
+      p.lead
+        | Your orders come with simple prepping instructions that 
+        | save you time, energy, &amp; stress without ever compromising 
+        | your children's health. Our meals can be prepared in as 
+        | little as 10 minutes!
+  .container.middle
+    a.cta href=new_order_path data-no-turbolink=true Get Started!
+    
+  .social-media
+    / Facebook
+    .fb-like data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial"
+
+    / Twitter
+    a href="https://twitter.com/share" class="twitter-share-button" data-text="Getting your kids to eat healthy has never been easier!" data-via="fitlyfamily"
+      | Tweet
+    javascript:
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    / Pinterest
+    #pinterest
+      a data-pin-do="buttonFollow" href="http://pinterest.com/thefitlyfamily"
+        | Fitly Family
+

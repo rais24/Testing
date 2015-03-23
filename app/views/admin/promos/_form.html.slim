@@ -1,0 +1,34 @@
+= form_for [:admin, @promo], html: {class: 'recipe-form'} do |f|
+  - if @promo.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@promo.errors.count, "error")} prohibited this promo from being saved:"
+      ul
+        - @promo.errors.full_messages.each do |message|
+          li = message
+  fieldset
+    ul.data
+      li.input.code.required
+        = f.label :code
+        = f.text_field :code
+      li.input.starts_on.required
+        = f.label :starts_on
+        = f.date_field :starts_on
+      li.input.ends_on.required
+        = f.label :ends_on
+        = f.date_field :ends_on
+      li.input.quantity.required
+        = f.label :quantity
+        = f.text_field :quantity
+      li.input.checkbox.optional
+        =label_tag "Active?"
+        = f.check_box :active
+      li.input.discount_cents.optional
+        = f.label :discount_cents
+        = f.text_field :discount_cents
+      li.input.discount_percent.optional
+        = f.label :discount_percent
+        = f.text_field :discount_percent
+
+    ul.actions
+      li.primary
+        = f.submit nil, class: "button-action button-fill"

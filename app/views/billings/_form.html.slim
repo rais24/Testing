@@ -1,0 +1,27 @@
+button#stripe-checkout.button-action class=(classes.join(' '))
+  #{label}
+
+= form_tag checkout_path(:payment), method: form_method, id: 'stripeForm' do
+  script src="https://checkout.stripe.com/v2/checkout.js"
+  script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+
+  javascript:
+    $('#stripe-checkout').click(function(){
+      var token = function(res){
+        var $input = $('<input type="hidden" name="stripeToken" />').val(res.id);
+        $('#stripeForm').append($input).submit();
+      };
+
+      StripeCheckout.open({
+        amount:      #{amount},
+        currency:    'usd',
+        name:        'Fitly Inc.',
+        description: 'Fitly Groceries',
+        panelLabel:  'Pay',
+        token:       token,
+        image:       '#{image_path("square-logo.jpg")}',
+        key:         '#{Rails.configuration.x.stripe.public}'
+      });
+
+      return false;
+    });

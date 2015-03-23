@@ -1,0 +1,24 @@
+.content
+  h2 
+    | What Don't You Need?
+    = link_to 'Shopping List', shop_order_path(@order), class: 'button-info pull-right'
+    - if can? :export, @order
+      = link_to 'Export', export_order_path(@order, format: 'xls'), class: 'button-info pull-right'
+
+    - unless current_user.billing
+      = link_to 'Checkout', billing_path, class: 'button-action pull-right'
+
+  p.copy Uncheck any items you already have. You won't be charged for excluded items.
+
+  .row-fluid
+    - [:meats, :produce, :groceries].each do |category|
+      .span4
+        h2= category.to_s.titleize
+        .portion-list id="included-#{category}"
+          = render self.send(category)
+      
+  .row-fluid
+    .span12
+      h2#excluded-label class=(excluded.empty? ? 'hidden' : '') Excluded Items
+      #excluded-portions.portion-list 
+        = render excluded

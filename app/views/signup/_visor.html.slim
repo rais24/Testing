@@ -1,0 +1,22 @@
+#visor
+  .navbar
+    .navbar-inner
+      button.btn.btn-navbar data-toggle="collapse" data-target=".nav-collapse"
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      a.brand title="Fitly" href="#top"
+        = image_tag "logo.svg", { "data-svg-fallback" => "#{image_path('logo.png')}", alt: "Fitly" }
+        
+      .nav-collapse.collapse
+        ul.nav
+          li
+            a.copy title="Learn more" href="#how-it-works"
+              | How it Works
+          li
+            = blogger_link_to "Blog", title: "Blog", target: "_blank",class: "copy"
+          li
+            a.copy href=login_path data-no-turbolink=true 
+              i.icon-user
+              | &nbsp; Login

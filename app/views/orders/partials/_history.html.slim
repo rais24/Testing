@@ -1,0 +1,47 @@
+= link_to "Order ##{order.id}", order_path(order)
+
+ul
+    li
+        | Placed on:
+        span
+            / TODO: need to get the right call for this
+            = order.line_item_date
+    li
+        | Scheduled for delivery:
+        span
+            / TODO: need to get the right call for this
+            = order.line_item_date
+    li
+        | Status:
+        span
+            = (order.charge ? 'Charged' : 'In Process')
+    li
+        | Total:
+        span
+            = number_to_currency(order.calculate_price)
+    li
+        | Recipes:
+        ul.order-recipes
+            - order.servings.each do |serving|
+                li
+                    = link_to serving.name, serving.recipe
+
+
+
+
+
+/ - if orders.empty?
+/   p.empty-history You have no past orders.
+
+/ - else
+/   table.table.table-hover
+/     tr
+/       th Price
+/       th Delivered
+/       th Billed
+/     - orders.each do |order|
+/       tr
+/         / td= humanized_money_with_symbol(order.price)
+/         td= number_to_currency(order.price)
+/         td= order.delivered_at || "Not Delivered"
+/         td= order.charge.try(:charged?) || "Not Billed"

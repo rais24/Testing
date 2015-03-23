@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# development tools
+
+set -e
+
+script/bootstrap
+
+bin/guard

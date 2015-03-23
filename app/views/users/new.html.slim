@@ -1,0 +1,18 @@
+.content
+  h1.center Sign up for Fitly!
+
+  p
+    | Enter your zip code and invite code to see if Fitly is available in your area.
+  p
+    = "Already have an account?  #{link_to 'Already have an account?  Log in and start shopping', '/login'}".html_safe
+
+  = simple_form_for @signup_inquiry, url: signup_path, html: { class: "form-horizontal registration" } do |f|
+    h3= @signup_inquiry.validation_error
+    table
+      tr
+        td= f.input :zipcode, placeholder: "Your Delivery Zipcode", required: true, input_html: { value: params[:zip] }
+        td= f.input :invite_code, placeholder: "Invite code (optional)", required: :false
+    = f.input :locked, as: :hidden, input_html: { value: false }
+
+    .checkout-btn
+        = f.submit 'Get Started!', class: "data-no-turbolink=true"

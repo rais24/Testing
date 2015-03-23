@@ -1,0 +1,237 @@
+// Sections ---
+//
+#visor {
+  width: 100%;
+  
+  position: fixed;
+  top: 0;
+  // CTA is 3, we need to be above that
+  z-index: 4;
+  background-color: rgba(255, 255, 255, 0.85);
+
+  @media (max-width: $break-medium-landscape) {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .navbar {
+    margin-bottom: auto;
+
+    .btn {
+      margin-top: 18px;
+      
+      @media (max-width: $break-medium-landscape) {
+        margin-top: 12px;
+      }
+    }
+
+    .brand {
+      padding-right: 0;
+      padding-left: 0;
+
+      .svg {
+        display:block;
+      }
+      .svg-fallback {
+        display:none;
+      }
+
+      img {
+        margin: 5px;
+        width: 150px;
+        max-width: none;
+
+        // As we scale down, shrink the visor
+        @media (max-width: $break-medium-landscape) {
+          width: 50px;
+        }
+
+        @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-portrait) {
+          width: 75px;
+        }
+
+        @media (min-width: $break-large-portrait + 1px) and (max-width: $break-large-landscape) {
+          width: 100px;
+        }
+
+        @media (min-width: $break-large-landscape +1px) {
+          margin: 10px;
+        }
+      }
+    }
+
+    li {
+      a {
+        @media (max-width: $break-large-portrait) {
+          padding: 5px 8px;
+        }
+      }
+    }
+  }
+
+  .navbar-inner {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding-right: 0;
+
+    #eventcode {
+      margin-top: 40px;
+
+      @media (max-width: $break-medium-landscape) {
+        margin-top: 0;
+      }
+
+
+      @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-landscape) {
+        margin-top: 20px;
+      }
+
+    }
+
+    a {
+      &.copy {
+        @include transition (all 0.1s ease);
+
+        display: block;
+        margin-top: 30px;
+
+        color: $green;
+        font-family: $font-light;
+        text-align: left;
+
+        font-size: 20px;
+
+
+        @media (max-width: $break-medium-landscape) {
+          font-size: 20px;
+          margin-top: 10px;
+        }
+
+        @media (min-width: $break-medium-landscape + 1) and (max-width: $break-large-portrait) {
+          font-size:17px;
+          margin-top:20px;
+        }
+
+        @media (min-width: $break-large-portrait + 1px) and (max-width: $break-large-landscape) {
+          font-size: 22px;
+          margin-top: 20px;
+        }
+      }
+
+      &:hover {
+        color: $darkgreen;
+      }
+      &:visited {
+        color: $green;
+      }
+      &:visited:hover {
+        color: $darkgreen;
+      }
+    }
+
+    ul.nav {
+      list-style: none;
+      padding-left: 5px;
+    }
+  }
+}
+
+#how-it-works {
+  background: $green;
+  border-top:solid 5px $darkgreen;
+  padding-bottom: 50px;
+
+  h1 {
+    &.section-heading {
+      text-align: center;
+      margin: 0;
+      margin-top:50px;
+    }
+  }
+
+  .how-it-wrapper {
+    @include size(100% auto);
+    text-align: center;
+  }
+
+  img {
+    &.how-it-works {
+      @include size(75% auto);
+      margin: auto;
+    }
+  }
+  
+  a.cta {
+    position: relative;
+    width: 50%;
+    margin: 100px auto;
+  }
+}
+
+#stay-tuned {
+  background: url("/assets/content-border-trail-blue.png") top center repeat-x;
+  background-color: #f7f7f7;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+
+  .container {
+    margin: auto;
+  }
+
+  canvas {
+    @include position(absolute, 0 0 0 0);
+    display: block;
+    margin: auto;
+  }
+
+  form {
+    font-size:32px;
+    margin:100px auto 0 auto;
+  }
+
+  input[type=submit]{
+    padding: 11px 15px;
+  }
+
+  h1, h2 {
+    margin-top:100px;
+    color: $footer-heading;
+  }
+
+  h1 {
+    font-size:48px;
+    text-shadow: 0 0;
+  }
+
+  #pinterest {
+    display:block;
+    margin-top: -25px;
+    margin-left: 260px;  
+  }
+}
+
+#footer {
+  clear: both;
+  height: 3px;
+  background: image-url('border-top.png') #fff repeat-x bottom center;
+  position: relative;
+
+}
+
+.partnerships {
+  text-align: center;
+  img {
+    display:inline;
+    width:30%;
+
+    margin:0 auto;
+    margin-bottom:100px;
+
+    @media (max-width: $break-small-portait) {
+      width: auto;
+      margin-bottom:40px;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import "bourbon";
+@import "font-awesome";
+
+@import "../globals/variables";
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline
+  }
+
+  &:visited {
+
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+img {
+  border: none;
+  display: block;
+}
+
+.share-icon {
+  @include size(35);
+  display: inline;
+}
+
+table {
+  &.corners {
+    background-color: none;
+  }
+}
+
+td {
+  &.filler {
+    background-color: #FFF;
+  }
+
+  &.corner {
+    background-color: none;
+    display: block;
+  }
+
+  &.left-column {
+    border-right: solid #CCC 1px;
+  }
+}
+
+#content {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:#EEEEDD;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  td {
+    background-color: #fff;
+  }
+
+  span {
+    color: $theme-color;
+    font-weight: 900;
+  }
+}
+
+.body {
+  & > * {
+    background-color: #fff
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.copy {
+    color: $theme-color;
+  }
+
+  small {
+    display: block;
+  }
+}
+
+#header {
+
+}
+
+#footer {
+  font-size: 12px;
+}

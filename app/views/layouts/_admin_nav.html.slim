@@ -1,0 +1,9 @@
+- if can?(:manage, :all) && !layouts.empty?
+  .pre-content.admin
+    .alert
+      a href="#" class=:close data-dismiss=:alert
+        | &times;
+      strong View Alternate Layout:
+      - layouts.each do |layout|
+        - unless params[:layout].to_s == layout.to_s
+          = link_to layout.to_s.humanize, params.merge(layout: layout), class: "layout"

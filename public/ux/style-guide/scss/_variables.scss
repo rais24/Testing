@@ -1,0 +1,172 @@
+/*-------------------
+Variables
+-------------------*/
+$version: '0.1';
+$glyphs: 'EntypoDev';
+$red: rgb(224, 77, 36);
+$orange: rgb(243, 160, 18);
+$light-green: rgb(129, 218, 27);
+$green: rgb(105, 184, 20);
+$dark-green: rgb(21, 147, 38);
+
+/*-------------------
+Mixins
+-------------------*/
+
+// Cross-browser animation
+@mixin animation ($params) {
+    -moz-animation: $params;
+    -ms-animation: $params;
+    -o-animation: $params;
+    -webkit-animation: $params;
+    animation: $params;
+}
+
+// Cross-browser border radius
+@mixin borderRadius ($radius) {
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// Cross-browser box shadow
+@mixin boxShadow ($params) {
+    -moz-box-shadow: #{$params};
+    -ms-box-shadow: #{$params};
+    -o-box-shadow: #{$params};
+    -webkit-box-shadow: #{$params};
+    box-shadow: #{$params};
+}
+
+// Cross-browser gradient
+@mixin gradient ($background, $position, $from, $to) {
+    background-color: $background;
+    background-image: -webkit-linear-gradient($position, $from, $to);
+    background-image:    -moz-linear-gradient($position, $from, $to);
+    background-image:     -ms-linear-gradient($position, $from, $to);
+    background-image:      -o-linear-gradient($position, $from, $to);
+}
+
+// Cross-browser text shadow
+@mixin textShadow ($params) {
+    -moz-text-shadow: #{$params};
+    -ms-text-shadow: #{$params};
+    -o-text-shadow: #{$params};
+    -webkit-text-shadow: #{$params};
+    text-shadow: #{$params};
+}
+
+// Cross-browser transform
+@mixin transform ($params) {
+    -moz-transform: $params;
+    -ms-transform: $params;
+    -o-transform: $params;
+    -webkit-transform: $params;
+    transform: $params;
+}
+
+// Cross-browser transform
+@mixin transformOrigin ($params) {
+    -moz-transform-origin: $params;
+    -ms-transform-origin: $params;
+    -o-transform-origin: $params;
+    -webkit-transform-origin: $params;
+    transform-origin: $params;
+}
+
+// Cross-browser transition
+@mixin transition ($params) {
+    -moz-transition: #{$params};
+    -ms-transition: #{$params};
+    -o-transition: #{$params};
+    -webkit-transition: #{$params};
+    transition: #{$params};
+}
+
+// Creates an icon by replacing text with a glyph
+@mixin icon ($iconSize, $content) {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0 0 0 #{$iconSize*10+'px'};
+    padding: 0 0 0 #{$iconSize+'rem'};
+    width: #{$iconSize*10+'px'};
+    width: #{$iconSize+'rem'};
+    height: #{$iconSize*10+'px'};
+    height: #{$iconSize+'rem'};
+    text-indent: 110%;
+    overflow: hidden;
+    text-decoration: none;
+    line-height: #{$iconSize*11+'px'};
+    line-height: #{$iconSize*1.1+'rem'};
+
+    &:before {
+        position: absolute;
+        top: 50%;
+        margin-top: -#{$iconSize*10/2+'px'};
+        margin-top: -#{$iconSize/2+'rem'};
+        left: 50%;
+        margin-left: -#{$iconSize*10/2+'px'};
+        margin-left: -#{$iconSize/2+'rem'};
+        display: block;
+        width: #{$iconSize*10+'px'};
+        width: #{$iconSize+'rem'};
+        height: #{$iconSize*10+'px'};
+        height: #{$iconSize+'rem'};
+        content: $content;
+        font-family: $glyphs;
+        font-size: #{$iconSize*10+'px'};
+        font-size: #{$iconSize+'rem'};
+        text-indent: 0;
+    }
+}
+
+// Adds an icon in front of an anchor's text
+@mixin iconBeforeText ($iconSize, $content) {
+    text-decoration: none;
+    line-height: #{$iconSize*10+'px'};
+    line-height: #{$iconSize+'rem'};
+    width: auto;
+    text-indent: 0;
+
+    &:before {
+        display: inline;
+        vertical-align: top;
+        width: #{$iconSize*10+'px'};
+        width: #{$iconSize+'rem'};
+        height: #{$iconSize*10+'px'};
+        height: #{$iconSize+'rem'};
+        padding-right: #{$iconSize*10/4+'px'};
+        padding-right: #{$iconSize/4+'rem'};
+        content: $content;
+        font-family: $glyphs;
+        font-size: #{$iconSize*10+'px'};
+        font-size: #{$iconSize+'rem'};
+
+    }
+}
+
+// Adds an icon after an anchor's text
+@mixin iconAfterText ($iconSize, $content) {
+    text-decoration: none;
+    line-height: #{$iconSize*10+'px'};
+    line-height: #{$iconSize+'rem'};
+    width: auto;
+
+    &:after {
+        display: inline;
+        vertical-align: top;
+        width: #{$iconSize*10+'px'};
+        width: #{$iconSize+'rem'};
+        height: #{$iconSize*10+'px'};
+        height: #{$iconSize+'rem'};
+        padding-left: #{$iconSize*10/4+'px'};
+        padding-left: #{$iconSize/4+'rem'};
+        content: $content;
+        font-family: $glyphs;
+        font-size: #{$iconSize*10+'px'};
+        font-size: #{$iconSize+'rem'};
+    }
+}

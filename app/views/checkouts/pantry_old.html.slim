@@ -1,0 +1,24 @@
+section#pantry-items
+    h1
+    = render 'user_groups/welcome_greeting'
+        | Pantry Items and Staples <span> - Step 1 of 5</span>
+    / TODO: Need logic to drive different messaging based on some (or all) pantry items being included at no charge.
+    = form_for @order, url: wizard_path, method: 'PUT', html: { class: "pantry-items" } do |f|
+        p
+            | Are you running low on any of these items? The recipes you've selected require them, so we're happy to add them to your order if you don't have them on hand.
+        fieldset
+            ul.data
+                - @pantry_items.each do |item|
+                    li.input.checkbox.optional
+                        label for="order_ingredient_#{item[:id]}"
+                            = item[:name]
+                            span.price
+                                - if item[:price] > 0
+                                    = number_to_currency(item[:price])
+                                - else
+                                    | Free
+                        = check_box_tag 'order[pantry_ingredient_ids][]', item[:id], false, id: "order_ingredient_#{item[:id]}"
+
+            ul.actions
+                li.primary
+                    = submit_tag "Next Step: Delivery Info"

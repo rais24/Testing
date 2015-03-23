@@ -1,0 +1,1 @@
+BetterErrors.use_pry! if Rails.configuration.x.better_errors.enable

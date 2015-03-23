@@ -1,0 +1,56 @@
+﻿.hideOnDesktop {
+    display: none;
+}
+
+.backToTop {
+    background-color: rgb(0,0,0);
+    zoom: 1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+.headerMenuContainer .headerMenu ul li.signIn .signInBackground {
+    height: 51px;
+}
+
+.pageHeader {
+    margin-top: 51px;
+}
+
+
+.landingSplash .landingHeaderMenu ul li.signIn .signInBackground {
+    height: 51px;
+}
+
+.landingGetStartedPromptSection > div {
+    width: 389px;
+}
+
+.howItWorksContainer .howItWorksModalContainer .howItWorksModal {
+    z-index: 1;
+}
+
+.howItWorksContainer .howItWorksModalContainer .modalBackground {
+    background-color: rgb(0,0,0);
+    zoom: 1;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.pricingTrialSection .trialText {
+    padding-top: 75px;
+}
+
+.getStartedPromptSection .zipCodeStartSection {
+    width: 357px;
+}
+
+input[type='submit'].addButton.redButton {
+    background: url('/assets/Icon_Add.png') scroll no-repeat 64px center #e36967;
+}

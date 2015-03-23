@@ -1,0 +1,30 @@
+= simple_form_for @ingredient, html: {class: 'ingredients'} do |f|
+  = render 'layouts/form_errors', resource: @ingredient
+
+  fieldset
+    ul.data
+      li.input.name.required
+        = f.input :name, placeholder: "Name it"
+      li.input.unit.required
+        = f.input :unit, collection: Ingredient::UNITS, prompt: "Select Unit"
+      li.input.checkbox.optional
+        =label_tag "pantry?"
+        /= check_box_tag 'ingredient[pantry]', true, false
+
+        = f.input_field :pantry, as: :boolean
+      li.input.checkbox.optional
+        =label_tag "cash back?"
+        /= check_box_tag 'ingredient[cash_back]', true, false
+
+        = f.input_field :cash_back, as: :boolean
+      li.input.category.required
+        = f.input :category, collection: Ingredient::CATEGORIES, prompt: "Select Unit"
+      li.input.measurement-type.required
+        = f.input :measurement_type, collection: Ingredient::MEASURE_TYPES, prompt: "Select measure type"
+
+      li.input.products
+        = f.input :product_ids, collection: Product.all.collect{|x| ["#{x.brand_and_item} - (#{x.sku})", x.id]},selected: @ingredient.products.map(&:id), prompt: "Select product"
+
+    ul.actions
+      li.primary
+        = f.submit class: "button-action"

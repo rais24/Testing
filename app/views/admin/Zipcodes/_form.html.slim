@@ -1,0 +1,24 @@
+= simple_form_for [:admin, @zipcode], html: {class: 'recipe-form'} do |f|
+  - if @zipcode.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@zipcode.errors.count, "error")} prohibited this zip code from being saved:"
+      ul
+        - @zipcode.errors.full_messages.each do |message|
+          li = message
+  fieldset
+    ul.data
+      li.input.name.required
+      	= f.label :name
+        = f.text_field :name
+      li.input.code.required
+        = f.label :code
+        = f.text_field :code
+      li.delivery_zone
+      	= f.select(:delivery_zone, options_for_select(DeliveryZone.all.collect{|x| [x.name, x.id]}, selected: @zipcode.delivery_zone), { :prompt => "Please select"}, { :multiple => false })
+
+
+      	
+
+    ul.actions
+      li.primary
+        = f.submit nil, class: "button-action button-fill"

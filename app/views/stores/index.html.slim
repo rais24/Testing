@@ -1,0 +1,23 @@
+.content
+  h1
+    | Listing stores (#{collection.size})
+    = link_to 'New Store', new_resource_path, class: 'button-action'
+
+  table.table.table-hover.stores
+    tr
+      th Name
+      th Code/Identifier
+      th Website and BPO Credentials
+      th Printer Email
+      th
+    - collection.each do |store|
+      tr
+        td.rip= store.name
+        td.rip= store.code
+        td.rip= website_bpo_credentials(store)
+        td.rip= store.remote_printer_email
+        td.rip
+          = link_to('Edit', edit_store_path(store)) << " "
+          = link_to("Delete", store_path(store), method: 'DELETE')
+
+  = link_to 'New Store', new_resource_path

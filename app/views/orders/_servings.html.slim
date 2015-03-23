@@ -1,0 +1,13 @@
+.shop-servings
+  table.table
+    tr
+      th
+      th Meal
+      th Servings
+    - servings.each do |serving|
+      tr
+        td
+          = link_to serving.recipe do
+            img.thumb src=serving.photo(:medium) alt=serving.name
+        td= link_to serving.name, serving.recipe
+        td.units= serving_override(serving.quantity)

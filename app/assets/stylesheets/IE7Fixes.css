@@ -1,0 +1,175 @@
+﻿input[type="submit"].redButton {
+    padding: 12px 0;
+}
+
+.backToTop {
+    background: url("/assets/arrow.png") no-repeat center center;
+    filter: none;
+}
+
+.headerMenuContainer .headerMenu .headerLogo {
+    background: none;
+    /*
+     *
+     *   the path to the image file is relative to the HTML page location, not the CSS file
+     *
+     */
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/fitly-logo.png", sizingMethod="scale");
+}
+
+.headerMenuContainer .headerMenu ul li.signIn .signInBackground {
+    height: 66px;
+}
+
+.footer .logo {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/fitly-logo.png", sizingMethod="scale");
+}
+
+.footer .thirdLinkLine.footerLinks .facebook > a {
+    background: url("/assets/Footer_Facebook.png") no-repeat center center;
+}
+
+.footer .thirdLinkLine.footerLinks .twitter > a {
+    background: url("/assets/Footer_Twitter.png") no-repeat center center;
+}
+
+.footer .thirdLinkLine.footerLinks .pinterest > a {
+    background: url("/assets/Footer_Pinterest.png") no-repeat center center;
+}
+
+.footer .thirdLinkLine.footerLinks .instagram > a {
+    background: url("/assets/Footer_IG.png") no-repeat center center;
+}
+
+
+.pageHeader {
+    margin-top: 66px;
+}
+
+
+
+.landingSplash {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/home-page-hero-10f.jpg", sizingMethod="scale");
+}
+
+    .landingSplash .landingHeaderMenu .headerLogo {
+        background: none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/fitly-logo.png", sizingMethod="scale");
+    }
+
+    .landingSplash .landingHeaderMenu ul li.signIn .signInBackground {
+        height: 66px;
+    }
+
+    .landingSplash .getStartedSection .logo {
+        background: none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/fitly-logo.png", sizingMethod="scale");
+    }
+
+    .landingSplash .getStartedSection .getCookingSection {
+        width: 402px;
+    }
+
+.asSeenInSection .ventureBeat {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/press/venturebeat-logo.png", sizingMethod="scale");
+}
+
+.asSeenInSection .medCityNews {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/press/medcity-logo.png", sizingMethod="scale");
+}
+
+.asSeenInSection .philadelphiaBusinessJournal {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/press/pbj-logo.png", sizingMethod="scale");
+}
+
+.asSeenInSection .phillyDotCom {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/press/philly-dotcom-logo.png", sizingMethod="scale");
+}
+
+.asSeenInSection .technically {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/press/technically-logo.png", sizingMethod="scale");
+}
+
+.howItWorksContainer {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/HowitWorks_Bg.png", sizingMethod="scale");
+}
+
+    .howItWorksContainer .howItWorksSection {
+        background: none;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/HowitWorks_Play.png", sizingMethod="scale");
+    }
+
+.landingStepsSection > div {
+    height: 106px;
+}
+
+.landingBenefitsSection > div {
+    min-height: 130px;
+}
+
+.landingGetStartedPromptSection > div {
+    width: 409px;
+}
+
+.howItWorksContainer .howItWorksSection .howItWorksPlayVideo {
+    position: relative;
+    top: 271px;
+    height: 123px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+}
+
+
+.cashBackHeaderSection {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/CTA_bgimage.png", sizingMethod="scale");
+    height: 400px;
+}
+
+    .cashBackHeaderSection .cashBackItemsSection {
+        max-width: 400px;
+    }
+
+.pricingTrialSection {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/Pricing30_Bg.png", sizingMethod="scale");
+}
+
+.getStartedPromptSection {
+    background: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/CTA_bgimage.png", sizingMethod="scale");
+    height: 230px;
+}
+
+.menuList .menuRow .menuItem .menuItemPhoto .viewDetails {
+    left: 0;
+}
+
+.recipeDetails {
+    overflow: hidden;
+}
+
+.categoriesSection .categories > a {
+    position: static;
+    border: 2px solid #5e3a56;
+    padding: 0 5px;
+    margin: 5px 5px 0 5px;
+}
+
+.nutritionSection {
+    background: url('/assets//Section_Bg.png') scroll no-repeat center center transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src="/assets/Section_Bg.png", sizingMethod="scale");
+}
+
+    .nutritionSection .nutritionSectionContainer > div {
+        float: left;
+    }

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+</head>
+
+<body>
+<script type="text/javascript">
+    $(function(){
+      $('input:checkbox').screwDefaultButtons({
+        image: 'url("/assets/checkboxvSmall.jpg")',
+        width: 28,
+        height: 28
+      });
+
+    });
+</script>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+   <h1 class="h1-float-left"><a href="/account">< Back to Dashboard</a></h1>
+    <div class="contentcontainer">
+      
+      <%= form_tag(account_path, :method => :put) do %>
+
+        <div class="innerbody fullwidth"><br />
+          <div style="width:100%; height:1px;"></div>
+          <h1>Track Progress</h1>
+         
+          <h1 class="newheadingleft">TARGETS</h1>
+          <div class="border-line"></div>
+          
+           <div class="targetbox">
+          <div class="innerdetails" style="text-align:right;">target weight:</div>
+          <div class="inputfiled"><input type="text" name="user[targets][weight]" value="<%= @user.targets_list[:weight] %>" /></div>
+          <div class="innerdetails" style="text-align:left;">pounds</div>	
+          </div>
+          
+          <div class="targetbox">
+          <div class="innerdetails" style="text-align:right;">target glucose</div>
+          <div class="inputfiled"><input type="text" name="user[targets][glucose]" value="<%= @user.targets_list[:glucose] %>"/></div>
+          <div class="innerdetails" style="text-align:left;">mg/dL</div>	
+          </div>
+
+          <div class="targetbox" align="center">
+            <div class="trackwidth">
+              <div>
+                <input type="checkbox" name="user[targets][become_active]" id="ex2_a" value="1">
+                <label for="ex2_a">Become more active</label>
+              </div>
+            
+              <div>   
+                <input type="checkbox" name="user[targets][less_fatigue]" id="ex2_a" value="1">
+                <label for="ex2_a">Experience less fatigue</label>
+              </div>
+             
+              <div>  
+                <input type="checkbox" name="user[targets][improve_memory]" id="ex2_a" value="1">
+                <label for="ex2_a">Improve memory</label>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="newheadingleft">TRACK PROGRESS</h1>
+          <div class="border-line"></div>
+          
+          <div class="targetbox">
+            <div class="innerdetails innerdetails2">date:</div>
+            <div class="inputfiled inputfiled2"><input type="text" name="user[progress_history][date]" placeholder="MM-DD-YYYY"/></div>
+          </div>
+          
+          <div class="targetbox">
+            <div class="innerdetails">weight:</div>
+            <div class="inputfiled"><input type="text" name="user[progress_history][weight]"/></div>
+            <div class="innerdetails textfloat">pounds</div>
+          </div>
+          
+          <div class="targetbox">
+            <div class="innerdetails">glucose:</div>
+            <div class="inputfiled widthexpand"><input type="text" name="user[progress_history][glucose]"/></div>
+            <div class="innerdetails textfloat">mg/dL</div>
+          </div>
+
+          <div class="target-after">
+            <%= render "accounts/account_partials/progress_history" %>
+          </div>
+                                  
+          <div class="footertop">
+            By creating an account, you confirm that you have read and agreed to our <a href="#">Terms of
+            Service</a>,<br>
+            which includes our <a href="#">Substitution Policy</a>, and our <a href="#">Privacy Policy</a>.
+          </div>
+        </div>
+        <div class="back-nextbtn2">
+          <div class="backbtn">
+            <input type="submit" value="Save Personal Information" />
+          </div>
+          <div class="canclebtn"> <a href="#">Cancel</a></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close -->  
+  
+  <%= render "layouts/shared/footer" %>  
+  
+</div>
+</body>
+</html>

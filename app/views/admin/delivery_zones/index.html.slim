@@ -1,0 +1,19 @@
+.content
+  h1 Delivery Zones
+
+  table.table.table-hover.delivery_zones
+    tr
+      th Zone
+      th Zipcodes
+      th Store(s)
+      th Delivery days
+      th 
+      th
+    - @delivery_zones.each do |zone|
+      tr
+        td= zone.name
+        td= zipcode_list(zone)
+        td= stores_list(zone)
+        td= valid_days_list(zone)
+        td= link_to 'Edit', edit_admin_delivery_zone_url(zone)
+        td= link_to 'Destroy', [:admin, zone], method: :delete, data: { confirm: 'Are you sure?' }

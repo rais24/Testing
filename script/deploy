@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# deploy
+
+set -e
+
+set -u
+
+mkdir -p $HOME/.ec2/
+
+PRIVATE_KEY=$HOME/.ec2/gsg-keypair
+PUBLIC_KEY=$PRIVATE_KEY.pub
+
+# if the file is already downloaed, move it
+if [ -f $HOME/Downloads/gsg-keypair.pem ]; then
+  mv ~/Downloads/gsg-keypair.pem $PRIVATE_KEY
+fi
+
+# The private key exists
+if [ -f $PRIVATE_KEY ]; then
+
+  # the privte version exists,
+  # but the public version hasn't yet been created
+  if ! [ -f $PUBLIC_KEY ]; then
+    echo "Creating $PUBLIC_KEY..."
+    chmod 600 $PRIVATE_KEY &&
+      ssh-keygen -y -f $PRIVATE_KEY > $PUBLIC_KEY &&
+        chmod 600 $PUBLIC_KEY
+        
+    bin/cap rubber:setup_local_aliases
+  fi
+fi
+
+if ! [ -f $PRIVATE_KEY ] || ! [ -f $PUBLIC_KEY ]; then
+  echo "$(cat<<FAIL_PROMPT
+  FAILED TO DEPLOY
+
+  You must first setup your GSG Keypair.
+
+  To do so,
+    1. Go to 'https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs'
+    2. if a Key Pair exists skip to step 5
+    3. click 'Create Key Pair' button
+    4. Enter 'gsg-keypair'
+    5. download the keypair
+    6. run this script again.
+
+FAIL_PROMPT)" && exit 1
+fi
+
+ROLES=app bin/cap deploy

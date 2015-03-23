@@ -1,0 +1,11 @@
+- content_for :header do
+  script src="//cdn.optimizely.com/js/2116980677.js"
+= render '/signup/custom/google_adwords'
+= render '/signup/custom/facebook_ad'
+p 
+  h1 Thank You for Signing Up! 
+  p Please contact us for Full Meal Plan pricing at $4.99 per plate. 
+div 
+	ul
+		li Email: #{mail_to('holler@fitly.com')}
+		li 1-844-GET-FITLY (438-3485) 

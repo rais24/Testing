@@ -1,0 +1,471 @@
+/*-------------------
+Checkout Styles
+-------------------*/
+@import '_variables';
+
+.checkouts-controller.show-action {
+    form {
+        &.delivery-address {
+            fieldset {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    #checkout-payment {
+        #existing-cc {
+            ul.actions {
+                margin-top: 0;
+            }
+        }
+        ul.data {
+            overflow: hidden;
+
+            li.card-expiration {
+                width: 70%;
+                float: left;
+                margin-bottom: 0;
+
+                select {
+                    margin-top: 9px;
+                }
+                #card_month {
+                    width: 57%;
+                    float: left;
+                }
+                #card_year {
+                    width: 40%;
+                    float: right;
+                }
+            }
+            li.cvv {
+                width: 25%;
+                float: right;
+            }
+            li.save-payment-info {
+                clear: both;
+            }
+        }
+    }
+    #checkout-order-review {
+        form ul.actions {
+            margin-top: 0;
+        }
+        li.image {
+            display: none;
+        }
+    }
+    #checkout-order-confirmation {
+        #social {
+            p {
+                text-align: center;
+            }
+        }
+        nav.social {
+            padding-bottom: 30px;
+        }
+        #delivery-info {
+            clear: both;
+        }
+    }
+    #pantry-items {
+        caption {
+            font-family: LatoBold;
+        }
+    }
+    #checkout-delivery-address {
+        overflow: hidden;
+    }
+    footer {
+        clear: both;
+    }
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 330px ) {
+
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////          Second Breakpoint (small tablet): > 500px         ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 500px ) {
+        #checkout-delivery-address {
+            & > p {
+                text-align: center;
+            }
+
+            form.address {
+                max-width: 500px;
+                padding: 0 10px;
+            }
+
+            li.input {
+                margin-bottom: 15px;
+
+                &.first-name {
+                    float: left;
+                    width: 48%;
+                }
+
+                &.last-name {
+                    float: right;
+                    width: 48%;
+                }
+
+                &.address-1 {
+                    clear: both;
+                }
+
+                &.city {
+                    float: left;
+                    width: 40%;
+                }
+
+                &.state {
+                    float: left;
+                    width: 23%;
+                    padding-left: 10px;
+                }
+
+                &.zipcode {
+                    float: right;
+                    width: 37%;
+                    padding-left: 10px;
+                    clear: none;
+                }
+
+                &.phone {
+                    clear: both;
+                }
+            }
+
+            li.input.last-name,
+            li.input.zipcode {
+                margin-bottom: 40px;
+            }
+
+        }
+        #checkout-delivery-time {
+            p {
+                text-align: center;
+            }
+        }
+        #checkout-payment {
+            p {
+                max-width: 414px;
+                margin: 15px auto;
+            }
+        }
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////          Third Breakpoint (large tablet): > 740px          ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 740px ) {
+        main {
+            overflow: hidden;
+        }
+        div.login {
+            float: left;
+            width: 50%;
+            margin: 0 auto;
+        }
+        div.signup {
+            float: right;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #checkout-delivery-address {
+            ul.actions li.primary input {
+                max-width: 330px;
+            }
+        }
+
+        #checkout-delivery-time {
+            form {
+                max-width: 95%;
+
+                li.date {
+                    float: left;
+                    width: 48%;
+                    margin-top: 21px;
+                }
+
+                li.time {
+                    width: 48%;
+                    position: absolute;
+                    top: 90px;
+                }
+                li.comments {
+                    float: right;
+                    width: 48%;
+                }
+
+                ul.actions {
+                    clear: both;
+                    padding-top: 30px;
+                }
+            }
+        }
+        #checkout-order-review,
+        #checkout-order-confirmation {
+            & > p {
+                max-width: 410px;
+                margin: 15px auto;
+            }
+            #delivery-info {
+                .address {
+                    float: left;
+                    width: 49%;
+                }
+                .time {
+                    float: right;
+                    width: 49%;
+                }
+            }
+            #recipes {
+                clear: both;
+                width: 100%;
+
+                li.recipe-summary {
+                    position: relative;
+                    padding-left: 180px;
+                    min-height: 180px;
+
+                    li.image {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        display: block;
+                        width: 150px;
+
+                        img {
+                            width: 100%;
+                            border: 1px solid rgb(170, 159, 146);
+                        }
+                    }
+                }
+            }
+            #pantry-items {
+                float: right;
+                width: 50%;
+                padding-top: 25px;
+
+                caption {
+                    font-size: 120%;
+                }
+            }
+            #order-total {
+                clear: both;
+                width: 50%;
+                margin: 0 auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                float: right;
+            }
+            p.lower {
+                clear: both;
+                width: 300px;
+            }
+            form.lower {
+                clear: both;
+            }
+            a.action.primary {
+                clear: both;
+            }
+        }
+
+        #checkout-order-confirmation {
+            div.confirmation {
+                float: left;
+                width: 50%;
+            }
+
+            div.actions {
+                float: right;
+                width: 50%;
+            }
+        }
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////            Fourth Breakpoint (desktop): > 960px            ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 960px ) {
+        #checkout-delivery-address {
+            form.address {
+                max-width: initial;
+                margin-top: 5px;
+
+                & > ul.actions {
+                    float: left;
+                    width: 50%;
+
+                    & + fieldset {
+                        float: right;
+                        width: 50%;
+                    }
+                }
+
+                fieldset {
+                    margin-top: 30px;
+
+                    ul.data {
+                        max-width: 330px;
+                        margin: 0 auto;
+                    }
+                    li.input {
+                        &.first-name {
+                            float: none;
+                            width: 100%;
+                        }
+
+                        &.last-name {
+                            float: none;
+                            width: 100%;
+                        }
+
+                        &.city {
+                            float: left;
+                            width: 70%;
+                        }
+
+                        &.state {
+                            float: right;
+                            width: 25%;
+                            padding-left: 0;
+                        }
+
+                        &.zipcode {
+                            float: none;
+                            width: 100%;
+                            padding-left: 0;
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+        #checkout-order-review {
+            li.image {
+                img {
+                    top: -200px;
+                }
+            }
+        }
+        #checkout-delivery-time {
+            form {
+                max-width: 65%;
+            }
+        }
+
+    }
+}
+
+@media only print {
+    @page {
+        size: portrait;
+    }
+    /* First remove anything we don't need */
+    body, table tr {
+        background: none !important;
+    }
+
+    header, footer, .actions, .action {
+        display: none !important;
+    }
+
+    /* Set a reasonable font */
+    body {
+        font: 12pt Georgia, "Times New Roman", Times, serif !important;
+        line-height: 1.3 !important;
+    }
+
+    /* Remove backgrounds on header elements and set standard sizes */
+    h1, h2 {
+        background: none !important;
+        color: #000 !important;
+        border-bottom: 1pt solid #000 !important;
+        display: block !important;
+    }
+
+    h1 {
+        font-size: 24pt !important;
+        text-shadow: none !important;
+    }
+
+    h2 {
+        font-size: 14pt !important;
+    }
+
+    /* Center confirmation text */
+    div.confirmation {
+        width: 100% !important;
+        p {
+            text-align: center !important;
+        }
+    }
+
+    /* Layout pieces */
+    #delivery-info {
+        .address {
+            float: left !important;
+            width: 45% !important;
+        }
+        .time {
+            float: right !important;
+            width: 45% !important;
+        }
+    }
+
+    #recipes {
+        clear: both !important;
+        float: left !important;
+        width: 45% !important;
+    }
+
+    #pantry-items {
+        float: right !important;
+        width: 45% !important;
+
+        caption {
+            background: none !important;
+            color: #000 !important;
+        }
+    }
+
+    #order-total {
+        clear: both !important;
+        padding-top: 20pt !important;
+        width: 25% !important;
+        margin: 0 auto !important;
+    }
+
+    /* Table border smaller */
+    table {
+        border-width: 1pt !important;
+    }
+
+    /* Set the margins */
+    @page {
+        margin: .5cm;
+    }
+}

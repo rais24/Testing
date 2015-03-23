@@ -1,0 +1,17 @@
+<div class="filterGroup">
+    <div class="filterHeader">
+        Diet Type
+    </div>
+    <div class="filterOptions">
+        <div>
+            <% Recipe.diet_type_counts.each_with_index do |tag, index| %>
+                <div>
+                    <label>
+                        <%= check_box_tag "filter[diet_type][#{index}]", "#{tag.name}" %>
+                        <%= tag.name.titleize %>
+                    </label>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+#checkout-delivery-time
+    h1
+        | Delivery Date &amp; Time <span> - Step 3 of 5</span>
+    - if @weekly_delivery_schedule && @weekly_delivery_schedule.errors
+      p
+        - @weekly_delivery_schedule.errors.full_messages.each do |msg|
+          = msg
+          br/
+    p
+    = render 'user_delivery_schedule'

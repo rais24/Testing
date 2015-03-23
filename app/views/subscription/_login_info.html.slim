@@ -1,0 +1,90 @@
+p
+  - if @user && @user.errors
+    - @user.errors.full_messages.each do |msg|
+      = msg
+      br/
+
+fieldset
+    legend Sign up for Fitly
+    = f.input_field :zipcode, as: :hidden, value: @user.zipcode
+    / TODO: server side validation
+    / = if @user.validation_error
+    /     p.error
+    /         = @user.validation_error
+    ul.data#first_column
+        - unless @user.is_specialist?
+            = f.fields_for :subscription, @user.subscription do |subscr|
+                li.input.first-name.required
+                    label for="order_address_first_name"
+                    = subscr.input :subscription_type, :collection => [['3-day', '3-day'] ,['5-day', '5-day']],
+                    :label_method => :last, :value_method => :first,:as => :radio_buttons, :item_wrapper_class => 'inline'
+        li.input.email.required
+            label for="user_email"
+                | E-mail Address <abbr title="(Required)">*</abbr>
+            = f.input_field :email, value:'pa1@p.com', required: :true
+        li.input.first.required
+            label for="user_first_name"
+                | First Name <abbr title="(Required)">*</abbr>
+            = f.input_field :first, value:'p', required: :true
+        li.input.last.required
+            label for="user_last_name"
+                | Last Name <abbr title="(Required)">*</abbr>
+            = f.input_field :last, value:'p', required: :true
+        li.input.invite-code
+            label for="user_invite_code"
+                | Invite Code
+            = f.input_field :invite_code, placeholder: 'optional'
+        li.input.invite-code
+            label for="user_practitioner_code"
+                | Practitioner Code
+            = f.input_field :practitioner_code, placeholder: 'optional'
+        li.input.password.required
+            label for="user_password"
+                | Password <abbr title="(Required)">*</abbr>
+            p.label-note
+                | 8 to 20 letters or numbers, at least 1 number
+            = f.input_field :password, value:'abcdefgh1', as: :password, required: true
+        li.input.password-confirmation.required
+            label for="user_password_confirmation"
+                | Verify Password <abbr title="(Required)">*</abbr>
+            = f.input_field :password_confirmation, value:'abcdefgh1', as: :password, required: true
+    ul.data#second_column
+        - if @user.is_specialist?
+            li.input.certificate_number.required
+                label for="user_certificate_number"
+                    | Certificate Number
+                = f.input_field :certificate_number, value: 'CERT123', required: true
+            li.input.certifcate_type.required
+                label for="user_certificate_type"
+                    | Certificate Type
+                = f.input_field :certificate_type, value: 'Registered Dietician', rrequired: true
+        - else
+            li.input.height.optional
+                label for="user_height"
+                    | Height (in feet)
+                = f.input_field :height, placeholder: '5.0'
+            li.input.weight.optional
+                label for="user_weight"
+                    | Weight (in lbs)
+                = f.input_field :weight, placeholder: '150'
+            li.input.gender.optional
+                = f.input :gender, :collection => [['Male', 'Male'] ,['Female', 'Female']],
+                :label_method => :last, :value_method => :first,:as => :radio_buttons, 
+              :item_wrapper_class => 'inline'
+            li.input.dob.optional
+                label for="user_dob"
+                    | Date of Birth
+                = f.input_field :dob, value: '01/01/1980', :as => :text
+        li.input.subscribe.checkbox.optional
+            label for="ok_to_discuss_with_dietician"
+                | Would you be interested in speaking to a registered dietitian in your area?
+            = f.input_field :ok_to_discuss_with_dietician, as: :boolean, boolean_style: :inline, checked: false
+        li.input.subscribe.checkbox.optional
+            label for="user_ok_to_email"
+                | Send me Fitly's latest recipes each week
+            = f.input_field :ok_to_email, as: :boolean, boolean_style: :inline, checked: false
+    p.legal
+        | By creating an account, you conﬁrm that you have read and agree to our <a href="/pages/terms">Terms of Service</a>, which includes our <a href="/pages/terms#substitution-policy">Substitution Policy</a>, and our <a href="/pages/privacy">Privacy Policy</a>.
+    ul.actions
+        li.primary
+            = f.submit 'Next'

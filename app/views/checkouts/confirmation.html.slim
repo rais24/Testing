@@ -1,0 +1,87 @@
+= render 'ecommerce_tracking'
+= render 'adwords', adword_url: "//www.googleadservices.com/pagead/conversion/985025795/?value=" << @order.price.to_s << "&amp;currency_code=USD&amp;label=_mhzCJ7j1FYQg5rZ1QM&amp;guid=ON&amp;script=0"
+= render 'facebook_ad', facebook_ad_url: "https://www.facebook.com/tr?ev=6019229497115&amp;cd[value]=#{@order.price}&amp;cd[currency]=USD&amp;noscript=1"
+= render 'bing_ad'
+#checkout-order-confirmation
+    h1
+        | Thank you for your order!
+    div.confirmation
+        p
+            | Your <strong>Order ID</strong> is <strong>##{@order.id}</strong>.
+        p
+            | You'll receive a confirmation email at <strong>#{@user.email}</strong> containing your order details.
+    div.actions
+        a class="action primary" href="javascript:window.print()"
+            | Print receipt
+        section#social
+            p
+                | Share Fitly with your friends :)
+            = render "layouts/social_links"
+    section#delivery-info
+        div.address
+            h2
+                | Delivery Address
+            p
+                = @order.address.name
+                <br/>
+                = @order.address.street
+                <br/>
+                = @order.address.city_line
+                <br/>
+                = number_to_phone(@order.address.phone)
+        div.time
+            h2
+                | Delivery Time
+            p
+                = @order.delivery_time.date_and_time
+    section#recipes
+        h2 #{@order.servings.count} recipes (#{@order.serving_amount.to_i} total plates)
+        ul
+            - @order.servings.each do |serving|
+                li.recipe-summary
+                    h3 = serving.recipe.name
+                    ul.data
+                        li.image
+                            noscript data-small=serving.recipe.photo.url(:thumb) data-medium=serving.recipe.photo.url(:medium) data-large=serving.recipe.photo.url(:extra_large)
+                                = image_tag serving.recipe.photo.url(:small), alt: serving.recipe.name
+                        li.quantity
+                            span.label Plates:
+                            span.quantity = serving.quantity.to_i
+                        li.price
+                            span.label Price per plate:
+                            span.price = display_price_per_serving(serving.quantity.to_i)
+                        li.total
+                            span.label Item total:
+                            span.price = display_item_total(serving.quantity.to_i)
+    section#pantry-items
+        - unless @order.order_products.pantry.blank?
+            table.pantry-items
+                caption
+                    | Pantry Items
+                = render partial: 'pantry', collection: @order.order_products
+        br 
+        - unless @order.order_cashback_items.blank?
+            table.cashback-items
+                caption
+                    | Cashback Items
+                = render partial: 'cashback', collection: @order.order_cashback_items
+    section#order-total
+        table.order-total
+            tr.subtotal
+                th Subtotal:
+                td = number_to_currency(@order.subtotal)
+            tr.delivery
+                th Delivery:
+                td Free
+            tr.tax
+                th Tax:
+                td = number_to_currency(cart.taxes)
+            - if @order.used_promo
+                tr.promo
+                    th Promo:
+                    td = "-#{number_to_currency(@order.shopping_cart.discount_from_promo)}"
+            tr.grand-total
+                th Amount Charged:
+                td = number_to_currency(@order.price)
+    a class="action primary" href="javascript:window.print()"
+        | Print receipt

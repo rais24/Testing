@@ -1,0 +1,17 @@
+- if portions.empty?
+  h2.center Processing Your Order. Please Refresh...
+- else
+  .shop-portions
+    table.table
+      tr
+        th &#x2713;
+        th
+        th Ingredient
+        th Portions
+      - portions.each do |portion|
+        tr
+          td= check_box_tag nil, nil, false, class: 'large'
+          td
+            img src=portion.photo(:thumb) alt=portion.name
+          td= portion.name.titleize
+          td.units= portion.to_display_amount(1, portion.ingredient.unit)

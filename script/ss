@@ -1,0 +1,5 @@
+#!/bin/sh                                                                                                                                           
+#                                                                                                                                                   
+# ss
+
+script/seed && script/server

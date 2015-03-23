@@ -1,0 +1,57 @@
+= simple_form_for @order, url: wizard_path, html: { class: "address delivery-address" }, :method => "PUT" do |f|
+    - if @user.address
+        ul.actions
+            li.primary
+                button class="with-prompt cancel" name="saved_address" type="submit" value="use_saved_address"
+                    span class="intro"
+                        | Use my saved address:
+                    | #{@user.address.street1}
+    fieldset
+        - if @user.address
+            legend Use a different address:
+        ul.data
+            = f.fields_for :address, @order.address do |addr|
+                li.input.first-name.required
+                    label for="order_address_first_name"
+                        | First Name <abbr title="(Required)">*</abbr>
+                    = addr.text_field :first_name, value: '', class: 'required'
+                li.input.last-name.required
+                    label for="order_address_last_name"
+                        | Last Name <abbr title="(Required)">*</abbr>
+                    = addr.text_field :last_name, value: '', class: 'required'
+                li.input.address-1.required
+                    label for="order_address_street1"
+                        | Address 1 <abbr title="(Required)">*</abbr>
+                    = addr.text_field :street1, value: '', class: 'required'
+                li.input.address-2.optional
+                    label for="order_address_street2"
+                        | Address 2
+                    = addr.text_field :street2, value: ''
+                li.input.city.required
+                    label for="order_address_city"
+                        | City <abbr title="(Required)">*</abbr>
+                    = addr.text_field :city, value: '', class: 'required'
+                li.input.state.required
+                    label for="order_address_state"
+                        | State <abbr title="(Required)">*</abbr>
+                    = addr.text_field :state, value: '', class: 'required'
+                li.input.zipcode.required
+                    label for="order_address_zipcode"
+                        | Zip Code <abbr title="(Required)">*</abbr>
+                    = addr.text_field :zipcode, value: '', class: 'required'
+                li.input.phone.required
+                    label for="order_address_phone"
+                        | Phone Number <abbr title="(Required)">*</abbr>
+                    p.label-note In case we need to call you about the delivery
+                    = addr.text_field :phone, value: '', class: 'required'
+                / TODO: This isn't in the wireframes, but I think we should ask them if we're
+                / going to overwrite their currently saved address. Feel free to comment out
+                / and mark as phase 2 if it's too much.
+                / a.t. - ill revisit this if we have extra time, otherwise marking as phase 2
+                /li.input.checkbox.save-address.optional
+                /    label for="save_address"
+                /        | Use this as my default address from now on
+                /    = f.input_field :save_address, as: :boolean, boolean_style: :inline, checked: false
+        ul.actions
+            li.primary
+                = submit_tag "Next Step: Delivery Time"

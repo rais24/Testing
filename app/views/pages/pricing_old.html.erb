@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <%= render "layouts/shared/head_includes" %>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/assets/Shared.css" />
+    <link rel="stylesheet" href="/assets/Pricing.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function getStarted() {
+            location.href = "/signup/zipcode_check";
+        }
+
+        function toggleMobileMenu() {
+            if (!$(".headerMobileExpandedMenu").is(":visible")) {
+                $(".headerMobileExpandedMenu").toggle();
+                $(".headerMobileExpandedMenu .expandedMenu").animate({ left: 0 }, 200);
+            }
+            else {
+                $(".headerMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".headerMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+
+        $(document).ready(function () {
+            $(".blueButton").on("click", getStarted);
+            $(".redButton").on("click", getStarted);
+        });
+
+    </script>
+</head>
+<body>
+    <% if current_user %>
+        <%= render "layouts/shared/navigation_header_authenticated" %>
+    <% else %>
+        <%= render "layouts/shared/navigation_header" %>
+    <% end %>
+    <div class="pageHeader">
+        Pricing
+    </div>
+    <div class="pricingPageHeader">
+        <div class="pricingPageHeaderText">
+            <p>Meal Plans: <a href="/subscription?plan=3">3-Day Meal Plan</a>
+            &nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;&nbsp;
+            <a href="/subscription?plan=5">5-Day Meal Plan</a>
+            </p>
+            <p>Registered Dieticians: 
+                <%= link_to "Sign Up now!", subscription_index_path(user_type: "spec") %>
+            </p>
+            Your price per plate can be reduced to $5.99 the more plates per recipe you choose to cook for the week.
+            <span class="boldRokkitt">Our minimum order size is 8 plates</span>
+            in any combination of your choice. Here are some typical combos:
+        </div>
+    </div>
+    <div class="pricingContainer">
+        <div class="pricingSection">
+            <div class="pricingSectionHeader">
+                <div>
+                    2 plates/recipe
+                </div>
+                <div>
+                    $9.99 per plate
+                </div>
+            </div>
+            <div class="pricingSectionPricesContainer">
+                <div class="pricePerPlateSection twoPlates">
+                </div>
+                <div class="goodForSection">
+                    <div>
+                        GOOD FOR
+                    </div>
+                    <div>
+                        One or two people!
+                    </div>
+                </div>
+                <div class="totalSection">
+                    <div>
+                        TOTAL: $79.92
+                    </div>
+                    <div>
+                        <input type="submit" class="redButton" value="Get Started" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pricingSection mostPopular">
+            <div class="pricingSectionHeader">
+                <div>
+                    4 plates/recipe
+                </div>
+                <div>
+                    $6.99 per plate
+                </div>
+            </div>
+            <div class="pricingSectionPricesContainer">
+                <div class="mostPopularBanner">
+                </div>
+                <div class="pricePerPlateSection fourPlates">
+                </div>
+                <div class="goodForSection">
+                    <div>
+                        GOOD FOR
+                    </div>
+                    <div>
+                        Families and couples that want to cook once and eat twice!
+                    </div>
+                </div>
+                <div class="totalSection">
+                    <div>
+                        TOTAL: $67.92
+                    </div>
+                    <div>
+                        <input type="submit" class="blueButton" value="Get Started" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pricingSection">
+            <div class="pricingSectionHeader">
+                <div>
+                    8 plates/recipe
+                </div>
+                <div>
+                    $5.99 per plate
+                </div>
+            </div>
+            <div class="pricingSectionPricesContainer">
+                <div class="pricePerPlateSection eightPlates">
+                </div>
+                <div class="goodForSection">
+                    <div>
+                        GOOD FOR
+                    </div>
+                    <div>
+                        Fun dinner parties or events with family and friends!
+                    </div>
+                </div>
+                <div class="totalSection">
+                    <div>
+                        TOTAL: $47.92
+                    </div>
+                    <div>
+                        <input type="submit" class="redButton" value="Get Started" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearFix">
+        </div>
+    </div>
+    <div class="footer hideOnMobile">
+        <div class="logo">
+        </div>
+        <div class="footerLinks firstLinkLine">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/#howItWorks">How It Works</a>
+                </li>
+                <li>
+                    <%= link_to "The Menu", recipes_path %>
+                </li>
+                <li>
+                    <%= link_to "Sign Up", zipcode_check_signup_path %>
+                </li>
+                <li>
+                    <a href="/account">Sign In</a>
+                </li>
+                <li>
+                    <%= link_to "Contact", page_path('contact') %>
+                </li>
+            </ul>
+            <div class="clearFix">
+            </div>
+        </div>
+        <div class="footerLinks secondLinkLine">
+            <ul>
+                <li>
+                    <%= link_to "FAQ", page_path('faqs') %>
+                </li>
+                <li>
+                    <%= link_to "Testimonials", page_path('testimonials') %>
+                </li>
+                <li>
+                    <%= link_to "Careers", page_path('jobs') %>
+                </li>
+                <li>
+                    <%= link_to "Our Team", page_path('team') %>
+                </li>
+                <li>
+                    <a href="https://fitlyfamily.blogspot.com/">Blog</a>
+                </li>
+            </ul>
+            <div class="clearFix">
+            </div>
+        </div>
+        <div class="footerLinks thirdLinkLine">
+            <ul>
+                <li class="facebook">
+                    <a href="https://www.facebook.com/pages/Fitly-The-best-way-to-eat-healthy/254561257918450?soft=side-area">Facebook</a>
+                </li>
+                <li class="twitter">
+                    <a href="https://twitter.com/fitlyfamily/">Twitter</a>
+                </li>
+                <li class="pinterest">
+                    <a href="http://www.pinterest.com/fitlyfamily/">Pinterest</a>
+                </li>
+                <li class="instagram">
+                    <a href="http://instagram.com/fitlyfoods">Instagram</a>
+                </li>
+            </ul>
+        </div>
+        <div class="copyright">
+            © Fitly® 2014 — <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+    <div class="mobileFooter hideOnDesktop hideOnTablet">
+        <div class="topFooterIcons">
+            <div class="logo">
+            </div>
+            <div class="socialIcons">
+                <ul>
+                    <li class="facebook">
+                        <a href="https://www.facebook.com/pages/Fitly-The-best-way-to-eat-healthy/254561257918450?soft=side-area">Facebook</a>
+                    </li>
+                    <li class="twitter">
+                        <a href="https://twitter.com/fitlyfamily/">Twitter</a>
+                    </li>
+                    <li class="pinterest">
+                        <a href="http://www.pinterest.com/fitlyfamily/">Pinterest</a>
+                    </li>
+                    <li class="instagram">
+                        <a href="http://instagram.com/fitlyfoods">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerLinks">
+            <div class="leftFooterLinks">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#howItWorks">How It Works</a>
+                    </li>
+                    <li>
+                        <%= link_to "The Menu", recipes_path %>
+                    </li>
+                    <li>
+                        <%= link_to "Sign Up", zipcode_check_signup_path %>
+                    </li>
+                    <li>
+                        <a href="/account">Sign In</a>
+                    </li>
+                    <li>
+                        <%= link_to "Contact", page_path('contact') %>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightFooterLinks">
+                <ul>
+                    <li>
+                        <%= link_to "FAQ", page_path('faqs') %>
+                    </li>
+                    <li>
+                        <%= link_to "Testimonials", page_path('testimonials') %>
+                    </li>
+                    <li>
+                        <%= link_to "Careers", page_path('jobs') %>
+                    </li>
+                    <li>
+                        <%= link_to "Our Team", page_path('team') %>
+                    </li>
+                    <li>
+                        <a href="https://fitlyfamily.blogspot.com/">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

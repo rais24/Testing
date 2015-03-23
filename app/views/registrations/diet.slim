@@ -1,0 +1,12 @@
+.pre-content
+  = render "registrations/progress"
+  
+.content
+  .row-fluid
+    .span3
+      = render "registrations/registration", user: current_user
+
+    .span9
+      h1.center
+        i.icon-user
+        | &nbsp; Your Profile

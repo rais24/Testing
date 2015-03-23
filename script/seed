@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# seed
+
+set -e
+
+for stage in development test; do
+  echo "Recreating $stage database..."
+  RACK_ENV=$stage zeus rake db:drop db:create
+done
+
+echo "running migrations..."
+zeus rake db:migrate db:test:prepare
+
+echo "seeding..."
+zeus rake db:seed db:dev:seed ingredient:convert

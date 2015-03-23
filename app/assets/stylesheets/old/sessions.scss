@@ -1,0 +1,71 @@
+#promo_code {
+  height: 82px;
+  font-size: 34px;
+  line-height: 38px;
+  margin-bottom: 30px;
+}
+
+.login {
+  font-size: 18px;
+
+  @media (max-width: $break-small-landscape) {
+    font-size: 12px;    
+  }
+
+  .span5 {
+    @media (max-width: $break-large-landscape) {
+      padding: 15px;
+    }
+  }
+
+  h1 {
+    padding: 15px;
+    font-family: $font-light;
+  }
+
+  form {
+    margin: auto;
+  }
+
+  input, label {
+    font-size: 24px;
+    height: 36px;
+  }
+
+  a {
+    display: block;
+    cursor: pointer;
+  }
+
+  @media (max-width: $break-small-landscape) {
+    h1 {
+      font-size: 29.5px;
+    }
+
+    h2 {
+      font-size: 27.5px;
+    }
+  }
+
+  .returning {
+
+  }
+
+  .new {
+    input[type=text] {
+      height: 84px;
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.actions {
+  margin: auto;
+  margin-bottom: 50px;
+
+  * {
+    display: inline;
+  }
+}

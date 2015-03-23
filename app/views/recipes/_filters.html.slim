@@ -1,0 +1,15 @@
+h4 Filters
+= form_tag recipes_path, method: "GET" do
+  .row-fluid
+    - %w(cooking_time protein).map(&:titleize).each do |filter|
+      .span3
+        strong= filter
+        hr/
+        br/
+        - Recipe.uniq_tags( filter ).each_with_index do |t,i|
+          .checkbox
+            label
+              = check_box_tag "filter[#{filter.downcase}][#{i}]", "#{t}", session[:filters][:protein].include?(t.name), class: 'filter-check-box'
+              = t.name
+    
+  = submit_tag "filter"

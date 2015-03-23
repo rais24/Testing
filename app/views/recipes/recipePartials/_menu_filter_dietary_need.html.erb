@@ -1,0 +1,17 @@
+<div class="filterGroup">
+    <div class="filterHeader">
+        Dietary Needs
+    </div>
+    <div class="filterOptions">
+        <div>
+            <% Recipe.dietary_need_counts.each_with_index do |tag, index| %>
+                <div>
+                    <label>
+                        <%= check_box_tag "filter[dietary_need][#{index}]", "#{tag.name}" %>
+                        <%= tag.name.titleize %>
+                    </label>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

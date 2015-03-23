@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <script src="/assets/modal.jquery.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(e) {
+      $(".nextbtn a").on("click", function(){
+        $( ".modal" ).trigger( "click" );
+      });      
+      $('.modal').modal({
+        'modal': 'modal-window',
+        'close': 'modal-close',
+        'closeText': 'Close',
+        'shade': 'modal-shade'
+      });
+  });
+</script>
+
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header" %>
+  
+  <a href="#" class="modal" data-content="<%= page_path("signed_up") %>" style="display:none;"></a>
+
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <h1>Get Started with Fitly!</h1>
+    <div class="contentcontainer">
+      <div class="tab">
+        <div class="tab1"><a href="<%= wizard_path(:signup) %>" class="rightactive">1. <span>Sign Up</span></a></div>
+        <div class="tab1"><a href="<%= wizard_path(:billing) %>" class="rightactive">2. <span>Billing Information</span></a></div>
+        <div class="tab1"><a href="<%= wizard_path(:delivery_address) %>" class="rightactive">3. <span>Delivery Information</span></a></div>
+      </div>
+      <div class="innerbody">
+        <form action="#" method="post">
+          <div class="delvinf-container">
+            <h1>Please review the information you’ve entered:</h1>
+                
+                <div class="signupcomplete">
+                <h5>PERSONAL INFORMATION</h5>
+                <div class="leftblock">Full Name:</div>
+                <div class="leftblock"><%= @user.name %></div>
+                <div class="leftblock">Email:</div>
+                <div class="leftblock"><%= @user.email %></div>
+                <div class="leftblock">Invite Code:</div>
+                <div class="leftblock"><%= @user.invite_code.present? ? @user.invite_code : "N/A" %></div>
+                <div class="leftblock">Practitioner Code:</div>
+                <div class="leftblock"><%= @user.practitioner_code.present? ? @user.practitioner_code : "N/A" %></div>
+                <div class="leftblock">Height:</div>
+                <div class="leftblock"><%= @user.height_in_feet %></div>
+                <div class="leftblock">Weight:</div>
+                <div class="leftblock"><%= @user.weight %> lbs</div>
+                <div class="leftblock">DOB:</div> 
+                <div class="leftblock"><%= display_user_age_dob(@user) %></div>
+                <div class="leftblock">Gender:</div>
+                <div class="leftblock"><%= display_user_gender(@user) %></div>
+                <div class="leftblock">Insurance Provider:</div>
+                <div class="leftblock"><%= @user.insurer.present? ? @user.insurer : "N/A" %></div>
+             </div>
+             
+             <div class="signupcomplete">
+                <h5>BILLING INFORMATION</h5>
+                <div class="leftblock">Card on File:</div>
+                <div class="leftblock"><%= @user.billing.card_number %></div>
+                <div class="leftblock">Expiration Date:</div>
+                <div class="leftblock"><%= @user.billing.expiration_date %></div>
+                <div class="leftblock">CVC:</div>
+                <div class="leftblock"><%= @user.billing.card_code %></div>
+                <div class="leftblock">Name on Card:</div> 
+                <div class="leftblock"><%= @user.billing.name %></div>
+                <div class="leftblock">Billing Address:</div>
+                <div class="leftblock"><%= @user.billing.address.street1 %></div>
+                <div class="leftblock">City/State: </div>
+                <div class="leftblock"><%= @user.billing.address.city %></div>
+                <div class="leftblock">Zip: </div>
+                <div class="leftblock"><%= @user.billing.address.zipcode %></div>
+             </div>
+             
+             <div class="signupcomplete">
+                <h5>DELIVERY INFORMATION</h5>
+                <div class="leftblock">Day of Week:</div>
+                <div class="leftblock"><%= @user.weekly_delivery_schedule.delivery_day %></div>
+                <div class="leftblock">Time:</div>
+                <div class="leftblock"><%= @user.weekly_delivery_schedule.time_slot.upcase %></div>
+                <div class="leftblock">Instructions:</div>
+                <div class="leftblock"><%= @user.weekly_delivery_schedule.delivery_instructions.present? ? @user.weekly_delivery_schedule.delivery_instructions : "N/A" %></div>
+             </div>
+             
+          </div>
+        </form>
+      </div>
+      <div class="back-nextbtn">
+        <div class="backbtn"><%= link_to "Back", previous_wizard_path %></div>
+        <div class="nextbtn"><a href="#">Finish</a></div>
+      </div>
+    </div>
+  </div>
+  <!-- Get Started container close --> 
+
+  <%= render "layouts/shared/footer" %>
+  
+</div>
+</body>
+</html>

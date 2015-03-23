@@ -1,0 +1,196 @@
+$(document).ready(function() {
+	if (setupCanvas()) {
+		loadData();
+	}
+});
+
+function setupCanvas(){
+	canvas = $('#canvas');
+	first = canvas.get(0);
+	if (first == null) {
+		return false;
+	}
+	context = first.getContext('2d');
+	canvasWidth = canvas.width();
+	canvasHeight = canvas.height();
+	mouseDistance = 0;
+	
+	function resizeCanvas(){
+		canvas.attr('width', $(window).get(0).innerWidth);
+		
+		var setHeight = $('#stay-tuned').innerHeight();
+		
+		canvas.attr('height', setHeight);
+		canvasWidth = canvas.width();
+		canvasHeight = canvas.height();
+	}
+	resizeCanvas();
+	$(window).resize(resizeCanvas);
+	return true;
+}
+
+function loadData(){
+	$.ajax({
+		type: "GET",
+		url: "<%= asset_path 'data.json' %>",
+		dataType: "json",
+		error: function(data){
+			// alert('error loading data');
+		},
+		success: function(ajaxData){
+			var ajaxData = ajaxData;
+			initAnimation(ajaxData);
+			return data;
+		}
+	});
+}
+
+function randomFromTo(from, to){
+	 return Math.random() * (to - from) + from;
+}
+
+// Planet / Moon stuff below here
+var stageInterval = 10; // in ms
+var colors = ['rgba(166,160,152,0.09)'];
+
+function Planet(x,y,radius, color){
+	this.x = x;
+	this.y = y;
+	this.radius = randomFromTo(15,40); //radius;
+	this.velocityX = randomFromTo(-0.5,0.5);
+	this.velocityY = randomFromTo(-0.5,0.5);
+	this.moons = new Array;
+	this.color = color;
+}
+
+function Moon(radius){
+	this.radius = randomFromTo(4,10); //radius;		// Size of the moon
+	this.orbit = Math.floor(Math.random()* 360); 	// Orbit refers to which position in orbit the moon is (maximum of 360 degrees)
+	this.velocity = randomFromTo(0.1,0.5);			// Speed at which the moon orbits the planet
+	this.distance = Math.floor(Math.random()*50);	// Distance from the center of the planet
+}
+
+function initAnimation(ajaxData){
+	initCanvasObjects(ajaxData);
+	drawCanvasObjects();
+	updateCanvas();
+}
+
+function initCanvasObjects(ajaxData){
+	planets = new Array();
+	
+	data = ajaxData; // Data from ajax call has been passed through functions to here where it's globalised
+	
+	for(var i=0; i<data.planets.planet.length; i++){
+		//colors.sort(function(){return 0.5 - Math.random()}); //Array elements now scrambled
+				
+		planets.push(new Planet(
+			Math.floor(Math.random()* canvasWidth),		// x
+			Math.floor(Math.random()* canvasHeight),	// y
+			20,											// radius
+			colors[i]
+		));
+				
+		for(var j=0; j<data.planets.planet[i].moons.moon.length; j++){
+			
+			planets[i].moons.push(new Moon(
+				5	// radius
+			));
+			
+		}				
+	}
+
+}
+
+function updateCanvas(){
+	clearCanvas();
+	updateCanvasObjects();
+	drawCanvasObjects();	
+	setTimeout(updateCanvas, stageInterval);
+}
+ 
+
+$(document).mousemove(function(e){
+	  var parentOffset = $('#stay-tuned').offset();
+	  if (parentOffset != null) { 
+		  mouseX = e.pageX - parentOffset.left;
+		  mouseY = e.pageY - parentOffset.top;
+		}
+});
+	
+
+function drawCanvasObjects(){
+	
+	// Display planets
+	for(var i=0; i<planets.length; i++){
+		
+		context.fillStyle = planets[i].color;
+		context.beginPath();
+		context.arc(
+			planets[i].x,
+			planets[i].y,
+			planets[i].radius,
+			0,
+			Math.PI*2, true);
+		context.closePath();
+		
+		
+		// Update planets	
+		var totalSize = planets[i].radius + 30;
+		
+		// This detects if an element leaves the screen and moves it to the opposite side, like the old asteroids game or snake
+		if(planets[i].x > canvasWidth + totalSize && planets[i].velocityX > 0) planets[i].x = -totalSize;
+		else if(planets[i].x < -totalSize && planets[i].velocityX < 0) planets[i].x = canvasWidth + totalSize;
+		
+		if(planets[i].y > canvasHeight + totalSize && planets[i].velocityX > 0) planets[i].y = -totalSize;
+		else if(planets[i].y < -totalSize && planets[i].velocityY < 0) planets[i].y = canvasHeight + totalSize;
+		
+		// Keep planets moving
+		planets[i].x += planets[i].velocityX;
+		planets[i].y += planets[i].velocityY;
+				 
+		if((typeof mouseX != "undefined")){
+			dx =  planets[i].x - mouseX;
+			dy = planets[i].y - mouseY;
+			mouseDistance = Math.sqrt(dx * dx + dy * dy);
+						
+			if(mouseDistance < 150) mouseDistance = mouseDistance - 150;
+			else if(mouseDistance > 150) mouseDistance = 0;			
+		}
+					
+		// Display moons
+		moonsVisible = true;
+		if(moonsVisible != false){
+			for(var j=0; j<planets[i].moons.length; j++){
+						
+				rads = planets[i].moons[j].orbit * (Math.PI / 180.0);
+				moonX = Math.cos(rads);
+				moonY = Math.sin(rads);
+				context.arc(
+					//planets[i].x + ((planets[i].radius + 10 + planets[i].moons[j].distance) * moonX),
+					//planets[i].y + ((planets[i].radius + 10 + planets[i].moons[j].distance) * moonY),
+					planets[i].x + (mouseDistance) * moonX,
+					planets[i].y + (mouseDistance) * moonY,
+					planets[i].moons[j].radius,
+					0,
+					Math.PI*2, true )
+				context.closePath();
+				
+				// Keep moons orbiting
+				planets[i].moons[j].orbit += planets[i].moons[j].velocity;
+			}
+		}
+		
+		context.fill();
+		
+	}
+}
+
+ 	 
+function updateCanvasObjects(){
+}
+
+function clearCanvas(){
+	context.clearRect(0,0,canvasWidth, canvasHeight);
+	context.beginPath();
+}

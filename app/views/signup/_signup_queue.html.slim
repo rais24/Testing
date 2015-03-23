@@ -1,0 +1,20 @@
+#signup-queue
+    h1 Bummer! Fitly isn't available in your area.
+    p
+        | If you give us your e-mail, we'll let you know when Fitly is in your location. We won't spam you or share your e-mail address with anyone. Promise.
+    p
+      - if @signup_inquiry && @signup_inquiry.errors
+        - @signup_inquiry.errors.full_messages.each do |msg|
+          = msg
+          br/
+    = simple_form_for @signup_inquiry, url: queue_signup_inquiry_signup_path do |f|
+        fieldset
+            = f.input_field :zipcode, as: :hidden
+            ul.data
+                li.input.email.required
+                    label for="signup_inquiry_email"
+                        | E-mail <abbr title="(Required)">*</abbr>
+                    = f.input_field :email, input_html: { value: params[:zip] }, class: "required"
+            ul.actions
+                li.primary
+                    = f.submit 'Notify me'

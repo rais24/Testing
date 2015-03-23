@@ -1,0 +1,2372 @@
+@charset "utf-8";
+/* CSS Document */
+ 
+#container {
+	max-width: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lato-Regular';
+	overflow-x: hidden;
+}
+
+h1 {
+	color: #e36967;
+	font-weight: bolder;
+	font-size: 28px;
+}
+
+h2 {
+	color: #5e3a56;
+	font-size: 26px;
+
+}
+/* top header call us sigup 22.1.2015*/
+
+.help-inline {
+	color: red;
+	float: left;
+}
+.topcontainer {
+	height: 25px;
+	background: #59514b;
+	/* background: #d1d3d4; */
+	padding: 0 20px;
+}
+.topcontainer .leftsocilicon {
+	width: 10%;
+	float: left;
+}
+.topcontainer .leftsocilicon img {
+	float: left;
+	margin: 5px 2px;
+	cursor: pointer;
+}
+.topcontainer .leftsocilicon img a {
+	border: 0px;
+}
+.topcontainer .rightblock {
+	width: 35%;
+	float: right;
+}
+.topcontainer .rightblock .callus {
+	margin: 0px;
+	padding: 0px;
+	width: 51%;
+	font-size: 12px;
+	color: #FFF;
+	font-weight: lighter;
+	float: left;
+	height: 25px;
+	line-height: 25px;
+}
+.topcontainer .rightblock .callus img {
+	margin-right: 5px;
+	float: left;
+	margin-top: 4px;
+}
+.topcontainer .rightblock .signup-login {
+	background: #bcbec0;
+	width: 48%;
+	margin: 0px;
+	float: left;
+	padding: 6px 1px;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	font-weight: lighter;
+}
+.topcontainer .rightblock .signup-login a {
+	text-decoration: none;
+	color: inherit;
+}
+/* top header call us sigup close 22.1.2015*/
+ 
+/* top header menu links 22.1.2015*/
+#menu {
+	height: 50px;
+	background: #aaa095;
+	padding: 0px 20px;
+	margin: 0px;
+	overflow: hidden;
+}
+#menu .logo {
+	float: left;
+	line-height: 85px;
+	width: 20%;
+}
+#menu .logo img a {
+	border: none;
+}
+.mobilemenu {
+	display: none;
+}
+.menulinks {
+	width: 61%;
+	float: right;
+}
+.menulinks1 {
+	width: 30% !important;
+}
+.menulinks ul {
+	list-style: none;
+	margin: 0px;
+}
+.menulinks ul li {
+	float: left;
+	line-height: 50px;
+	margin: 0 33px;
+}
+.menulinks ul li:last-child {
+	margin-right: 0px;
+}
+.menulinks ul li a {
+	color: #FFF;
+	font-size: 16px;
+	text-decoration: none;
+}
+.menulinks ul li a:hover {
+	color: #9c3d3e;
+}
+.menulinks ul li a div {
+	background: #d1d3d4;
+	border-radius: 20px;
+	width: 20px;
+	text-align: center;
+	height: 20px;
+	color: #FFF;
+	display: inline-block;
+	line-height: 18px;
+	font-weight: bold;
+}
+.topicons {
+	display: inline-block;
+	margin-left: 20px;
+	padding: 4px 0px;
+	position: relative;
+}
+.tooltip {
+	width: 20%;
+	background: #e36967;
+	float: right;
+	display: inline-block;
+	right: 2%;
+	margin-top: 20px;
+	position: absolute;
+	top: 60px;
+	border-radius: 5px;
+	padding: 5px;
+	color: #FFF;
+	font-size: 12px;
+	line-height: 20px;
+	display: none;
+}
+.tooltip .arrowicon {
+	width: 50px;
+	margin: 0 auto;
+	position: absolute;
+	right: 100px;
+	top: -15px;
+}
+/* top header menu links close 22.1.2015*/
+
+ 
+  
+/*  login page container 22.1.2015*/
+.login-container {
+	margin: 0 auto;
+	/*background: #f1f2f2;*/
+	background: url('/assets/blue_bg.jpg') fixed center center transparent;
+	padding-bottom: 70px;
+	min-height: 600px;
+}
+.login-container h1 {
+	text-align: center;
+	/*color: #000018;
+	font-size: 24px;
+	font-weight: normal;
+	*/
+	line-height: 100px;
+}
+.login-container .popupbox {
+	background: #FFF;
+	margin: 0 auto;
+	width: 40%;
+	border-radius: 8px;
+	border: 1px solid #eaebeb;
+	height: 250px;
+	/*font-family: "Rokkitt";*/
+}
+.login-container .popupbox h2 {
+	text-align: center;
+	line-height: 80px;
+	/*font-size: 20px;
+	font-weight: normal;*/
+	letter-spacing: 1px;
+}
+.login-container .popupbox h2 a {
+	text-decoration: underline;
+	color: inherit;
+}
+.textname {
+	font-size: 20px;	
+	font-family: "Rokkitt";
+}
+.login-container .popupbox .textname {
+	text-align: left;
+	/*margin: 5px auto;*/
+	margin: 2px auto;
+	width: 60%;
+	/*padding: 5px;*/
+	padding: 2px;
+}
+.login-container .inputfield {
+	/*margin: 5px auto;*/
+	margin: 2px auto;
+	text-align: center;
+	border: 2px solid #d1d3d4;
+	width: 60%;
+	/*padding: 5px;*/
+	padding: 2px;
+	font-size: 20px;
+}
+.inputfield input {
+	font-size: 18px;
+}
+.login-container .inputfield input {
+	background: none;
+	border: 0px;
+	width: 100%;
+	outline: none;
+}
+.login-container .forgotpass {
+	width: 62%;
+	margin: 0 auto;
+}
+.login-container .forgotpass .forgottext {
+	color: #000;
+	text-align: left;
+	font-size: 16px;
+	float: left;
+	line-height: 25px;
+}
+.login-container .forgotpass .forgottext a {
+	text-decoration: underline;
+	color: inherit;
+	font-size: 18px;
+}
+.login-container .forgotpass .loginbtn {
+	text-align: right;
+	float: right;
+	background-color: #e36967;
+	border-color: #b02a27;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-family: 'Rokkitt';
+	border-width: 1px 1px 3px;
+	border-style: none none solid;
+}
+.login-container .forgotpass .loginbtn input {
+	background: none;
+	border: 0px;
+	outline: none;
+	color: #FFF;
+	font-size: 14px;
+	cursor: pointer;
+}
+/* login page container close 22.1.2015*/
+
+/* Get Started page container close 22.1.2015*/
+.toprightiocns {
+	width: 160px;
+	margin: 8px 25px;
+	display: inline-block;
+	border-left: 2px solid #8c7c69;
+	float: right;
+}
+.get-started-container {
+	padding: 0px 20px;
+	/*background: #f1f2f2;*/
+	background: url('/assets/blue_bg.jpg') fixed center center transparent;
+	padding-bottom: 30px;
+}
+.get-started-container-full-width {
+	float: left !important;
+}
+.get-started-container h1 {
+	/*font-size: 20px;
+	font-weight: lighter;*/
+	margin: 0px;
+	padding: 0px;
+	line-height: 50px;
+}
+.get-started-container .contentcontainer {
+	margin: 0 auto;
+	border: 1px solid #CCC;
+	border-radius: 8px;
+	background: #FFF;
+}
+	.get-started-container .contentcontainer.signup {
+		margin: 2px auto;
+	}
+
+.full-width {
+	float: left !important;
+	border-radius: 0px !important;
+	width: 100%;
+}
+.get-started-container .contentcontainer.borderbold {
+	border: 6px solid #CCC;
+	padding: 10px 10px !important;
+}
+.get-started-container .contentcontainer .tab {
+	border-radius: 6px 6px 0px 0px;
+	background: #5e3a56;
+	height: 50px;
+	font-family: 'Rokkitt';
+}
+.get-started-container .contentcontainer .tab .tab1 {
+	width: 33%;
+	float: left;
+	text-align: center;
+	line-height: 51px;
+	height:65px;
+}
+.get-started-container .contentcontainer .tab .tab1 a {
+	text-decoration: none;
+	font-size: 22px;
+	color: #FFF;
+}
+.get-started-container .contentcontainer .tab .tab1 a.active {
+	color: #FFF;
+}
+.get-started-container .contentcontainer .tab .tab1 a.rightactive {
+	color: #FFF;
+	background: url(/assets/right-icon.png) no-repeat right;
+	padding-right: 12px;
+}
+.get-started-container .contentcontainer .tab .tab1 a.rightactive2 {
+	color: #FFF;
+	background: url(/assets/right-icon.png) no-repeat right;
+	background-position:149px 20px;
+	padding-right: 7px;
+	display: inline-block;
+	width:150px;
+}
+.get-started-container .contentcontainer .tab .tab1 a.active:after {
+	border-color: #FFF transparent;
+	content: " ";
+	display: block;
+	height: 0;
+	margin: 0 auto;
+	position: relative;
+	width: 0;
+	top: -10px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 9px solid #FFF;
+	z-index: 99;
+}
+.get-started-container .contentcontainer .innerbody {
+	width: 51%;
+	/*margin: 0 auto;*/
+	margin: 0px auto 30px;
+	text-align: center;
+}
+.get-started-container .contentcontainer .innerbody.fullwidth {
+	width: 98% !important;
+}
+.newheadingleft {
+	text-align: left !important;
+}
+.targetbox {
+	width: 33%;
+	float: left;
+}
+.targetbox .innerdetails {
+	display: inline-block;
+	width: 120px;
+	font-size: 14px;
+	text-align: right;
+}
+.targetbox .innerdetails.textfloat {
+	text-align: left;
+}
+.targetbox .innerdetails2 {
+	width: 70px !important;
+	text-align: right;
+}
+.targetbox .inputfiled {
+	border: 2px solid #ccc;
+	margin: 3px 0 20px;
+	padding: 10px 5px;
+	width: 35%;
+	display: inline-block;
+}
+.targetbox .inputfiled.inputfiled2 {
+	width: 50% !important;
+}
+.targetbox .inputfiled input {
+	border: none;
+	width: 90%;
+	outline: none;
+}
+.target-after {
+	width: 70%;
+	margin: 0 auto;
+	display: inline-block;
+}
+.get-started-container .contentcontainer .innerbody h1 {
+	text-align: center;
+}
+.get-started-container .contentcontainer .innerbody h3 {
+	text-align: center;
+	line-height: 30px;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+.get-started-container .contentcontainer .innerbody h5 {
+	text-align: left;
+	line-height: 30px;
+	/*font-size: 16px;*/
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-weight: normal;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv { /*width:63%;*/
+	width: 58%;
+	margin: 0 auto;
+	/*background: #f1f2f2;*/
+	background: url('/assets/blue_bg.jpg') fixed center center transparent;
+	border-radius: 8px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv .dayplan {
+	background: #e6e7e8;
+	padding: 14px;
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 14px;
+	border-radius: 8px;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv .dayplan h1 {
+	font-size: 50px;
+	font-weight: bold;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv .includedplan {
+	text-align: left;
+	display: inline-block;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv .includedplan h3 {
+	text-align: left;
+	line-height: 33px;
+	font-size: 14px;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv .includedplan ul {
+	margin: 0px;
+	padding: 0px;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv .includedplan ul li {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	display: block;
+	line-height: 18px;
+}
+.forminfor {
+	width: 63%;
+	display: inline-block;
+}
+.forminfor h4 {
+	font-size: 12px;
+	margin: 0px;
+	text-align: left;
+	font-weight: normal;
+	display: inline-block;
+	line-height: 30px;
+	color: #666;
+}
+.forminfor .name {
+	width: 185px;
+	margin-right: 20px;
+	float: left;
+	text-align: left;
+	font-size: 11px;
+	line-height: 20px;
+	color: #666;
+}
+.forminfor .name input {
+	background: none;
+	border: 0px;
+	width: 90%;
+	padding: 10px 5px;
+	border: 2px solid #CCC;
+	font-size: 15px;
+}
+.forminfor .name1 input {
+	background: none;
+	border: 0px;
+	width: 90%;
+	padding: 10px 5px;
+	border: 2px solid #CCC;
+	font-size: 15px;
+}
+.forminfor .height {
+	float: left;
+	text-align: left;
+	font-size: 11px;
+	line-height: 20px;
+	color: #666;
+}
+.forminfor .height input {
+	width: 35px;
+	background: none;
+	border: 0px;
+	height: 35px;
+	text-align: center;
+	padding: 0px 5px;
+	border: 2px solid #CCC;
+}
+.forminfor .nametext {
+	float: left;
+	line-height: 50px;
+	font-size: 11px;
+	text-align: center;
+	width: 30px;
+	color: #999;
+}
+.forminfor .weight {
+	float: left;
+}
+.forminfor .weight input {
+	background: none;
+	border: 0px;
+	text-align: center;
+	padding: 10px 5px;
+	width: 40px;
+	border: 2px solid #CCC;
+	font-size: 11px;
+}
+.forminfor .gender-block {
+	width: 80px;
+	float: left;
+	margin-left: 30px;
+	color: #999;
+}
+.forminfor .gender-block .genderblock {
+	text-align: left;
+	font-size: 11px;
+	line-height: 20px;
+}
+.other {
+	margin: 0px;
+	position: relative;
+	top: -10px;
+	border: 2px solid #ccc;
+	margin: 3px 0 20px;
+	display: inline-block;
+}
+.other input {
+	background: none;
+	border: 0px;
+	height: 35px;
+	outline: none;
+}
+/*sign up page*/
+.signuppage-form {
+	width: 80%;
+	display: inline-block;
+	/*font-size: 13px;*/
+	font-size: 18px;
+	overflow: hidden;
+	margin: 30px auto;
+}
+.signuppage-form .lasttop {
+	text-align: left;
+	display: inline-block;
+	font-size: 15px;
+}
+.signuppage-form .lasttop.dietician_question {
+	font-size: 15px;
+	margin: 10px 0 5px 0;
+}
+.signuppage-form .lastbtn {
+	margin-top: 20px;
+}
+.signuppage-form .lastbtn .yes-no {
+	/*float: left;*/
+	width: 80px;
+	margin-bottom: 10px;
+	text-align: left;
+	display: inline-block;
+	font-size: 18px;
+}
+.signuppage-form .lastbtn .yes-no input {
+	margin-left: 20px;
+}
+.signuppage-form .lastbtn .checkbox {
+	float: left;
+	text-align: left;
+	width: 500px;
+	outline: none;
+	margin: 10px auto 0px;
+}
+	.signuppage-form .lastbtn .checkbox label {
+		vertical-align: 0px;
+		font-size: 14px;
+	}
+.signuppage-form .leftdetails {
+	width: 250px;
+	float: left;
+	text-align: left;
+	color: #666;
+}
+.signuppage-form .lastbtn .submitbtn {
+	background: #8a3637;
+	float: left;
+	text-align: center;
+	padding: 4px 10px;
+	font-size: 14px;
+	border-radius: 7px;
+	height: 20px;
+}
+.signuppage-form .lastbtn .submitbtn input {
+	background: none;
+	border: 0px;
+	cursor: pointer;
+	color: #FFF;
+}
+.signuppage-form .leftdetails .inputfield {
+	border: 2px solid #ccc;/* margin:3px 0 20px 0px;*/
+	margin-bottom:5px;
+}
+.signuppage-form .leftdetails .inputfield input {
+	border: none;
+	padding: 10px 5px;
+	outline: none;
+	width: 95%;
+}
+.signuppage-form .rightdetails {
+	width: 250px;
+	float: right;
+	text-align: left;
+	color: #666;
+}
+.signuppage-form .rightdetails .heightdiv {
+	line-height: 30px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+.signuppage-form .rightdetails .text {
+	display: inline-block;
+}
+.signuppage-form .rightdetails .height {
+	border: 2px solid #ccc;
+	/*height: 34px;*/
+	height: 39px;
+	padding: 0 5px;
+	display: inline-block;
+	text-align: center;
+	width: 35px;
+}
+.back-nextbtn {
+	width: 30%;
+	margin: 5px auto 0px;
+}
+.back-nextbtn2 {
+	width: 100%;
+	text-align: center;
+	margin: 10px auto;
+}
+.signuppage-form .rightdetails .height input {
+	background: none;
+	border: none;
+	width: 35px;
+	text-align: center;
+	outline: none;
+	font-size: 18px;
+	/*padding: 10px 5px;*/
+	padding: 10px 0px;
+}
+.signuppage-form .rightdetails .textname {/*margin-bottom:5px;*/
+}
+.signuppage-form .rightdetails .inputfield {
+	border: 2px solid #ccc;  /*margin:3px 0 20px 0px;*/
+	margin-bottom:5px;
+}
+.signuppage-form .rightdetails .inputfield input {
+	border: none;
+	padding: 10px 5px;
+	outline: none;
+	width: 95%;
+}
+.signuppage-form .rightdetails .weight-gender {
+	/*margin-bottom: 6px;
+	margin-top: 5px;*/
+	display: inline-block;
+}
+.signuppage-form .rightdetails .weight-gender .weight {
+	border: 2px solid #ccc;
+	width: 60px;
+}
+.signuppage-form .rightdetails .weight-gender .weight input {
+	border: 0px;
+	padding: 10px 0px;
+	width: 60px;
+	text-align: center;
+	outline: none;
+	font-size: 18px;
+}
+.signuppage-form .rightdetails .weight-gender .innerdiv {
+	width: 120px;
+	display: inline-block;
+	float: left;
+}
+.signuppage-form .rightdetails .weight-gender .innerdiv:last-child {
+	margin: 0 0 0 10px;
+}
+.signuppage-form .rightdetails .weight-gender .innerdiv .text { /*margin:17px 0 6px 0;*/
+	font-family: 'Rokkitt';
+	font-size: 20px;
+}
+.fix-height {
+	height: 80px;
+}
+.fix-height2 {
+	height: 81px;
+}
+/*sign up page close*/
+
+.footertop {
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	color: #a2a2a2;
+	line-height: 18px;
+	padding-top: 15px;
+	padding-bottom: 30px;
+	font-weight: lighter;
+}
+.innerbody .signuppage-form {
+	margin: 30px auto 5px;
+}
+.innerbody .footertop {
+	padding-top: 0;
+}
+.footertop a {
+	text-decoration: underline;
+	color: inherit;
+}
+.footertop b {
+	color: #666;
+	font-style: italic;
+	letter-spacing: 1px;
+	font-size: 13px;
+}
+.styledRadio, .styledCheckbox {
+	display: inline-block;
+}
+label {
+	font-size: 12px;
+	vertical-align: 9px;
+	color: #666;
+	margin-left: 5px;
+}
+.delvinf-container label {
+	vertical-align: 0;
+}
+.innerdiv:last-child div {
+	margin: 1px auto;
+}
+.innerdiv label {
+	font-size: 18px;
+	color: #666;
+	vertical-align: 0px;
+	margin-left: 5px;
+	font-family: 'Rokkitt';	
+}
+.dietician_question label {
+	vertical-align: 0px;	
+	font-size: 18px;
+}
+button {
+	display: block;
+}
+.backbtn {
+	display: inline-block;
+	color: #e36967;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: #e36967;
+	border-color: #b02a27;
+	border-image: none;
+	border-radius: 5px;
+	border-style: none none solid;
+	border-width: 1px 1px 3px;
+	font-size: 16px;
+	margin: 0;
+	font-family: 'Rokkitt';
+	padding: 8px 20px;
+	margin-bottom: 5px;
+}
+.backbtn input {
+	background: none;
+	border: 0px;
+	cursor:pointer;
+	color: #FFF;
+}
+.backbtn a {
+	text-decoration: none;
+	color: #FFF;
+	font-weight: normal;
+}
+.nextbtn {
+	display: inline-block;
+	/*color: #e36967;*/
+	color: #fff;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: #e36967;
+	border-color: #b02a27;
+	border-image: none;
+	border-radius: 5px;
+	border-style: none none solid;
+	border-width: 1px 1px 3px;
+	font-size: 16px;
+	margin: 0;
+	float: right;
+	font-family: 'Rokkitt';
+	padding: 8px 20px;
+}
+.nextbtn input {
+	background: none;
+	border: none;
+	color: #fff;
+}
+.canclebtn {
+	background: none;
+	color: #000;
+	display: inline-block;
+	text-align: left;
+}
+.canclebtn a {
+	text-decoration: none;
+	color: inherit;
+}
+.nextbtn a {
+	text-decoration: none;
+	color: #FFF;
+	font-weight: normal;
+}
+/* Get Started page container close 22.1.2015*/
+
+/* Billing Information page container close 23.1.2015*/
+.billing-container {
+	display: inline-block;
+	margin: 0 auto;
+	width: 60%;
+}
+.billing-container h1 {
+	margin: 0px;
+	text-align: left !important;
+}
+.billing-container .cardfile {
+	border-radius: 4px;
+	border: 2px solid #ccc;
+	line-height: 35px;
+	margin-bottom: 10px;
+}
+.billing-container .cardfile .cardnumaber {
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+	font-size: 10px;
+	height: 35px;
+	position: relative;
+}
+.billing-container .cardfile .cardnumaber input {
+	width: 99%;
+	background: none;
+	border: 0px;
+	/*color: #9c9c9d;*/
+	color: #000;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+}
+.billing-container .cardfile .cardnumaber span {
+	height: 20px;
+	position: absolute;
+	right: 4px;
+	top: 8px;
+}
+.billing-container .cardfile .exdate {
+	width: 50%;
+	border-right: 2px solid #CCC;
+	display: inline-block;
+	line-height: 35px;
+}
+.billing-container .cardfile .exdate input {
+	width: 99%;
+	background: none;
+	border: 0px;
+	font-size: 15px;
+	/*color: #9c9c9d;*/
+	color: #000;
+	outline: none;
+}
+.billing-container .cardfile .ccvnum {
+	width: 48%;
+	display: inline-block;
+	line-height: 35px;
+}
+.billing-container .cardfile .ccvnum input {
+	width: 98%;
+	background: none;
+	border: 0px;
+	font-size: 15px;
+	/*color: #9c9c9d;*/
+	color: #000;
+	outline: none;
+}
+.billing-container .cardname {
+	border: 2px solid #ccc;
+	margin-bottom: 10px;
+	line-height: 35px;
+}
+.billing-container .cardname input {
+	background: none;
+	border: 0px;
+	width: 98%;
+	font-size: 15px;
+	/*color: #9c9c9d;*/
+	color: #000;
+	outline: none;
+}
+.billing-container .state {
+	width: 46%;
+	float: left;
+	margin-right: 23px;
+	line-height: 35px;
+	border: 2px solid #ccc;
+	margin-top: 10px;
+}
+.styled-select {
+	width: 46%;
+	float: left;
+	margin-right: 23px;
+	line-height: 35px;
+	border: 2px solid #ccc;
+	margin-top: 10px;
+	outline: none;
+}
+.styled-select.topmargin {
+	margin-top: 0px !important;
+}
+.styled-select {
+	overflow: hidden;
+	font-size: 11px;
+	font-family: arial;
+}
+.styled-select select {
+	background: transparent;
+	border: none;
+	/*font-size: 12px;*/
+	font-size: 16px;
+	/* padding: 5px;*/ /* If you add too much padding here, the options won't show in IE */
+	width: 47%;
+}
+.fix-height .styled-select.styled-select select {
+	width: 100%;
+}
+.styled-select.short-catg {
+	background: url(/assets/short-icons.png) no-repeat right center;
+	height: 37px;
+	width: 46%;
+	margin: 0px;
+}
+.styled-select.medium-catg {
+	background: url(/assets/short-icons.png) no-repeat right center;
+	height: 37px;
+	width: 98%;
+	margin: 0px;
+}
+/*.fix-height .styled-select.medium-catg {
+	width: 46%;
+}*/
+.styled-select.short-catg.selectweek {
+	width: 90% !important;
+	text-align: left;
+}
+.styled-select.short-catg.selectcertification {
+	width: 98% !important;
+	text-align: left;
+}
+.styled-select.short-catg select {
+	/*font-size: 13px;*/
+	font-size: 15px;
+	color: #666;
+	width: 242px;
+	outline: none;
+	border: none;
+}
+.styled-select.short-catg select.select2 {
+	width: 270px !important;
+}
+.styled-select.short-catg select.select3 {
+	width: 130px !important;
+}
+.billing-container .zipcode {
+	width: 43%;
+	float: right;
+	border: 2px solid #ccc;
+	/*margin-top: 10px;*/
+	line-height: 30px;
+	height: 37px;
+}
+.billing-container .zipcode input {
+	background: none;
+	border: 0px;
+	width: 95%;
+	font-size: 15px;
+	/*color: #9c9c9d;*/
+	color: #000;
+	outline: none;
+}
+/* Billing Information page container close 23.1.2015*/
+
+
+/* Delivery Information page container 23.1.2015*/
+.delvinf-container {
+	width: 76%;
+	margin: 0 auto;
+	display: inline-block;
+}
+.delvinf-container .leftblock {
+	width: 36%;
+	float: left;
+}
+.delvinf-container .leftblock h1 {
+	font-size: 14px;
+	margin: 0px;
+	text-align: left !important;
+	line-height: 5px;
+}
+.delvinf-container .selectday {
+	width: 246px;
+	float: left;
+}
+.delvinf-container .rightblock {
+	width: 100%;
+}
+.delvinf-container .rightblock h1 {
+	font-size: 14px;
+	margin: 0px;
+	text-align: left !important;
+	line-height: 15px;
+}
+.delvinf-container .mainblock {
+	display: block !important;
+	font-size: 14px;
+	text-align: left !important;
+}
+.delvinf-container .time {
+	width: 105px;
+	display: inline-block;
+}
+.delvinf-container .delivery {
+	float: left;
+	height: 37px;
+	margin-left: 10px;
+	width: 170px;
+	border: 1px solid;
+}
+.delvinf-container .textarea {
+	width: 100%;
+	border: 2px solid #CCC;
+	display: inline-block;
+	margin-top: 10px;
+}
+.delvinf-container .textarea textarea {
+	width: 98%;
+	padding: 5px 0px;
+	outline: none;
+	border: 0px;
+	font-size: 15px;
+	font-family: inherit;
+}
+.signupcomplete {
+	width: 56%;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+.signupcomplete h3 {
+	font-weight: normal;
+	text-align: left !important;
+	line-height: 50px !important;
+}
+.signupcomplete .leftblock {
+	/*font-size: 12px;*/
+	font-size: 16px;
+	text-align: left;
+	line-height: 20px;
+	width: 50%;
+}
+.signupcomplete .leftblock:nth-child(odd) {
+	font-weight: bolder;
+	color: #5e3a56;
+}
+.delvinf-container .leftdiv {
+	width: 250px;
+	float: left;
+}
+.delvinf-container .leftdiv .heading {
+	font-size: 14px;
+	color: #000;
+	text-align: left;
+	margin: 10px 0px;
+}
+/*data table css */
+.datatabletop {
+	width: 100%;
+}
+.datatabletop .datatableinleft {
+	float: left;
+	width: 50%;
+	line-height: 35px;
+	font-size: 20px;
+}
+.datatabletop .rightsearch {
+	float: right;
+	width: 20%;
+	text-align: right;
+	border: 2px solid #ccc;
+	background: url(/assets/searchbtn.png) no-repeat left;
+	overflow: hidden;
+	height: 30px;
+}
+
+.rightsearch_imp {
+	background-image:none !important;
+	display:inline-block;
+}
+.rightsearch_imp img{
+	float:left;
+	cursor:pointer;
+}
+
+.datatabletop .rightsearch input {
+	background: none;
+	text-align: left;
+	border: none;
+	width: 80%;
+	line-height: 28px;
+	padding-left: 2px;
+	padding-right: 5px;
+	overflow: hidden;
+	color: #a7a9ae;
+	font-size: 16px;
+	display:inline-block;
+}
+.datatabletop .add-patient {
+	float: right;
+	width: 10%;
+	text-align: center;
+	background: #e36967;
+	border-radius: 7px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-bottom: 10px;
+	font-family: 'Rokkitt';
+	margin-right: 10px;
+}
+.datatabletop .add-patient a {
+	color: #FFF;
+	text-decoration: none;
+}
+/*data table css */
+		
+/* Delivery Information page container close 23.1.2015*/
+
+ /*Welcome page css 21.1.2015*/
+ 
+.topcontainer .rightblock1 {
+	width: 18% !important;
+}
+.topcontainer .rightblock .callus1 {
+	width: 100% !important;
+}
+.welcomecontainer {
+	padding: 0px 20px;
+	/*background: #f1f2f2;*/
+	background: url('/assets/blue_bg.jpg') fixed center center transparent;
+	padding-bottom: 30px;
+}
+.welcomecontainer .heading {
+	width: 64%;
+	text-align: left;
+	display: inline-block;
+	height: 37px;
+}
+.welcomecontainer .heading h1 {
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0px;
+	line-height: 13px;
+}
+.welcomecontainer .profilecomplete {
+	width: 35%;
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	display: inline-block;
+	padding-top: 9px;
+}
+.welcomecontainer .profilecomplete p {
+	line-height: 20px;
+	margin: 0px;
+	padding: 0px;
+	margin-right: 8px;
+}
+.welcomecontainer .profilecomplete .progress-bar {
+	background: #d1d3d4;
+	border-radius: 18px;
+	width: 35%;
+	height: 12px;
+	text-align: right;
+	display: inline-block;
+}
+.welcomecontainer .profilecomplete .progress-bar .innerbar {
+	background: #939598;
+	height: 12px;
+	border-radius: 15px 0px 0px 15px;
+}
+.welcomecontainer .leftcontainer {
+	margin-right: 1%;
+	width: 73%;
+	display: inline-block;
+	text-align: left;
+}
+.welcomecontainer .leftcontainer.float {
+	float: left !important;
+	display: inline-block;
+}
+.welcomecontainer .leftcontainer1 {
+	width: auto;
+	background: #FFF;
+	border-radius: 7px;
+	border: 1px solid #e6e7e8;
+	padding: 20px;
+	padding-bottom: 40px;
+	margin-bottom: 15px;
+}
+.welcomecontainer .leftcontainer1.floatleft2 {
+	display: inline-block;
+	width: 95.60% !important;
+	margin-bottom: 10px;
+}
+.welcomecontainer .leftcontainer1.extraheight {
+	height: 70px !important;
+}
+.welcomecontainer .leftcontainer1 .topfour {
+	width: 24%;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+}
+.welcomecontainer .leftcontainer1 .topfour img {
+	border: 0px;
+}
+.welcomecontainer .leftcontainer1 .topfour a {
+	text-decoration: none;
+	color: inherit;
+}
+.welcomecontainer .leftcontainer1 .dayplanimg {
+	float: left;
+	margin-right: 20px;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo {
+	width: 86%;
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo h1 {
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 25px;
+	text-align: left;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo ul {
+	margin: 0px;
+	padding: 0px;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo ul li {
+	font-size: 12px;
+	line-height: 15px;
+	margin-left: 10px;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo p {
+	text-align: left;
+	font-size: 12px;
+	margin: 0px;
+	line-height: 18px;
+}
+.welcomecontainer .leftcontainer1 .vieworder {
+	text-align: left;
+	font-size: 13px;
+	line-height: 30px;
+}
+.welcomecontainer .leftcontainer1 .vieworder a {
+	text-decoration: underline;
+	color: #000;
+}
+.welcomecontainer .leftcontainer1 h1 {
+	font-size: 20px;
+	font-weight: normal;
+}
+.welcomecontainer .leftcontainer1 .myplanimg1 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+.welcomecontainer .leftcontainer1 .headigntext {
+	text-align: center;
+	/*font-size: 12px;*/
+	font-size: 16px;
+	line-height: 20px;
+}
+.welcomecontainer .leftcontainer1 .progressleft {
+	text-align: left; /*width:685px;*/
+	display: inline-block;
+}
+.welcomecontainer .leftcontainer1 .progresright {
+	text-align: left;
+	display: inline;
+	float: right;
+}
+.welcomecontainer .leftcontainer1 .headingblock {
+	display: inline-block;
+	width: 33%;
+	margin: 10px 0px;
+}
+.welcomecontainer .leftcontainer1 .headingblockinfo {
+	width: 33%;
+	float: left;
+}
+.welcomecontainer .leftcontainer1 .headingblockinfo ul {
+	list-style: none;
+}
+.welcomecontainer .leftcontainer1 .headingblockinfo ul li {
+	line-height: 20px;
+	font-size: 13px;
+}
+.border-line2 {
+	margin-bottom: 5px !important;
+}
+.welcomecontainer .leftcontainer1 .preferences {
+	width: 33%;
+	float: left;
+}
+.welcomecontainer .leftcontainer1 .preferences h1 {
+	text-align: left;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 40px;
+}
+.welcomecontainer .leftcontainer1 .preferences ul li {
+	margin-left: 15px;
+	/*font-size: 12px;*/
+	font-size: 14px;
+	line-height: 20px;
+}
+.choosebtn {
+	background-color: #e36967;
+	border-color: #b02a27;
+	padding: 6px 20px;
+	font-family: 'Rokkitt';
+	border-width: 1px 1px 3px;
+	border-style: none none solid;
+	margin: 0 auto;
+	text-align: center;
+	width: auto;
+	border-radius: 5px;
+	margin-top: 10px;
+	display: table;
+}
+.choosebtn-right {
+	float: right !important;
+	padding: 6px 12px !important;
+	display: inline-block;
+}
+.choosebtn a {
+	font-size: 16px;
+	color: #FFF;
+	text-decoration: none;
+}
+.welcomecontainer .rightcontainer {
+	float: right;
+	width: 22%;
+	padding: 20px;
+	background: #FFF;
+	border-radius: 7px;
+	border: 1px solid #e6e7e8;
+	text-align: right;
+}
+.welcomecontainer .rightcontainer.float {
+	float: none !important;
+	display: inline-block !important;
+}
+.welcomecontainer .rightcontainer h1 {
+	font-size: 20px;
+	font-weight: normal;
+	text-align: left;
+}
+ .welcomecontainer .rightcontainer {
+	font-size:16px;
+	font-weight:normal;
+	text-align:left;
+}
+.welcomecontainer .rightcontainer .maincontainer {
+	margin: 0px;
+	padding: 0px;
+	width: 290px;
+	margin-bottom: 40px;
+}
+.welcomecontainer .rightcontainer .leftname {
+	width: 300px;
+	font-size: 12px;
+	text-align: left;
+	line-height: 20px;
+}
+.welcomecontainer .rightcontainer .leftname .fristname {
+	text-align: left;
+	width: 120px;
+	display: inline-block;
+}
+.welcomecontainer .rightcontainer .leftname .lastname {
+	text-align: left;
+}
+.welcomecontainer .rightcontainer .healthimg {
+	text-align: center;
+}
+.welcomecontainer .rightcontainer .headigntext {
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+}
+.welcomecontainer .rightcontainer .tittle1 {
+	text-align: left;
+	font-size: 16px;
+	line-height: 25px;
+	font-weight: bold;
+}
+.welcomecontainer .rightcontainer .tittle2 {
+	text-align: left;
+	font-size: 14px;
+	line-height: 20px;
+}
+.welcomecontainer .rightcontainer .tittle3 {
+	text-align: left;
+	font-size: 12px;
+	line-height: 20px;
+}
+.welcomecontainer .rightcontainer .ratingblock {
+	display: inline-block;
+	float: left;
+	width: 100%;
+	margin-bottom: 6px;
+}
+.welcomecontainer .rightcontainer .span1 {
+	border-radius: 8px;
+	background: #000;
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	margin: 3px;
+}
+.welcomecontainer .rightcontainer .span2 {
+	border-radius: 6px;
+	background: #FFF;
+	border: 1px solid #000;
+	width: 6px;
+	height: 6px;
+	display: inline-block;
+	text-align: left;
+	float: left;
+	margin: 3px;
+}
+.welcomecontainer .rightcontainer .ratingblock ul {
+	list-style: none;
+	text-align: left;
+	margin-top: 8px;
+	margin-bottom: 20px;
+}
+.welcomecontainer .rightcontainer .ratingblock ul li {
+	background: url(/assets/right-tick1.png) no-repeat left;
+	padding-left: 30px;
+	line-height: 20px;
+	font-size: 12px;
+}
+.trackwidth {
+	width: 200px;
+	text-align: left;
+}
+.border-line {
+	height: 3px;
+	background: #e6e7e8;
+	margin: 10px 0px 25px 0px;
+}
+.border-line-short {
+	height: 3px;
+	background: #e6e7e8;
+	margin: 10px 0px 5px 0px;
+	width: 80%;
+}
+/*pop up box*/
+.righticon {
+	float: left;
+	margin-left: 35px;
+}
+.modal-window {
+	position: fixed;
+	left: 50%;
+	top: 30%;
+	width: 35%;
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px rgba(0,0,0,.5);
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	z-index: 2;
+}
+.modal-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 25px;
+	font-family: arial;
+	text-decoration: none;
+	font-weight: bolder;
+	color: #000;
+}
+.modal-close a {
+	text-decoration: none;
+	color: #000;
+}
+.modal-shade {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,.7);
+	z-index: 1;
+}
+.popupbox {
+	text-align: center;
+	font-family: 'Rokkitt';
+}
+.popupbox .popupheading {
+	font-size: 23px;
+	margin-bottom: 20px;
+	text-align: left;
+	line-height: 35px;
+}
+.popupbox .popupheading2 {
+	text-align: center !important;
+	font-size: 16px !important;
+	line-height: 20px;
+}
+.popupbox .popupheading3 {
+	font-size: 16px !important;
+	line-height: 20px;
+}
+.popupbox p {
+	font-size: 20px;
+}
+.popupbox .progress-bar {
+	background: none repeat scroll 0 0 #d1d3d4;
+	border-radius: 18px;
+	display: inline-block;
+	height: 12px;
+	text-align: right;
+	width: 48%;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.popupbox .progress-bar .completebar {
+	background: none repeat scroll 0 0 #939598;
+	border-radius: 15px 0 0 15px;
+	height: 12px;
+}
+.popupbox .letterlink {
+	display: inline-block;
+	margin-left: 10px;
+}
+.popupbox .letterlink a {
+	text-decoration: none;
+	color: inherit;
+}
+/*pop up box close*/
+   
+ /*Welcome page css 21.1.2015 close*/
+  /*-----page 43 css---------------*/
+.bodycontainer {
+	width: 98%;
+	margin: 0 auto;
+}
+.top-review {
+	padding: 5px 10px;
+	text-align: center;
+	float: right;
+}
+.top-review a {
+	text-decoration: none;
+	color: #FFF;
+}
+.btn-all {
+	background-color: #e36967;
+	border-color: #b02a27;
+	border-image: none;
+	border-radius: 5px;
+	border-style: none none solid;
+	border-width: 1px 1px 3px;
+	font-family: 'Rokkitt';
+	text-align: center;
+	padding: 8px 10px;
+	color: #FFF;
+	cursor:pointer;
+}
+.btn-all a{ color:inherit; text-decoration:none;}
+.over-right {
+	margin: 0 auto !important;
+	width: 260px !important;
+}
+.btn-all input {
+	background: none;
+	border: 0px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	cursor:pointer;
+	font-family: 'Rokkitt';
+}
+.filter-left {
+	float: left;
+	width: 150px;
+}
+.table-width {
+	font-size: 14px;
+	width: 800px;
+}
+.filter-right {
+	float: right;/*width: 150px;*/
+}
+.filter-right a {
+	color: inherit;
+}
+.filter-right .inner-left {
+	width: 180px;
+	float: left;
+	text-align: left;
+	line-height: 25px;
+	height: 25px;
+}
+.filter-right .inner-right {
+	width: 70px;
+	float: left;
+	text-align: left;
+	line-height: 25px;
+	height: 25px;
+}
+.filter-right .inner-left .img-icon {
+	float: left;
+	margin-right: 5px;
+}
+.filter-right .inner-right .img-icon {
+	float: left;
+	margin-right: 5px;
+}
+.filter-top-container {
+	width: 95%;
+	margin: 0 auto;
+	height: 50px;
+}
+.filter-left a {
+	color: inherit;
+	text-decoration: none;
+}
+.data-cell-tab {
+	background: #5e3a56;
+	height: 50px;
+	font-family: 'Rokkitt';
+}
+.data-cell-tab .tab1 {
+	width: 25%;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+}
+.data-cell-tab .tab1 a {
+	text-decoration: none;
+	font-size: 22px;
+	color: #FFF;
+}
+.data-cell-tab .tab1 a.active {
+	color: #FFF;
+}
+.data-cell-tab .tab1 a.active:after {
+	border-color: #FFF transparent;
+	content: " ";
+	display: block;
+	height: 0;
+	margin: 0 auto;
+	position: relative;
+	width: 0;
+	top: -10px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 9px solid #FFF;
+	z-index: 99;
+}
+.row-bottom-border {
+	width: 99%;
+	margin: 0 auto;
+	height: 30px;
+	border-bottom: 1px solid #CCC;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+.recipe-box {
+	width: 280px;
+	float: left;
+	margin-bottom: 30px;
+	text-align: center;
+	font-family: 'Rokkitt';
+	margin: 18px 18px;
+}
+.recipe-box .imgwidth {
+	min-width: 280px;
+	height: auto;
+}
+.recipe-box .imgwidth img {
+	max-width: 280px;
+	height: auto;
+}
+.recipe-box-small {
+	width: 156px;
+	margin: 10px 50px 30px !important;
+}
+.recipe-box:last-child {
+	margin-right: 0 !important;
+}
+.recipe-box .name {
+	text-align: left;
+	font-size: 22px;
+	line-height: 25px;
+	max-width: 184px;
+}
+.midd-row {
+	font-size: 13px;
+	line-height: 25px;
+	max-width: 280px;
+	text-align: left;
+}
+.midd-row a {
+	margin-right: 5px;
+	color: inherit;
+	text-decoration: none;
+}
+.recipe-box .add-btn a {
+	color: inherit;
+	text-decoration: none;
+	text-align: center;
+}
+.topheading {
+	line-height: 20px;
+	font-size: 18px;
+}
+.top-heading {
+	font-size: 12px;
+}
+.date-calc {
+	float: left;
+	width: 200px;
+	border: 2px solid #d1d3d4;
+}
+.date-calc input {
+	border: 0px;
+	background: none;
+	line-height: 30px;
+	width: 98%;
+	font-size: 12px;
+	outline: none;
+	padding: 5px;
+	height: 35px;
+}
+.todate {
+	width: 50px;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+}
+.save-btn {
+	float: left;
+	margin-left: 50px;
+	width: 100px;
+}
+.active {
+	width: 80px; /*float: left;*/
+	margin-right: 20px;
+}
+
+.active2 {
+	   float: left !important;
+	 
+}
+.active-left {
+	float: left;
+	font-size: 16px;
+}
+.active-left a {
+	color: inherit;
+	font-size: 12px;
+}
+.active-right {
+	float: left;
+	font-size: 12px;
+	line-height: 20px;
+	width: 250px;
+}
+.active-right a {
+	color: inherit;
+	font-size: 12px;
+}
+.active-right .heading {
+	font-size: 16px;
+	height: 25px;
+}
+.active-right .smallfont {
+	font-size: 10px;
+	height: 20px;
+	line-height: 20px;
+}
+.active-right .passbox {
+	border: 2px solid #d1d3d4;
+	margin-right: 20px;
+	font-size: 12px;
+	 
+}
+.heading-blod {
+	font-weight: bold;
+	font-size: 16px;
+}
+.passbox input {
+	background: none;
+	border: 0px;
+	line-height: 35px;
+	height:35px;
+	width: 98%;
+	padding-left: 5px;
+	outline: none;
+}
+.viewbill {
+	color: inherit;
+	font-size: 14px;
+}
+.viewbill a {
+	font-weight: bold;
+}
+.card-exp-container {
+	width: 300px;
+	height: 40px;
+	margin: 5px 0;
+	background: #E8E7E7;
+	border-radius: 7px;
+	float: left;
+}
+.card-exp-end {
+	float: left;
+	margin-right: 10px;
+	padding: 5px;
+}
+.date-exp {
+	line-height: 38px;
+	font-size: 13px;
+}
+.date-exp span {
+	text-align: right;
+	margin-left: 20px;
+}
+/*-----page 43 css---------------*/
+  
+   /*--------------- page 40     ---------------*/
+  
+.window-cancel {
+	float: right;
+	height: 40px;
+	line-height: 55px;
+	cursor: pointer;
+}
+.input-filed-left {
+	width: 300px;
+	height: 35px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-bottom: 5px;
+	padding: 0px;
+	line-height: 33px;
+}
+.input-filed-left input {
+	outline: none;
+	width: 97%;
+	border: 0px;
+	padding: 0px 4px;
+	color: #757575;
+}
+.input-filed-right {
+	width: 720px;
+	height: 35px;
+	border: 1px solid #ccc;
+	float: right;
+	margin-bottom: 5px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 33px;
+}
+.input-filed-right input {
+	outline: none;
+	width: 98%;
+	border: 0px;
+	padding: 0px 4px;
+	color: #757575;
+}
+.input-filed-textarea {
+	width: 1036px;
+	height: 35px;
+	border: 1px solid #ccc;
+	float: left;
+	height: 150px;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+.input-filed-textarea textarea {
+	border: 0px;
+	width: 99%;
+	padding: 4px;
+	font-size: 12px;
+	font-family: arial;
+	outline: none;
+	color: #757575;
+	height: 139px;
+}
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.last-div-row {
+	background: #f9f9f9;
+	height: 50px;
+	width: 1037px;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	float: left;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	width: 29px;
+}
+.click-send-mail {
+	float: right;
+	height: 50px;
+	background: #bcbec0;
+	line-height: 78px;
+}
+/*--------------- page 40     ---------------*/
+	
+	 /*--------------- page 41     ---------------*/
+.mail-body {
+	background: #f9f9f9;
+	border-bottom: 1px solid #ccc;
+}
+.mail-body {
+	background: #f9f9f9;
+	border-bottom: 1px solid #ccc;
+	padding: 0 10px;
+	float: left;
+	width: 98%;
+}
+.bg-none {
+	background-color: #FFF !important;
+}
+.mail-body .leftdiv {
+	float: left;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 25px;
+}
+.mail-body .rightdiv {
+	float: right;
+	font-size: 12px;
+}
+.mail-body .rightdiv img {
+	margin-right: 10px;
+}
+.mail-body .rightdiv span {
+	line-height: 33px;
+	color: #757575;
+}
+.mail-body .last-rwo {
+	float: left;
+	font-size: 12px;
+}
+.mail-body .last-rwo img {
+	margin-right: 10px;
+}
+.mail-body .last-rwo span {
+	line-height: 33px;
+	color: #757575;
+}
+.mail-body .last-rwo span a {
+	color: inherit;
+}
+.fileUpload2 {
+	margin-left: 0 !important;
+}
+.body-message {
+	font-size: 12px;
+	width: 100%;
+	float: left;
+	color: #757575;
+	line-height: 18px;
+}
+.text-textarea-inner-width {
+	width: 99%;
+}
+.text-textarea-main-div {
+	width: 96%;
+	padding: 0 2%;
+	float: left;
+	margin-top: 20px;
+}
+.body-message {
+	font-size: 12px;
+	width: 100%;
+	float: left;
+}
+/*--------------- page 41     ---------------*/
+/*--------------- page 44    ---------------*/
+.recipe-left-block{width:64%; float:left;}
+.recipe-left-block .img-respo{ max-width: 100%;	height: auto;}
+.recipe-left-block .img-respo img{ max-width: 100%;	height: auto;}
+.text-matt{ font-size:12px; text-align:justify; line-height:18px; margin:12px 0;}
+
+.recipe-right-block{float:right; width:30%;}
+.recipe-right-block h1{ margin:0px; padding:0px; line-height:15px;}
+.name-recipe-right{background:#e36967; border-radius:7px; width:auto; min-height:75px; padding:10px; margin-bottom:25px;  font-size:13px; color:#fff; margin-top:25px; }
+.name-recipe-right .top-block{width:250px; margin:0 auto; line-height:25px;}
+.name-recipe-right .top-block .icon-div{float:left; margin-right:10px;}
+.diet-plan-main{width:317px; margin:0 auto;}
+.diet-plan{float:left; border-right:1px solid #FFF; height:20px; text-align:center; line-height:25px; padding:10px;}
+.diet-plan:last-child{ border-right:0px;}
+.heading-rwo{width:100px; margin:0 auto; height:2px; background:#9A9898;}
+.recipe-last-row{border-top:1px solid #ccc; background:#CCC; width:96%; padding:2%; float:left;}
+.recipe-last-row .left-right-box{width:32%; float:left; margin:30px 0px;}
+.recipe-last-row .left-right-box h1{text-align:center; margin:0px; padding:0px; line-height:40px;}
+.recipe-last-row .left-right-box ul{ padding:0 20px; font-size:12px; line-height:20px;} 
+.recipe-last-row .left-right-box p{ font-size:12px; padding:0px 10px; margin:25px 0px;}
+.recipe-chef{float:left; width:100%; margin-top:30px;}
+.recipe-last-row .center-box{width:32%; float:left; background:#FFF;  margin:0 25px;} 
+.recipe-last-row .center-box h1{ text-align:center; margin:0px; padding:0px; line-height:40px;}
+.center-box .facts{height:20px; border-bottom:1px solid #ccc; margin:5px 10px; font-size:13px;}
+
+.center-box .facts .span1{ text-align:left; display:inline-block; width:50%;}
+.center-box .facts .span2{ text-align:right; display:inline-block; width:49%;}
+  
+/*--------------- page 44     ---------------*/
+	
+	
+/*  footer container 22.1.2015*/
+.footer {
+	background: #59514b;
+	min-height: 170px;
+	padding: 0px 20px;
+	text-align: center;
+	color: #FFF;
+}
+.footer-full-width {
+	float: left !important;
+	width: 100%;
+}
+.footer .footer-left {
+	width: 20%;
+	float: left;
+	text-align: left;
+}
+.footer .footer-left .logo {
+	padding-top: 20px;
+}
+.footer .footer-left .link {
+	text-align: left;
+	font-size: 12px;
+}
+.footer .footer-left .link a {
+	padding: 0 5px 2px;
+	line-height: 8px;
+	text-decoration: none;
+	color: #FFF;
+	display: inline-block;
+	border-right: 1px solid #FFF;
+	margin-bottom: 8px;
+}
+.footer .footer-left .copyright {
+	font-size: 12px;
+	padding-left: 5px;
+	padding-top: 10px;
+}
+.footer .footer-left .link a.inactivepipe, .footer .footer-left .link a:last-child {
+	border-right: none;
+}
+.footer .footer-center {
+	width: 60%;
+	float: left;
+	text-align: center;
+	padding-top: 20px;
+}
+.footer .footer-center .signup {
+	display: inline-block;
+	text-align: left;
+	border-radius: 4px;
+	background: #FFF;
+}
+.footer .footer-center .signup input {
+	width: 150px;
+	background: none;
+	border: 0px;
+	padding: 5px;
+	text-align: left;
+	font-size: 11px;
+	outline: none;
+}
+.footer .footer-center .signupbtn {
+	display: inline-block;
+	text-align: left;
+	background: #e6e7e8;
+	border-radius: 7px;
+	margin-left: 5px;
+}
+.footer .footer-center .signupbtn input {
+	background: none;
+	border: 0px;
+	padding: 4px;
+	outline: none;
+	font-size: 11px;
+	cursor: pointer;
+}
+.footer .footer-center h4 {
+	font-size: 14px;
+	margin: 0px;
+	line-height: 40px;
+	width: 220px;
+	margin: 0 auto;
+	text-align: left;
+	font-weight: lighter;
+}
+.footer .footer-right {
+	width: 20%;
+	float: right;
+	padding-top: 20px;
+}
+.footer .footer-right h4 {
+	font-size: 14px;
+	margin: 0px;
+	line-height: 40px;
+	width: 260px;
+	margin: 0 auto;
+	text-align: left;
+	font-weight: lighter;
+}
+.footer .footer-right .visacard {
+	margin: 0px;
+}
+.footer .footer-right .visacard-div {
+	float: left;
+	margin: 0px 4px;
+}
+.footer .footer-right .visacard-div img a {
+	border: 0px;
+}
+.footer .footer-right .socilimg {
+	margin: 0px;
+}
+.footer .footer-right .socilimg h4 {
+	display: inline-block;
+}
+.footer .footer-right .socilimg-div {
+	float: left;
+	margin: 0px 8px;
+}
+.footer .footer-right .socilimg-div img a {
+	border: none;
+}
+/*  footer container 22.1.2015*/
+ /* Amit Chhabra CSS Starts */
+.delvinf-container-extra-width {
+	width: 80% !important;
+}
+.spacer {
+	height: 1px;
+	overflow: hidden;
+	width: 100%;
+}
+.dietary-needs-tabs {
+	/*width: 146px;
+	height: 35px;*/
+	width: 196px;
+	height: 35px;
+	background-color: #939598;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 32px;
+	font-size: 12px;
+	padding: 0 10px 0 2px;
+	display: inline-block;
+	margin: 5px 2px;
+	cursor: pointer;
+}
+.dietary-needs-tabs span {
+	background-image: url(/assets/dietary-tick.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 10px;
+}
+.dietary-needs-tabs-untick {
+	background-color: #d1d3d4 !important;
+}
+.dietary-needs-tabs-untick span {
+	background-image: none !important;
+}
+.profile-complete {
+	float: right;
+	margin-top: 5px;
+}
+.profile-complete.margintop {
+	margin-top: 12px !important;
+}
+.profile-complete div {
+	width: 100%;
+	height: 10px;
+	background-color: #d1d3d4;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+.profile-complete div span {
+	background-color: #939598;
+	height: 10px;
+	display: block;
+	border-radius: 10px;
+}
+.h1-float-left {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: lighter;
+	line-height: 50px;
+}
+.innerbody-extra-width {
+	width: 80% !important;
+}
+.textarea1 {
+	width: 60% !important;
+	height: 80px;
+	border: 1px solid #d1d3d4;
+	/*color: #acb1b5;*/
+	color: #000;
+	font-family: inherit;
+	font-size: 15px;
+	padding: 5px;
+}
+.table-div {
+	width: 100%;
+	text-align: center;
+}
+.table-cell {
+	display: inline-table;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 230px;
+}
+.table-cell-right-align {
+	text-align: right;
+}
+.table-cell span {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #fff;
+	border: 1px solid #939598;
+	color: #939598;
+	font-size: 14px;
+	cursor: pointer;
+	margin-right: 2px;
+}
+.table-cell div {
+	display: inline-block;
+	font-size: 11px;
+	margin: 0 14px;
+	color: #979ca5;
+}
+.clickTab {
+	background-color: #939598 !important;
+	color: #fff !important;
+}
+.res-width {
+	width: 400px;
+}
+.small {
+	font-size: 14px !important;
+}
+h1 a {
+	text-decoration: none;
+}
+/* Amit Chhabra CSS Ends */
+
+/*--------------- pricing page ---------------*/
+.login-container .top-text{ color:#000000; font-size:24px; line-height:30px; padding:15px; font-family: 'Rokkitt'; width:950px; margin:0 auto;}
+.login-container .footer-text{ color:#000000; font-size:12px; line-height:18px; padding:15px; font-family: 'Lato-Regular'; width:950px; margin:0 auto;}
+.login-container .inner-container{ /*width:65%;*/ width:55%; margin:0 auto;}
+ .plan-box{width:184px; margin:0px; float:left; margin:0px 16px;}
+ .plan-box-heading{ text-align:center; font-size:16px; width:184px; float:left; line-height:40px; font-family: 'Lato-Regular';}
+ .plan-box-details{width:184px; float:left; border:1px solid #000000; border-radius:18px; border:1px solid #ccc;}
+ .plan-box-details .top-row{height:100px; background:#5e3a56; border-radius:18px 18px 0px 0px; text-align:center; color:#FFF; line-height:40px;}
+ .most-popular{position:relative; left:-26px; top:-3px; height:20px;}
+ .plan-box-details .top-row h2{ font-size:42px;  font-family:'WolfintheCityLight'; font-weight:normal;color: #fff;}
+ .plan-box-details .top-row h3{ font-size:16px; font-weight:bold;}
+ .plan-box-inner{background:#fff; border-radius:0px 0px 18px 18px; padding:10px;}
+ .plan-box-inner .cat-name{text-align:center; height:75px; line-height:120px; font-family: 'Lato-Regular'; font-size:16px; font-weight:bolder; text-transform:uppercase; }
+.disc-name-img{ width:80%; margin:0 auto;}
+.disc-name-img .heading{text-align:left; font-family: 'Rokkitt'; font-size:21px; color:#000000; height:60px; line-height:75px;}
+.plan-box-inner ul{ margin:0px; padding:0px;}
+.plan-box-inner ul li{ font-size:14px; font-family: 'Lato-Regular'; line-height:20px; margin-left:15px;}
+.total{ text-align:center; font-size:18px; line-height:30px; font-weight:bold; height:40px;}
+/*--------------- pricing page ---------------*/

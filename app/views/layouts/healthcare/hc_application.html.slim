@@ -1,0 +1,20 @@
+doctype html
+html lang="en" class="#{params[:controller]}-controller #{params[:action]}-action"
+    head
+        meta charset="utf-8"
+        title Fitly® - Delicious. Delivered.™
+        meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        meta name="p:domain_verify" content="8bbf614c81fa82be60e2104068c4b8d9"
+        meta name="google-site-verification" content="JI7ILU5meQIALUVVKl4vZLfN9ujZ8eX864QISZgmPk8"
+        = favicon_link_tag "favicon.png"
+        = csrf_meta_tags
+        = stylesheet_link_tag :application, media: :all
+        = javascript_include_tag :application
+        - if tracking?
+            = render 'layouts/google'
+        = yield :header
+    body id="#{params[:controller]}-#{params[:action]}" data-controller="#{params[:controller]}" data-action="#{params[:action]}"
+        = render "layouts/healthcare/hc_header"
+        main
+            = yield
+        = render "layouts/healthcare/hc_footer"

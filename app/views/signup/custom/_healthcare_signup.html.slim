@@ -1,0 +1,48 @@
+div.signup
+	= simple_form_for @user, url: @specialty_signup_link do |f|
+		p
+		  - if @user && @user.errors
+		    - @user.errors.full_messages.each do |msg|
+		      = msg
+		      br/
+
+		fieldset
+		    = f.input_field :guest, as: :hidden, value: false
+		    = f.input_field :zipcode, as: :hidden, value: @user.zipcode
+		    ul.data
+                li.input.zipcode.required
+                    label for="signup_inquiry_zipcode"
+                        | Zip Code <abbr title="(Required)">*</abbr>
+                    = f.input_field :zipcode, value: params[:zip], placeholder: 'zip code'
+		        li.input.email.required
+		            label for="user_email"
+		                | E-mail Address <abbr title="(Required)">*</abbr>
+		            = f.input_field :email, required: :true
+		        li.input.first.required
+		            label for="user_first_name"
+		                | First Name <abbr title="(Required)">*</abbr>
+		            = f.input_field :first, required: :true
+		        li.input.last.required
+		            label for="user_last_name"
+		                | Last Name <abbr title="(Required)">*</abbr>
+		            = f.input_field :last, required: :true
+
+		        li.input.password.required
+		            label for="user_password"
+		                | Password <abbr title="(Required)">*</abbr>
+		            p.label-note
+		                | 8 to 20 letters or numbers, at least 1 number
+		            = f.input_field :password, as: :password, required: true
+		        li.input.password-confirmation.required
+		            label for="user_password_confirmation"
+		                | Verify Password <abbr title="(Required)">*</abbr>
+		            = f.input_field :password_confirmation, as: :password, required: true
+		        li.input.subscribe.checkbox.optional
+		            label for="user_ok_to_email"
+		                | Send me Fitly's latest recipes each week
+		            = f.input_field :ok_to_email, as: :boolean, boolean_style: :inline, checked: false
+		    p.legal
+		        | By creating an account, you conﬁrm that you have read and agree to our <a href="/pages/terms">Terms of Service</a>, which includes our <a href="/pages/terms#substitution-policy">Substitution Policy</a>, and our <a href="/pages/privacy">Privacy Policy</a>.
+		    ul.actions
+		        li.primary
+		            = f.submit 'Create my account'

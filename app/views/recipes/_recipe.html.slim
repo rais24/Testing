@@ -1,0 +1,17 @@
+li class=(recipe.is_new? ? 'recipe new' : 'recipe')
+    = link_to recipe, class: 'recipe-image', title: recipe.name
+        noscript data-small=recipe.photo.url(:thumb) data-medium=recipe.photo.url(:medium) data-large=recipe.photo.url(:extra_large)
+            = image_tag recipe.photo.url(:medium), alt: recipe.name
+        div
+            h3 = recipe.name
+    ul.stats
+        li.time
+            | <span class="value">#{recipe.total_time}</span> minutes
+        li.calories
+            | <span class="value">#{recipe.calories}</span> calories
+        li.price
+            | As low as <span class="value">$5.99</span> per&nbsp;serving
+    ul.actions
+        li.primary
+            = link_to recipe, class: 'action primary'
+                | View details

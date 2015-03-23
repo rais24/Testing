@@ -1,0 +1,35 @@
+footer
+    a.home href="/"
+        | Fitly
+    nav.site
+        ul
+            li.services
+                h3 Services
+                ul
+                    li.home
+                        a href="/"
+                            | Home
+                    li.recipes
+                        = link_to "Recipes", recipes_path
+                    li.pricing
+                        = link_to "Pricing", page_path('pricing')
+                    li.faqs
+                        = link_to "FAQs", page_path('faqs')
+                    li.contact
+                        = link_to "Contact", page_path('contact')
+            li.about
+                h3 About
+                ul.about
+                    li.testimonials
+                        = link_to "Testimonials", page_path('testimonials')
+                    li.jobs
+                        = link_to "Careers", page_path('jobs')
+                    li.team
+                        a href="/pages/team" Our&nbsp;Team
+                        / = link_to "Our&nbsp;Team", page_path('team')
+                    li.blog
+                        a href="https://fitlyfamily.blogspot.com/"
+                            | Blog
+    = render "layouts/social_links"
+    p.copyright
+        | &copy; Fitly&reg; #{Time.now.year} &mdash; <a href="/pages/terms">Terms of Service</a> | <a href="/pages/privacy">Privacy Policy</a>

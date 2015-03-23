@@ -1,0 +1,14 @@
+/ ul.breadcrumb.registration-breadcrumb
+  li.complete 
+    | Sign Up
+    span.divider >
+    
+  - wizard_steps.each_with_index do |s, index|
+    li class=step_class(s)
+      - if past_step?(s)
+        = link_to s.to_s.titleize, wizard_path(s)
+      - else
+        = s.to_s.titleize
+      span.divider >
+
+  li.muted Registration Complete!

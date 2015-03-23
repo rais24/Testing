@@ -1,0 +1,441 @@
+/*-------------------
+Global Styles
+-------------------*/
+@import '_variables';
+
+
+// Typefaces
+
+@font-face {
+    font-family: 'Vag-Rounded-Bold';
+    src: url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.eot');
+    src: url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.woff') format('woff'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.svg#vagroundedstdbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vag-Rounded-Light';
+    src: url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.eot');
+    src: url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.woff') format('woff'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.svg#vagroundedstdlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vag-Rounded-Thin';
+    src: url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.eot');
+    src: url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.woff') format('woff'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.svg#vagroundedstdthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceCodePro-Regular';
+    src: url('/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.eot');
+    src: url('/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.woff') format('woff'),
+         url('/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.svg#SourceCodePro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'asapbold';
+    src: url('/ux/style-guide/fonts/ASAP/asap-bold-webfont.eot');
+    src: url('/ux/style-guide/fonts/ASAP/asap-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/ASAP/asap-bold-webfont.woff') format('woff'),
+         url('/ux/style-guide/fonts/ASAP/asap-bold-webfont.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/ASAP/asap-bold-webfont.svg#asapbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'asapbold_italic';
+    src: url('/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.eot');
+    src: url('/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.woff') format('woff'),
+         url('/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.svg#asapbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'asapitalic';
+    src: url('/ux/style-guide/fonts/ASAP/asap-italic-webfont.eot');
+    src: url('/ux/style-guide/fonts/ASAP/asap-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/ASAP/asap-italic-webfont.woff') format('woff'),
+         url('/ux/style-guide/fonts/ASAP/asap-italic-webfont.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/ASAP/asap-italic-webfont.svg#asapitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'asapregular';
+    src: url('/ux/style-guide/fonts/ASAP/asap-regular-webfont.eot');
+    src: url('/ux/style-guide/fonts/ASAP/asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/ux/style-guide/fonts/ASAP/asap-regular-webfont.woff') format('woff'),
+         url('/ux/style-guide/fonts/ASAP/asap-regular-webfont.ttf') format('truetype'),
+         url('/ux/style-guide/fonts/ASAP/asap-regular-webfont.svg#asapregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    font-family: Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 8px 10px 2px 14px;
+    // background: $red;
+    @include gradient($green, top, $light-green, $green);
+    @include boxShadow(0 -4px 4px 5px #6f6f6f);
+
+    a {
+        font-family: asapregular;
+        color: rgb(255,255,255);
+        text-decoration: none;
+    }
+    a.logo {
+        font-family: Vag-Rounded-Bold;
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #fff;
+        @include textShadow(0 1px 2px #525252);
+
+        span.tm {
+            font-size: 12px;
+            vertical-align: 90%;
+        }
+    }
+}
+
+main {
+    position: relative;
+    padding-top: 50px;
+
+    section {
+        margin-bottom: 50px;
+
+        p {
+            margin: 20px 15px;
+            line-height: 1.6;
+
+            a {
+                font-weight: bold;
+                color: $dark-green;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin: 30px 20px 15px;
+        font-family: asapbold;
+        font-size: 20px;
+        text-align: center;
+        color: #6f6f6f;
+    }
+
+    h2 {
+        margin: 15px 0;
+        padding: 8px 15px;
+        line-height: 1.5;
+        font-family: asapbold;
+        font-size: 20px;
+        color: #fff;
+        background: $dark-green;
+    }
+}
+
+#colors {
+    display: block;
+    width: 100%;
+    color: #fff;
+
+    li {
+        display: block;
+        width: 100%;
+        padding: 15px 18px;
+        margin: 15px 0;
+        font-family: SourceCodePro-Regular;
+
+        &.red {
+            background: $red;
+        }
+        &.orange {
+            background: $orange;
+        }
+        &.light-green {
+            background: $light-green;
+        }
+        &.green {
+            background: $green;
+        }
+        &.dark-green {
+            background: $dark-green;
+        }
+    }
+}
+
+form {
+    display: block;
+    width: 100%;
+    margin: 0 auto 30px;
+    padding: 0 15px;
+    position: relative;
+
+    fieldset {
+        legend {
+            margin: 30px 0px;
+            font-family: asapbold;
+            font-size: 20px;
+            text-align: center;
+            color: #6f6f6f;
+        }
+        p {
+            margin: 0 0 25px;
+        }
+        ul.data {
+            margin-bottom: 30px;
+
+            li.input {
+                margin-bottom: 25px;
+                display: block;
+                position: relative;
+
+                label {
+                    display: block;
+                    font-size: 16px;
+                }
+                &.required {
+                    label {
+                        font-weight: bold;
+                    }
+                }
+                p.label-note {
+                    margin: 0;
+                    font-size: 14px;
+                    color: #666;
+                }
+                input[type="email"],
+                input[type="password"],
+                input[type="text"],
+                textarea {
+                    width: 100%;
+                    border: 1px solid rgb(200, 200, 200);
+                    margin-top: 4px;
+                    padding: 10px 14px;
+                    font-family: Helvetica, Arial, sans-serif;
+                    font-size: 16px;
+                    @include borderRadius(4px);
+                    @include boxShadow(inset 0px 2px 6px -1px hsl(0, 0%, 80%));
+                }
+
+                &.checkbox {
+                    padding-left: 40px;
+
+                    input[type="checkbox"] {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #999;
+                        @include borderRadius(4px);
+                        background: #efefef;
+
+                        &:checked {
+                            &:after {
+                                display: block;
+                                width: 30px;
+                                height: 30px;
+                                top: 0;
+                                left: 0;
+                                content: 'x';
+                                font-size: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        ul.actions {
+            margin-top: 30px;
+
+            li {
+                margin-bottom: 15px;
+
+                a.submit {
+                    display: block;
+                    text-decoration: none;
+
+                    &.with-prompt {
+                        padding: 10px;
+                    }
+                    span {
+                        display: block;
+                        font-family: asapregular;
+                        font-size: 14px;
+                        text-align: center;
+
+                        &.intro {
+                            padding-bottom: 4px;
+                        }
+                        &.exit {
+                            padding-top: 4px;
+                        }
+                    }
+                }
+                a.submit,
+                input {
+                    width: 100%;
+                    padding: 20px 10px;
+                    font-family: asapbold;
+                    font-size: 20px;
+                    text-align: center;
+                    color: #fff;
+                    @include borderRadius(6px);
+                    cursor: pointer;
+                }
+                &.primary {
+                    a.submit,
+                    input {
+                        background: $dark-green;
+                        // @include gradient($dark-green, top, $dark-green, rgb(10, 111, 32));
+                        @include gradient($dark-green, top, $dark-green, rgb(23, 130, 46));
+                        @include boxShadow('inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1)');
+                        @include textShadow(0px 1px 2px #222);
+                        border-top: 1px solid #4A8509;
+                        border-right: 1px solid #315707;
+                        border-bottom: 1px solid #053D0D;
+                        border-left: 1px solid #315707;
+                    }
+                }
+                &.secondary {
+                    a.submit,
+                    input {
+                        background: $green;
+                        @include gradient($green, top, $light-green, $green);
+                        @include boxShadow('inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1)');
+                        @include textShadow(0px 1px 2px #666);
+                        border-top: 1px solid #6DC50C;
+                        border-right: 1px solid #64B111;
+                        border-bottom: 1px solid #0A801A;
+                        border-left: 1px solid #64B111;
+                    }
+                }
+                &.tertiary {
+                    padding: 10px 0;
+                    text-align: center;
+
+                    a {
+                        font-family: asapbold;
+                        font-size: 20px;
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+
+    &.error {
+        fieldset {
+            p.error {
+                padding: 10px 15px;
+                background: $red;
+                color: rgb(255,255,255);
+            }
+            ul.data {
+                li.error {
+                    label {
+                        color: $red;
+                    }
+                    input {
+                        border-color: #6f6f6f;
+                        background: $red;
+                        color: rgb(255,255,255);
+                        @include boxShadow(inset 0px 2px 6px -1px #7E7E7E);
+                    }
+                }
+            }
+            ul.actions {
+
+            }
+        }
+    }
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-top: 2px solid $green;
+    border-bottom: 2px solid $green;
+
+    caption {
+        padding: 10px 15px 8px;
+        background: $green;
+        font-family: asapregular;
+        color: rgb(255,255,255);
+    }
+    thead {
+        tr {
+            background: $dark-green;
+
+            th {
+                width: auto;
+                font-family: asapbold;
+                color: rgb(255,255,255);
+            }
+        }
+    }
+    tfoot {
+        td {
+            padding-bottom: 8px;
+            background: $green;
+            color: rgb(255,255,255);
+        }
+    }
+    tr {
+        &:nth-child(even) {
+            background: rgb(235,235,235);
+        }
+        > th {
+            font-weight: bold;
+        }
+    }
+    td,
+    th {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    th {
+        width: 35%;
+    }
+}

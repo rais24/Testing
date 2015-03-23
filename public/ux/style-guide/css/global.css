@@ -1,0 +1,412 @@
+/*-------------------
+Global Styles
+-------------------*/
+/*-------------------
+Variables
+-------------------*/
+/*-------------------
+Mixins
+-------------------*/
+@font-face {
+  font-family: 'Vag-Rounded-Bold';
+  src: url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.eot");
+  src: url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.woff") format("woff"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.ttf") format("truetype"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdbold.svg#vagroundedstdbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Vag-Rounded-Light';
+  src: url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.eot");
+  src: url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.woff") format("woff"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.ttf") format("truetype"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdlight.svg#vagroundedstdlight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Vag-Rounded-Thin';
+  src: url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.eot");
+  src: url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.woff") format("woff"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.ttf") format("truetype"), url("/ux/style-guide/fonts/Vag-Rounded/vagroundedstdthin.svg#vagroundedstdthin") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'SourceCodePro-Regular';
+  src: url("/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.eot");
+  src: url("/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.woff") format("woff"), url("/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.ttf") format("truetype"), url("/ux/style-guide/fonts/Source-Code-Pro/SourceCodePro-Regular.svg#SourceCodePro-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'asapbold';
+  src: url("/ux/style-guide/fonts/ASAP/asap-bold-webfont.eot");
+  src: url("/ux/style-guide/fonts/ASAP/asap-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/ASAP/asap-bold-webfont.woff") format("woff"), url("/ux/style-guide/fonts/ASAP/asap-bold-webfont.ttf") format("truetype"), url("/ux/style-guide/fonts/ASAP/asap-bold-webfont.svg#asapbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'asapbold_italic';
+  src: url("/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.eot");
+  src: url("/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.woff") format("woff"), url("/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.ttf") format("truetype"), url("/ux/style-guide/fonts/ASAP/asap-bolditalic-webfont.svg#asapbold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'asapitalic';
+  src: url("/ux/style-guide/fonts/ASAP/asap-italic-webfont.eot");
+  src: url("/ux/style-guide/fonts/ASAP/asap-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/ASAP/asap-italic-webfont.woff") format("woff"), url("/ux/style-guide/fonts/ASAP/asap-italic-webfont.ttf") format("truetype"), url("/ux/style-guide/fonts/ASAP/asap-italic-webfont.svg#asapitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'asapregular';
+  src: url("/ux/style-guide/fonts/ASAP/asap-regular-webfont.eot");
+  src: url("/ux/style-guide/fonts/ASAP/asap-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/ux/style-guide/fonts/ASAP/asap-regular-webfont.woff") format("woff"), url("/ux/style-guide/fonts/ASAP/asap-regular-webfont.ttf") format("truetype"), url("/ux/style-guide/fonts/ASAP/asap-regular-webfont.svg#asapregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\0000397}}
+body {
+  background: white;
+  font-family: Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003103}}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 8px 10px 2px 14px;
+  background-color: #69b814;
+  background-image: -webkit-linear-gradient(top, #81da1b, #69b814);
+  background-image: -moz-linear-gradient(top, #81da1b, #69b814);
+  background-image: -ms-linear-gradient(top, #81da1b, #69b814);
+  background-image: -o-linear-gradient(top, #81da1b, #69b814);
+  -moz-box-shadow: 0 -4px 4px 5px #6f6f6f;
+  -ms-box-shadow: 0 -4px 4px 5px #6f6f6f;
+  -o-box-shadow: 0 -4px 4px 5px #6f6f6f;
+  -webkit-box-shadow: 0 -4px 4px 5px #6f6f6f;
+  box-shadow: 0 -4px 4px 5px #6f6f6f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003114}}
+  header a {
+    font-family: asapregular;
+    color: white;
+    text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003119}}
+  header a.logo {
+    font-family: Vag-Rounded-Bold;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #fff;
+    -moz-text-shadow: 0 1px 2px #525252;
+    -ms-text-shadow: 0 1px 2px #525252;
+    -o-text-shadow: 0 1px 2px #525252;
+    -webkit-text-shadow: 0 1px 2px #525252;
+    text-shadow: 0 1px 2px #525252; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003127}}
+    header a.logo span.tm {
+      font-size: 12px;
+      vertical-align: 90%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003134}}
+main {
+  position: relative;
+  padding-top: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003138}}
+  main section {
+    margin-bottom: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003141}}
+    main section p {
+      margin: 20px 15px;
+      line-height: 1.6; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003145}}
+      main section p a {
+        font-weight: bold;
+        color: #159326;
+        text-decoration: underline; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003150}}
+        main section p a:hover {
+          text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003157}}
+  main h1 {
+    margin: 30px 20px 15px;
+    font-family: asapbold;
+    font-size: 20px;
+    text-align: center;
+    color: #6f6f6f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003165}}
+  main h2 {
+    margin: 15px 0;
+    padding: 8px 15px;
+    line-height: 1.5;
+    font-family: asapbold;
+    font-size: 20px;
+    color: #fff;
+    background: #159326; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003176}}
+#colors {
+  display: block;
+  width: 100%;
+  color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003181}}
+  #colors li {
+    display: block;
+    width: 100%;
+    padding: 15px 18px;
+    margin: 15px 0;
+    font-family: SourceCodePro-Regular; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003188}}
+    #colors li.red {
+      background: #e04d24; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003191}}
+    #colors li.orange {
+      background: #f3a012; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003194}}
+    #colors li.light-green {
+      background: #81da1b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003197}}
+    #colors li.green {
+      background: #69b814; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003200}}
+    #colors li.dark-green {
+      background: #159326; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003206}}
+form {
+  display: block;
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 0 15px;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003214}}
+  form fieldset legend {
+    margin: 30px 0px;
+    font-family: asapbold;
+    font-size: 20px;
+    text-align: center;
+    color: #6f6f6f; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003221}}
+  form fieldset p {
+    margin: 0 0 25px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003224}}
+  form fieldset ul.data {
+    margin-bottom: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003227}}
+    form fieldset ul.data li.input {
+      margin-bottom: 25px;
+      display: block;
+      position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003232}}
+      form fieldset ul.data li.input label {
+        display: block;
+        font-size: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003237}}
+      form fieldset ul.data li.input.required label {
+        font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003241}}
+      form fieldset ul.data li.input p.label-note {
+        margin: 0;
+        font-size: 14px;
+        color: #666; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003249}}
+      form fieldset ul.data li.input input[type="email"],
+      form fieldset ul.data li.input input[type="password"],
+      form fieldset ul.data li.input input[type="text"],
+      form fieldset ul.data li.input textarea {
+        width: 100%;
+        border: 1px solid #c8c8c8;
+        margin-top: 4px;
+        padding: 10px 14px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        -moz-box-shadow: inset 0px 2px 6px -1px #cccccc;
+        -ms-box-shadow: inset 0px 2px 6px -1px #cccccc;
+        -o-box-shadow: inset 0px 2px 6px -1px #cccccc;
+        -webkit-box-shadow: inset 0px 2px 6px -1px #cccccc;
+        box-shadow: inset 0px 2px 6px -1px #cccccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003260}}
+      form fieldset ul.data li.input.checkbox {
+        padding-left: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003263}}
+        form fieldset ul.data li.input.checkbox input[type="checkbox"] {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 30px;
+          height: 30px;
+          border: 1px solid #999;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          background: #efefef; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003274}}
+          form fieldset ul.data li.input.checkbox input[type="checkbox"]:checked:after {
+            display: block;
+            width: 30px;
+            height: 30px;
+            top: 0;
+            left: 0;
+            content: 'x';
+            font-size: 40px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003289}}
+  form fieldset ul.actions {
+    margin-top: 30px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003292}}
+    form fieldset ul.actions li {
+      margin-bottom: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003295}}
+      form fieldset ul.actions li a.submit {
+        display: block;
+        text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003299}}
+        form fieldset ul.actions li a.submit.with-prompt {
+          padding: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003302}}
+        form fieldset ul.actions li a.submit span {
+          display: block;
+          font-family: asapregular;
+          font-size: 14px;
+          text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003308}}
+          form fieldset ul.actions li a.submit span.intro {
+            padding-bottom: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003311}}
+          form fieldset ul.actions li a.submit span.exit {
+            padding-top: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003317}}
+      form fieldset ul.actions li a.submit,
+      form fieldset ul.actions li input {
+        width: 100%;
+        padding: 20px 10px;
+        font-family: asapbold;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003329}}
+      form fieldset ul.actions li.primary a.submit,
+      form fieldset ul.actions li.primary input {
+        background: #159326;
+        background-color: #159326;
+        background-image: -webkit-linear-gradient(top, #159326, #17822e);
+        background-image: -moz-linear-gradient(top, #159326, #17822e);
+        background-image: -ms-linear-gradient(top, #159326, #17822e);
+        background-image: -o-linear-gradient(top, #159326, #17822e);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -ms-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -moz-text-shadow: 0px 1px 2px #222222;
+        -ms-text-shadow: 0px 1px 2px #222222;
+        -o-text-shadow: 0px 1px 2px #222222;
+        -webkit-text-shadow: 0px 1px 2px #222222;
+        text-shadow: 0px 1px 2px #222222;
+        border-top: 1px solid #4A8509;
+        border-right: 1px solid #315707;
+        border-bottom: 1px solid #053D0D;
+        border-left: 1px solid #315707; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003343}}
+      form fieldset ul.actions li.secondary a.submit,
+      form fieldset ul.actions li.secondary input {
+        background: #69b814;
+        background-color: #69b814;
+        background-image: -webkit-linear-gradient(top, #81da1b, #69b814);
+        background-image: -moz-linear-gradient(top, #81da1b, #69b814);
+        background-image: -ms-linear-gradient(top, #81da1b, #69b814);
+        background-image: -o-linear-gradient(top, #81da1b, #69b814);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -ms-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+        -moz-text-shadow: 0px 1px 2px #666666;
+        -ms-text-shadow: 0px 1px 2px #666666;
+        -o-text-shadow: 0px 1px 2px #666666;
+        -webkit-text-shadow: 0px 1px 2px #666666;
+        text-shadow: 0px 1px 2px #666666;
+        border-top: 1px solid #6DC50C;
+        border-right: 1px solid #64B111;
+        border-bottom: 1px solid #0A801A;
+        border-left: 1px solid #64B111; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003354}}
+      form fieldset ul.actions li.tertiary {
+        padding: 10px 0;
+        text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003358}}
+        form fieldset ul.actions li.tertiary a {
+          font-family: asapbold;
+          font-size: 20px;
+          color: #666; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003370}}
+  form.error fieldset p.error {
+    padding: 10px 15px;
+    background: #e04d24;
+    color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003377}}
+  form.error fieldset ul.data li.error label {
+    color: #e04d24; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003380}}
+  form.error fieldset ul.data li.error input {
+    border-color: #6f6f6f;
+    background: #e04d24;
+    color: white;
+    -moz-box-shadow: inset 0px 2px 6px -1px #7e7e7e;
+    -ms-box-shadow: inset 0px 2px 6px -1px #7e7e7e;
+    -o-box-shadow: inset 0px 2px 6px -1px #7e7e7e;
+    -webkit-box-shadow: inset 0px 2px 6px -1px #7e7e7e;
+    box-shadow: inset 0px 2px 6px -1px #7e7e7e; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003395}}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-top: 2px solid #69b814;
+  border-bottom: 2px solid #69b814; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003401}}
+  table caption {
+    padding: 10px 15px 8px;
+    background: #69b814;
+    font-family: asapregular;
+    color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003408}}
+  table thead tr {
+    background: #159326; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003411}}
+    table thead tr th {
+      width: auto;
+      font-family: asapbold;
+      color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003419}}
+  table tfoot td {
+    padding-bottom: 8px;
+    background: #69b814;
+    color: white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003426}}
+  table tr:nth-child(even) {
+    background: #ebebeb; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003429}}
+  table tr > th {
+    font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003434}}
+  table td,
+  table th {
+    padding: 10px 15px;
+    font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/global\.scss}line{font-family:\00003438}}
+  table th {
+    width: 35%; }

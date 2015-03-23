@@ -1,0 +1,13 @@
+.holder
+  .cart
+    a.cart-title href="#open"
+      | Your Cart 
+      span= order.servings.count
+
+    .cart-window#open
+      = render order.servings, max_length: 25
+
+    a#closebtn href="#close"
+     | &times;
+     
+  = render 'orders/checkout_button',  order: order

@@ -1,0 +1,93 @@
+#checkout-order-review
+    h1
+        | Order Review <span>- Step 5 of 5</span>
+    p
+      - if flash[:alert].present?
+        .alert.alert-danger
+          a href="#" class=:close data-dismiss=:alert
+            | &times;
+          strong= flash[:alert]
+
+    p
+        | Almost done! We'll charge <strong>#{number_to_currency(@order.price)}</strong> to your card ending in #{current_user.billing.last_4} when you submit your order.
+    = form_tag checkout_path(:review), method: 'PUT' do
+        fieldset
+            ul.actions
+                li.primary
+                    = submit_tag "Submit your order"
+    section#delivery-info
+        div.address
+            h2
+                | Delivery Address
+            p
+                = @order.address.name
+                <br/>
+                = @order.address.street
+                <br/>
+                = @order.address.city_line
+                <br/>
+                = number_to_phone(@order.address.phone)
+
+        div.time
+            h2
+                | Delivery Time
+            p
+                / TODO: Fix format (should be "Thursday, September 5th between 3 PM and 5 PM")
+                = @order.delivery_time.date_and_time
+    section#recipes
+        h2 #{@order.recipes.count} recipes (#{@order.serving_amount.to_i} total plates)
+        ul
+            - @order.servings.each do |serving|
+                li.recipe-summary
+                    h3 = serving.recipe.name
+                    ul.data
+                        li.image
+                            noscript data-small=serving.recipe.photo.url(:thumb) data-medium=serving.recipe.photo.url(:medium) data-large=serving.recipe.photo.url(:extra_large)
+                                = image_tag serving.recipe.photo.url(:small), alt: serving.recipe.name
+                        li.quantity
+                            span.label Plates:
+                            span.quantity = serving.quantity.to_i
+                        li.price
+                            span.label Price per plate:
+                            span.price = display_price_per_serving(serving.quantity.to_i)
+                        li.total
+                            span.label Item total:
+                            span.price = display_item_total(serving.quantity.to_i)
+    - if !@order.order_products.empty?
+        section#pantry-items
+            - unless @order.order_products.pantry.blank?
+                table.pantry-items
+                    caption
+                        | Pantry Items
+                    = render partial: 'pantry', collection: @order.order_products
+            br
+            - unless @order.order_cashback_items.blank?
+                table.cashback-items
+                    caption
+                        | Cashback Items
+                    = render partial: 'cashback', collection: @order.order_cashback_items
+    section#order-total
+        table.order-total
+            tr.subtotal
+                th Subtotal:
+                td = number_to_currency(@order.subtotal)
+            tr.delivery
+                th Delivery:
+                td Free
+            tr.tax
+                th Tax:
+                td = number_to_currency(cart.taxes)
+            - if @order.used_promo
+              tr.promo
+                th Promo:
+                td= "-#{number_to_currency(@order.shopping_cart.discount_from_promo)}"
+            tr.grand-total
+                th Grand Total:
+                td = number_to_currency(@order.price)
+    p.lower
+        | We'll charge <strong>#{number_to_currency(@order.price)}</strong> to your card ending in #{current_user.billing.last_4} when you submit your order.
+    = form_tag checkout_path(:review), class: 'lower', method: 'PUT' do
+        fieldset
+            ul.actions
+                li.primary
+                    = submit_tag "Submit your order"

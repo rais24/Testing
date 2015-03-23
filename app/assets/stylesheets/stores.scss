@@ -1,0 +1,21 @@
+// for stores form
+
+@import '_variables';
+
+form.stores {
+    padding: 0;
+    
+    ul.data {
+
+        li.input {
+        }
+    }
+    ul.actions {
+        padding: 0 15px;
+
+        &:first-child {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+}

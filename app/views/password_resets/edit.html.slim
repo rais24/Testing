@@ -1,0 +1,22 @@
+h1 Reset Your Password
+section#login
+  - flash.each do |key, msg|
+    = content_tag :div, msg, :id => key
+
+
+  = simple_form_for @user, url: password_reset_path(params[:id]) do |f|
+    fieldset
+      ul.data
+        li.input.password.required
+            label for="user_password"
+                | Password <abbr title="(Required)">*</abbr>
+            p.label-note
+                | 8 to 20 letters or numbers, at least 1 number
+            = f.input_field :password, as: :password, required: true
+        li.input.password-confirmation.required
+            label for="user_password_confirmation"
+                | Verify Password <abbr title="(Required)">*</abbr>
+            = f.input_field :password_confirmation, as: :password, required: true
+      ul.actions
+        li.primary
+             = submit_tag "Reset Password"

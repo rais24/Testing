@@ -1,0 +1,29 @@
+<div class="headerMobileExpandedMenu hideOnDesktop hideOnTablet">
+    <div class="expandedMenuOverlay" onclick="toggleMobileMenu();">
+    </div>
+    <div class="expandedMenu">
+        <ul>
+            <li class="home">
+                <a href="/">Home</a>
+            </li>
+            <li class="howItWorks">
+                <a href="/#howItWorks">How It Works</a>
+            </li>
+            <li class="benefits">
+                <a href="/#benefits">Benefits</a>
+            </li>
+            <li class="pricing">
+                <%= link_to "Pricing", page_path('pricing') %>
+            </li>
+            <li class="menu">
+                <%= link_to "The Menu", recipes_path %>
+            </li>
+            <li class="signUp">
+                <%= link_to "Sign Up", zipcode_check_signup_path %>
+            </li>
+            <li class="signIn">
+                <a href="/account">Sign In</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<% content_for :header do %>
+	<script type="text/javascript"> if (!window.mstag) mstag = {loadTag : function(){},time : (new Date()).getTime()};</script> <script id="mstag_tops" type="text/javascript" src="//flex.msn.com/mstag/site/d7d7b681-64a3-4d6a-87e1-d5d4913f1f20/mstag.js"></script> <script type="text/javascript"> mstag.loadTag("analytics", {dedup:"1",domainId:"40005193",type:"1",revenue:"<%=@order.price%>",actionid:"271085"})</script> 
+	<noscript> 
+		<iframe src="//flex.msn.com/mstag/tag/d7d7b681-64a3-4d6a-87e1-d5d4913f1f20/analytics.html?dedup=1&domainId=40005193&type=1&revenue=<%=@order.price%>&actionid=271085" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"> </iframe> 
+	</noscript>
+<% end %>

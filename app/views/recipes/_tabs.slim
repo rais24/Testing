@@ -1,0 +1,49 @@
+ul#recipe-tabs.nav.nav-tabs.recipe-wrap
+  li.active
+    a href="#cooktime-m" data-toggle="tab"
+      i.icon-time
+  li
+    a href="#ingredients-m" data-toggle="tab"
+      i.icon-list
+  li
+    a href="#preparation-m" data-toggle="tab"
+      i.icon-food
+  li
+    a href="#nutrition-m" data-toggle="tab"
+      i.icon-heart
+ 
+.tab-content
+  #cooktime-m.tab-pane.active
+    p
+      | Prep time:&nbsp;
+      span
+        = resource.prep_time
+        | &nbsp;minutes
+    p
+      | Cook time:&nbsp;
+      span
+        = resource.cook_time
+        | &nbsp;minutes
+    p
+      | Total time:&nbsp;
+      span
+        = resource.prep_time + resource.cook_time
+        | &nbsp;minutes
+    p
+      | Family:&nbsp;
+      span
+        = pluralize(current_user.family_size, 'member')
+  #ingredients-m.tab-pane
+    = render 'recipes/portions', portions: recipe.portions
+
+  #preparation-m.tab-pane
+    - recipe.steps.each do |step|
+      p.step= step
+      
+  #nutrition-m.tab-pane.print-hide
+    - recipe.facts.each do |fact|
+      - if  (fact =~ /\d/)
+        li.p.nutrition=fact
+      - else
+        p
+        p.nutrition=fact

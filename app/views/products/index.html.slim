@@ -1,0 +1,31 @@
+.content
+  h1
+    | Listing store ingredients (#{collection.size})
+    = link_to 'New Store Ingredient', new_resource_path, class: 'button-action'
+
+  table.table.table-hover.ingredients
+    tr
+      th Brand and Item
+      th Friendly Name
+      th Confirmation Name
+      th Sku
+      th Sku Quantity
+      th Amount
+      th Unit
+      th Price
+      th
+    - collection.each do |ingredient|
+      tr
+        td.rip= ingredient.brand_and_item
+        td.rip= ingredient.friendly_name
+        td.rip= ingredient.confirmation_name
+        td.rip= ingredient.sku
+        td.rip= ingredient.sku_quantity
+        td.rip= ingredient.amount
+        td.rip= ingredient.unit
+        td.rip= number_to_currency(ingredient.price)
+        td.rip
+          = link_to('Edit', edit_product_path(ingredient)) << " "
+          = link_to("Delete", product_path(ingredient), method: 'DELETE')
+
+  = link_to 'New Store Ingredient', new_resource_path

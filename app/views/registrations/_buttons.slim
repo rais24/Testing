@@ -1,0 +1,4 @@
+.registration-actions
+  = f.submit submit_text, class: "button-action pull-right"
+  - unless step == :pantry
+    = button_to "Back", previous_wizard_path, class: "button-danger pull-right", disabled: !next_order.can_checkout?

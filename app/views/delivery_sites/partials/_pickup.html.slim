@@ -1,0 +1,15 @@
+p.pickup-date
+  | In 
+  span= time_ago_in_words(delivery.scheduled_for)
+  |  on 
+  span= delivery.scheduled_for.strftime("%B %d")
+  |  at 
+  span= delivery.scheduled_for.strftime("%I:%M %p")
+
+p.location
+  | From 
+  span= site.name
+
+= render 'delivery_sites/partials/location', site: site
+
+

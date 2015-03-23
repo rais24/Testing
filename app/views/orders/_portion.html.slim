@@ -1,0 +1,7 @@
+.line-item data-id=dom_id(portion)
+  = link_to portion.ingredient, class: 'line-item-thumb' do
+    img src=portion.photo.url(:thumb) alt=portion.name
+
+  = link_to portion.name.titleize, portion.ingredient, class: 'line-item-name'
+
+  span.line-item-quantity= portion.to_display_amount

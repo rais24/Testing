@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /bin/
+Disallow: /config/
+Disallow: /db/
+Disallow: /doc/
+Disallow: /lib/
+Disallow: /log/
+Disallow: /tmp/
+Disallow: /vendor/

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="charset" content="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fitly&trade; Responsive Style Guide</title>
+        <link rel="stylesheet" href="/ux/style-guide/css/reset.css" type="text/css" media="all">
+        <link rel="stylesheet" href="/ux/style-guide/css/global.css" type="text/css" media="all">
+    </head>
+    <body>
+        <header>
+            <a class="logo" href="/ux/style-guide">Fitly<span class="tm">&trade;</span></a>
+        </header>
+        <main>
+            <section id="summary">
+                <h1>
+                    Fitly Style Guide
+                </h1>
+                <p>
+                    This style guide serves as a record for Fitly's visual design requirements on the web. Please consult it during development to maintain visual consistency across various devices during the development cycle.
+                </p>
+                <p>
+                    If you don't see design specifications called out explicitly, just inspect the element with your browser's dev tools. If an element is missing entirely, please contact <a href="mailto:jay@fitly.org">Jay Sylvester</a> to have it added.
+                </p>
+            </section>
+            <section id="color-scheme">
+                <h2>
+                    Color Scheme
+                </h2>
+                <p>
+                    These colors are the foundation for elements that should attract the user's attention: navigational elements, section headers, form buttons, etc. They should serve as the basis for any gradients as well.
+                </p>
+                <p>
+                    Green should be used for navigation (site header, links, and buttons) and headers, orange for accents, and red for errors and warnings. Gradients should be reserved for the site header and buttons. Section headers should be flat.
+                </p>
+                <ul id="colors">
+                    <li class="light-green">
+                        rgb(129, 218, 27)
+                    </li>
+                    <li class="green">
+                        rgb(105, 184, 20)
+                    </li>
+                    <li class="dark-green">
+                        rgb(21, 147, 38)
+                    </li>
+                    <li class="orange">
+                        rgb(243, 160, 18)
+                    </li>
+                    <li class="red">
+                        rgb(224, 77, 36)
+                    </li>
+                </ul>
+            </section>
+            <section id="copy">
+                <h2>
+                    Headers and Body Copy
+                </h2>
+                <p>
+                    All headers are in Asap Bold typeface. First-level header styles (&lt;h1&gt;) will vary from page to page depending on content, but the default is 24px, dark grey (#6f6f6f). Second-level headers (&lt;h2&gt;) are 20px, white, with a dark green background that extends to the edges of the viewport.
+                </p>
+                <p>
+                    Default body copy is Helvetica/Arial/Sans Serif, 14px, black, with a line height of 1.5 (no units). Links within body copy should be <a href="#">dark green, bold, and underlined</a>. The underline should disappear on hover.
+                </p>
+            </section>
+            <section id="forms">
+                <h2>
+                    Forms
+                </h2>
+                <form id="form-example" action="index.html" method="post">
+                    <fieldset>
+                        <legend>
+                            Fieldset Legend - Default State
+                        </legend>
+                        <p>
+                            Some forms will have a paragraph of introductory copy beneath the &lt;legend&gt; that explains the purpose of the form.
+                        </p>
+                        <ul class="data">
+                            <li class="input email required">
+                                <label for="email">
+                                    E-mail Address <abbr title="(Required)">*</abbr>
+                                </label>
+                                <input type="email" id="email" name="email" value="jsmith@gmail.com" required>
+                            </li>
+                            <li class="input password required">
+                                <label for="password">
+                                    Password <abbr title="(Required)">*</abbr>
+                                </label>
+                                <p class="label-note">
+                                    8 to 20 letters or numbers, at least 1 number
+                                </p>
+                                <input type="password" id="password" name="password" value="password" required>
+                            </li>
+                            <li class="input text optional">
+                                <label for="text">
+                                    Optional Field
+                                </label>
+                                <input type="text" id="text" name="text" value="" required>
+                            </li>
+                            <li class="input textarea optional">
+                                <label for="textarea">
+                                    Comments
+                                </label>
+                                <textarea id="textarea" name="textarea" rows="5"></textarea>
+                            </li>
+                            <li class="input checkbox optional">
+                                <label for="checkbox">
+                                    You know you want to check this box and let us e-mail you every day
+                                </label>
+                                <input type="checkbox" id="checkbox" name="checkbox" value="true">
+                            </li>
+                        </ul>
+                        <ul class="actions">
+                            <li class="primary">
+                                <input type="button" name="primary2" value="Primary action">
+                            </li>
+                            <li class="primary">
+                                <a class="submit with-prompt" href="#"><span class="intro">Additional text to prompt the user</span> Primary action</a>
+                            </li>
+                            <li class="secondary">
+                                <a class="submit" href="#">Secondary action</a>
+                            </li>
+                            <li class="secondary">
+                                <a class="submit with-prompt" href="#">Secondary action <span class="exit">Additional text to prompt the user</span></a>
+                            </li>
+                            <li class="tertiary">
+                                <a href="#">Tertiary action</a>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
+                <form id="form-example" class="error" action="index.html" method="post">
+                    <fieldset>
+                        <legend>
+                            Fieldset Legend - Error State
+                        </legend>
+                        <p class="error">
+                            For MVP, error messages will be generated server-side and appear at the top of the form.
+                        </p>
+                        <ul class="data">
+                            <li class="input email required error">
+                                <label for="email2">
+                                    E-mail Address <abbr title="(Required)">*</abbr>
+                                </label>
+                                <input type="email" id="email2" name="email" value="jsmith@gmail.com" required>
+                            </li>
+                            <li class="input password required error">
+                                <label for="password2">
+                                    Password <abbr title="(Required)">*</abbr>
+                                </label>
+                                <p class="label-note">
+                                    8 to 20 letters or numbers, at least 1 number
+                                </p>
+                                <input type="password" id="password2" name="password" value="password" required>
+                            </li>
+                            <li class="input text optional">
+                                <label for="text2">
+                                    Optional Field
+                                </label>
+                                <input type="text" id="text2" name="text" value="" required>
+                            </li>
+                            <li class="input textarea optional">
+                                <label for="textarea2">
+                                    Comments
+                                </label>
+                                <textarea id="textarea2" name="textarea" rows="5"></textarea>
+                            </li>
+                            <li class="input checkbox optional">
+                                <label for="checkbox2">
+                                    You know you want to check this box and let us e-mail you every day
+                                </label>
+                                <input type="checkbox" id="checkbox2" name="checkbox" value="true">
+                            </li>
+                        </ul>
+                        <ul class="actions">
+                            <li class="primary">
+                                <input type="button" name="primary2" value="Primary action">
+                            </li>
+                            <li class="primary">
+                                <a class="submit with-prompt" href="#"><span class="intro">Additional text to prompt the user</span> Primary action</a>
+                            </li>
+                            <li class="secondary">
+                                <a class="submit" href="#">Secondary action</a>
+                            </li>
+                            <li class="secondary">
+                                <a class="submit with-prompt" href="#">Secondary action <span class="exit">Additional text to prompt the user</span></a>
+                            </li>
+                            <li class="tertiary">
+                                <a href="#">Tertiary action</a>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </form>
+            </section>
+            <section id="tables">
+                <h2>
+                    Tables
+                </h2>
+                <p>
+                    Tables should be used for displaying tabular data&mdash;never layout.
+                </p>
+                <p>
+                    A table with a caption/title, header cells, and footer:
+                </p>
+                <table>
+                    <caption>
+                        Table With Some Things In It
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>
+                                Header One
+                            </th>
+                            <th>
+                                Header Two
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Content Cell
+                            </td>
+                            <td>
+                                Content Cell
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Content Cell
+                            </td>
+                            <td>
+                                Content Cell
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Content Cell
+                            </td>
+                            <td>
+                                Content Cell
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Content Cell
+                            </td>
+                            <td>
+                                Content Cell
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">
+                                Footer cell with notes and whatever.
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <p>
+                    A table with a caption and side headers:
+                </p>
+                <table>
+                    <caption>
+                        Table With Other Stuff In It
+                    </caption>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    A table with no caption:
+                </p>
+                <table>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Header Cell
+                        </th>
+                        <td>
+                            Content Cell
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

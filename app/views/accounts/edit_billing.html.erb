@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <h1>Get Started with Fitly!</h1>
+    <div class="contentcontainer">
+      <div class="tab">
+        <div class="tab1"><a href="#" class="rightactive">1. <span>Sign Up</span></a></div>
+        <div class="tab1"><a href="#" class="active">2. <span>Billing Information</span></a></div>
+        <div class="tab1"><a href="#">3. <span>Delivery Information</span></a></div>
+      </div>
+      <!-- Billing Information -->
+      <%= form_tag(account_path, id:'billing_form', :method => :put) do %>
+        <div class="innerbody">
+            <div class="billing-container">
+              <h1>Card on file:</h1>
+              <div class="cardfile">
+                <div class="cardnumaber">
+                  <input id="cc" name="user[billing][cc]" type="text" pattern="[0-9]{13,16}" placeholder="1234-1234-1234-1234" value="<%= @user.billing.card_number%>" />
+                  <span><img src="/assets/mc_vs_accpt_h_023_gif.gif"/></span> </div>
+                <div class="exdate">
+                  <input type="text" name="user[billing][exdate]" placeholder="Expiration Date" value="<%= @user.billing.expiration_date%>"/>
+                </div>
+                <div class="ccvnum">
+                  <input type="text" name="user[billing][ccvnum]" placeholder="CVV" value="<%= @user.billing.card_code%>"/>
+                </div>
+              </div>
+              <div class="cardname">
+                <input type="text" name="user[billing][name]" placeholder="name on card" value="<%= @user.billing.name%>" />
+              </div>
+              <h1>Billing Address:</h1>
+              <div class="cardname">
+                <input type="text" name="user[billing][address]" placeholder="address" value="<%= @user.billing.address%>" />
+              </div>
+              <div class="cardname">
+                <input type="text" name="user[billing][city]" placeholder="city" value="<%= @user.billing.city%>"/>
+              </div>
+              <div class="styled-select short-catg">
+                <%= select_tag "user[billing][cancer]", options_for_select(us_states, @user.billing.state) %>
+              </div>
+              <div class="zipcode">
+                <input type="text" name="user[billing][zipcode]" placeholder="zip code" value="<%= @user.billing.zipcode%>"/>
+              </div>
+            </div>
+        </div>
+        <!-- Billing Information -->
+        <div class="back-nextbtn">
+          <div class="backbtn"><%= link_to "Back", edit_account_path(page_type: "plan") %></div>
+          <input type="submit" class="nextbtn" value="Next" />
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %>
+  
+</div>
+</body>
+</html>

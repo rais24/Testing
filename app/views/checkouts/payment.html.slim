@@ -1,0 +1,88 @@
+script src="https://js.stripe.com/v2/"
+
+javascript:
+  Stripe.setPublishableKey('#{Rails.configuration.x.stripe.public}')
+
+  jQuery(function($) {
+    $('#stripeForm').submit(function(event) {
+      var $form = $(this);
+
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+      Stripe.card.createToken($form, stripeResponseHandler);
+
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+  });
+
+  var stripeResponseHandler = function(status, response) {
+    var $form = $('#stripeForm');
+
+    if (response.error) {
+      // Show the errors on the form
+      $form.find('.payment-errors').text(response.error.message);
+      $form.find('button').prop('disabled', false);
+    } else {
+      // token contains id, last4, and card type
+      var token = response.id;
+      // Insert the token into the form so it gets submitted to the server
+      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+      // and submit
+      $form.get(0).submit();
+    }
+  };
+
+#checkout-payment
+    h1
+        | Payment Info <span>- Step 4 of 5</span>
+    - if @user.billing
+        p
+            | You’ll have the opportunity to review your order before we charge you.
+        p
+            | You can use your saved credit card, or you can enter a different one below.
+        = form_tag checkout_path(:payment), method: 'PUT', id: 'existing-cc' do
+            fieldset
+                ul.actions
+                    li.primary
+                        button id="saved_card" class="with-prompt" name="saved_card" type="submit" value="use_saved_card"
+                            span class="intro"
+                                | Use my saved credit card:
+                            | Ends in #{@user.billing.last_4}, expires #{@user.billing.expiration_month}/#{@user.billing.expiration_year}
+    - else
+        p
+            | After you provide your payment information, you'll have the opportunity to review your order before we charge you.
+    section#payment-form
+        = form_tag checkout_path(:payment), method: 'PUT', id: 'stripeForm' do
+            fieldset
+                - if @user.billing
+                    legend
+                        | Use a different card:
+                ul.data
+                    li.input.card-number.required
+                        label for="card_number"
+                            | Credit Card Number
+                        = text_field_tag :card_number, nil, name: nil, "data-stripe" => 'number', "autocomplete" => 'off'
+                    li.input.card-expiration.required
+                        label for="card_month"
+                            | Expiration Date
+                        / TODO: Month should be a 2-digit entry, not a string. Even better, month and year should be combined
+                        / into a single field that accepts MM/YYYY format. See wireframe 5.5, which is based on Stripe's example
+                        / payment form.
+                        = select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", "data-stripe" => 'exp-month'}
+                        = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", "data-stripe" => 'exp-year'}
+                    li.input.cvv.required
+                        label for="card_code"
+                            | CVC
+                        = text_field_tag :card_code, nil, name: nil, "data-stripe" => 'cvc'
+                    / TODO: This isn't in the wireframes, but I think we should ask them if we're
+                    / going to save or overwrite their currently saved payment info. Feel free to
+                    / comment out and mark as phase 2 if it's too much.
+                    /li.input.checkbox.save-payment-info.optional
+                    /    label for="save_payment_info"
+                    /        | Save this credit card so I can use it next time
+                    /    input type="checkbox"
+                        / = f.input_field :save_payment_info, as: :boolean, boolean_style: :inline, checked: false
+                ul.actions
+                    li.primary
+                        = submit_tag "Review your order"

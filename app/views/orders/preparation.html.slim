@@ -1,0 +1,26 @@
+h2 Ingredients You'll Need
+
+- @order.portions.each do |portion|
+  = "#{portion.to_display_amount} #{portion.name}"
+  br/
+
+h2 Here are your recipes
+
+- @order.servings.each do |serving|
+  - recipe = serving.recipe
+  section#preparation
+      = recipe.name
+      dl
+          dt Prep Time:
+          dd #{recipe.prep_time} minutes
+          dt Cook Time:
+          dd #{recipe.cook_time} minutes
+      ul.ingredients
+          - recipe.portions.each do |ingredient|
+              /TODO: get the correct display amount for each recipe in this order
+              li= "#{ingredient.to_display_amount(4)} #{ingredient.name}, #{ingredient.additional_instructions}"
+
+
+      ul.instructions
+          - recipe.steps.each do |step|
+              li = step

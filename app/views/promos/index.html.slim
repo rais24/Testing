@@ -1,0 +1,27 @@
+.content
+  h1 Promotional Codes
+  = link_to "Add New Code", new_promo_path
+
+
+  table.table.table-hover.promos
+    tr
+      th Code
+      th Starts On
+      th Ends On
+      th Quantity
+      th Quantity Used
+      th Active?
+      th Discount Amount
+      th Discount Percentage
+      th
+    - collection.each do |promo|
+      tr
+        td= promo.code
+        td= promo.starts_on
+        td= promo.ends_on
+        td= promo.quantity
+        td= promo.total_used
+        td= promo.active.to_s
+        td= number_to_currency(promo.discount)
+        td= promo.discount_percent
+        td= link_to 'Destroy', promo, method: :delete, data: { confirm: 'Are you sure?' }

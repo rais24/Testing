@@ -1,0 +1,577 @@
+/*-------------------
+Recipe Detail Styles
+-------------------*/
+@import '_variables';
+
+@media only screen {
+
+.recipes-controller.show-action {
+    #hero {
+        position: relative;
+        height: 215px;
+        padding-top: 0;
+        overflow: hidden;
+        border-top: 1px solid rgb(170,159,146);
+
+        &.new {
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                content: 'New!';
+                font-family: LatoBold;
+                padding: 10px;
+                text-align: center;
+                color: #fff;
+                background: #F15D22;
+                border-top: 1px solid #AD4319;
+                border-bottom: 1px solid #AD4319;
+                opacity: 0.9;
+            }
+        }
+
+        h1 {
+            position: absolute;
+            bottom: 0;
+            padding: 12px 35% 12px 15px;
+            background: none;
+            text-align: left;
+            line-height: 1.4;
+            @include linearGradient(none, bottom, rgba(44,43,36,0.9), rgba(44,43,36,0));
+            @include textShadow(0 0 4px rgb(0,0,0));
+        }
+        img {
+            width: 100%;
+            z-index: 1;
+        }
+        a.action {
+            @include smallButton;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            margin: 0;
+        }
+    }
+
+    &.csstransforms {
+        #hero {
+            &.new {
+                &:before {
+                    top: 7%;
+                    left: -40%;
+                    @include transform(rotate(-45deg));
+                }
+            }
+        }
+    }
+
+    #included-items,
+    #pantry-items,
+    #categories,
+    #preparation {
+        ul {
+            margin: 20px 15px;
+
+            li {
+                margin: 4px 0;
+            }
+        }
+    }
+    #summary {
+        color: rgb(52,46,43);
+
+        ul {
+            padding: 15px 0 20px;
+            background: rgb(94,58,86);
+            color: rgb(255,255,255);
+            text-align: center;
+
+            li {
+                display: inline-block;
+                margin-right: 15px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+                span.value {
+                    font-family: LatoBold;
+                }
+            }
+            li.prep-time {
+                display: block;
+                @include iconBeforeText(2.6, '\e63d');
+                text-align: center;
+                padding-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    #cart-form {
+        overflow: hidden;
+    }
+    #included-items ul,
+    #pantry-items ul,
+    #measurements ul.ingredients {
+        li {
+            margin-left: 20px;
+            list-style-type: square;
+        }
+    }
+    #preparation {
+        h2 {
+            position: relative;
+
+            a {
+                @include smallButton;
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                margin: 0;
+                line-height: 1;
+                color: rgb(255,255,255);
+            }
+        }
+        ul.instructions {
+            li {
+                margin: 10px 0;
+            }
+        }
+        dl {
+            margin: 20px 15px;
+        }
+    }
+    #nutrition {
+        table {
+            td {
+                text-align: right;
+            }
+        }
+    }
+    #prepview {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: 1200;
+        background: rgb(255, 255, 255) url('/assets/bg.jpg') top left repeat;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        @include transition('opacity 0.5s, left 0.5s');
+
+        &.on {
+            left: 0;
+            opacity: 1;
+            @include transition('opacity 0.5s, left 0.5s');
+        }
+        ul.actions {
+            text-align: center;
+
+            li {
+                display: inline-block;
+                padding: 15px 25px;
+            }
+        }
+        a.recipe-print {
+            @include iconBeforeText(3, '\e626');
+            color: rgb(156,61,62);
+        }
+        a.prepview-close {
+            @include iconBeforeText(3, '\e67b');
+            color: rgb(156,61,62);
+        }
+        img {
+            width: 88%;
+            margin: 0 auto;
+            padding: 15px;
+            background: rgb(255,255,255);
+            @include boxShadow(0px 3px 6px 0px rgb(140,140,140));
+        }
+        .recipe-name {
+            font-family: LatoBold;
+            font-size: 120%;
+            width: 88%;
+            margin: 25px auto;
+            line-height: 1.4;
+        }
+        & > p,
+        div.measurements,
+        div.instructions {
+            width: 88%;
+            margin: 25px auto;
+            line-height: 1.4;
+
+            a {
+                font-weight: bold;
+                color: rgb(156,61,62);
+            }
+        }
+        h3 {
+            font-family: LatoBold;
+            margin: 10px auto;
+        }
+        div.measurements {
+            ul {
+                li {
+                    margin-left: 18px;
+                    list-style-type: square;
+                }
+            }
+        }
+        div.instructions {
+            ul {
+                li {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    .recipes-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+    .recipes-controller.show-action {
+        #hero {
+            height: 250px;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 480px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 480px ) {
+    .recipes-controller.show-action {
+        #prepview {
+            img {
+                width: 44%;
+                padding: 10px;
+                float: left;
+                margin-left: 6%;
+            }
+            .recipe-name {
+                float: left;
+                width: 38%;
+                margin-left: 6%;
+                margin-right: 6%;
+                font-size: 100%;
+            }
+            & > p {
+                width: 40%;
+                float: left;
+                margin-top: 0;
+                margin-left: 6%;
+            }
+            div.measurements {
+                clear: both;
+                padding-top: 30px;
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    .recipes-controller.show-action {
+        h2 {
+            padding: 16px 25px;
+        }
+        #included-items,
+        #pantry-items,
+        #categories,
+        #preparation {
+            p {
+                margin: 25px;
+                padding: 0;
+                max-width: none;
+            }
+            ul {
+                margin: 25px;
+            }
+        }
+        #hero {
+            height: 400px;
+
+            h1 {
+                font-size: 150%;
+                padding: 20px 35% 30px 5%;
+            }
+            img {
+                margin-top: -50px;
+                // width: 125%;
+                // margin-left: -15%;
+            }
+            a.action {
+                right: 25px;
+                bottom: 25px;
+            }
+        }
+        &.csstransforms {
+            #hero {
+                &.new {
+                    &:before {
+                        left: -43%;
+                        padding: 15px;
+                        font-size: 120%;
+                    }
+                }
+            }
+        }
+        #summary {
+            float: left;
+            // width: 50%;
+            // @include linearGradient(none, top, rgba(242,236,225,1), rgba(242,236,225,0.3));
+            width: 50%;
+            margin: 5% 0 0 0;
+            min-height: 320px;
+            // @include borderRadius(8px);
+            @include boxShadow(3px 3px 8px 0px #999);
+            background: rgb(94,58,86);
+            color: rgb(255,255,255);
+
+            ul {
+                padding: 25px 0 0 0;
+                background: none;
+
+                li.prep-time {
+                    padding-bottom: 20px;
+                }
+                li {
+                    margin-right: 24px;
+                }
+            }
+            p {
+                margin-bottom: 25px;
+                font-size: 85%;
+            }
+        }
+        #cart-form {
+            float: left;
+            width: 50%;
+
+            form {
+                margin-top: 30px;
+            }
+            p {
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        #included-items {
+            float: left;
+            width: 50%;
+        }
+        #pantry-items {
+            float: left;
+            width: 50%;
+        }
+        #preparation {
+            clear: both;
+        }
+        #nutrition {
+            float: left;
+            width: 50%;
+        }
+        #categories {
+            float: left;
+            width: 50%;
+        }
+        #prepview {
+            ul.actions {
+                li {
+                    padding: 25px 50px;
+                }
+            }
+            img {
+                width: 36%;
+            }
+            #stats {
+                font-size: 80%;
+                position: relative;
+                left: 10%;
+            }
+            .recipe-name {
+                width: 46%;
+                margin-top: 2%;
+                font-size: 120%;
+            }
+            #prepview_instr {
+                float: left;
+                width: 100%;
+                margin-top: 2%;
+                font-size: 90%;
+            }
+            div.measurements,
+            div.instructions {
+                width: 86%;
+                font-size: 120%;
+            }
+            div.instructions {
+                margin-top: 8%;
+
+                ul {
+                    li {
+                        margin-bottom: 4%;
+                    }
+                }
+            }
+            // div.measurements {
+            //     ul {
+            //         overflow: hidden;
+
+            //         li {
+            //             float: left;
+            //             width: 44%;
+
+            //             &:nth-child(odd) {
+            //                 margin-right: 6%;
+            //             }
+            //         }
+            //     }
+            // }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    .recipes-controller.show-action {
+        #preparation {
+            overflow: hidden;
+        }
+        #measurements {
+            float: left;
+            width: 40%;
+        }
+        #instructions {
+            float: left;
+            width: 60%;
+        }
+        #nutrition {
+            width: 40%;
+        }
+        #categories {
+            width: 60%;
+        }
+    }
+}
+
+}
+
+
+@media only print {
+    @page {
+        size: portrait;
+    }
+
+    header,
+    footer,
+    #stats,
+    #breadcrumbs,
+    #cart-form,
+    #ingredients,
+    #categories,
+    #hero a.action.primary,
+    #hero img,
+    #summary p.description,
+    #prepview .recipe-name,
+    #preparation,
+    h2 {
+        display: none;
+    }
+    body {
+        font-size: 16px!important;        
+    }
+    #prepview p {
+        position: relative;
+        top: -120px;
+        font-size: 14px!important; 
+        text-align: justify;    
+        font-style: italic;
+    }
+    #prepview img {
+        position: absolute;
+        top: 85px;
+        width: 50%;
+        margin: 5%;
+        padding: 1.5%;
+        background: rgb(255,255,255);
+        border: 1px solid #999;
+    }
+    #summary {
+        position: absolute;
+        top: 115px;
+        left: 60%;
+        font-size: 18px!important;        
+        line-height: 2;
+    }
+    #prepview {
+        div.measurements {
+            position: relative;
+            top: -120px;
+            float: left;
+            width: 34%;
+            margin: 3% 0%;
+        }
+        div.measurements h3 {
+            font-weight: bold;
+        }
+        ul.measurements {
+            margin: 1% 0% 0% 0%;
+            font-size: 15px!important;        
+        }
+        div.instructions {
+            position: relative;
+            top: -120px;
+            float: left;
+            width: 64%;
+            margin: 3% 0%;        
+        }
+        div.instructions h3 {
+            font-weight: bold;
+        }
+        ul.instructions li {
+            text-align: justify;
+            font-size: 15px!important;        
+        }
+    }
+}

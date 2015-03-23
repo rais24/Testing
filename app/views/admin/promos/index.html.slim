@@ -1,0 +1,31 @@
+.content
+  h1 Promotional Codes
+  = link_to "Add New Code", new_admin_promo_path
+
+
+  table.table.table-hover.promos
+    tr
+      th Code
+      th Starts On
+      th Ends On
+      th Quantity
+      th Quantity Used
+      th Active?
+      th Discount Amount
+      th Discount Percentage
+      th
+      th
+    - collection.each do |promo|
+      tr
+        td= promo.code
+        td= promo.starts_on.strftime('%B %d %Y')
+        td= promo.ends_on.strftime('%B %d %Y')
+        td= promo.quantity
+        td= promo.total_used
+        td= promo.active.to_s
+        td= number_to_currency(promo.discount)
+        td= promo.discount_percent
+        td= link_to 'Edit', edit_admin_promo_url(promo)
+        td
+          - if promo.total_used == 0
+            = link_to 'Destroy', [:admin, promo], method: :delete, data: { confirm: 'Are you sure?' }

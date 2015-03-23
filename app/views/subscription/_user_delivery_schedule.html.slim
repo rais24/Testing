@@ -1,0 +1,22 @@
+= simple_form_for @subscription, url: wizard_path, :method => "PUT" do |subscr|
+    = subscr.fields_for :weekly_delivery_schedule, @subscription.weekly_delivery_schedule do |del|
+        fieldset
+            ul.data
+                li.input.select.date.required
+                    label for="subscription_delivery_time_delivery_date"
+                        | Delivery Date
+                    = del.select :delivery_day, @zone_days
+                li.input.select.time.required
+                    label for="subscription_delivery_time_time_slot"
+                        | Delivery Time
+                    = del.select :time_slot, []
+                li.input.textarea.comments.optional
+                    label for="subscription_comments"
+                        | Delivery Instructions / Comments
+                    p.label-note Use the side door, beware of dog, etc.
+                    = del.text_area :delivery_instructions, rows: 5
+            ul.actions
+                li.primary
+                    = submit_tag "Next Step: Payment Info"
+
+= render 'user_delivery_schedule_script'

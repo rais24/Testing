@@ -1,0 +1,77 @@
+ul.social-icons {
+  list-style: none;  
+  margin: auto;
+
+  li {
+    @include size(25);
+    @include inline-block;
+    @include transition(all 0.1s);
+
+    margin: auto 5px 5px auto;
+
+    vertical-align:top;
+      
+    opacity:0.3;
+    filter:alpha(opacity=30);
+    list-style:none;
+
+    &:hover {
+      opacity: 1.0;
+      filter: alpha(opacity=100);
+    }
+
+    a {
+      @include size(100%);
+      display: block;
+      text-indent: -9999px;
+      border-radius: 999px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &.facebook {
+      a {
+        background-color: #2c5293;
+        background-image: image-url('social/facebook.png');
+      }
+    }
+
+    &.twitter {
+      a {
+        background-color: #58a8dc;
+        background-image: image-url('social/twitter.png');
+      }
+    }
+    &.linkedin {
+      a {
+        background-color: #1378bd;
+        background-image: image-url('social/linkedin.png');
+      }
+    }
+    &.instagram {
+      a {
+        background-color: #517fa4;
+        background-image: image-url('social/instagram.png');
+      }
+    }
+    &.dribbble {
+      a {
+        background-color: #e56694;
+        background-image: image-url('social/dribbble.png');
+      }
+    }
+    &.skype {
+      a {
+        background-color: #4bc6f0;
+        background-image: image-url('social/skype.png');
+      }
+    }
+    &.rss {
+      a{
+        background-color: #f99f41;
+        background-image: image-url('social/rss.png');
+      }
+    }
+  }
+}

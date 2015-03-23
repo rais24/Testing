@@ -1,0 +1,117 @@
+.dashboard {
+  .recipe-tag {
+    display: none;
+  }
+}
+
+#locked {
+  @extend .row-fluid;
+
+  img {
+    @extend .hidden-phone;
+    margin: 50px auto;
+  }
+}
+
+#empty {
+  height: 300px;
+}
+
+#ineligible {
+  margin: auto;
+  width: 50%;
+}
+
+.zipcode {
+  @extend .center;
+  line-height: normal;
+  font: {
+    size: 72px;
+    family: $font-light;
+  }
+}
+
+.messaging {
+  p {
+    padding-bottom: 12px;
+  }
+}
+
+p.border-top {
+  margin-top: 15px;
+  padding: 15px 20px;
+  border-top: solid 1px #CCC;
+}
+
+img.copy-image {
+  height: 150px;
+  width: 170px;
+}
+
+.dashboard {
+  @extend .content;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .button-info,
+  .button-action {
+    @media (max-width: $break-large-landscape) {
+      margin: 10px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &.message {
+      padding: 5px;
+    }
+
+    &.lead {
+      font-size: 24px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      @include respond-to(small) {
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  .carousel {
+    .carousel-control {
+      background-color: $carousel-controls;
+    }
+  }
+  ol {
+    &.carousel-indicators {
+      li {
+        background-color: $carousel-inactive;
+        &.active {
+          background-color: $carousel-active;
+        }
+      }
+    }
+  }
+}
+
+small.billing {
+  padding-left: 15px;
+  a {
+    color: $theme-color;
+  }
+}
+
+p.share {
+  margin-top: 50px;
+  text-align: center;
+  span.links {
+    img {
+      @include size(40);
+    }
+  }
+}

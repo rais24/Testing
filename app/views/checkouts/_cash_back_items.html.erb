@@ -1,0 +1,29 @@
+<div class="cashBackItemsSection">
+    <% @cash_back_items.each do |item| %>
+        <div>
+            <div>
+                <label><input type="checkbox" id="cb_<%=item[:id]%>" /><%= item[:name] %></label>
+            </div>
+            <div>
+                <span class="cashBackItemCrossout">
+                    <% if item[:price] > 0 %>
+                        <%= number_to_currency(item[:price]) %>
+                    <% else %>
+                        Free
+                    <% end %>
+                </span>
+                &nbsp;
+                <span>
+                    <% if item[:price] > 0 %>
+                        <%= number_to_currency(item[:price].to_f/2) %>
+                    <% else %>
+                        Free
+                    <% end %>
+                </span>
+            </div>
+        </div>
+    <% end %>
+</div>
+<div class="cashBackTotal">
+    Cash Back Total: $<span id="cashBackTotalAmount">0.00</span>
+</div>

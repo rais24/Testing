@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="<%= @order.report_name %>">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Name</Data></Cell>
+        <Cell><Data ss:Type="String">Delivery Date</Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String"><%= @order.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= @order.user_name %> - <%= @order.user_family_size %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= @order.line_item_date %></Data></Cell>
+      </Row>
+      <Row>
+        <Cell><Data ss:Type="String">Item</Data></Cell>
+        <Cell><Data ss:Type="String">Amount</Data></Cell>
+      </Row>
+    <% Ingredient::CATEGORIES.each do |category| %>
+      <% portions = @order.portions.included.send(category) %>
+      <% unless portions.empty? %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= category.titleize %></Data></Cell>
+      </Row>
+      <% portions.each do |portion| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= portion.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= portion.to_display_amount.strip %></Data></Cell>
+      </Row>
+      <% end %>
+      <% end %>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

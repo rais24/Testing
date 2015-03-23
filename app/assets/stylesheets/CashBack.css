@@ -1,0 +1,226 @@
+﻿.pageHeader {
+    margin-top: 53px;
+}
+
+.cashBackHeaderSection {
+    background: url('/assets/CTA_bgimage.png') fixed no-repeat center center transparent;
+    background-size: cover;
+    padding: 40px 15px 120px 15px;
+    color: #fff;
+    position: relative;
+     -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .cashBackHeaderSection .congratulationsText {
+        font-family: Pacifico, script;
+        font-size: 312.5%;
+        text-align: center;
+    }
+
+    .cashBackHeaderSection .chanceToWinText {
+        font-family: Rokkitt, serif;
+        text-align: center;
+        font-size: 193.8%;
+    }
+
+    .cashBackHeaderSection .letUsKnowText {
+        font-size: 156.3%;
+        width: 700px;
+        margin: 40px auto 0 auto;
+    }
+
+    .cashBackHeaderSection .cashBackItemsSection {
+        font-size: 156.3%;
+        display: table;
+        margin: 15px auto 0 auto;
+    }
+
+        .cashBackHeaderSection .cashBackItemsSection > div {
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+            .cashBackHeaderSection .cashBackItemsSection > div:first-child {
+                margin-top: 0;
+            }
+
+            .cashBackHeaderSection .cashBackItemsSection > div > div {
+                float: left;
+            }
+
+                .cashBackHeaderSection .cashBackItemsSection > div > div:first-child {
+                    margin-right: 25px;
+                    width: 250px;
+                }
+
+    .cashBackHeaderSection .cashBackTotal {
+        font-family: Rokkitt, serif;
+        font-weight: 600;
+        text-align: center;
+        font-size: 193.8%;
+        margin-top: 15px;
+    }
+
+    /*.cashBackHeaderSection .continueSelecting {
+        background: url('/assets/continueCashBack.png') scroll no-repeat top left transparent;
+        width: 671px;
+        height: 167px;
+        position: absolute;
+        bottom: -70px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }*/
+
+    .continueSelecting {
+        background: url('/assets/continueCashBack.png') scroll no-repeat top left transparent;
+        width: 671px;
+        height: 167px;
+        position: relative;
+        top: -90px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+.pantryItemsHeader {
+    font-size: 156.3%;
+    max-width: 740px;
+    min-width: 273px;
+    /*margin: 40px auto 5px auto;*/
+    margin: -105px auto 5px auto;
+    padding: 0 15px;
+}
+
+.pantryItemsRunningOutText {
+    font-size: 125%;
+    max-width: 740px;
+    min-width: 273px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.pantryItemsSelectionSection {
+    width: 600px;
+    margin: 30px auto 40px auto;
+    font-size: 125%;
+}
+
+    .pantryItemsSelectionSection > div {
+        border-bottom: 1px solid #000;
+        overflow: hidden;
+        padding: 15px 0;
+    }
+
+        .pantryItemsSelectionSection > div:first-child {
+            border-top: 1px solid #000;
+        }
+
+        .pantryItemsSelectionSection > div > div {
+            float: right;
+            height: 30px;
+            line-height: 30px;
+        }
+
+            .pantryItemsSelectionSection > div > div:first-child {
+                float: left;
+                margin-right: 25px;
+            }
+
+.cashBackNextStep {
+    width: 377px;
+    margin: 0 auto 40px auto;
+}
+
+.cashBackItemCrossout {
+    text-decoration: line-through;
+    color: #e36967;
+}
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    .cashBackHeaderSection {
+        padding-bottom: 40px;
+    }
+
+        .cashBackHeaderSection .congratulationsText {
+            font-size: 243.8%;
+        }
+
+        .cashBackHeaderSection .cashBackItemsSection {
+            font-size: 100.3%;
+        }
+
+        .cashBackHeaderSection .chanceToWinText {
+            font-family: Rokkitt, serif;
+            text-align: center;
+            font-size: 153.8%;
+        }
+
+        .cashBackHeaderSection .cashBackTotal {
+            font-family: Rokkitt, serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 143.8%;
+            margin-top: 15px;
+        }
+
+        .cashBackHeaderSection .letUsKnowText {
+            font-size: 116.3%;
+            width: auto;
+            margin-top: 20px;
+        }
+
+        .cashBackHeaderSection .cashBackItemsSection > div > div:first-child {
+            margin-right: 25px;
+        }
+    .pantryItemsHeader {
+        margin: 25px auto 5px; 
+    }
+
+    .pantryItemsSelectionSection {
+        width: auto;
+        padding: 0 15px;
+    }
+
+        .pantryItemsSelectionSection > div > div {
+            height: auto;
+            line-height: normal;
+        }
+
+            .pantryItemsSelectionSection > div > div:first-child {
+                width: 250px;
+            }
+}
+
+/*Mobile*/
+@media all and (max-width: 430px) {
+    .cashBackNextStep {
+        width: auto;
+    }
+
+        .cashBackNextStep input[type="submit"].redButton {
+            font-size: 143.8%;
+            width: 284px;
+            margin: 0 auto;
+            display: block;
+        }
+
+    .pantryItemsHeader {
+        margin: 25px auto 5px; 
+    }
+}
+
+/*Mobile*/
+@media all and (max-width: 400px) {
+    .cashBackHeaderSection .cashBackItemsSection > div > div:first-child {
+        width: 135px;
+    }
+
+    .pantryItemsSelectionSection > div > div:first-child {
+        width: 175px;
+    }
+    .pantryItemsHeader {
+        margin: 25px auto 5px; 
+    }
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# cibuild
+
+set -e
+
+export RACK_ENV='test'
+
+script/bootstrap
+
+bin/rake db:test:prepare
+
+bin/rspec

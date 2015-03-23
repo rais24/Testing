@@ -1,0 +1,82 @@
+#checkout-order-confirmation
+    h1
+      = "Here is the order check for #{@order.id}"
+    p
+      = "This order was sent to #{@order.bpo_processor.email}." if @order.bpo_processor
+    p
+      = link_to "reprint pdf", pdf_order_path(@order), format: :pdf
+    h2
+      | The following are the recipes chosen, along with the the ingredients
+
+    - @order.servings.each do |serving|
+      br
+      = "#{serving.recipe.name} - #{serving.quantity} servings"
+      p
+        | The following ingredients are needed for this recipe (portions correct to plate amount)
+      ul.ingredients
+          - serving.recipe.portions.each do |ingredient|
+              li= "#{ingredient.to_display_amount( serving.quantity )} #{ingredient.name}, #{ingredient.additional_instructions}"
+
+
+    - unless @order.order_products.pantry.empty?
+
+      h2
+        | The following are the pantry items chosen
+
+      - @order.order_products.pantry.each do |pantry_item|
+        br
+        = "#{pantry_item.product.name}"
+
+    p
+      | The following is a table of items that will be sent to shoprite, with the amount needed,
+      |  the brand and item name, the approximate cost, and the units
+    table
+      tr
+        th Brand and Name
+        th Sku
+        th Item Description
+        th Sku Quantity
+        th Quantity
+        th Approx. Price
+        th Confirmation Match?
+      - @order.order_products.each do |si|
+        - if si.product
+          tr
+            td= si.brand_and_item
+            td= si.sku
+            td= si.confirmation_name
+            td= si.sku_quantity
+            td= si.quantity
+            td= number_to_currency(si.product.price * si.quantity)
+            td
+              - unless @order.order_confirmations.empty?
+                - name = @order.order_confirmations.last.ingredients.select{|ing| ing[:name] == si.confirmation_name}
+                - unless name.empty?
+                  - if name[0][:quantity] == si.quantity
+                    | Yes
+                - else
+                  | No
+
+    - @order.order_confirmations.each do |confirmation|
+      div style="border: 1px solid red; padding: 5px; margin: 5px;"
+        h2 These are the ingredients pulled from the confirmation email
+        table
+          tr
+            th Quantity
+            th Ingredient
+
+          - confirmation.ingredients.each do |row|
+            tr
+              td= row[:quantity]
+              td= row[:name]
+
+        h2 Missing Ingredients
+        - m = confirmation.order_check[:ingredients]
+        - m.each do |row|
+          = "#{row[:quantity]} : #{row[:name]}"
+          br/
+        h2 Extra Ingredients
+        - m = confirmation.order_check[:extras]
+        - m.each do |row|
+          = "#{row[:quantity]} : #{row[:name]}"
+          br/

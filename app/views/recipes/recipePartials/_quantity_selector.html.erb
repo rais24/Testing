@@ -1,0 +1,21 @@
+<div class="menuItemAdd">
+    <%= form_tag shopping_cart_items_path do %>
+        <input type="hidden" value="<%=recipe_index%>" name="shopping_cart_item[recipe_id]" />
+        <table>
+            <tr>
+                <td>
+                    <div class="selectContainer">
+                        <label />
+                        <%= select_tag "shopping_cart_item[quantity]", serving_quantities, {class: "shopping_cart_item_quantity", data: "#{recipe_index}"} %>
+                    </div>
+                </td>
+                <td>
+                    Total: <span id="subtotal_<%=recipe_index%>"><%=show_total_cart_price(cart)%></span>
+                </td>
+                <td>
+                    <input type="submit" class="redButton addButton" value="Add" />
+                </td>
+            </tr>
+        </table>
+    <% end %>
+</div>

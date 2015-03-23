@@ -1,0 +1,19 @@
+.content
+  h1.font-light Your Meats
+ 
+  p.copy The recipes you've selected will require the following items.
+  p.copy Do you need any of the following?
+
+  .row-fluid
+    .span6.included
+      h2 
+        | Included &nbsp;
+        i.icon-shopping-cart
+      #included-meats.portion-list
+        = render meats.included
+    .span6.excluded
+      h2 Excluded
+      #excluded-portions.portion-list
+        = render meats.excluded
+
+  =render 'buttons'

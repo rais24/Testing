@@ -1,0 +1,31 @@
+= simple_form_for @recipe, html: {class: 'recipe-form'} do |f|
+  = render 'layouts/form_errors', resource: @recipe
+
+  fieldset
+    ul.data
+      li.input.name.required
+        = f.input :name
+      li.input.name.required
+        = f.input :photo
+      li.input.description.required
+        = f.input :description, placeholder: "Describe it..."
+      li.input.prep_time.required
+        = f.input :prep_time
+      li.input.cook_time.required
+        = f.input :cook_time
+
+      li.input.preparation.required
+        = f.input :preparation, placeholder: "How do you cook it?"
+      li.input.nutrition.required
+        = f.input :nutrition, placeholder: "What are the nutritional facts?"
+      li.input.dietary_need
+        = f.input :dietary_need_list, placeholder: "what dietary needs does this dish meet? lose weight, manage type 2 diabetes or prediabetes"
+      li.input.main_dish
+        = f.input :main_dish_list, label: 'Preferences' , placeholder: "whats this recipes main dish? beef, etc"
+      li.input.preparation
+        = f.input :prep_list, placeholder: "prep facts - less than 30 minutes, no bake, etc."
+
+    ul.actions
+      li.primary
+        = f.input_field :meal, as: :hidden, value: 'dinner'
+        = f.submit nil, class: "button-action button-fill"

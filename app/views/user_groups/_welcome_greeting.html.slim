@@ -1,0 +1,3 @@
+- if current_user && current_user.user_group && current_user.user_group.welcome_greeting
+  .user-group-welcome-greeting
+    =  current_user.user_group.welcome_greeting.gsub(/{user.name}/,current_user.name).html_safe

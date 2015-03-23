@@ -1,0 +1,70 @@
+= render "emails/header"
+br
+br
+table align="center" border="0" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+    tr
+        td An order placed on shoprite.com contains errors that require correction before the order can be processed.
+br
+br
+table align="center" border="1" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+    tr
+        td width="150" valign="top" style="font-weight: bold;"
+            | Fitly Order ID:
+        td valign="top"
+            | #{@order.id}
+    tr
+        td valign="top" style="font-weight: bold;"
+            | Issue:
+        td valign="top"
+            | The order placed on the ShopRite web site has incorrect ingredients.
+    tr
+        td valign="top" style="font-weight: bold;"
+            | Instructions:
+        td valign="top"
+            | Please review the attached PDF from the Fitly order and correct the order on shoprite.com immediately. Details on the incorrect ingredients are below.
+
+- if @missing
+    br
+    br
+    br
+    table align="center" border="1" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+        caption style="font-weight: bold; font-size: 18px; text-align: left;"
+            | The following ingredients are missing from the order:
+            br
+            br
+        thead
+            th valign="top" width="100" Quantity
+            th valign="top" Item
+        - @missing.each do |row|
+            tr
+                td align="center" valign="top"
+                    | #{row[:quantity]}
+                td valign="top"
+                    | #{row[:name]}
+
+- if @extras
+    br
+    br
+    br
+    table align="center" border="1" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+        caption style="font-weight: bold; font-size: 18px; text-align: left;"
+            | The following ingredients are not part of this order and should be removed:
+            br
+            br
+        thead
+            th width="100" valign="top" Quantity
+            th valign="top" Item
+        - @extras.each do |row|
+            tr
+                td align="center" valign="top"
+                    | #{row[:quantity]}
+                td valign="top"
+                    | #{row[:name]}
+
+br
+br
+table align="center" border="0" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+    tr
+        td Please do not reply to this e-mail. It is automatically generated.
+    tr
+        td If you need help, please call <span style="font-weight: bold">1-844-GET-FITLY</span>.

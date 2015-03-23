@@ -1,0 +1,6 @@
+tr
+    - if pantry.price
+      th = "#{pantry.name}"
+      td
+        = number_to_currency(pantry.total_price)
+            

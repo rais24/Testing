@@ -1,0 +1,120 @@
+/* - BUTTONS
+------------------------------------------ */ 
+.button,
+button,
+input[type=submit],
+input[type=text]{
+  font-family:$font-bold,"Open Sans","Helvetica","Arial";
+  letter-spacing:0.06em;
+}
+
+/*
+ * button styling.
+ */
+.button{
+  @include transition(all 0.3s);
+  color:#FFFFFF;
+  font-size: 16px;
+  text-decoration: none;
+  text-align:center;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  
+  padding:12px 15px; //lines up with height of input[text]
+  margin-left:-2px; //flush up against input[text]
+  background:$action-color; // "bright red"
+  position:relative;
+  
+  display:-moz-inline-stack;
+  display:inline-block;
+  vertical-align:top;
+  zoom:1;
+  *display:inline;
+
+  outline:none;
+  border:1px solid $action-color;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+  border-bottom-right-radius:30px;
+  border-top-right-radius:30px;
+
+  &:hover {
+    color:#fff;
+    background:$action-hover;
+    border-color:$action-hover;
+  }
+
+  &:active {
+    @include transition(none);
+  }
+}
+
+.button-blue {
+  background-color: #0E90D2;
+  border:1px solid #0E90D2;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+span.button-shadow{
+  display:block;
+  box-shadow: 0 5px 0 #db8b3c;
+  border-radius:6px;
+}
+span.button-holder{
+  display:-moz-inline-stack;
+  display:inline-block;
+  vertical-align:top;
+  zoom:1;
+  *display:inline;
+  
+  background:rgba(0,0,0,0.07);
+  
+  padding:6px 6px 11px 6px;
+  width:auto;
+  
+  border-radius:8px;   
+  box-shadow:inset 0 1px 0 rgba(0,0,0,0.1), 0 1px 0 #fff;
+}
+
+#subscribe {
+  @include position(relative, 0 0 0 50%);
+  margin-left:-200px;
+  padding:15px;
+  text-align:left;
+  background:#EEE;
+  width:400px;
+  border-radius: 5px;
+  border: 1px solid #BDBDBD;
+  margin-bottom:300px;
+
+  button {
+    @include linear-gradient(left top, left bottom, from(#94f266), to(#62cc58));
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display:block;
+    color: #076935;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #55cc3d;
+    box-shadow:
+      0 1px 3px rgba(000,000,000,0.5),
+      inset 0 0 1px rgba(255,255,255,1);
+    text-shadow:
+      0 -1px 0 rgba(000,000,000,0.1),
+      0 1px 0 rgba(255,255,255,0.3);
+
+      &:hover {
+        @include linear-gradient(linear, left top, left bottom, from(#b1ed93), to(#5de051));
+        color: #0a6635;
+        box-shadow:
+          0 1px 3px rgba(000,000,000,0.5),
+          inset 0 0 1px rgba(255,255,255,1);
+      }
+
+      &:active {
+        @include linear-gradient(linear, left top, left bottom, from(#8aeb59), to(#2abd1c));
+        color: #0a6635;
+        box-shadow:
+          0 1px 3px rgba(000,000,000,0.2),
+          inset 0 0 1px rgba(255,255,255,0.2);
+      }
+  } 
+} 

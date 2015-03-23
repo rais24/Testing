@@ -1,0 +1,59 @@
+$footer-height: 159px;
+
+$content-width: 1110px;
+$content-padding: 30px;
+
+$break-x-large-landscape: 1200px;
+$break-large-landscape: 979px;
+$break-large-portrait: 768px;
+$break-medium-landscape: 600px;
+$break-small-landscape: 480px;
+$break-small-portait: 320px;
+
+$font-light: "VAGRoundedStd-Light";
+$font-thin: "VAGRoundedStd-Thin";
+$font-bold: "VAGRoundedStd-Bold";
+
+// Navigation
+// ----------------------------
+$theme-color: #67ac96;
+$light-theme-color: #81cbb3;
+$dark-theme-color: #1e6550;
+$call-to-action: #E01B1B;
+
+$action-color: #00A84E;
+$action-color-dark: darken($action-color, 5%);
+$action-color-light: lighten($action-color, 5%);
+
+$danger-color: #FB5D75;
+$danger-color-dark: darken($danger-color, 5%);
+$danger-color-light: lighten($danger-color, 5%);
+
+$info-color: #8EB6DC;
+$info-color-dark: darken($info-color, 5%);
+$info-color-light: lighten($info-color, 5%);
+
+// The color of the active text
+$nav-active: $theme-color;
+// The color of the inactive text
+$nav-inactive: lighten($nav-active, 15%);
+
+// Registration
+// ----------------------------
+// In the registration wizard
+// Label of the active task
+$registration-active: #cbb9b2;
+// Labels of completed tasks
+$registration-complete: $nav-active;
+// Labels of future tasks
+$registration-pending: gray;
+
+$carousel-active: $nav-active;
+$carousel-inactive: $nav-inactive;
+$carousel-controls: $nav-active;
+
+// Bootstrap Overrides
+$navbarLinkBackgroundActive: transparent;
+$navbarLinkColor: lighten($theme-color, 15%);
+$navbarLinkColorHover: $theme-color;
+$navbarLinkColorActive: $navbarLinkColorHover;

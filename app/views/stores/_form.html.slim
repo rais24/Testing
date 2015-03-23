@@ -1,0 +1,21 @@
+= simple_form_for @store, html: {class: 'stores'} do |f|
+  = render 'layouts/form_errors', resource: @store
+
+  fieldset
+    ul.data
+      li.input.name.required
+        = f.input :name, placeholder: "Store Name"
+      li.input.code
+        = f.input :code, placeholder: "Store Code"
+      li.input.store_website.required
+        = f.input :store_website, placeholder: "Store Website"
+      li.input.store_email.required
+        = f.input :store_email, placeholder: "Store Email"
+      li.input.store_password
+        = f.input :store_password, placeholder: "Password"
+      li.input.remote_printer_email
+        = f.input :remote_printer_email, placeholder: "Printer Email"
+
+    ul.actions
+      li.primary
+        = f.submit class: "button-action"

@@ -1,0 +1,24 @@
+.content
+  h1 Delivery Sites
+
+  table.table.table-hover
+    tr
+      th 
+      th Name
+      th Promo code
+      th Members
+      th Address
+      th
+
+    - collection.each do |site|
+      tr
+        td= image_tag site.logo(:medium), class: "thumb-small"
+        td= link_to site.name, site
+        td= site.promo_code
+        td= site.users.size
+        td= site.address
+        td= link_to 'Edit', edit_resource_path(site)
+
+  br
+
+  = link_to 'New Delivery Site', new_resource_path

@@ -1,0 +1,14 @@
+<% @pantry_items.each do |item| %>
+    <div>
+        <div>
+            <label><input type="checkbox" id="pi_<%=item[:id]%>" /><%= item[:name] %></label>
+        </div>
+        <div>
+            <% if item[:price] > 0 %>
+                <%= number_to_currency(item[:price]) %>
+            <% else %>
+                Free
+            <% end %>
+        </div>
+    </div>
+<% end %>

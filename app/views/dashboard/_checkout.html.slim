@@ -1,0 +1,20 @@
+- if next_order.site
+  = render partial: 'orders/upcoming_order', object: next_order
+
+- if next_order.can_checkout? && current_user.billing.blank?
+  = render 'billing_prompt'
+
+- %w(current_week next_week last_week).each do |week|
+    - unless recipes = Recipe.send(week) and recipes.empty?
+      h1.font-bold.slim= week.humanize.titleize
+
+      = render 'recipes/recipe_row', recipes: recipes.dinners, id: "#{week}_dinners", label: 'Dinners'
+
+      = render 'recipes/recipe_row', recipes: recipes.lunches, id: "#{week}_lunches", label: 'Lunches'
+
+      = render 'recipes/recipe_row', recipes: recipes.desserts, id: "#{week}_desserts", label: 'Healthy Desserts'
+
+- if next_order.charge
+  = render 'edit_buttons'
+- else
+  = render 'checkout_buttons'

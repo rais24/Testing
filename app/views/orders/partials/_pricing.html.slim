@@ -1,0 +1,15 @@
+table.table.table-hover
+  tr
+    th Recipe
+    th Servings
+    th Price
+
+  - order.servings.each do |serving|
+    tr
+      td=link_to serving.recipe.name, serving.recipe
+      td=serving.quantity.to_i
+      td=number_to_currency(serving.price)
+  tr
+    td
+    td.total Total:
+    td=number_to_currency(order.price)

@@ -1,0 +1,275 @@
+$cta-gradient-start: #FF494F;
+$cta-gradient-end: #BE0A26;
+
+/* - FORMS
+------------------------------------------ */
+input, textarea, select{
+  color:#999;
+  font-size:16px;
+  margin-bottom:1em;
+  display:inline;
+  border:1px solid #BABABA;
+  border-right:none;
+  border-top-left-radius:30px;
+  border-bottom-left-radius:30px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.05),inset 0 2px 0 rgba(0,0,0,0.03);
+
+  &:focus {
+    color:#444;
+    outline:none;
+  }
+
+  &.required {
+    background-image:image-url('asterix.png');
+    background-repeat:no-repeat;
+    background-position:right 9px;
+  }
+}
+
+.middle {
+  margin: auto;
+}
+
+a.cta {
+  display: block;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-family: $font-bold;
+  color: #ffffff;
+  font-size: 35px;
+  padding: 28px;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow:inset 0 -5px 0 #3c0709;
+  text-shadow: 1px 1px 2px #000000;
+  -webkit-background-size: 100% 200%;  
+    -moz-background-size: 100% 200%;  
+  @include linear-gradient( to top, $cta-gradient-end, $cta-gradient-start, $fallback: $call-to-action );
+  @include transition( all 0.4s );
+
+  &:hover {
+    background-position: 0 102%;  
+  }
+
+  @media (max-width: $break-medium-landscape) {
+    font-size: 22px;
+    padding: 16px;
+  }
+
+  @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-portrait) {
+  }
+
+  @media (min-width: $break-large-portrait + 1px) and (max-width: $break-x-large-landscape) {
+  }
+
+  @media (min-width: $break-x-large-landscape + 1px) {
+  }
+}
+
+// Email
+.subscribe {
+  input {
+    @media (max-width: $break-medium-landscape) {
+      font-size: 13px
+    }
+
+    @media (max-width: $break-large-portrait - 1px) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $break-large-portrait) {
+      font-size:32px;
+    }
+
+    @media (min-width: $break-x-large-landscape) {
+      font-size:22px;
+    }
+  }
+
+  input[type=text], input[type=email]{
+    width: 330px;
+    padding: 12.5px 15px;
+    font-weight: bold;
+    position:relative;
+
+    @media (min-width: $break-x-large-landscape) {
+      width:240px;
+    }
+
+    @media (max-width: $break-large-portrait) {
+      width: 270px;
+    }
+
+    @media (min-width: $break-medium-landscape) and (max-width: $break-medium-landscape) {
+      width: 165px;
+    }
+
+    @media (max-width: $break-medium-landscape) {
+      width: 145px;
+    }
+  }
+}
+
+input[type=button], input[type=submit] {
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+}
+
+#eventcode {
+  input {
+    font-size: 13px;
+
+    &[type=text] {
+      font-family: $font-light,"Open Sans","Helvetica","Arial";
+      padding: 13px 10px;
+
+      width:115px;
+      @media (max-width: $break-large-portrait) {
+        width: 105px;
+        font-size: 12px;
+      }
+
+      @media (max-width: $break-medium-landscape) {
+        width: 205px;
+        font-size: 12px;
+      }
+    }
+
+    &[type=submit] {
+
+    }
+  }
+
+  .button {
+    background-color:$blue;
+    border-color:$blue;
+
+    &:hover {
+      border-color:$darkblue;
+      background-color:$darkblue
+    }
+  }
+}
+
+form {
+  .error {
+    color:red;
+    font-style:italic;
+  }
+
+  label{
+    font-style:normal;
+    display:block;
+    margin:0 0 0.5em 0;
+    font-size:13px;
+  }
+  input.date-time{
+    background-image:image-url('clock-icon.png');
+    background-repeat:no-repeat;
+    background-position:right center;
+  }
+
+  select{
+    @include linear-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#ececec));
+    background:#F8F8F8;
+    width:290px;
+    padding:10px;
+    text-shadow: 0 1px 0 #FFF;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,1);
+
+    option{
+      text-shadow:none;
+    }
+  }
+
+  textarea{
+    @include size(568 150);
+    padding:10px;
+    font-size:14px; 
+  }
+  button{
+    display:inline;
+    &:hover {
+      cursor:pointer;
+    }
+  }
+}
+
+/* - BUTTONS
+------------------------------------------ */ 
+.button,
+button,
+input[type=submit],
+input[type=text]{
+  font-family:$font-bold,"Open Sans","Helvetica","Arial";
+  letter-spacing:0.06em;
+}
+
+/*
+ * button styling.
+ */
+.button{
+  $border-radius: 30px;
+
+  @include transition(all 0.3s);
+  color:#FFFFFF;
+  font-size:16px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  
+  padding:12px 15px; //lines up with height of input[text]
+  margin-left:-2px; //flush up against input[text]
+  background:$action-color; // "bright red"
+  position:relative;
+  
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+
+  outline: none;
+  border: 1px solid $action-color;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom-right-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+
+  &:hover {
+    color:#fff;
+    background:$action-hover;
+    border-color:$action-hover;
+  }
+
+  &:active {
+    @include transition(none);
+  }
+}
+
+.button-blue {
+  background-color: #0E90D2;
+  border:1px solid #0E90D2;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+span.button-shadow{
+  display:block;
+  box-shadow: 0 5px 0 #db8b3c;
+  border-radius:6px;
+}
+span.button-holder{
+  display:-moz-inline-stack;
+  display:inline-block;
+  vertical-align:top;
+  zoom:1;
+  *display:inline;
+  
+  background:rgba(0,0,0,0.07);
+  
+  padding:6px 6px 11px 6px;
+  width:auto;
+  
+  border-radius:8px;   
+  box-shadow:inset 0 1px 0 rgba(0,0,0,0.1), 0 1px 0 #fff;
+}

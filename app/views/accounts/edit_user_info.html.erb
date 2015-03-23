@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <%= javascript_include_tag "rails.validations", "rails.validations.simple_form" %>
+  <script type="text/javascript">
+      $(function(){
+      
+        $('input:radio').screwDefaultButtons({
+          image: 'url("/assets/radiovSmall.jpg")',
+          width: 25,
+          height: 25
+        });
+        
+        $('input:checkbox').screwDefaultButtons({
+          image: 'url("/assets/checkboxvSmall.jpg")',
+          width: 28,
+          height: 28
+        });
+
+      });
+  </script>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <h1 class="h1-float-left"><a href="/account">< Back to Dashboard</a></h1>
+    <div class="contentcontainer">
+      <%= simple_form_for @user, url: account_path, :validate => true, :method => "PUT" do |f| %>
+        <div class="innerbody"><br />
+          <div style="width:100%; height:1px;"></div>
+          <h1>Edit Personal Information</h1>
+            <div class="signuppage-form">
+                <div class="leftdetails">
+                  <div class="fix-height">
+                    <div class="textname">First name</div>
+                    <div class="inputfield">
+                      <%= f.input_field :first, placeholder: "First Name", value: @user.first, required: true %>
+                    </div>
+                  </div>
+                  <div class="fix-height">
+                    <div class="textname">Last name</div>
+                    <div class="inputfield">
+                      <%= f.input_field :last, placeholder: "Last Name", value: @user.last, required: true %>
+                    </div>
+                  </div>
+                  <div class="fix-height">
+                    <div class="textname">Email</div>
+                    <div class="inputfield">
+                      <%= f.input_field :email, placeholder: "Email", value: @user.email, required: true %>
+                    </div>
+                  </div>
+                  <div class="fix-height">
+                    <div class="textname">Password</div>
+                    <div class="inputfield">
+                      <%= f.input_field :password, placeholder: "password", required: true, value: @user.password %>
+                    </div>
+                  </div>
+                  <div class="fix-height">
+                    <div class="textname">Confirm password</div>
+                    <div class="inputfield">
+                      <%= f.input_field :password_confirmation, placeholder: "password confirmation", required: true, value: @user.password_confirmation %>
+                    </div>
+                    </div>
+                <div class="fix-height">
+                <div>Zip code</div>
+                <div class="inputfield">
+                  <%= f.input_field :zipcode, placeholder: "zip code", required: true, value: @user.zipcode %>
+                </div>
+                </div>
+              </div>
+              <div class="rightdetails">
+                <div class="fix-height">
+                  <div class="textname">Height</div>
+                  <div class="heightdiv">
+                    <div class="height">
+                      <%= f.input_field :height_ft, placeholder: "5", required: false, value: @user.height_in_feet %>
+                      </div>
+                    <div class="text">Feet</div>
+                    <div class="height">
+                      <%= f.input_field :height_inch, placeholder: "8", required: false, value: @user.height_in_inches %>
+                    </div>
+                    <div class="text">Inches</div>
+                  </div>
+                </div>
+                <div class="fix-height2">
+                  <div class="weight-gender">
+                    <div class="innerdiv">
+                      <div class="text">Weight (in lbs)</div>
+                      <div class="weight">
+                        <input placeholder="200" type="text"/>
+                      </div>
+                    </div>
+                    <div class="innerdiv">
+                      <div class="text">Gender</div>
+                      <div style="overflow:hidden; margin:0px; padding:0px;">
+                        <input type="radio" name="ex1" id="ex1_a">
+                        <label for="ex1_a">Male</label>
+                      </div>
+                       <div style="overflow:hidden; margin:0px; padding:0px;">
+                        <input type="radio" name="ex1" id="ex1_b">
+                        <label for="ex1_b">Female</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="fix-height">
+                  <div class="textname2">Date of birth</div>
+                  <div class="inputfield">
+                    <input type="text" placeholder="02/02/1960" name="height"  />
+                  </div>
+                </div>
+                
+                <div class="fix-height">
+                  <div class="textname2">Invite code (optional)</div>
+                  <div class="inputfield">
+                    <input type="text" placeholder="76638" name="height"   />
+                  </div>
+                </div>
+                <div class="fix-height">
+                  <div class="textname2">Practitioner code (optional)</div>
+                  <div class="inputfield">
+                    <input type="text"  placeholder="183749" name="height" />
+                  </div>
+                </div>
+                <div class="fix-height">
+                    <div class="textname">Insurance Provider*:</div>
+                    <div class="styled-select medium-catg">
+                      <%= select_tag "signup_request[insurer]", insurance_providers, include_blank: true, prompt: 'Please select provider', style: "margin: 0" %>
+                    </div>
+                </div>
+              </div>
+              <div class="lasttop">Would you be interested in speaking to a registered dietitian in your area?</div>
+              <div class="lastbtn">
+                <div class="yes-no">
+                  <input type="radio" name="ex2" id="ex1_a">
+                  <label for="ex1_a">Yes</label>
+                </div>
+                <div class="yes-no">
+                  <input type="radio" name="ex2" id="ex1_b">
+                  <label for="ex1_b">No</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="ex2_a" id="ex2_a">
+                  <label for="ex2_a">Send me Fitly’s latest recipes each week!</label>
+                </div>
+              </div>
+            </div>
+          <div class="footertop"><b>* To take advantage of Fitly’s dietetic services, you must provide proof of insurance.</b> <br>
+            By creating an account, you confirm that you have read and agreed to our <a href="#">Terms of
+            Service</a>,<br>
+            which includes our <a href="#">Substitution Policy</a>, and our <a href="#">Privacy Policy</a>.</div>
+        </div>
+        <div class="back-nextbtn2">
+          <div class="backbtn">
+            <input type="submit" value="Save Personal Information" />
+          </div>
+          <div class="canclebtn"> <a href="/account">Cancel</a></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %>  
+  
+</div>
+</body>
+</html>

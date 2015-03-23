@@ -1,0 +1,114 @@
+@mixin color-button($name, $color, $hover-color, $disabled-color) {
+  .button-#{$name},
+  a.button-#{$name},
+  input.button-#{$name},
+  button.button-#{$name} {
+    @extend .button-accent;
+
+    background-color: $color;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &.disabled,
+    &[disabled] {
+      background-color: $disabled-color;
+    }
+  }
+}
+
+@mixin create-button($name) {
+  .button-#{$name},
+  a.button-#{$name},
+  input.button-#{$name},
+  button.button-#{$name} {
+    @content;
+  }
+}
+
+.button,
+a.button,
+input.button,
+button.button {
+  display: block;
+  padding: 20px;
+  line-height: 0;
+  box-shadow: inset 0 -2px 0 #3c0709;
+
+  font: {
+    family: $font-thin;
+    size: 16px;
+  }
+
+  text: {
+    align: center;
+    decoration: none;
+  }
+
+  border: {
+    radius: 5px;
+    color: transparent;
+  }
+
+  &.active,
+  &:active {
+    box-shadow: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-image: none;
+    opacity: 0.65;
+    box-shadow: none;
+  }
+}
+
+.stacked-buttons {
+  .button:last-child {
+    margin-top: 5px;
+  }
+}
+
+@include create-button(accent) {
+  @extend .button;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
+}
+
+@include create-button(fill) {
+  width: 100%;
+}
+
+@include create-button(large) {
+  padding: 46px;
+
+  font: {
+    size: 46px;
+    family: $font-light;
+  }
+
+  @include respond-to(small) {
+    padding: 40px;
+    font-size: 40px;
+  }
+}
+
+@include create-button(small) {
+  padding: 14px;
+
+  font: {
+    size: 14px;
+    family: $font-light;
+  }
+}
+
+@include color-button(action, $action-color, $action-color-dark, $action-color-light);
+
+@include color-button(danger, $danger-color, $danger-color-dark, $danger-color-light);
+
+@include color-button(info, $info-color, $info-color-dark, $info-color-light);

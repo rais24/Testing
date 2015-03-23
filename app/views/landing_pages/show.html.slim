@@ -1,0 +1,58 @@
+= render "landing_pages/header"
+
+#headerCarousel.carousel.slide
+  .carousel-inner
+    .item.active
+      .carousel-caption
+        h1 
+      	  | Get Ready to Cook Some Awesome!
+      	  small style='color: white;'
+        		| &#8482;
+        .zip-form
+          p
+            | Enter Your Zip Code
+          = form_tag "/landing_pages", id: 'zip-form', remote: true do
+            = text_field_tag 'zipcode'
+            br/
+            = submit_tag 'Sign Up', class: 'btn btn-primary'
+
+#zip-confirmed.modal.second-form.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        p
+          | Great news!  Looks like we deliver to your area.  Enter your email address to continue.
+        = form_tag mailing_list_users_path, id: 'email-yes', class: 'mailing-form', remote: true
+          = hidden_field_tag 'user[zipcode]', '', class: 'user_zipcode'
+          = hidden_field_tag 'user[found]', 'yes'
+          = text_field_tag 'user[email]', nil, placeholder: "Email Address"
+          = submit_tag 'Submit', class: 'btn btn-primary'
+          
+#zip-not-found.modal.second-form.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        p
+          | Bummer! Looks like we're not delivering in your area. Enter your email address and we'll let you know when we are.
+        = form_tag mailing_list_users_path, id: 'email-no', class: 'mailing-form', remote: true
+          = text_field_tag 'user[email]', nil, placeholder: "Email Address"
+          = hidden_field_tag 'user[zipcode]', '', class: 'user_zipcode'
+          = hidden_field_tag 'user[found]', 'no'
+          = submit_tag 'Submit', class: 'btn btn-primary'
+
+#mailing-list-submit.modal.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+          | &times;
+        h4 class="modal-title"
+          | Thanks for Signing Up!
+      .modal-body
+        p
+          | Please check your inbox for our follow up email.
+      .modal-footer
+        button type="button" class="btn btn-default" data-dismiss="modal"
+          | Close
+
+= render "signup/footer"

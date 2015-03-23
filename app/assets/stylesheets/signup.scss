@@ -1,0 +1,162 @@
+/*-------------------
+Signup Styles
+-------------------*/
+@import '_variables';
+
+.signup-controller.new-action {
+    #signup-queue {
+        h1 {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+    &.create-action,
+    &.complete-action,
+    &.update-action {
+        form {
+            margin-top: 50px;
+
+            fieldset ul.data li.input.subscribe label {
+                padding-top: 9px;
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    .signup-controller.new-action {
+        .signup-form>p {
+            margin-top: 15px;
+        }
+
+        .edit_user,
+        .new_signup_inquiry {
+            max-width: none;
+            padding: 0 15px;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 500px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 500px ) {
+    .signup-controller.new-action {
+        #get-started {
+            margin: auto;
+        }
+
+        .signup-form>p,
+        .edit_user,
+        #signup-queue li.email {
+            margin: 15px auto 0;
+            width: 500px;
+        }
+
+        /* Not available */
+        #signup-queue {
+            form {
+                margin-top: 0;
+            }
+            &>p {
+                width: 500px;
+                margin: 25px auto;
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    .signup-controller.new-action {
+        #get-started {
+            width: 720px;
+            position: static;
+
+            .data {
+                width: 50%;
+                float: left;
+            }
+
+            .actions {
+                width: 40%;
+                float: right;
+                margin-top: 11px;
+            }
+
+            p:last-child {
+                text-align: center;
+            }
+        }
+
+        .signup-form {
+            overflow: hidden;
+
+            &>p {
+                text-align: center;
+            }
+
+            .skip {
+                float: left;
+                width: 50%;
+                margin: 50px auto 0;
+            }
+
+            form {
+                float: right;
+                width: 50%;
+                border-left: 1px solid #efefef;
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    .signup-controller.new-action {
+        #signup-queue {
+            &>p {
+                width: 750px;
+            }
+
+            form {
+                fieldset {
+                    margin: auto;
+                    width: 750px;
+                }
+                
+                ul.data {
+                    float: left;
+                }
+                
+                ul.actions {
+                    float: right;
+                    width: 200px;
+                }
+            }
+        }
+    }
+}

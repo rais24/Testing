@@ -1,0 +1,28 @@
+= simple_form_for resource, html: { class: "delivery-site" } do |f|
+  = render 'layouts/form_errors', resource: resource
+
+  .row-fluid
+    .span6
+      = f.text_field :name, placeholder: "Name it", class: "large"
+    .span6
+      = f.text_field :promo_code, placeholder: "Promotional Code", class: "large"
+
+  hr
+  .row-fluid
+    .span4
+      h2 Address
+      .field
+        = f.text_field :street, placeholder: "Street Number"
+      .field
+        = f.text_field :city, placeholder: "City"
+      .field
+        = f.text_field :state, placeholder: "State"
+      .field
+        = f.text_field :zip, placeholder: "Zipcode"
+    .span8
+      h2 Logo
+      = image_tag resource.logo(:medium), alt: resource.name, class: "thumb-large"
+      .field.pull-right
+        = f.file_field :logo
+  .actions
+    = f.submit 'Save'

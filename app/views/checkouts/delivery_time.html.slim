@@ -1,0 +1,17 @@
+#checkout-delivery-time
+    h1
+        | Delivery Date &amp; Time <span> - Step 3 of 5</span>
+    - if @order.delivery_time && @order.delivery_time.errors
+      p
+        - @order.delivery_time.errors.full_messages.each do |msg|
+          = msg
+          br/
+    p
+      - if current_user.user_group && current_user.user_group.delivery_info_message
+        = current_user.user_group.delivery_info_message
+      - else
+        | You can schedule delivery up to a week from today.
+    - if current_user && current_user.user_group && current_user.user_group.delivery_times
+      = render "user_group_delivery_time"
+    - else
+      = render 'user_delivery_time'

@@ -1,0 +1,37 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#zipModal").modal('show');
+    })
+  </script>
+<% end %>
+
+<%= render "signup/visor" %>
+
+<div id="headerCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active">
+      <div class="carousel-image" style="background-image: url('<%= image_path("signup/banner-1.jpg") %>') ">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="zipModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>
+          Enter your email address and zip code to see if we deliver to your area!
+        </p>
+        <%= form_tag "/landing_pages" do -%>
+          <%= text_field_tag 'user[email]', nil, placeholder: "Email Address" %>
+          <%= text_field_tag 'user[zipcode]', nil, placeholder: "Zipcode" %>
+          <%= submit_tag 'Submit' %>
+        <% end %>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<%= render "signup/footer" %>

@@ -1,0 +1,27 @@
+h1 Order Details
+
+table
+  th ID
+  th Date
+  th Customer
+  th Order Processing & Delivery
+  th Recipes (Servings)
+  th Checked Out?
+  th Subtotal
+  th Promo discount
+  th Total
+  th Actions
+  
+  - @orders.each do |order|
+    tr
+      td= order.id
+      td= display_order_date(order) rescue "N/A"
+      td= display_customer_details(order) rescue "N/A"
+      td= display_order_processing_details(order) rescue "N/A"
+      td= display_recipes(order.servings) rescue "N/A"
+      td= (order.checked_out ? "Yes" : "No") rescue "N/A"
+      td= display_total_adjusted_subtotal(order) rescue "N/A"
+      td= display_promo(order.used_promo) rescue "N/A"
+      td= number_to_currency(order.price) rescue "N/A"
+      td= display_actions_list(order) rescue "N/A"
+        

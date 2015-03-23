@@ -1,0 +1,16 @@
+= render 'facebook/tracker' if tracking?
+
+.content
+  .billing
+    .row-fluid
+      .span5.offset1.hidden-phone
+        = image_tag "fitly-bag-groceries.png", alt: "Fitly Does Your Grocery Shopping", class: "billing-image"
+
+      .span5
+        - if current_user.site
+          h2.center Billing
+
+          = render 'subscribe'
+
+        - else
+          = render 'locked', order: next_order, zipcode: current_user.zipcode

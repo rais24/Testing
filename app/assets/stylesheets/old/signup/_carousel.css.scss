@@ -1,0 +1,231 @@
+/* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+#cta {
+  position: absolute;
+  bottom: 40px;
+
+  width: 100%;
+  margin: auto;
+
+  text-align: center;
+  // Carousel Image is 1, Text and Indicators are 2, CTA must be above them
+  z-index: 3;
+
+  @media (min-width: $break-small-portait) and (max-width: $break-medium-landscape) {
+    bottom: 40px;
+  }
+
+  @media (min-width: $break-large-portrait + 1px) and (max-width: $break-x-large-landscape - 1px) {
+    bottom: 190px;
+  }
+  @media (min-width: $break-x-large-landscape) {
+    bottom: 280px;
+    left: 35px;
+    text-align: left;
+
+  }
+}
+
+#headerCarousel {
+  @include size(100% $carousel-height);
+  position: relative;
+
+  @media (min-width: $break-small-portait) and (max-width: $break-small-landscape) {
+    height: $carousel-height-small;
+  }
+
+  @media (max-width: $break-small-portait) {
+    height: $carousel-height-x-small;
+  }
+
+  @media (min-width: $break-small-landscape + 1px) and (max-width: $break-medium-landscape) {
+    height: $carousel-height-medium;
+  }
+
+
+  &.carousel {
+    .carousel-inner {
+      @include size(100%);
+      
+      .item {
+        @include size(100%);
+      }
+    }
+  }
+}
+
+/* Carousel base class */
+.carousel {
+  margin: 0;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .carousel-image {
+    @include size(100%);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+}
+
+// Carousel indicator pips
+// -----------------------------
+.carousel-indicators {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  margin: 0;
+  list-style: none;
+
+  li {
+    @include size(35);
+    display: block;
+    float: left;
+    margin-left: 5px;
+    text-indent: -999px;
+    background-color: #fff;
+    opacity: 0.75;
+    border-radius: 35px;
+
+    @media (max-width: $break-medium-landscape) {
+      @include size(25);
+    }
+  }
+  
+  &.middle {
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 15px;
+    padding-left: 0;
+    text-align: center;
+
+    li {
+      float: none;
+      display: inline-block;
+    }
+  }
+  .active {
+    background-color: #eaa2c7;
+  }
+}
+
+.carousel-caption {
+  background-color: transparent;
+  position: absolute;
+  padding-left: 0;
+  left: 0;
+  right: 0;
+  top: 200px;
+
+  @media (max-width: $break-small-portait) {
+    top: 224px;
+  }
+
+  @media (min-width: $break-small-portait + 1px) and (max-width: $break-medium-landscape) {
+    top: 80px;
+    left: 10px;
+    width: 175px;
+  }
+
+  @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-portrait + 2px) {
+    top: 320px;
+    left: 10px;
+    width: 90%;
+  }
+
+  @media (min-width: $break-large-portrait + 3px) and (max-width: $break-x-large-landscape) {
+    width: 350px;
+    top: 200px;
+    left: 40px;
+  }
+
+  @media (min-width: $break-x-large-landscape + 1px) {
+    width: 400px;
+    top: 300px;
+    left: 35px;
+  }
+
+  h1 {
+    width: 100%;
+    margin: auto;
+    z-index: 2;
+    font-family: $font-bold;
+    clear: both;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+
+    small {
+      font-size:12px;
+      vertical-align: top;
+    }
+
+    @media (max-width: $break-medium-landscape) {
+      font-size: 22px;
+      line-height: 22px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    }
+
+    @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-portrait) {
+      font-size: 44px;
+      line-height: 30px;
+    }
+
+    @media (min-width: $break-large-portrait + 1px) and (max-width: $break-large-landscape) {
+      font-size: 44px;
+    }
+
+    @media (min-width: $break-large-landscape + 1px) {
+      font-size: 44px;
+      text-align: center;
+    }
+  }
+
+  h2 {
+
+    font-family: $font-bold;
+    text-align: center;
+    line-height: 32px;
+    font-size: 24px;
+    color: #FFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+    @media (max-width: $break-medium-landscape) {
+      font-size: 12px;
+      line-height: 1em;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    }
+
+    @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-portrait) {
+      font-size: 24px;
+      text-shadow: 0 2px 2px rgba(0,0,0,0.9);
+
+    }
+  }
+
+  .highlight {
+    color: white;
+    display: block;
+
+
+    @media (max-width: $break-medium-landscape) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $break-medium-landscape + 1px) and (max-width: $break-large-portrait) {
+      font-size: 32px;
+    }
+
+    @media (min-width: $break-large-portrait + 1px) and (max-width: $break-large-landscape) {
+      
+    }
+
+  }
+}
+

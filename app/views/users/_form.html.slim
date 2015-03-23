@@ -1,0 +1,24 @@
+= simple_form_for resource, html: { class: "form-horizontal registration" } do |f|
+  = f.input :locked
+  = f.input :active
+
+  = f.input :email, placeholder: "Your email address"
+
+  .row-fluid
+    .span6
+      = f.input :first, placeholder: "Your first name"
+    .span6
+      = f.input :last, placeholder: "Your last name"
+
+  .row-fluid
+    .span6
+      = f.input :adults, placeholder: "Number of Adults"
+    .span6
+      = f.input :children, placeholder: "Number of Children"
+  .row-fluid
+    .span5
+      = f.association :allergies, as: :check_boxes, label_method: :titleize
+
+  = f.collection_radio_buttons :role, User::ROLES, :to_sym, :to_s
+
+  = f.button :submit, 'Save!', class: "btn btn-block btn-success"

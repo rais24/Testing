@@ -1,0 +1,30 @@
+- content_for :header do
+  script src="//cdn.optimizely.com/js/2116980677.js"
+  
+  javascript:
+    function scrollToSignupForm() {
+      $("html, body").animate({
+          scrollTop: $("#about").offset().top
+      }, 500);
+    }
+
+    function hideMobileMenu() {
+        if ($(".landingHeaderMobileExpandedMenu").is(":visible")) {
+            $(".landingHeaderMobileExpandedMenu .expandedMenu").animate(
+                { left: -335 },
+                {
+                    duration: 100,
+                    complete: function () {
+                        $(".landingHeaderMobileExpandedMenu").toggle();
+                    }
+                });
+        }
+    }
+
+    function mobileScrollToHowItWorks() {
+        hideMobileMenu();
+
+        $("html, body").animate({
+            scrollTop: $("#about").offset().top + 3
+        }, 500);
+    }

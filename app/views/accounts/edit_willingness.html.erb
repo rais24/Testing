@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+</head>
+
+<body>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#savebtn').click(function(){
+      var selected_items = "";
+      $(".multichoice").each(function(index){
+        var selected_level = $(this).find("span.clickTab").text();
+        selected_items += $(this).attr("data")+":"+selected_level+",";
+      });
+      $("#dietary_willingness").val(selected_items);
+      $('#dietary_willingness_form').submit();
+    });
+    $('.dietary-needs-tabs').click(function(){
+      $(this).toggleClass('dietary-needs-tabs-untick');
+      });
+      
+      $('.table-cell span').click(function(){
+      $(this).parent('.table-cell').find('span').each(function(index){
+        //$(this).hide();
+        $(this).removeClass('clickTab');
+      });
+      //$(this).parent('.table-cell span').removeClass('clickTab');
+      $(this).addClass('clickTab');
+      });
+    });
+  </script>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+   
+    <h1 class="h1-float-left"><a href="/account">< Back to Dashboard</a></h1>
+    <div class="contentcontainer">
+      <div class="tab">
+        <div class="tab1"><a href="#" class="active">1. <span>Willingness to Change</span></a></div>
+        <div class="tab1"><a href="#" >2. <span>Past Medical &amp; Surgical History</span></a></div>
+        <div class="tab1"><a href="#" >3. <span>My Food/Nutrition-Related Goals</span></a></div>
+      </div>
+      <%= form_tag(account_path, id:'dietary_willingness_form', :method => :put) do %>
+        <input type="hidden" name="user[dietary_willingness]" id="dietary_willingness" />
+        <div class="spacer"></div>
+        <div class="innerbody innerbody-extra-width">
+          <div class="delvinf-container delvinf-container-extra-width">
+            <h1>To improve your health, how willing are you to:</h1>
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Significantly modify my diet:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"modify_diet"} %>
+            </div>
+            
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Take nutritional supplements each day:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"nutritional_supplements"} %>
+            </div>
+            
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Keep record of everything I eat each day:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"daily_record"} %>
+            </div>
+            
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Modify my lifestyle:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"modify_lifestyle"} %>
+            </div>
+            
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Practice relaxation techniques:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"relaxation_techniques"} %>
+            </div>
+            
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Engage in regular exercise / physical activity:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"regular_exercise"} %>
+            </div>
+            
+            <div class="table-div">
+              <div class="table-cell table-cell-right-align" >Have periodic lab tests to assess your results:</div>
+              <%= render partial:"accounts/account_partials/willingness_multichoice", locals:{category:"periodic_tests"} %>
+            </div>
+          </div>
+        </div>
+        <div class="back-nextbtn2">
+          <div class="backbtn">
+            <input type="button" id="savebtn" value="Save" />
+          </div>
+          <div class="canclebtn"><a href="/account">Cancel</a></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close -->  
+  
+  <%= render "layouts/shared/footer" %>
+
+</div>
+</body>
+</html>

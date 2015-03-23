@@ -1,0 +1,25 @@
+.content
+  .ingredient-header
+    h1.ingredient-name= @ingredient.name.titleize
+    = link_to 'Edit', edit_ingredient_path(@ingredient), class: 'button-info ingredient-action'
+    = link_to 'Destroy', @ingredient, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-danger'
+
+  .ingredient-meta
+    span.ingredient-category = @ingredient.category.titleize
+
+    - if @ingredient.pantry?
+      span.ingredient-pantry Pantry
+
+    - published = recipes.published.map(&:recipe)
+    - unless published.empty?
+      h1 Published Recipes (#{published.count})
+      .ingredient-recipes
+        = grid_of_partial 'recipes/recipe', published, 6
+
+    - unpublished = recipes.unpublished.map(&:recipe)
+    - unless unpublished.empty?
+      h1 Unpublished Recipes (#{unpublished.count})
+      .ingredient-recipes
+        = grid_of_partial 'recipes/recipe', unpublished, 6
+
+  = link_to 'Back', collection_path, class: 'button-danger'

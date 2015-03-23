@@ -1,0 +1,23 @@
+// for products form
+
+@import '_variables';
+
+form.products {
+    padding: 0;
+    
+    ul.data {
+
+        li.input.stores select {
+            height: 150px;    
+            width: 350px;
+        }
+    }
+    ul.actions {
+        padding: 0 15px;
+
+        &:first-child {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+strong Ingredient: 
+= @portion.ingredient.name
+br /
+strong Recipe: 
+= @recipe.name
+
+= simple_form_for [@recipe, @portion], html: {class: 'portions'} do |f|
+  = render 'layouts/form_errors', resource: @portion
+
+  fieldset
+    ul.data
+      li.input.quantity.required
+        = f.input :quantity, placeholder: "1"
+      li.input.order.required
+        = f.input :order, placeholder: "1"
+      = f.input :include, :as => :boolean, :label => false, :wrapper_html => { :style => 'display: inline' }, inline_label: 'Include in recipe?'
+    ul.actions
+      li.primary
+        = f.submit class: "button-action"

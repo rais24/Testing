@@ -1,0 +1,57 @@
+link rel=:stylesheet href="email/email.css"
+table#content cellpadding="0" cellspacing="0"
+  tr
+    td height="20px"
+  tr
+    td.body align="center"
+      / Render the Header
+      = render "emails/header"
+
+      / the Content
+      table border="0" cellpadding="50px" cellspacing="0"
+        tr
+          td align="left" width="520px"
+
+            h1.copy.left
+              span= @user.name_or_email
+              |,
+
+            p 
+              | We're super excited that you've shown interest in our healthy 
+              | delivery service and can't wait to show you how 
+              span Fitly 
+              | works! 
+
+            p
+              | Getting your kids to eat healthy is a daunting task, but we've 
+              | figured out a way to make it simple, convenient &amp; fun for 
+              | your entire family.
+
+            p
+              | Our team would like to personally invite you to come by our 
+              | booth (located in 
+              span= @site.name 
+              |  Cafeteria today from 
+              span= @start
+              |  - 
+              span= @finish
+              | ) to answer any and all questions you may have regarding 
+              | our service.
+
+            p 
+              | There will be giveaways, fruits &amp; healthy snacks. Feel free 
+              | to stop by and just say hi - we love to chat!
+
+            p
+              | Please spread the word and let your co-workers know, something BIG 
+              | is happening.
+
+            p
+              | See you there!
+
+            h3.copy.left The Fitly Family
+
+      / Render the Footer
+      = render "emails/footer"
+  tr
+    td height="20px"

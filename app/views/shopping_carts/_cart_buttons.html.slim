@@ -1,0 +1,9 @@
+- if cart.can_checkout?
+    a class="action primary" href="#{checkout_path(:pantry)}"
+        | Checkout
+- if cart.total_unique_items < 20
+    a class="action secondary with-prompt" href="/recipes"
+        | Keep shopping<br><span class="exit">Add more plates and save up to $40.00!</span>
+- else
+    a class="action secondary" href="/recipes"
+        | Keep shopping

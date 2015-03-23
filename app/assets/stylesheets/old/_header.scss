@@ -1,0 +1,88 @@
+@media (max-width: $break-small-landscape) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.alert-register {
+  font-size: 18px;
+  padding: 10px;
+
+  .close {
+    right: 5px;
+  }
+}
+
+/* - HEADER
+---------------------------------------------- */
+header {
+  @include border-image(url(border-top.png) 0 0 25 0 repeat);
+  border-top: none;
+  background:#fff;  
+}
+
+.navbar {
+  margin: auto;
+}
+
+ul.nav {
+  $height: 111px;
+  $font-size: 15px;
+
+  font-size: $font-size;
+  font-weight:400;
+
+  // If the nav isn't collapsed, pad it from the top
+  @media (min-width: $navbarCollapseWidth) {
+    margin-top: ($height / 2) - ($font-size * 2) !important;
+  }
+
+  .active {
+    a {
+      font: {
+        family: $font-bold;
+        font-weight: 900;
+      }
+
+      &,
+      &:hover {
+        box-shadow: none !important;
+      }
+    }
+  }
+
+  a {
+    @include transition(all, 0.1s);
+  }
+}
+
+.navbar-inner {
+  border: none;
+  box-shadow: none;
+  background: none;
+  margin: auto;
+
+  .brand {
+    width: 170px;
+    height: 92px;
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    @media (max-width: $break-small-landscape) {
+      width: 100px;
+      height: 54px;
+    }
+  }
+}
+
+.btn.btn-navbar {
+  margin: 40px;
+
+  @media (max-width: $break-small-landscape) {
+    margin: 20px;
+  }
+}

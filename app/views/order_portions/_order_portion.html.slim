@@ -1,0 +1,5 @@
+.cart-item data-id=dom_id(order_portion) class=(order_portion.include? ? '' : 'empty')
+  = simple_form_for [order_portion.order, order_portion], remote: true do |f|
+    span.cart-item-name #{order_portion.to_display_amount} #{order_portion.name.titleize.truncate(30) }
+    = f.input :include, label: false, input_html: { class: 'js-checkbox-submit large', data: { id: dom_id(order_portion) } }
+    img src=order_portion.photo.url(:thumb)

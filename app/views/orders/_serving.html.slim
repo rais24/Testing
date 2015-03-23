@@ -1,0 +1,7 @@
+.line-item data-id=dom_id(serving)
+  = link_to serving.recipe, class: 'line-item-thumb' do
+    img src=serving.photo.url(:medium) alt=serving.name
+
+  = link_to serving.name, serving.recipe, class: 'line-item-name'
+  span.line-item-quantity= number_to_currency(serving.total_price)
+  span.line-item-quantity= serving_override(serving.quantity)

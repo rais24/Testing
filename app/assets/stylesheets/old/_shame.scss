@@ -1,0 +1,61 @@
+// Put nasty, shameful hacks here. 
+//
+// The idea is that if we centralize things we feel are hacky,
+// we can track their removal and feel better about ourselves
+//
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin-top: 0;
+  margin-bottom: -$footer-height;
+}
+
+/* Set the fixed height of the footer here */
+#push {
+  height: $footer-height;
+}
+#footer {
+  //height: $footer-height - 7;
+}
+
+/* Bootstrap container override */
+.container {
+  max-width:960px;
+  width:100%;
+}
+
+.dropdown {
+  a {
+    cursor: pointer;
+  }
+}
+
+// Override bootstrap tabs to not be transparent
+.nav-tabs {
+  & > li {
+    &.active > a {
+      opacity: 1.0;
+    }
+    & > a {
+      background-color: white;
+      opacity: 0.6;
+
+      &:hover, &:focus {
+        background-color: #CCC;
+      }
+    }
+  }
+}

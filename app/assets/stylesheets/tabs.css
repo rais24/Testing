@@ -1,0 +1,247 @@
+.tab-left{width:249px; float:left;  border-right:2px solid #ccc; font-family:'Lato-Regular';}
+.tab-left .textcenter{height:50px; line-height:50px; font-size:16px; font-weight:normal; text-align:center;}
+.tab-right{ float:right; width:1058px; font-family:'Lato-Regular';}
+.right-div-full-width{width:100%;}
+.tab-right .topdiv .inbox{float:left; font-size:22px; font-weight:normal; text-align:left; line-height:55px; height:50px;}
+.tab-right .topdiv{ /*margin:10px 0px;*/ padding:0px 10px; height:50px; border-bottom:1px solid #ccc;}
+.unread-name{ float:left; font-size:12px; color:#000; font-weight:bolder; padding-left:10px; padding-top:5px;}
+.unread-name a{ text-decoration:none; color:#000;}
+.unread-date{float:right; font-size:12px; color:#a7a9ac; padding-right:10px; padding-top:5px;}
+.unread-date a{text-decoration:none; color:#a7a9ac;}
+.unread-details{ font-size:12px; width:100%; display:inline-block; line-height:25px; padding-left:10px;}
+.unread-details a{ text-decoration:none; color:#6d6e71;}
+.unread-details span{ font-weight:bolder; font-size:12px; color:#000;}
+.unread-details span a{ text-decoration:none; color:#000;}
+.section-row{width:100%; border-bottom:1px solid #ccc; color:#6d6e71;}
+.section-row2{width:100%; border-bottom:1px solid #ccc; color:#6d6e71; background:#f1f2f2;}
+.read-name{ float:left; font-size:12px; color:#6d6e71; padding-left:10px; padding-top:5px;}
+.read-name a{ text-decoration:none; color:#6d6e71;}
+.inbox-search{float:right; width:25%; text-align:right;  border: 2px solid #ccc; background:url(/assets/searchbtn.png) no-repeat left; margin-top:4px;} 
+
+
+.rightsearch_imp {
+	background-image:none !important;
+	display:inline-block;
+}
+.rightsearch_imp img{
+	float:left;
+	cursor:pointer;
+}
+		.inbox-search input{ background:none; text-align:left; border:none; width:85%; line-height:28px; padding-left:2px; padding-right:5px; overflow:hidden; color:#a7a9ae; font-size:16px; line-height:26px; height:30px; outline:none;}
+
+.resp-tabs-list li {
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+    padding: 13px 15px;
+    margin: 0 4px 0 0;
+    list-style: none;
+    cursor: pointer;
+    float: left;
+	font-family:'Lato-Regular';
+}
+.resp-tabs-list li span{ background:#aaa095;
+   border-radius: 10px;
+   -webkit-border-radius: 10px; 
+ 	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-o-border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 20px;
+    line-height:20px;
+    text-align: center;	
+    width: 20px;}
+	
+.composemail-text-field{ width:98%; border:1px solid #ccc; height:35px; margin:5px auto;}
+.composemail-text-field input{ background:none; border:0px; line-height:35px; width:96%; height:35px; outline:none;  padding-left:5px;}
+.composemail-textarea-field{ width:98%; border:1px solid #ccc; height:100px; margin:5px auto; }
+.composemail-textarea-field textarea{ background:none; border:0px; height:100px; width:100%; padding-left:5px;  font-size:12px; font-family:arial; outline:none;}
+
+
+.resp-tabs-container {
+    padding: 0px;
+    background-color: #fff;
+    clear: left;
+}
+
+h2.resp-accordion {
+    cursor: pointer;
+    padding: 5px;
+    display: none;
+}
+
+.resp-tab-content {
+    display: none;
+    padding: 0px;
+}
+
+.resp-tab-active {
+	/*border: 1px solid #5AB1D0 !important;*/
+	border-bottom: none;
+	margin-bottom: -1px !important;
+	padding: 12px 14px 14px 14px !important;
+	/*border-top: 4px solid #5AB1D0 !important;
+	border-bottom: 0px #fff solid !important;*/
+}
+
+.resp-tab-active {
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.resp-content-active, .resp-accordion-active {
+    display: block;
+}
+
+.resp-tab-content {
+    /*border: 1px solid #c1c1c1;*/
+	border-top-color: #5AB1D0;
+}
+
+h2.resp-accordion {
+    font-size: 13px;
+    border: 1px solid #c1c1c1;
+    border-top: 0px solid #c1c1c1;
+    margin: 0px;
+    padding: 10px 15px;
+}
+
+h2.resp-tab-active {
+    border-bottom: 1px solid #c1c1c1 !important;
+    margin-bottom: 0px !important;
+    padding: 10px 15px !important;
+}
+
+h2.resp-tab-title:last-child {
+    border-bottom: 12px solid #c1c1c1 !important;
+    background: blue;
+}
+
+
+/*-----------Vertical tabs-----------*/
+.resp-vtabs ul.resp-tabs-list {
+    float: left;
+    width: 100%;	 
+	min-height:700px;
+}
+
+.resp-vtabs .resp-tabs-list li {
+    display: block;
+    padding: 15px 15px !important;
+    margin: 0 0 4px;
+    cursor: pointer;
+    float: none;
+	font-weight:normal;
+}
+
+.resp-vtabs .resp-tabs-list li:hover{ background-color:#e6e7e8  !important;}
+.resp-vtabs .resp-tabs-container {
+    padding: 0px;
+    background-color: #fff;
+   /* border: 1px solid #c1c1c1;*/
+    float: left;
+    width: 100%;
+    /*min-height: 250px;*/
+   
+    clear: none;
+}
+
+.resp-vtabs .resp-tab-content {
+    border: none;
+    word-wrap: break-word;
+	
+}
+
+.resp-vtabs li.resp-tab-active { 
+position: relative;
+z-index: 1;
+background:#e6e7e8 !important; 
+padding: 14px 15px 15px 14px !important;
+margin-bottom: 4px !important;
+color:#000;
+font-size:14px;
+font-weight:normal;
+ 
+}
+
+.resp-arrow {
+    width: 0;
+    height: 0;
+    float: right;
+    margin-top: 3px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #c1c1c1;
+}
+
+h2.resp-tab-active span.resp-arrow {
+    border: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #9B9797;
+}
+
+/*-----------Accordion styles-----------*/
+h2.resp-tab-active {
+    background: #DBDBDB;/* !important;*/
+}
+
+.resp-easy-accordion h2.resp-accordion {
+    display: block;
+}
+
+.resp-easy-accordion .resp-tab-content {
+    border: 1px solid #c1c1c1;
+}
+
+.resp-easy-accordion .resp-tab-content:last-child {
+    border-bottom: 1px solid #c1c1c1;/* !important;*/
+}
+
+.resp-jfit {
+    width: 100%;
+    margin: 0px;
+}
+
+.resp-tab-content-active {
+    display: block;
+}
+
+h2.resp-accordion:first-child {
+    border-top: 1px solid #c1c1c1;/* !important;*/
+}
+
+/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+@media only screen and (max-width: 768px) {
+    ul.resp-tabs-list {
+        display: none;
+    }
+
+    h2.resp-accordion {
+        display: block;
+    }
+
+    .resp-vtabs .resp-tab-content {
+        border: 1px solid #C1C1C1;
+		width:99.50% !important;
+    }
+
+    .resp-vtabs .resp-tabs-container {
+        border: none;
+        float: none;
+        width: 100%;
+        min-height: 100px;
+        clear: none;
+    }
+
+    .resp-accordion-closed {
+        display: none !important;
+    }
+
+    .resp-vtabs .resp-tab-content:last-child {
+        border-bottom: 1px solid #c1c1c1 !important;
+    }
+	
+}

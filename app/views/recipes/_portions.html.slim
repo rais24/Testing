@@ -1,0 +1,6 @@
+tbody
+  - portions.each do |portion|
+    tr
+      td
+      td= portion.name.titleize
+      td= portion.to_display_amount(4)

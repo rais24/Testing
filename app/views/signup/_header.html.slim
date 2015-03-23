@@ -1,0 +1,14 @@
+#headerCarousel.carousel.slide
+  .carousel-inner
+    .item.active
+      .carousel-image style=("background-image: url('" + image_path("signup/banner-1.jpg") + "')")
+      .carousel-caption
+        h1
+        	| Shop by meals.
+        	small
+        		| &#8482;
+        h2
+        	| Do all your grocery shopping
+	        span.highlight
+		        | in 5 minutes or less.
+            = render "signup/getstarted"

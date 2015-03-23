@@ -1,0 +1,29 @@
+= simple_form_for @product, html: {class: 'products'} do |f|
+  = render 'layouts/form_errors', resource: @product
+
+  fieldset
+    ul.data
+      li.input.brand_and_item.required
+        = f.input :brand_and_item, placeholder: "Pepper Bell - Red"
+      li.input.friendly_name.required
+        = f.input :friendly_name, placeholder: "Red Bell Pepper"
+      li.input.confirmation_name
+        = f.input :confirmation_name
+      li.input.sku.required
+        = f.input :sku, placeholder: "000000040884"
+      li.input.sku_quantity.required
+        = f.input :sku_quantity, placeholder: "1 each"
+      li.input.unit.required
+        = f.input :unit, collection: Ingredient::UNITS, prompt: "Select Unit"
+      li.input.amount.required
+        = f.input :amount, placeholder: "1"
+      li.input.price.required
+        = f.input :price, placeholder: "1.40"
+      li.input.ingredient
+        = f.input :ingredient_id, collection: Ingredient.all.collect{|x| [x.name, x.id]},selected: @product.ingredient_id, prompt: "Select ingredient"
+      li.input.stores
+        = f.input :stores, collection: Store.all.collect{|x| [x.name, x.id]}, input_html: { multiple: true }
+
+    ul.actions
+      li.primary
+        = f.submit class: "button-action"

@@ -1,0 +1,17 @@
+#checkout-delivery-address
+    h1
+        | Delivery Info <span> - Step 2 of 5</span>
+    p
+      - if @address && @address.errors
+        - @address.errors.full_messages.each do |msg|
+          = msg
+          br/
+
+    p
+      - if flash[:alert].present?
+        .alert.alert-danger
+          a href="#" class=:close data-dismiss=:alert
+            | &times;
+          strong= flash[:alert]
+    = render 'subscription/user_address'
+

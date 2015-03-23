@@ -1,0 +1,4 @@
+div.signup
+	h4 Discover how Fitly can help you reach your health goals!
+	= simple_form_for @user, url: wizard_path, method: 'PUT' do |f|
+		= render "login_info", :f => f

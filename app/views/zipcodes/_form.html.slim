@@ -1,0 +1,12 @@
+= form_for @zipcode do |f|
+  - if @zipcode.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@zipcode.errors.count, "error")} prohibited this zipcode from being saved:"
+      ul
+        - @zipcode.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions = f.submit 'Save'

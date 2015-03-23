@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# replicate recipes
+
+set -e
+
+DEFAULT=20
+
+if [ -z $LIMIT ]; then
+  echo "1) How many recipes do you want? (defaults to $DEFAULT)"
+  read LIMIT
+fi
+
+[ -z $LIMIT ] && LIMIT=$DEFAULT
+
+echo "Removing all Recipes and Ingredients..."
+
+bin/rake recipes:dev:clear orders:dev:clear
+
+echo "Replicating $LIMIT recipes..."
+
+dir=/mnt/fitly-production/current
+
+COMMAND=$(cat <<SSH 
+  . /etc/profile
+  . ~/.bashrc
+  LIMIT=$LIMIT replicate -r $dir/config/environment -d $dir/config/replicate/dump-recipes.rb
+SSH
+)
+
+ssh -i ~/.ec2/gsg-keypair ubuntu@fe02.fitly.org "$COMMAND" | replicate -r ./config/environment -l
+
+bin/rake recipes:populate_descriptions

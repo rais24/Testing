@@ -1,0 +1,145 @@
+/*-------------------
+Order Detail
+-------------------*/
+@import '_variables';
+
+
+.orders-controller.show-action {
+    #order-detail > p {
+        text-align: center;
+    }
+
+    li.recipe-summary {
+        form {
+            padding: 0;
+            margin-bottom: 0;
+        }
+        ul.actions {
+            margin-top: 0;
+        }
+        a.action {
+            margin: 0 auto;
+        }
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 330px ) {
+
+
+
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////          Second Breakpoint (small tablet): > 500px         ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 500px ) {
+        #order-status {
+            p {
+                max-width: 400px;
+                margin: 15px auto;
+            }
+        }
+        #delivery-info {
+            .address {
+                float: left;
+                width: 49%;
+            }
+            .time {
+                float: right;
+                width: 49%;
+            }
+        }
+        #recipes {
+            clear: both;
+
+            & > ul {
+                overflow: hidden;
+                border-bottom: 1px solid #acaaa3;
+
+                li.recipe-summary {
+                    border: none;
+                    float: left;
+                    width: 50%;
+
+                    &:nth-child(even) {
+                        background-color: #f8f8f8;
+                    }
+                    h3 {
+                        min-height: 40px;
+                    }
+                    a.action {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+        #order-total {
+            clear: both;
+            width: 400px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+   }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////          Third Breakpoint (large tablet): > 740px          ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 740px ) {
+        #order-status {
+            p {
+                max-width: 500px;
+            }
+            div.order-actions {
+                width: 82%;
+                margin: 0 auto;
+                overflow: hidden;
+
+                a.print-receipt {
+                    float: left;
+                    width: 100%;
+                }
+
+                a.print-prep {
+                    float: right;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////            Fourth Breakpoint (desktop): > 960px            ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 960px ) {
+        #recipes {
+            & > ul {
+                li.recipe-summary {
+                    width: 33%;
+                }
+            }
+        }
+        #order-status {
+            div.order-actions {
+                width: 65%;
+            }
+        }
+    }
+}

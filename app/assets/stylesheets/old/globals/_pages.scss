@@ -1,0 +1,103 @@
+
+/* Large desktop */
+@mixin break-x-large {
+  @media (min-width: $break-x-large-landscape) {
+    @content;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@mixin break-large {
+  @media (min-width: $break-large-portrait) and (max-width: $break-large-landscape) {
+    @content;
+  }
+}
+ 
+/* Landscape phone to portrait tablet */
+@mixin break-medium {
+  @media (max-width: $break-large-portrait - 1px) {
+    @content;
+  }
+}
+
+/* Landscape phones and down */
+@mixin break-small {
+  @media (max-width: $break-small-landscape) {
+    @content;
+  }
+}
+
+body {
+  background: image-url('bg.png') repeat #fff;
+}
+
+/* - PAGES
+---------------------------------------------- */
+.content {
+  padding: 20px;
+  @extend .constraint;
+  @extend .container;
+
+  margin-bottom:30px !important;
+
+  overflow: hidden;
+  background: image-url('content-border-trail.png') repeat-x right bottom #fff;
+
+}
+
+.constraint {
+  max-width:960px;
+  margin:0 auto;
+}
+
+.pre-content {
+  @extend .constraint;
+  @extend .container;
+
+  padding:20px 20px 0 20px;
+  margin: auto;
+  width: $content-width + (2 * $content-padding);
+  overflow: hidden;
+
+  background-color: #fff;
+}
+
+.post-content{
+  border-top: 1px dashed #eee;
+  clear: both;
+  overflow: hidden;
+  margin-top: 30px;
+  padding: {
+    top: 40px;
+    bottom: 20px;
+  }
+}
+
+h1.page-title{
+  font-size:40px;
+  color:#7f6f68;
+  text-shadow: 0 1px 0 #fff;
+  margin:0.7em 0 0.5em 0;
+}
+
+.alert {
+  strong {
+    font-size: 16px;
+  }
+
+  span {
+    color: $theme-color;
+  }
+}
+
+/* - PAGINATION
+---------------------------------- */
+.pagination {
+  text-align: center;
+
+  li {
+    &.disabled {
+      display: none;
+    }
+  }
+}

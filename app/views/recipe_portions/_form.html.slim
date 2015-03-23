@@ -1,0 +1,32 @@
+.tab-content
+
+.content
+  .row-fluid
+    h1.registration-title
+      = "#{@recipe.name} Portions"
+      = link_to "Edit Recipe", edit_recipe_path(@recipe), class: "button-action"
+      
+  - if Recipe.find(@recipe.id).portions.empty?
+    p.empty Recipe portions has yet to be added
+  - else
+    table.table.table-condensed.table-hover.recipe-portions
+      thead
+        tr
+          th Ingredient
+          th Included?
+          th Raw Quantity
+          th Amount in 4 Servings
+          th Order of use
+          th
+
+      tbody
+        - sort_portions(@recipe.id).each do |portion|
+          tr
+            td= link_to "#{portion.name.titleize} (#{portion.unit})", edit_ingredient_path(portion.ingredient)
+            td= portion.include.to_s
+            td= portion.quantity
+            td= portion.to_display_amount(4)
+            td= portion.order
+            td
+              = button_to "edit", {:controller => :recipe_portions, :action => 'edit', :id => portion.id}, :method => :get
+              = button_to "delete", {:controller => :recipe_portions, :action => 'destroy', :id => portion.id}, :method => :delete, class: "button-danger", data: { confirm: "Remove #{portion.name} from #{@recipe.name}?" }

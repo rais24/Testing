@@ -1,0 +1,4 @@
+= simple_form_for [order, serving], remote: true do |f|
+  = f.input :quantity, as: :hidden, input_html: { value: 1 }
+  = f.input :recipe_id, as: :hidden, input_html: { value: serving.recipe.id }
+  a.add-to-cart.js-submit.js-click-lock data-id=dom_id(serving.recipe)

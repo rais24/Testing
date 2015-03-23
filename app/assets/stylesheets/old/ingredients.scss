@@ -1,0 +1,39 @@
+// Place all the styles related to the ingredients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+img.ingredient-small {
+  @include size(30);
+}
+
+.ingredients {
+  font-size: 20px;
+  line-height: normal;
+
+  @media (max-width: $break-small-landscape) {
+    font-size: 16px;
+  }
+}
+
+.ingredient-header {
+  @extend .clearfix;
+
+  * {
+    display: inline;
+    float: left;
+  }
+
+  .button {
+    float: right;
+  }
+}
+
+.ingredient-image {
+  @extend .img-circle;
+}
+
+.ingredient-meta {
+  * {
+    margin: 10px;
+  }
+}

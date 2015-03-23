@@ -1,0 +1,503 @@
+/*-------------------
+Recipe List Styles
+-------------------*/
+@import '_variables';
+
+.recipes-controller.index-action {
+    body.filter-menu-open main {
+        z-index: 1100;
+    }
+    #filters {
+        h2 {
+            margin: 10px auto;
+            font-family: LatoRegular;
+            font-size: 100%;
+            color: rgb(0,0,0);
+            background: none;
+        }
+    }
+    #recipes {
+        overflow: hidden;
+
+        h2 {
+            position: absolute;
+            left: -100%;
+        }
+        ul {
+
+            li.recipe {
+                position: relative;
+                margin-bottom: 30px;
+                background: rgb(94,58,86);
+
+                a.recipe-image {
+                    display: block;
+                    width: 65%;
+                    color: white;
+                    text-decoration: none;
+
+                    div {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        margin: 0;
+                        width: 100%;
+                        @include linearGradient(none, bottom, rgba(44,43,36,0.9), rgba(44,43,36,0));
+                        @include textShadow(0 0px 3px rgb(0,0,0));
+                        padding: 25px 15px 15px;
+
+                        h3 {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 64%;
+                            margin: 0;
+                            font-size: 115%;
+                            line-height: 1.4;
+                        }                    
+                    }
+
+                    img {
+                        width: 100%;
+                        min-height: 208px;
+                    }
+                }
+                ul.stats {
+                    position: absolute;
+                    top: 10px;
+                    right: 15px;
+                    color: rgb(255,255,255);
+                    line-height: 1;
+
+                    li {
+                        padding-bottom: 16px;
+                        font-family: LatoBold;
+                        text-align: right;
+                        text-transform: lowercase;
+
+                        span.value {
+                            display: block;
+                            padding-top: 4px;
+                            font-family: LatoBold;
+                            font-size: 24px;
+                            text-align: right;
+                        }
+                        &.calories {
+                            display: none;
+                        }
+                    }
+                }
+                ul.actions {
+                    position: absolute;
+                    right: 15px;
+                    bottom: 15px;
+                    width: 25.5%;
+
+                    li {
+                        a {
+                            @include smallButton;
+                            margin: 0;
+                            font-family: LatoRegular;
+                        }
+                    }
+                }
+
+                &.new {
+                    a.recipe-image {
+                        position: relative;
+                        overflow: hidden;
+
+                        &:before {
+                            position: absolute;
+                            top: 5%;
+                            left: -18%;
+                            width: 65%;
+                            content: 'New!';
+                            font-family: LatoBold;
+                            padding: 10px;
+                            text-align: center;
+                            background: #F15D22;
+                            border-top: 1px solid #AD4319;
+                            border-bottom: 1px solid #AD4319;
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.csstransforms {
+        #recipes {
+            ul {
+                li.recipe {
+                    a {
+                        &:before {
+                            top: 7%;
+                            left: -40%;
+                            width: 100%;
+                            @include transform(rotate(-45deg));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.js {
+        #filters {
+            z-index: 1102;
+            overflow: hidden;
+
+            & > p {
+                span.edit-filters {
+                    font-weight: bold;
+                    color: rgb(156,61,62);
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            & > a.action {
+                margin: 20px auto;
+            }
+        }
+
+        #filter-form {
+            position: fixed;
+            z-index: 1102;
+            bottom: -100%;
+            @include transition(bottom 0.3s);
+            margin: 0;
+            padding: 0;
+            max-width: none;
+            background: rgb(255,255,255);
+
+            &.open {
+                bottom: 0;
+                @include transition(bottom 0.3s);
+                @include boxShadow(0 -4px 8px 1px #000);
+            }
+            .fieldsets {
+                position: relative;
+                overflow: hidden;
+                left: 0%;
+                @include transition(left 0.3s);
+            }
+            fieldset {
+                float: left;
+                padding: 0 15px;
+            }
+            legend {
+                margin: 0 auto 20px;
+                padding: 20px 0;
+                width: 120%;
+                background: rgb(141,125,109);
+                color: rgb(255,255,255);
+            }
+            ul.data {
+                overflow: hidden;
+                margin-bottom: 0;
+
+                li.input {
+                    float: left;
+                    width: 50%;
+                    margin-bottom: 15px;
+
+                    &.match-restrictions {
+                        width: 100%;
+
+                        label {
+                            position: absolute;
+                            left: -100%;
+                        }
+                    }
+                }
+            }
+            ul.actions {
+                margin: 15px;
+
+                li {
+                    &.primary {
+                        float: right;
+                        width: 60%;
+
+                        input {
+                            @include mediumButton;
+                        }
+                    }
+                    &.secondary {
+                        width: 35%;
+
+                        input {
+                            @include mediumButton;
+                        }
+                    }
+                }
+            }
+        }
+        .filter-control {
+            cursor: pointer;
+        }
+        #previous-filter {
+            @include icon(4.2, '\e6cd');
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            color: rgb(255,255,255);
+
+            &.inactive {
+                display: none;
+            }
+        }
+        #next-filter {
+            @include icon(4.2, '\e6d0');
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: rgb(255,255,255);
+
+            &.inactive {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    .recipes-controller.index-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+    .recipes-controller.index-action {
+        #recipes {
+            ul {
+                li.recipe {
+                    a {
+                        h3 {
+                            font-size: 18px;
+                        }
+                        ul.stats {
+                            top: 16px;
+
+                            li {
+                                font-size: 18px;
+
+                                span.value {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                        img {
+                            min-height: 247px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 480px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 480px ) and ( max-width: 739px ) and ( orientation: portrait ) {
+    .recipes-controller.index-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    .recipes-controller.index-action {
+        #filters {
+            min-height: 146px;
+
+            & > p {
+                margin-bottom: 25px;
+            }
+        }
+        #recipes {
+            > ul {
+                // This width counteracts a weird issue in mobile Safari that prevents full-width
+                // elements from being flush with the right side of the viewport, but causes very
+                // slight cropping in other browsers.
+                width: 100.2%;
+            }
+
+            ul {
+                li.recipe {
+                    float: left;
+                    width: 47.5%;
+                    margin-bottom: 5%;
+                    overflow: hidden;
+
+                    &:nth-child(odd) {
+                        margin-right: 5%;
+                        @include borderRadius(0 6px 6px 0);
+                    }
+                    &:nth-child(even) {
+                        @include borderRadius(6px 0 0 6px);
+                    }
+                    a.recipe-image {
+                        h3 {
+                            padding: 25px 20px 15px;
+                            font-size: 20px;
+                            width: 100%;
+                        }
+                        ul.stats {
+                            top: 20px;
+                            right: 20px;
+
+                            li {
+                                font-size: 16px;
+                                padding-bottom: 20px;
+
+                                span.value {
+                                    font-size: 28px;
+                                }
+                            }
+                        }
+                        img {
+                            min-height: 239px;
+                        }
+                    }
+                    &.new {
+                        a {
+                            &:before {
+                                width: 68%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.csstransforms {
+            #recipes {
+                ul {
+                    li.recipe {
+                        a {
+                            &:before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.js {
+            #filters {
+                & > p {
+                    float: left;
+                    width: 50%;
+                }
+                a.action {
+                    margin-top: 40px;
+                    margin-right: 25px;
+                }
+            }
+            #filter-form {
+                width: 80%;
+                left: 10%;
+                padding: 40px 50px;
+                @include borderRadius(12px);
+                opacity: 0;
+                @include transition(opacity 0.3s);
+
+                &.open {
+                    position: absolute;
+                    bottom: auto;
+                    opacity: 1;
+                    @include transition(opacity 0.3s);
+                    @include boxShadow(none);
+                }
+                .fieldsets {
+                    overflow: visible;
+                }
+                fieldset {
+                    padding: 0;
+
+                    legend {
+                        margin-bottom: 0;
+                        padding-top: 0;
+                        text-align: left;
+                        background: none;
+                        color: rgb(0,0,0);
+                    }
+                    ul.data {
+                        li.input {
+                            float: none;
+                            width: 100%;
+
+                            label {
+                                padding-top: 8px;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                ul.actions {
+                    position: absolute;
+                    right: 40px;
+                    bottom: 30px;
+                    margin: 0;
+                    width: 43.5%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    .recipes-controller.index-action {
+        #recipes {
+            ul {
+                li.recipe {
+                    a.recipe-image {
+                        width: 68%;
+                    }
+                    ul.stats {
+                        li.calories {
+                            display: list-item;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

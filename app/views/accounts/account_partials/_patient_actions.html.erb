@@ -1,0 +1,10 @@
+<% if @user != current_user %>
+ <!-- block1-->
+  <div class="leftcontainer1 extraheight">
+    <div class="topfour"><a href="#"><img src="/assets/sendmessage.png" alt=""/><br>SEND MESSAGE</a></div>
+    <div class="topfour"><a href="<%= new_user_meal_plan_path(@user)%>"><img src="/assets/create-meal.png" alt=""/><br>CREATE MEAL PLAN</a></div>
+    <div class="topfour"><a href="#"><img src="/assets/view-meal.png" alt=""/><br>VIEW MEAL PLAN HISTORY</a></div>
+    <div class="topfour"><a href="<%= user_orders_path(@user)%>"><img src="/assets/view-order.png" alt=""/><br>VIEW ORDER HISTORY</a></div>
+  </div>
+ <!-- block1 close--> 
+<% end %>

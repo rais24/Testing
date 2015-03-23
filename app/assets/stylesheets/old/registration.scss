@@ -1,0 +1,166 @@
+.registration-title {
+  text-align: center;
+  font-family: $font-light;
+  padding: 15px;
+  font-size: 18px;
+  line-height: 18px;
+
+  @media (max-width: $break-small-landscape) {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+.registration-instructions {
+  max-width: 600px;
+  margin: auto;
+
+  @media (max-width: $break-small-landscape) {
+
+  }
+}
+
+.registration-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration {
+  margin-bottom: 60px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+
+
+  .controls {
+    margin-left: 140px;
+    margin-right: 100px;
+
+    @media (max-width: $break-medium-landscape) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .control-label {
+    width: 120px;
+    padding: 6px;
+    line-height: normal;
+    font-size: 16px;
+
+    @media (max-width: $break-medium-landscape) {
+      width: auto;
+    }
+  }
+
+  input[type=submit] {
+    $button-size: 24px;
+    font-size: $button-size;
+    padding: $button-size;
+  }
+
+  .text {
+    label {
+      height: 36px;
+      font-size: 24px;
+    }
+  }
+
+  .checkboxes {
+    input {
+      vertical-align: middle;
+    }
+
+    label {
+      display: block;
+      float: left;
+      padding-right: 10px;
+      white-space: nowrap;
+
+      span {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  input {
+    @include placeholder {
+      padding-top: 4px;
+    };
+
+    &:not([type=checkbox]):not([type=file]):not([type=submit]) {
+      height: 42px;
+      font-size: 18px;
+      padding: 0 10px;
+      line-height: 12px;
+    }
+  }
+}
+
+.registration-actions {
+  & > * {
+    margin: 5px;
+  }
+}
+
+form {
+  &.registration {
+    &.registration-allergies,
+    &.registration-diets {
+      // Override the checkbox forms to get rid 
+      // of the left hand margin
+      .controls {
+        margin: auto;
+      }
+
+      // Lose the Name label that took up too much space
+      label.control-label {
+        display: none;
+      }
+    }
+  }
+}
+
+ul.breadcrumb.registration-breadcrumb {
+  li {
+    font-size: 18px;
+  }
+
+  li.active {
+    color: $orange;
+  }
+
+  li.complete {
+    color: $registration-complete;
+  }
+}
+
+.registration-name {
+  font-size: 20px;
+}
+
+.registration-email {
+  font-size: 18px;
+  small {
+    padding-left: 5px;
+    font-size: 12px;
+  }
+}
+
+.registration-diets,
+.registration-allergies {
+  font-size: 16px;
+  ul {
+    list-style-type: none;
+    li {
+      font-size: 14px;
+    }
+  }
+}
+
+.well{
+  
+  overflow:hidden;
+  word-wrap:break-word;
+}

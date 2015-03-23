@@ -1,0 +1,39 @@
+/* MARKETING CONTENT -------------------------------------------------- */
+
+.marketing {
+  margin: auto;
+
+  .featurette::first-of-type {
+    padding-top: 0;
+  }
+
+  .section-heading {
+    @media (max-width: $break-small-portait) {
+      font-size: 42px;
+    }
+
+    @media (min-width: $break-small-portait) and (max-width: $break-small-landscape) {
+      font-size: 60px;
+    }
+  }
+
+  /* Center align the text within the three columns below the carousel */
+  .span4 {
+    text-align: center;
+
+    p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    & + .span4 {
+      @media (max-width: $break-large-portrait) {
+        margin-top: 40px
+      }
+    }
+  }
+
+  h2 {
+    font-weight: normal;
+  }
+}

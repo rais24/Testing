@@ -1,0 +1,126 @@
+<% content_for :header do %>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/assets/Shared.css" />
+    <link rel="stylesheet" href="/assets/CashBack.css" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/assets/IEFixes.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/assets/IE7And8Fixes.css" />
+    <![endif]-->
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="/assets/IE7Fixes.css" />
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 400) {
+                    $(".backToTop").fadeIn(300);
+                }
+                else {
+                    $(".backToTop").fadeOut(300);
+                }
+            });
+
+            $('form.pantry-items').submit(function(e) { 
+                var selectedPantryItems = [];
+                $('.pantryItemsSelectionSection input:checked').each(function() {
+                    selectedPantryItems.push($(this).attr("id").replace("pi_", ""));
+                });
+                $("#pantry_ingredient_ids").val(selectedPantryItems.join(","));
+                var selectedCashbackItems = [];
+                $('.cashBackItemsSection input:checked').each(function() {
+                    selectedCashbackItems.push($(this).attr("id").replace("cb_", ""));
+                });
+                $("#cashback_ingredient_ids").val(selectedCashbackItems.join(","));
+            });
+
+            $('.cashBackItemsSection :checkbox').on('click', function() {
+               var currentTotalDiscount = parseInt($("#cashBackTotalAmount").text().trim()*100);
+               var itemValue = $(this).closest("div").parent().find(".cashBackItemCrossout ~ span").text().trim().replace("$","");
+                if ($(this).is(":checked")) {
+                   newTotalDiscount = parseFloat( (currentTotalDiscount + parseInt(itemValue*100)) / 100);
+                }     
+                else {
+                   newTotalDiscount = parseFloat( (currentTotalDiscount - parseInt(itemValue*100)) / 100);
+                }
+               $("#cashBackTotalAmount").text(newTotalDiscount.toFixed(2));
+
+            });
+
+        });
+
+        function scrollToTop() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        }
+
+        function toggleMobileMenu() {
+            if (!$(".headerMobileExpandedMenu").is(":visible")) {
+                $(".headerMobileExpandedMenu").toggle();
+                $(".headerMobileExpandedMenu .expandedMenu").animate({ left: 0 }, 200);
+            }
+            else {
+                $(".headerMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".headerMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+    </script>
+
+<% end %>
+
+<div class="backToTop" onclick="scrollToTop();">
+</div>
+
+<div class="pageHeader">
+    Pantry Items, Staples, and Cash Back - Step 1 of 6
+</div>
+<% unless @cash_back_items.blank? %>
+    <div class="cashBackHeaderSection">
+        <div class="congratulationsText">
+            Congratulations!
+        </div>
+        <div class="chanceToWinText">
+            You have a chance to win cash back!
+        </div>
+        <div class="letUsKnowText">
+            Let us know if you currently have any of the Cash Back items listed below to get 50% off each item:
+        </div>
+        <%= render "cash_back_items" %>
+    </div>
+<% end %>
+<div class="continueSelecting hideOnMobile">
+</div>
+<div class="pantryItemsHeader">
+    Pantry Items and Staples
+</div>
+<div class="pantryItemsRunningOutText">
+    Are you running low on any of these items? The recipes you've selected require them, so we're happy to add
+    them to your order if you don't have them on hand.
+</div>
+<div class="pantryItemsSelectionSection">
+    <%= render "pantry_items" %>
+</div>
+<div class="cashBackNextStep">
+    <%= form_for @order, url: wizard_path, method: 'PUT', html: { class: "pantry-items" } do |f| %>
+        <input type="hidden" id="pantry_ingredient_ids" name="pantry_ingredient_ids" />
+        <input type="hidden" id="cashback_ingredient_ids" name="cashback_ingredient_ids" />
+        <input type="submit" class="redButton" value="Next Step: Delivery Info" />
+    <% end %>
+</div>

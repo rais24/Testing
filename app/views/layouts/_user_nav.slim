@@ -1,0 +1,12 @@
+- unless flash.keys.empty?
+  .pre-content
+    - if flash[:notice].present?
+      .alert
+        a href="#" class=:close data-dismiss=:alert &times;
+        strong= flash[:notice]
+
+    - if flash[:alert].present?
+      .alert.alert-danger
+        a href="#" class=:close data-dismiss=:alert
+          | &times;
+        strong= flash[:alert]

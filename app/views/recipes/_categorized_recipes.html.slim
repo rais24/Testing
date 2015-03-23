@@ -1,0 +1,6 @@
+- %w(dinner).map(&:pluralize).each do |meal|
+    - recipes = recipes.send(meal)
+    - unless recipes.empty?
+        ul
+            - recipes.each do |recipe|
+                = render 'recipes/recipe', { :recipe => recipe }

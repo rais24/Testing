@@ -1,0 +1,27 @@
+.content
+  .billing
+    .span5.offset1
+      .history
+        h2.center Your Order History
+        - if resource.orders.paid.empty?
+          p.empty You Have No Past Orders
+
+          = link_to "Place an Order!", new_order_path, class: 'button-danger button-large'
+          
+        - else
+          = render resource.orders.paid
+
+    .span5
+      h2.center Billing
+
+      - if resource.billable?
+        = render resource
+
+        .row-fluid
+          .span6
+            = button_to 'Remove Your Card', resource_path, method: :delete, class: 'button-danger button-fill'
+          .span6
+            = render 'form', form_method: :PUT, label: 'Edit Your Card', classes: %w(button-fill)
+
+      - else
+        = render 'subscribe'

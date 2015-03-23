@@ -1,0 +1,11 @@
+<%= simple_form_for @signup_inquiry, url: signup_path do |f| %>
+    <% if @signup_inquiry.validation_error %>
+    	<p class='error'>
+    	<%= @signup_inquiry.validation_error %>
+    	</p>
+	    <%= f.input_field :zipcode, value: params[:zip], placeholder: 'zip code', required: true, class: 'fieldnotProvided' %>
+	<% else %>
+	    <%= f.input_field :zipcode, value: params[:zip], placeholder: 'zip code', required: true %>
+    <% end %>
+    <%= f.submit 'Get Cooking!', class:"redButton" %>
+<% end %>

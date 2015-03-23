@@ -1,0 +1,1005 @@
+@media all and (max-width: 640px) and (min-width: 320px) {
+.topcontainer .leftsocilicon {
+	display: none;
+}
+.topcontainer {
+	padding: 0px;
+}
+.topcontainer .rightblock {
+	float: none;
+	width: auto;
+}
+.topcontainer .rightblock .callus {
+	float: right;
+	width: auto;
+	margin-right: 10px;
+}
+.topcontainer .rightblock .callus2 {
+	float: none;
+	margin-left: 10px;
+	width: 100px !important;
+}
+.topcontainer .rightblock .callus2 span {
+	display: none;
+}
+.topcontainer .rightblock .none {
+	display: none;
+}
+#menu .logo {
+	width: auto;
+	text-align: center;
+	float: none;
+	width: 78px;
+	margin: 0 auto;
+	right: 0px;
+	left: 0px;
+	position: absolute;
+}
+.menulinks {
+	display: none;
+}
+#menu {
+	overflow: visible;
+	position: relative;
+}
+.mobilemenu {
+	width: 61%;
+	float: none;
+	display: block;
+}
+.mobilemenu img {
+	position: relative;
+	top: 14px;
+	cursor: pointer;
+	left: 5px;
+}
+.menutoggle {
+	display: none;
+	position: absolute;
+	top: 50px;
+	z-index: 100;
+}
+.mobilemenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.mobilemenu ul li {
+	float: none;
+	background: #9c3d3e;
+	padding: 15px 10px;
+	width: 250px;
+	border-bottom: 1px solid #7c3132;
+}
+.mobilemenu ul li a {
+	color: #FFF;
+	font-size: 16px;
+	text-decoration: none;
+}
+.mobilemenu ul li a div {
+	background: none repeat scroll 0 0 #d1d3d4;
+	border-radius: 20px;
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	height: 20px;
+	line-height: 18px;
+	text-align: center;
+	width: 20px;
+}
+.login-container h1 {
+	line-height: 50px;
+}
+.topcontainer .rightblock .signup-login {
+	width: auto;
+	float: left;
+	padding: 6px 10px;
+}
+.login-container .popupbox {
+	width: auto;
+	margin: 0 10px;
+	min-height: 160px;
+	height: auto;
+}
+.login-container .popupbox h2 {
+	line-height: 30px;
+	font-size: 15px;
+}
+.login-container .forgotpass {
+	width: 90%;
+	margin-top: 15px;
+}
+.login-container {
+	padding-bottom: 5px;
+	min-height: 250px;
+}
+.login-container .inputfield {
+	width: 90%;
+}
+.login-container .popupbox .textname {
+	padding: 0 15px;
+	margin: 0;
+}
+.footer {
+	min-height: 370px;
+}
+.footer .footer-left {
+	width: auto;
+	text-align: center;
+	float: none;
+}
+.footer .footer-center {
+	padding: 0px;
+}
+.footer .footer-center h4 {
+	text-align: left;
+}
+.footer .footer-right h4 {
+	text-align: center;
+}
+.footer .footer-left .link {
+	float: none;
+	text-align: center;
+}
+.footer .footer-left .copyright {
+	float: none;
+	text-align: center;
+}
+.footer .footer-right .visacard-div {
+	display: inline-block;
+	float: none;
+}
+.footer .footer-right .socilimg-div {
+	display: inline-block;
+	float: none;
+	margin: 0px 10px;
+	margin-bottom: 10px;
+}
+.footer .footer-right .socilimg h4 {
+	display: block;
+}
+.footer .footer-center {
+	float: none;
+	width: 100%;
+}
+.footer .footer-right {
+	width: 100%;
+}
+.get-started-container {
+	padding: 0px;
+}
+.get-started-container h1.paddingleft {
+	padding-left: 10px;
+}
+.signuppage-form .leftdetails .textname {
+	/*display: none;*/
+	display: block;
+}
+.signuppage-form .rightdetails .textname {
+	/*display: none;*/
+	display: block;
+}
+.get-started-container .contentcontainer {
+	border: none;
+}
+.get-started-container .contentcontainer .innerbody h1 {
+	line-height: 20px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.get-started-container .contentcontainer .innerbody .textalign {
+	text-align: left;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv {
+	display: none;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv2 {
+	display: block !important;
+	width: 85%;
+}
+.get-started-container .contentcontainer .innerbody h3 {
+	display: none;
+}
+.get-started-container .contentcontainer .innerbody {
+	width: auto;
+}
+.get-started-container .contentcontainer .tab {
+	border-radius: 0px;
+}
+.get-started-container .contentcontainer .tab .tab1 span {
+	display: none;
+}
+.signuppage-form .lasttop {
+	line-height: 25px;
+}
+.back-nextbtn {
+	width: 90%;
+}
+.signuppage-form .leftdetails {
+	float: none;
+	width: auto;
+	height: auto;
+}
+.fix-height {
+	height: auto;
+	margin-bottom: 5px;
+}
+.signuppage-form .rightdetails {
+	float: none;
+	width: auto;
+}
+.billing-container {
+	width: 90%;
+}
+.styled-select.short-catg.selectweek {
+	margin-bottom: 10px;
+}
+.delvinf-container {
+	width: 90%;
+}
+.delvinf-container .selectday {
+	width: auto;
+	float: none;
+}
+.styled-select.short-catg select {
+	width: 100%;
+}
+.delvinf-container .time {
+	width: 50%;
+}
+.delvinf-container .leftdiv {
+	width: 100%;
+}
+.signupcomplete {
+	width: auto;
+	display: block;
+}
+.toprightiocns {
+	width: auto;
+	border: 0px;
+	margin-right: 0px;
+}
+.topicons {
+	margin: 0px;
+	width: 36px;
+}
+#menu {
+	padding: 0px;
+}
+.profile-complete {
+	float: none;
+	margin: 5px auto;
+	width: 90%;
+}
+.dietary-needs-tabs {
+	width: 90%;
+}
+.get-started-container h1 {
+	margin-left: 0px;
+}
+.welcomecontainer .leftcontainer {
+	float: none;
+	width: 100%;
+}
+.welcomecontainer .leftcontainer1 .dayplanimg {
+	float: none;
+	text-align: center;
+	margin: 0px;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo {
+	width: auto;
+}
+.welcomecontainer .leftcontainer1 .dayplaninfo p {
+	text-align: justify;
+}
+.welcomecontainer .rightcontainer .maincontainer {
+	width: auto;
+}
+.welcomecontainer .rightcontainer {
+	width: auto;
+	float: none;
+}
+.welcomecontainer .profilecomplete {
+	text-align: left;
+	width: auto;
+}
+.welcomecontainer .profilecomplete .progress-bar {
+	width: 100%;
+	margin: 5px 0;
+}
+.signuppage-form .lastbtn .submitbtn {
+	float: right;
+}
+.textarea1 {
+	width: 100% !important;
+}
+.innerbody-extra-width {
+	width: 100% !important;
+}
+.styled-select.short-catg select.select2 {
+	width: 100% !important;
+}
+.styled-select.short-catg select.select3 {
+	width: 100% !important;
+}
+.res-width {
+	width: 250px !important;
+}
+.div-float-left {
+	float: left !important;
+}
+.welcomecontainer .leftcontainer1 .preferences {
+	width: 100%;
+}
+.popupbox .popupheading {
+	font-size: 12px;
+	margin-bottom: 0px;
+	line-height: 19px;
+}
+.popupbox .popupheading2 {
+	font-size: 10px !important;
+	line-height: 13px;
+}
+.popupbox .progress-bar {
+	margin-bottom: 8px;
+}
+.righticon {
+	text-align: left;
+	margin-left: 0px;
+}
+.welcomecontainer .leftcontainer1.floatleft2 {
+	width: auto !important;
+}
+.modal-window {
+	width: 60%;
+	top: 2%;
+}
+.table-cell-right-align {
+	text-align: center;
+}
+.welcomecontainer .leftcontainer1 .topfour {
+	width: 49%;
+}
+.welcomecontainer .leftcontainer1.extraheight {
+	min-height: 145px;
+}
+.targetbox {
+	width: 100%;
+	text-align: left;
+}
+.targetbox .innerdetails {
+	width: auto;
+	min-width: 53px;
+	text-align: left;
+}
+.target-after {
+	width: 90%;
+	font-size: 12px;
+}
+.targetbox .inputfiled {
+	width: 47%;
+}
+.targetbox .inputfiled.widthexpand {
+	width: 59% !important;
+}
+.targetbox .inputfiled.inputfiled2 {
+	width: 70% !important;
+}
+.popupbox p {
+	font-size: 12px;
+}
+.welcomecontainer .leftcontainer1 .progressleft {
+	width: 100%;
+}
+.welcomecontainer .leftcontainer1 .progresright {
+	float: none;
+}
+.welcomecontainer .heading h1 {
+	width: 100%;
+}
+.welcomecontainer .heading {
+	width: auto;
+	height: auto;
+}
+.tooltip {
+	width: 50%;
+	top: 35px;
+}
+.tooltip .arrowicon {
+	width: auto;
+	right: 80px;
+}
+.trackwidth {
+	float: left;
+	margin-left: 8px;
+}
+.targetbox .innerdetails2 {
+	width: auto !important;
+	min-width: 53px;
+	text-align: left;
+}
+table.dataTable tbody tr {
+	height: 35px;
+	line-height: 35px;
+}
+.datatabletop .datatableinleft {
+	float: none;
+}
+.datatabletop .add-patient {
+	float: none;
+	width: auto;
+	margin-top: 10px;
+	text-align: center;
+}
+.datatabletop .rightsearch {
+	float: none;
+	width: auto;
+}
+.datatable-middcell {
+	display: inline-block;
+}
+.date-calc {
+	width: auto;
+	float: none;
+}
+.todate {
+	width: auto;
+	float: none;
+}
+.tab-right {
+	width: auto !important;
+	float: none !important;
+	margin-left: 10px;
+}
+.tab-left {
+	border: 0px !important;
+	float: none !important;
+	width: auto !important;
+}
+.tab-right .topdiv .inbox {
+	line-height: 35px !important;
+}
+.tab-right .topdiv {
+	border: 0px !important;
+}
+.right-div-full-width {
+	width: 95% !important;
+	margin-bottom: 10px;
+}
+.inbox-search {
+	width: auto !important;
+}
+.inbox-search input {
+	padding-left: 32px !important;
+}
+.tab-right .topdiv .inbox {
+	width: auto !important;
+}
+.inbox-search {
+	margin-right: 10px !important;
+}
+.unread-details {
+	line-height: 18px !important;
+	width: auto !important;
+}
+.section-row2 {
+	border: 0 !important;
+}
+.save-btn {
+	margin: 0 auto;
+	float: none;
+	margin-top: 10px;
+}
+.resp-tabs-list-span {
+	background: #aaa095;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-o-border-radius: 10px;
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	width: 20px;
+}
+.active-left {
+	font-size: 15px;
+}
+.active-right {
+	width: 100%;
+}
+.table-width {
+	width: 99%;
+	font-size: 12px;
+}
+.composemail-text-field {
+	width: 95% !important;
+}
+.composemail-textarea-field {
+	width: 95% !important;
+}
+/*.recipe-box {
+	width: 250px;
+}
+.over-right {
+	width: 231px !important;
+}
+.recipe-box .imgwidth {
+	width: 250px;
+}
+.recipe-box .imgwidth img {
+	width: 250px;
+}*/
+.get-started-container h1 {
+	font-size: 19px;
+}
+.top-review {
+	float: none;
+	margin-bottom: 5px;
+}
+.blank-height {
+	height: 10px;
+	width: 100%;
+}
+/*--------------- page 40 - 41  -44    ---------------*/
+.input-filed-left {
+	float: none;
+	width: auto;
+}
+.input-filed-right {
+	float: none;
+	width: auto;
+}
+.input-filed-right input {
+	width: 97%;
+}
+.input-filed-textarea {
+	float: none;
+	width: auto;
+}
+.input-filed-textarea textarea {
+	width: 97%;
+}
+.last-div-row {
+	width: 100%;
+	float: none;
+}
+.mail-body {
+	width: auto;
+}
+.text-textarea-main-div {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.text-textarea-main-div{ width:96.2%;}
+
+.data-cell-tab span{ display:none;}
+
+.data-cell-tab .tab1{ height:60px;}
+.filter-left{ float:none; width:auto;}
+.filter-right{ float:none; height:25px; margin-top:5px;}
+.filter-right .inner-right{ float:right;}
+
+
+.recipe-left-block{ float:none; width:auto;}
+.recipe-right-block{ width:auto; float:none;}
+.diet-plan{ padding:8px;}
+.recipe-last-row .left-right-box{ width:auto; float:none;}
+.recipe-last-row .center-box{ float:none; margin:0px; width:auto;}
+.recipe-chef{margin-bottom:30px;}
+.get-started-container .contentcontainer .tab .tab1 a.rightactive2{ background-position:81px 20px;}
+.rightsearch_imp{ display:none !important;}
+/*--------------- page 40 - 41 - 44     ---------------*/
+}
+
+@media all and (max-width: 1024px) and (min-width: 641px) {
+.table-width {
+	width: 99%;
+	font-size: 12px;
+}
+.tab-right .topdiv {
+	border: 0px !important;
+	margin: 0px !important;
+	height: 60px !important;
+}
+.tab-right {
+	width: 72% !important;
+}
+.inbox-search {
+	margin-top: 8px !important;
+	width: 250px !important;
+}
+.tab-left .textcenter {
+	text-align: left !important;
+}
+.resp-vtabs .resp-tab-content {
+	width: auto !important;
+	border: 0px !important;
+}
+h2.resp-accordion:first-child {
+	border-bottom: 1px solid #ccc !important;
+	border-left: 0px !important;
+	border-right: 0px !important;
+}
+h2.resp-tab-active {
+	border-left: 0px !important;
+	border-right: 0px !important;
+	border-bottom: 1px solid #c1c1c1 !important;
+}
+h2.resp-accordion {
+	border-left: 0px !important;
+	border-right: 0px !important;
+}
+.resp-vtabs .resp-tab-content:last-child {
+	border-bottom: 0px !important;
+}
+table.dataTable tbody tr {
+	height: 35px;
+	line-height: 35px;
+}
+.get-started-container h1.lineheight {
+	line-height: 25px;
+}
+.signuppage-form .lastbtn {
+	float: left;
+}
+.topmargin {
+	margin-top: 15px;
+}
+.topcontainer {
+	padding-right: 0px;
+}
+.login-container .popupbox {
+	width: 90%;
+}
+.topcontainer .leftsocilicon {
+	width: 12%;
+}
+.topcontainer .rightblock {
+	width: auto !important;
+}
+.topcontainer .rightblock .signup-login {
+	width: auto;
+}
+.topcontainer .rightblock {
+	width: auto;
+}
+.topcontainer .rightblock1 {
+	width: auto;
+}
+#menu .logo {
+	width: auto;
+	text-align: center;
+	float: none;
+	width: 78px;
+	margin: 0 auto;
+	right: 0px;
+	left: 0px;
+	position: absolute;
+}
+.menulinks {
+	display: none;
+}
+#menu {
+	overflow: visible;
+	position: relative;
+}
+.mobilemenu {
+	width: 61%;
+	float: none;
+	display: block;
+}
+.mobilemenu img {
+	position: relative;
+	top: 14px;
+	cursor: pointer;
+}
+.menutoggle {
+	display: none;
+	position: absolute;
+	top: 50px;
+	z-index: 100;
+}
+.mobilemenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.mobilemenu ul li {
+	float: none;
+	background: #9c3d3e;
+	padding: 15px 10px;
+	width: 250px;
+	border-bottom: 1px solid #7c3132;
+}
+.mobilemenu ul li a div {
+	background: none repeat scroll 0 0 #d1d3d4;
+	border-radius: 20px;
+	display: inline-block;
+	height: 20px;
+	line-height: 18px;
+	text-align: center;
+	width: 20px;
+}
+.mobilemenu ul li a {
+	color: #FFF;
+	font-size: 16px;
+	text-decoration: none;
+}
+.footer .footer-left {
+	width: 30%;
+}
+.footer .footer-center {
+	width: 38%;
+}
+.footer .footer-right {
+	width: 28%;
+}
+.get-started-container .contentcontainer .innerbody {
+	width: auto;
+}
+.get-started-container .contentcontainer .innerbody .selecteddiv {
+	width: 45%;
+}
+.signuppage-form .leftdetails {
+	width: 45%;
+}
+.signuppage-form .rightdetails {
+	width: 45%;
+}
+.delvinf-container .selectday {
+	width: 300px;
+}
+.styled-select.short-catg select {
+	width: 100%
+}
+.delvinf-container .leftdiv {
+	width: 50%;
+}
+.signuppage-form .lastbtn .checkbox {
+	width: 100%;
+}
+.welcomecontainer .leftcontainer {
+	width: 100%;
+}
+.welcomecontainer .rightcontainer {
+	width: auto;
+	float: none;
+}
+.welcomecontainer .leftcontainer1 .dayplanimg {
+	margin: 0px;
+}
+.welcomecontainer .rightcontainer .maincontainer {
+	display: block;
+	width: 30%;
+	margin: 0 auto;
+}
+.choosebtn2 {
+	margin: 0px !important;
+}
+.welcomecontainer .leftcontainer1.floatleft2 {
+	width: 94% !important;
+}
+.topcontainer .rightblock .callus {
+	width: auto;
+}
+.popupbox .popupheading {
+	font-size: 16px;
+}
+.righticon {
+	margin-left: 0px;
+}
+.targetbox .innerdetails {
+	width: auto;
+}
+.back-nextbtn {
+	width: 48%;
+}
+.modal-window {
+	top: 10%;
+}
+.popupbox .popupheading {
+	line-height: 20px;
+}
+.welcomecontainer .heading h1 {
+	width: 100%;
+}
+.welcomecontainer .heading {
+	width: auto;
+	height: auto;
+}
+.tooltip {
+	width: 43%;
+	top: 35px;
+}
+.tooltip .arrowicon {
+	width: auto;
+	right: 150px;
+}
+.get-started-container .contentcontainer .tab .tab1 a {
+	font-size: 17px;
+}
+.textarea1 {
+	width: 80% !important;
+}
+.get-started-container .contentcontainer .tab .tab1 {
+	height: 60px;
+}
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+	height: 45px;
+}
+table.dataTable tbody tr {
+	height: 45px;
+}
+.datatabletop .rightsearch {
+	width: 30%;
+}
+.datatabletop .add-patient {
+	width: auto;
+}
+.datatabletop .rightsearch input {
+	width: 80%;
+}
+.resp-tabs-list-span {
+	background: #aaa095;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-o-border-radius: 10px;
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	width: 20px;
+}
+.input-filed-left {
+	float: none;
+	width: auto;
+}
+.input-filed-right {
+	float: none;
+	width: auto;
+}
+.input-filed-right input {
+	width: 97%;
+}
+.input-filed-textarea {
+	float: none;
+	width: auto;
+}
+.input-filed-textarea textarea {
+	width: 97%;
+}
+.last-div-row {
+	width: 100%;
+	float: none;
+}
+.mail-body {
+	width: auto;
+}
+.text-textarea-main-div {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.filter-right {
+    
+    height: 25px;
+    margin-top: 5px;
+}
+.data-cell-tab .tab1{ height:60px;}
+.filter-right{margin-top:0px;}
+.recipe-left-block{ float:none; width:auto;}
+.recipe-right-block{ width:auto; float:none;}
+.diet-plan{ padding:8px;}
+
+ .center-box .facts .span1{ width:49%;}
+ .recipe-left-block .img-respo{ text-align:center;}
+.recipe-last-row .center-box{ float:left; width:26%;}
+.recipe-chef{margin-bottom:30px;}
+}
+
+@media all and (max-width: 1023px) and (min-width: 768px) {
+.tab-right {
+	width: auto !important;
+	float: none !important;
+}
+}
+
+@media all and (max-width: 1360px) and (min-width: 1025px) {
+ .topcontainer .leftsocilicon {
+	width: 12%;
+}
+.menulinks {
+	width: 65%;
+}
+.menulinks1 {
+	width: 32% !important;
+}
+.topcontainer .rightblock {
+	width: 40%;
+}
+f .delvinf-container {
+	width: 80%;
+}
+.topcontainer .rightblock1 {
+	width: 19% !important;
+}
+.popupbox .popupheading {
+	font-size: 18px;
+}
+.welcomecontainer .leftcontainer1 .progressleft {
+	width: 625px;
+}
+.get-started-container .contentcontainer .tab .tab1 a {
+	font-size: 17px;
+}
+.tab-right {
+	width: 1058px !important;
+}
+
+}
+
+@media all and (max-width: 1300px) and (min-width: 1100px) {
+.tab-right {
+	width: 1200px !important;
+}
+
+}
+
+@media all and (max-width: 1281px) and (min-width: 1025px) {
+.tab-right {
+	width: 989px !important;
+}
+.input-filed-right{ width:655px !important;}
+.input-filed-textarea{ width:969px !important;}
+.last-div-row{ width:970px !important;}
+}
+
+@media only screen and (max-width:760px) {
+.pop-up.large {
+	left: 5%;
+	margin: 0;
+}
+}
+
+@media only screen and (max-width:480px) {
+.pop-up.small, .pop-up.medium {
+	left: 5%;
+	margin: 0;
+}
+.pop-up-content {
+	padding: 12px;
+}
+.pop-up-footer {
+	padding-top: 12px;
+}
+} 
+	
+/*page tab 2*/
+
+
+/* pricing page */
+@media all and (max-width: 640px) and (min-width: 320px) {
+.plan-box-inner .cat-name{ font-size:14px;}
+}
+
+@media all and (max-width: 1024px) and (min-width: 641px) {
+	.plan-box-inner .cat-name{ font-size:14px;}
+}
+
+
+@media all and (max-width: 1023px) and (min-width: 320px) {
+.login-container .inner-container{ /*width:90%;*/ width:55%;}
+.login-container .top-text{ width:auto;}
+.login-container .footer-text{ width:auto;}
+}
+
+@media all and (max-width: 1360px) and (min-width: 1025px) {
+.plan-box-inner .cat-name{ font-weight:normal;}
+}

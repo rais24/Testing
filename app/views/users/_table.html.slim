@@ -1,0 +1,15 @@
+table.table.table-striped class="lead"
+  tr
+    th= sortable User, "Locked"
+    th= sortable User, "first", "Name"
+    th= sortable User, "email", "Email"
+    th= sortable User, "adults", "Adults"
+    th= sortable User, "children", "Children"
+
+  - collection.each do |user|
+      tr
+        td= "X" if user.locked?
+        td= link_to user.name, resource_path(user)
+        td= link_to user.email, resource_path(user)
+        td= user.adults
+        td= user.children

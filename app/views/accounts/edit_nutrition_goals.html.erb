@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <div style="width:100%; height:5px;"> </div>
+    <h1 class="h1-float-left"><a href="/account">< Back to Dashboard</a></h1>     
+    <div class="contentcontainer" style="margin-bottom:20px;">
+      <div class="tab">
+       <div class="tab1"><a href="#" class="rightactive">1. <span>Willingness to Change</span></a></div>
+        <div class="tab1"><a href="#" class="rightactive">2. <span>Past Medical &amp; Surgical History</span></a></div>
+        <div class="tab1"><a href="#" class="active">3. <span>My Food/Nutrition-Related Goals</span></a></div>
+      </div>
+      <%= form_tag(account_path, :method => :put) do %>
+        <div class="spacer"></div>
+        <div class="innerbody innerbody-extra-width">
+            <div class="delvinf-container delvinf-container-extra-width">
+             
+            <h1 class="lineheight">My food- and nutrition-related goals are:</h1>
+            <div style="width:100%;">
+              <textarea name="user[nutrition_goals]" class="textarea1" placeholder="Lorem ipsum dolor sit amet, est nibh morbi, pellentesque volutpat, porttitor diam velit mirhoncus iusto.Pharetra erat facilisi, sit lobortis"></textarea>
+            </div>
+        </div>
+      </div>
+        <div class="back-nextbtn">
+          <div class="backbtn"><%= link_to "Back", edit_account_path(page_type: "medical_history") %></div>
+          <input type="submit" class="nextbtn" value="Next" />
+        </div>
+      <% end %>
+  </div>
+  <!-- Get Started container close --> 
+  
+  </div>
+  <%= render "layouts/shared/footer" %>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fitly® - Delicious. Delivered.™</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/assets/Shared.css" />
+    <link rel="stylesheet" href="/assets/Menu.css" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/assets/IEFixes.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/assets/IE7And8Fixes.css" />
+    <![endif]-->
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="/assets/IE7Fixes.css" />
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="/assets/jquery.placeholder.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.shopping_cart_item_quantity').on('change', priceCalculator);
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 400) {
+                    $(".backToTop").fadeIn(300);
+                }
+                else {
+                    $(".backToTop").fadeOut(300);
+                }
+            });
+        });
+
+        function priceCalculator() {
+            var total_amount = $(this).find("option:selected").attr("data");
+            $('#subtotal_' + $(this).attr("data")).text("$"+total_amount);
+        }
+
+        function scrollToTop() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        }
+
+        function toggleMobileMenu() {
+            if (!$(".headerMobileExpandedMenu").is(":visible")) {
+                $(".headerMobileExpandedMenu").toggle();
+                $(".headerMobileExpandedMenu .expandedMenu").animate({ left: 0 }, 200);
+            }
+            else {
+                $(".headerMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".headerMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+
+        function toggleFilterModal() {
+            $("#filterModal").toggle();
+        }
+
+        function showPreviousFilterGroup() {
+            if ($(".filterGroup:visible").prev(".filterGroup").length > 0) {
+                var currentFilterGroup = $(".filterGroup:visible");
+                $(".filterGroup:visible").prev(".filterGroup").show();
+                currentFilterGroup.hide();
+
+                if ($(".filterGroup:visible").prev(".filterGroup").length == 0) {
+                    $(".previousFilterGroup").hide();
+                }
+                else {
+                    $(".previousFilterGroup").show();
+                }
+
+                if ($(".filterGroup:visible + .filterGroup").length == 0) {
+                    $(".nextFilterGroup").hide();
+                }
+                else {
+                    $(".nextFilterGroup").show();
+                }
+            }
+        }
+
+        function showNextFilterGroup() {
+            if ($(".filterGroup:visible + .filterGroup").length > 0) {
+                var currentFilterGroup = $(".filterGroup:visible");
+                $(".filterGroup:visible + .filterGroup").show();
+                currentFilterGroup.hide();
+
+                if ($(".filterGroup:visible + .filterGroup").length == 0) {
+                    $(".nextFilterGroup").hide();
+                }
+                else {
+                    $(".nextFilterGroup").show();
+                }
+
+                if ($(".filterGroup:visible").prev(".filterGroup").length == 0) {
+                    $(".previousFilterGroup").hide();
+                }
+                else {
+                    $(".previousFilterGroup").show();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="backToTop" onclick="scrollToTop();">
+    </div>
+    <%= render "layouts/shared/navigation" %>
+    <%= render "layouts/shared/navigation_mobile" %>
+    <div class="pageHeader">
+        The Menu
+    </div>
+    <%= render "recipes/recipePartials/menu_filter" %>
+    <div class="menuFilterAndLegendSection">
+        <div class="filterSection">
+            <div class="currentFilter">
+                Showing: 
+                <% if @filters.blank? %>
+                     All
+                <% else %>
+                    <%= @filters.map!{ |x| x.titleize}.join(", ") %>
+                <% end %>
+            </div>
+            <div class="filterTypes">
+                You can filter by dietary need, preferences and preparation.
+            </div>
+            <div class="changeFilterButton">
+                <input type="submit" class="redButton" onclick="toggleFilterModal(); return false;" value="Filter Recipes" />
+            </div>
+        </div>
+        <div class="menuIconLegend">
+            <div class="glutenFreeLegend">
+                gluten free
+            </div>
+            <div class="veganLegend">
+                vegan
+            </div>
+        </div>
+    </div>
+    <div class="menuList">
+        <%= render "recipes/recipePartials/menu_list" %>
+        <div class="clearFix">
+        </div>
+    </div>
+    <%= render "layouts/shared/footer" %>
+</body>
+</html>

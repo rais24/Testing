@@ -1,0 +1,26 @@
+= render "emails/header"
+br
+br
+table align="center" border="0" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+    tr
+        td A Fitly order failed to checkout and requires your immediate attention.
+br
+br
+table align="center" border="1" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+    tr
+        td width="150" valign="top" style="font-weight: bold;"
+            | Fitly Order ID:
+        td valign="top"
+            | #{@order.id}
+    tr
+        td valign="top" style="font-weight: bold;"
+            | Error Details:
+        td valign="top"
+            | #{@error_details}
+br
+br
+table align="center" border="0" cellpadding="6" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+    tr
+        td Please do not reply to this e-mail. It is automatically generated.
+    tr
+        td If you need help, please call <span style="font-weight: bold">1-844-GET-FITLY</span>.

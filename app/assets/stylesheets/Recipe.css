@@ -1,0 +1,860 @@
+@font-face {
+    font-family: 'glyphs';
+    src: url('/assets/glyphs/icomoon.eot');
+    src: url('/assets/glyphs/icomoon.eot?#iefix') format('embedded-opentype'),
+         url('/assets/glyphs/icomoon.woff') format('woff'),
+         url('/assets/glyphs/icomoon.ttf') format('truetype'),
+         url('/assets/glyphs/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+input[type="submit"].redButton.addButton {
+    width: 360px;
+    background: url('/assets/Icon_Add.png') scroll no-repeat 75px center #e36967;
+    text-transform: uppercase;
+    font-size: 125%;
+}
+
+.backToMenuLink {
+    max-width: 1100px;
+    margin: 83px auto 50px auto;
+    overflow: hidden;
+}
+
+    .backToMenuLink a {
+        color: #e16a6a;
+        font-size: 125%;
+        text-decoration: none;
+        background: url('/assets/BackToMenu.png') scroll no-repeat center left transparent;
+        padding-left: 30px;
+        height: 26px;
+        line-height: 26px;
+        display: block;
+        float: left;
+    }
+
+.recipeSection {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#preparation-view {
+    display: none;
+}
+
+#prepview .actions a {
+    color: rgb(156,61,62);
+}
+
+.recipeDetails {
+    position: relative;
+}
+
+    .recipeDetails #previewRecipePhoto {
+        display: none;
+    }
+
+    .recipeDetails .newItemBanner {
+        display: none;
+    }
+
+    .recipeDetails.new .newItemBanner {
+        display: block;
+        position: absolute;
+        background: url('/assets/NewBanner.png') scroll no-repeat center left transparent;
+        width: 129px;
+        height: 134px;
+        left: -35px;
+        top: -36px;
+        z-index: 1;
+    }
+
+    .recipeDetails .recipePhoto {
+        position: relative;
+        height: 300px;
+        width: 710px;
+        background: scroll no-repeat center left transparent;
+        background-size: cover;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        margin-bottom: 15px;
+        float: left;
+        margin-right: 30px;
+    }
+
+        .recipeDetails .recipePhoto .recipeOverlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: url('/assets/RecipeImageOverlay_Large.png') scroll no-repeat top left transparent;
+            width: 100%;
+            height: 137px;
+        }
+
+        .recipeDetails .recipePhoto .recipeDiet {
+            position: absolute;
+            left: 13px;
+            bottom: 20px;
+        }
+
+            .recipeDetails .recipePhoto .recipeDiet > div {
+                display: none;
+                float: left;
+                margin-left: 7px;
+            }
+
+            .recipeDetails .recipePhoto .recipeDiet .glutenFree {
+                background: url('/assets/Icon_GF.png') scroll no-repeat center left transparent;
+                width: 21px;
+                height: 22px;
+            }
+
+            .recipeDetails .recipePhoto .recipeDiet .vegan {
+                background: url('/assets/Icon_Vegan.png') scroll no-repeat center left transparent;
+                width: 21px;
+                height: 22px;
+            }
+
+            .recipeDetails .recipePhoto .recipeDiet .paleo {
+                background: url('/assets/Icon_Paleo.png') scroll no-repeat center left transparent;
+                width: 21px;
+                height: 22px;
+            }
+
+    .recipeDetails .recipeInformationSection {
+        float: left;
+        width: 360px;
+    }
+
+        .recipeDetails .recipeInformationSection .recipeName {
+            font-family: Rokkitt, serif;
+            font-size: 156.3%;
+            margin-bottom: 10px;
+        }
+
+        .recipeDetails .recipeInformationSection .recipeInformation {
+            width: 340px;
+            background-color: #f3f3f3;
+            padding: 20px 10px 10px 10px;
+            margin-bottom: 30px;
+        }
+
+            .recipeDetails .recipeInformationSection .recipeInformation .prepTime {
+                background: url('/assets/Icon_PreptoPlate.png') scroll no-repeat center left transparent;
+                height: 26px;
+                line-height: 26px;
+                padding-left: 30px;
+                width: 185px;
+                margin: 0 auto 10px auto;
+            }
+
+            .recipeDetails .recipeInformationSection .recipeInformation .recipeBasicNutrition {
+                font-size: 85.7%;
+                border-top: 1px solid #9b9b9b;
+                width: 100%;
+                text-align: center;
+                border-spacing: 0;
+            }
+
+                .recipeDetails .recipeInformationSection .recipeInformation .recipeBasicNutrition td {
+                    border-left: 1px solid #9b9b9b;
+                    padding: 7px 0;
+                }
+
+                    .recipeDetails .recipeInformationSection .recipeInformation .recipeBasicNutrition td:first-child {
+                        border-left-style: none;
+                    }
+
+        .recipeDetails .recipeInformationSection .priceSelectionContainer {
+            margin-bottom: 20px;
+        }
+
+            .recipeDetails .recipeInformationSection .priceSelectionContainer .priceSelection {
+                float: left;
+            }
+
+            .recipeDetails .recipeInformationSection .priceSelectionContainer .totalPrice {
+                float: right;
+            }
+
+.recipeSection .recipeDescription {
+    width: 710px;
+    float: left;
+    margin-right: 30px;
+}
+
+    .recipeSection .recipeDescription > div:first-child {
+        margin-bottom: 20px;
+    }
+
+    .recipeSection .recipeDescription a {
+        color: #e16a6a;
+    }
+
+.recipeSection .meetTheChefSection {
+    float: left;
+}
+
+    .recipeSection .meetTheChefSection .meetTheChefTitle {
+        font-family: Rokkitt, serif;
+        font-size: 156.3%;
+        margin: 40px 0 7px 0;
+    }
+
+    .recipeSection .meetTheChefSection .chefInformationSection .chefPictureContainer {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        border: 1px solid #c8c8c8;
+        float: left;
+    }
+
+        .recipeSection .meetTheChefSection .chefInformationSection .chefPictureContainer .chefPicture {
+            width: 60px;
+            height: 60px;
+            background-color: #f3f3f3;
+            background: url('/assets/jen_iserloh180_260.jpg') scroll no-repeat center top transparent;
+            background-size: 60px;
+        }
+
+    .recipeSection .meetTheChefSection .chefInformationSection .chefInformation {
+        float: left;
+        margin: 12px 0 0 10px;
+        height: 46px;
+    }
+
+        .recipeSection .meetTheChefSection .chefInformationSection .chefInformation .chefName {
+            font-size: 112.5%;
+        }
+
+        .recipeSection .meetTheChefSection .chefInformationSection .chefInformation .chefDescription {
+            margin-top: 5px;
+            color: #999;
+            font-style: italic;
+        }
+
+.categoriesSection {
+    clear: both;
+    padding: 0 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+    .categoriesSection .categoriesHeader {
+        color: #5e3a56;
+        font-size: 125%;
+        margin-top: 35px;
+    }
+
+    .categoriesSection .categories {
+        overflow: hidden;
+    }
+
+        .categoriesSection .categories > a {
+            color: #5e3a56;
+            float: left;
+            display: block;
+            border-top: 2px solid #5e3a56;
+            border-bottom: 2px solid #5e3a56;
+            height: 30px;
+            line-height: 30px;
+            position: relative;
+            margin: 5px 17px 0 20px;
+            text-decoration: none;
+        }
+
+            .categoriesSection .categories > a:before {
+                content: url('/assets/Cat_Left.png');
+                position: absolute;
+                left: -17px;
+                top: -2px;
+            }
+
+            .categoriesSection .categories > a:after {
+                content: url('/assets/Cat_Right.png');
+                position: absolute;
+                right: -16px;
+                top: -2px;
+            }
+
+            .categoriesSection .categories > a:hover {
+                background-color: #5e3a56;
+                color: #fff;
+            }
+
+                .categoriesSection .categories > a:hover:before {
+                    content: url('/assets/Cat_Left-Hover.png');
+                }
+
+                .categoriesSection .categories > a:hover:after {
+                    content: url('/assets/Cat_Right-Hover.png');
+                }
+
+.nutritionSection {
+    clear: both;
+    padding: 80px 0 50px 0;
+    margin-top: 80px;
+    background: url('/assets/Section_Bg.png') fixed no-repeat center center transparent;
+    background-size: cover;
+    -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .nutritionSection .nutritionSectionContainer {
+        max-width: 1077px;
+        margin: 0 auto;
+    }
+
+        .nutritionSection .nutritionSectionContainer:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em; /* Adjusts for spacing */
+        }
+
+        .nutritionSection .nutritionSectionContainer > div {
+            width: 283px;
+            min-height: 240px;
+            padding: 30px 20px 40px 20px;
+            background-color: #fff;
+            margin-left: 50px;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+            .nutritionSection .nutritionSectionContainer > div:first-child {
+                margin-left: 0;
+            }
+
+        .nutritionSection .nutritionSectionContainer .header {
+            font-size: 156.3%;
+            font-family: Rokkitt, serif;
+            text-align: center;
+        }
+
+        .nutritionSection .nutritionSectionContainer .headerDivider {
+            width: 90px;
+            height: 1px;
+            background-color: #9b9b9b;
+            margin: 15px auto 0 auto;
+        }
+
+        .nutritionSection .nutritionSectionContainer .whatsIncludedSection ul {
+            margin-top: 40px;
+        }
+
+            .nutritionSection .nutritionSectionContainer .whatsIncludedSection ul li {
+                list-style-position: inside;
+                font-size: 87.5%;
+                padding-top: 2px;
+            }
+
+                .nutritionSection .nutritionSectionContainer .whatsIncludedSection ul li:first-child {
+                    padding-top: 0;
+                }
+
+        .nutritionSection .nutritionSectionContainer .whatsIncludedSection .whatsIncludedText {
+            font-size: 87.5%;
+            margin-top: 20px;
+        }
+
+        .nutritionSection .nutritionSectionContainer .nutritionDetailsSection ul {
+            margin-top: 25px;
+        }
+
+            .nutritionSection .nutritionSectionContainer .nutritionDetailsSection ul li {
+                list-style: none;
+                clear: both;
+                overflow: hidden;
+                padding: 3px 0 1px 0;
+                border-bottom: 1px solid #c8c8c8;
+                font-size: 87.5%;
+            }
+
+                .nutritionSection .nutritionSectionContainer .nutritionDetailsSection ul li:first-child {
+                    padding-top: 0;
+                }
+
+                .nutritionSection .nutritionSectionContainer .nutritionDetailsSection ul li > div {
+                    float: right;
+                }
+
+                    .nutritionSection .nutritionSectionContainer .nutritionDetailsSection ul li > div:first-child {
+                        float: left;
+                    }
+
+        .nutritionSection .nutritionSectionContainer .otherIngredientsSection .otherIngredientsThingsLike {
+            font-size: 87.5%;
+            margin-top: 25px;
+        }
+
+        .nutritionSection .nutritionSectionContainer .otherIngredientsSection ul li {
+            list-style-position: inside;
+            font-size: 87.5%;
+            padding-top: 2px;
+        }
+
+        .nutritionSection .nutritionSectionContainer .otherIngredientsSection .otherIngredientsRunningLow {
+            font-size: 87.5%;
+            margin-top: 20px;
+        }
+
+#prepview li a:before {
+    display: inline;
+    vertical-align: top;
+    width: 15px;
+    width: 1.5rem;
+    height: 10px;
+    height: 1.5rem;
+    padding-right: 2px;
+    font-family: 'glyphs';
+    font-size: 10px;
+    font-size: 1.5rem;
+    color: rgb(156,61,62);
+}
+
+#prepview li.print a {
+    color: #e16a6a;
+    font-size: 125%;
+    text-decoration: none;
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    float: left;
+    top: 83px;
+    position: absolute
+}
+
+#prepview li.print a:before {
+    content: '\e626';
+}
+
+#prepview li.close a {
+    color: #e16a6a;
+    font-size: 125%;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    float: left;
+    top: 83px;
+    position: absolute;
+    left: 80px;
+}
+
+#prepview li.close a:before {
+    content: '\e67b';
+}
+
+#prepview .recipeName {
+    font-size: 25px;
+    text-align: center;
+    top: -60px;
+    position: relative;
+}
+
+#previewRecipePhoto {
+        display: block;
+        position: relative;
+        top: -120px;
+        left: -50px;
+        max-width: 710px;
+        margin: 5%;
+        padding: 1.0%;
+        background: rgb(255,255,255);
+        border: 1px solid #999;
+}
+
+    #stats {
+        font-size: 20px;
+    }
+    #stats .prepTime {
+        position: absolute;
+        display: inline-block;
+        top: 200px;
+        left: 800px;
+    }
+    #stats .recipeBasicNutrition td {
+        position: absolute;
+        display: inline-block;
+        left: 800px;
+    }
+    #stats .recipeBasicNutrition td:nth-child(1) {
+        top: 230px;        
+    }
+    #stats .recipeBasicNutrition td:nth-child(2) {
+        top: 260px;        
+    }
+    #stats .recipeBasicNutrition td:nth-child(3) {
+        top: 290px;        
+    }
+
+#prepview_instr {
+    position: relative;
+    top: -190px;
+    display: block;
+    font-size: 16px;
+    font-style: italic;
+    text-align: justify;
+}
+
+div.measurements, div.instructions {
+    top: -200px;
+    position: relative;
+}
+
+
+/*Tablet and small desktop*/
+@media(min-width: 768px)and (max-width:1145px) {
+    .backToMenuLink {
+        padding: 0 15px;
+    }
+
+    .recipeSection {
+        padding: 0 40px;
+    }
+
+        .recipeSection .recipeDetails .recipePhoto {
+            float: none;
+            margin: 0 auto 15px auto;
+            width: auto;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection {
+            float: none;
+            width: 100%;
+        }
+
+        .recipeSection .recipeDescription {
+            width: 100%;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection > div {
+            float: left;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection .recipeInformation {
+            float: right;
+            clear: left;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection .priceSelectionContainer {
+            width: 360px;
+            margin-bottom: 15px;
+        }
+
+            .recipeSection .recipeDetails .recipeInformationSection .priceSelectionContainer .totalPrice {
+                margin-top: 5.5px;
+            }
+
+        .recipeSection .meetTheChefSection {
+            display: none;
+        }
+
+    .categoriesSection {
+        margin-top: 20px;
+    }
+
+    .nutritionSection {
+        padding: 50px 15px;
+    }
+
+        .nutritionSection .nutritionSectionContainer > div {
+            display: block;
+            vertical-align: auto;
+            margin: 20px auto 0 auto;
+        }
+
+            .nutritionSection .nutritionSectionContainer > div:first-child {
+                margin: 0 auto;
+            }
+
+        .nutritionSection .nutritionSectionContainer:before {
+            display: none;
+        }
+}
+
+/*Small tablet*/
+@media(min-width: 768px)and (max-width:830px) {
+    input[type="submit"].redButton.addButton {
+        width: 285px;
+        background: url('/assets/Icon_Add.png') scroll no-repeat 38px center #e36967;
+    }
+
+    .recipeSection .recipeDetails .recipeInformationSection .priceSelectionContainer {
+        width: 285px;
+    }
+}
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    input[type="submit"].redButton.addButton {
+        width: auto;
+        height: 26px;
+        padding: 6.5px 14.5px;
+        font-size: 0;
+        background: url('/assets/Icon_Add.png') scroll no-repeat center center #e36967;
+    }
+
+    .backToMenuLink {
+        padding: 0 15px;
+    }
+
+    .recipeSection {
+        padding: 0 20px;
+        overflow: hidden;
+    }
+
+        .recipeSection .recipeDetails.new .newItemBanner {
+            display: block;
+            position: absolute;
+            background: url('/assets/NewBanner_Mobile.png') scroll no-repeat center left transparent;
+            width: 86px;
+            height: 88px;
+            left: -1px;
+            top: 0px;
+            z-index: 1;
+        }
+
+        .recipeSection .recipeDetails .recipePhoto {
+            float: none;
+            margin: 0 auto 15px auto;
+            width: auto;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection {
+            float: none;
+            width: 100%;
+        }
+
+        .recipeSection .recipeDescription {
+            width: 100%;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection > div {
+            float: left;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection .recipeInformation {
+            float: none;
+            clear: both;
+            margin: 20px auto;
+        }
+
+        .recipeSection .recipeDetails .recipeInformationSection .priceSelectionContainer {
+            width: auto;
+            margin-bottom: 15px;
+            margin-right: 20px;
+        }
+
+            .recipeSection .recipeDetails .recipeInformationSection .priceSelectionContainer .totalPrice {
+                margin-top: 5.5px;
+                margin-left: 10px;
+                font-size: 87.5%;
+            }
+
+        .recipeSection .meetTheChefSection {
+            display: none;
+        }
+
+    .categoriesSection {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+        .categoriesSection .categoriesHeader {
+            margin-top: 0;
+        }
+
+    .nutritionSection {
+        padding: 50px 15px;
+        margin-top: 50px;
+    }
+
+        .nutritionSection .nutritionSectionContainer > div {
+            display: block;
+            vertical-align: auto;
+            margin: 20px auto 0 auto;
+        }
+
+            .nutritionSection .nutritionSectionContainer > div:first-child {
+                margin: 0 auto;
+            }
+
+        .nutritionSection .nutritionSectionContainer:before {
+            display: none;
+        }
+}
+
+/*Mobile*/
+@media all and (max-width: 560px) {
+    .recipeSection .recipeDetails .recipePhoto {
+        height: 180px;
+    }
+
+    .recipeSection .recipeDetails .recipeInformationSection .priceSelectionContainer {
+        margin-right: 15px;
+    }
+
+    .selectContainer select {
+        width: 130px;
+    }
+}
+
+/*Mobile*/
+@media all and (max-width: 440px) {
+    .recipeSection .recipeDetails .recipeInformationSection .recipeInformation {
+        width: 100%;
+        position: relative;
+        left: -10px;
+    }
+
+    .recipeDetails .recipeInformationSection .recipeInformation .recipeBasicNutrition td {
+        padding: 7px 5px;
+    }
+}
+
+/*Mobile*/
+@media all and (max-width: 440px) {
+    .nutritionSection .nutritionSectionContainer > div {
+        width: auto;
+    }
+}
+
+
+/*Print*/   
+@media only print {
+    @page {
+        size: portrait;
+        margin: 0 20px;
+        padding: 0;
+    }
+
+    .backToMenuLink,
+    .meetTheChefSection,
+    .backToMenuLink a,
+    .priceSelectionContainer,
+    .redButton,
+    .categoriesSection,
+    #prepview .actions,
+    .nutritionSection,
+    .recipeInformation,
+    .footer,
+    .mobileFooter,
+    .headerMobileExpandedMenu,
+    .headerMenuContainer,
+    .recipeDescription,
+    .backToTop,
+    .backToTop:before,
+    .recipeDetails .recipePhoto,
+    .recipeDetails .recipePhoto .recipeOverlay,
+    .recipeDetails .recipePhoto .newItemBanner,
+    h2 {
+        display: none!important;
+    }
+    body {
+        font-size: 16px!important;   
+        margin: 0;     
+    }
+    #prepview .recipeName {
+        display: inline-block;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+        top: 30px;
+        left:10px;
+        font-size: 210%;
+    }
+    #previewRecipePhoto {
+        display: block;
+        position: relative;
+        top: 30px;
+        left: -35px;
+        max-width: 300px;
+        margin: 5%;
+        padding: 1.0%;
+        background: rgb(255,255,255);
+        border: 1px solid #999;
+    }
+    #prepview_instr {
+        position: relative;
+        top: -15px;
+        display: block;
+        font-size: 16px;
+        font-style: italic;
+        text-align: justify;
+    }
+    #stats {
+        font-size: 20px;
+    }
+    #stats .prepTime {
+        position: absolute;
+        display: inline-block;
+        top: 100px;
+        left: 400px;
+    }
+    #stats .recipeBasicNutrition td {
+        position: absolute;
+        display: inline-block;
+        left: 400px;
+    }
+    #stats .recipeBasicNutrition td:nth-child(1) {
+        top: 130px;        
+    }
+    #stats .recipeBasicNutrition td:nth-child(2) {
+        top: 160px;        
+    }
+    #stats .recipeBasicNutrition td:nth-child(3) {
+        top: 190px;        
+    }
+    div.measurements, div.instructions, #prepview_instr, #stats {
+        font-family: "Times New Roman";      
+    }
+    div.measurements, div.instructions {
+        top: -45px;  
+        display: inline;
+        position: relative;
+    }
+    div.measurements {
+        float: left;
+        width: 34%;
+        margin: 3% 0%;
+    }
+    div.measurements h3 {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    ul.measurements {
+        margin: 1% 0% 0% 0%;
+        font-size: 15px!important;  
+        list-style: none;      
+    }
+    ul.measurements, li {
+        margin: 0 0 0 15px;
+    }
+    div.instructions {
+        float: right;
+        width: 64%;
+        margin: 3% 0%;        
+    }
+    div.instructions h3 {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    ul.instructions {
+        list-style: none;      
+    }
+    ul.instructions li {
+        text-align: justify;
+        font-size: 15px!important;  
+    }
+    ul.instructions, li {
+        margin: 2px 0 0 0px;
+    }
+
+}

@@ -1,0 +1,32 @@
+.content
+  h1.center Fitly is available in your area!
+
+  p
+    | If you give us your e-mail address and a password, we can set up your account now, or you can do it later when you check out. Up to you.
+
+  = form_for @signup_inquiry, url: signup_path do |f|
+    h3= @signup_inquiry.validation_error
+
+    .checkout-btn
+      = f.submit "Take me to the recipes!<span>I'll create my account later.</span>"
+
+  h1.center Sign up for Fitly!
+
+  = form_for @signup_inquiry, url: signup_path do |f|
+    h3= @signup_inquiry.validation_error
+
+	= f.label :email
+	= f.text_field :email
+	= f.label :password
+	= f.text_field :password
+	= f.label :verify
+	= f.text_field :verify
+
+	check_box_tag 'email', 'Send me an e-mail once a week with the latest recipes and news from Fitly.'
+
+	p
+	  = "By creating an account, you confirm that you have read and agree to our #{link_to 'Terms of Service', '/terms'}, which includes our Substitution Policy, and our #{link_to 'Privacy Policy', '/privacy'}".html_safe
+
+	.checkout-btn
+  	  = f.submit 'Create my account!'
+

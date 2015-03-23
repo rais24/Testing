@@ -1,0 +1,85 @@
+/* - TYPOGRAPHY
+------------------------------------------ */
+@font-face {
+    font-family: $font-bold;
+    src: font-url('vagroundedstdbold.eot'),
+         font-url('vagroundedstdbold.eot?#iefix') format('embedded-opentype'),
+         font-url('vagroundedstdbold.woff') format('woff'),
+         font-url('vagroundedstdbold.ttf') format('truetype'),
+         font-url('vagroundedstdbold.svg#vagroundedstdbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $font-thin;
+    src: font-url('vagroundedstdthin.eot'),
+         font-url('vagroundedstdthin.eot?#iefix') format('embedded-opentype'),
+         font-url('vagroundedstdthin.woff') format('woff'),
+         font-url('vagroundedstdthin.ttf') format('truetype'),
+         font-url('vagroundedstdthin.svg#vagroundedstdthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+::selection {
+  background:#000;
+  color:#fff;
+}
+
+body,
+input, textarea, select{
+  font-family:"Open Sans","Helvetica","Arial";
+  font-size:16px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family:$font-bold,"Open Sans","Helvetica","Arial";
+  margin:0.2em 0 0.7em 0;
+  font-weight:400;
+  letter-spacing:0.03em;
+  /* text-shadow:1px 1px 3px #333333 ; */
+ 
+  
+}
+
+h2{font-size:48px;}
+h3{font-size:22px;}
+h4{font-size:18px;}
+h5{font-size:16px;}
+h6{font-size:14px;}
+p{
+  color:#333;
+  margin:0 0 1em 0;
+  line-height:1.5em;
+  font-weight:300;
+}
+a{
+  font-weight:300;
+  color:#666;
+  text-decoration:none; 
+
+  &:hover {
+    color:#333;
+  }
+}
+
+strong{
+  font-weight:500;
+}
+em{
+  font-weight:500;
+  font-style:italic;
+}
+i{
+  font-style:italic;
+}
+b{
+  font-weight:500;
+}
+
+ul{}
+ul li{
+  list-style:disc inside;
+  line-height:1.5em;
+}

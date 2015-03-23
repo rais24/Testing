@@ -1,0 +1,75 @@
+/*-------------------
+Login Styles
+-------------------*/
+@import '_variables';
+
+.sessions-controller.new-action {
+    form.login {
+        legend {
+            display: none;
+        }
+        ul.data {
+            margin-bottom: 15px;
+        }
+        ul.actions {
+            margin-top: 15px;
+        }
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 330px ) {
+
+
+
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////          Second Breakpoint (small tablet): > 500px         ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 500px ) {
+        #login {
+            width: 500px;
+            margin: auto;
+
+            &>p {
+                text-align: center;
+            }
+        }
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////          Third Breakpoint (large tablet): > 740px          ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 740px ) {
+
+
+
+    }
+
+
+
+
+    //////////////////////////////////////////////////////////////////////////
+    ///////            Fourth Breakpoint (desktop): > 960px            ///////
+    //////////////////////////////////////////////////////////////////////////
+
+    @media only screen and ( min-width: 960px ) {
+
+
+
+    }
+}

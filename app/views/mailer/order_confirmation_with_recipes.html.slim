@@ -1,0 +1,117 @@
+= render "emails/header"
+br
+br
+table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 140%;"
+    tr
+        td Thanks for your order! If you have any questions, please send an email to holler@fitly.com or call us at 1-844-GET-FITLY.<br><br>We hope you enjoy eating Fitly :)<br><br>- The Fitly Family
+br
+br
+table align="center" border="0" cellpadding="10" cellspacing="2" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 140%;"
+    tr
+        td width="150" valign="top" style="font-weight: bold; background-color: #5E3A56; color: #fff;"
+            | Order ID:
+        td valign="top" style="background: #F3EBE0;"
+            | #{@order.id}
+    tr
+        td width="150" valign="top" style="font-weight: bold; background-color: #5E3A56; color: #fff;"
+            | Amount Charged:
+        td valign="top" style="background: #F3EBE0;"
+            | #{number_to_currency(@order.price)}
+    tr
+        td width="150" valign="top" style="font-weight: bold; background-color: #5E3A56; color: #fff;"
+            | Delivery Address:
+        td valign="top" style="background: #F3EBE0;"
+            = @order.address.name
+            br
+            = @order.address.street
+            br
+            = @order.address.city_line
+            br
+            = number_to_phone(@order.address.phone)
+    tr
+        td width="150" valign="top" style="font-weight: bold; background-color: #5E3A56; color: #fff;"
+            | Delivery Time:
+        td valign="top" style="background: #F3EBE0;"
+            | #{@order.delivery_time.date_and_time}
+            - if @order.bpo_processor.name.include?("ShopRite")
+                br
+                br
+                | Fitly orders are fulfilled by ShopRite. You will receive a call from ShopRite on the day of delivery.
+    tr
+        td width="150" valign="top" style="font-weight: bold; background-color: #5E3A56; color: #fff;"
+            | Prep instructions:
+            br
+            | <span style="font-weight: normal;">Log into Fitly.com web site first, then click to view in your web browser. Instructions for all recipes are also attached as a PDF document in this email. </span>
+        td valign="top" style="background: #F3EBE0;"
+            - @order.servings.each do |serving|
+                a href="https://www.fitly.com/recipes/#{serving.recipe.slug}?prepview=on" style="color: #332E2B;"
+                    = serving.recipe.name
+                br
+                br
+br
+br
+br
+table align="center" border="1" cellpadding="10" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 140%;"
+    caption style="font-weight: bold;" Order Contents<br><br>
+    tr
+        th width="350" Recipe
+        th width="50" Servings
+        th width="125" Per Serving
+        th width="75" Total
+    - @order.servings.each do |serving|
+        tr
+            td valign="top"
+                a href="https://www.fitly.com/recipes/#{serving.recipe.slug}" style="color: #332E2B;"
+                    = serving.recipe.name
+            td align="center" valign="top"
+                = serving.quantity.to_i
+            td valign="top" align="center"
+                = number_to_currency(Pricing.price_per_serving(serving.quantity.to_i)) rescue "N/A"
+            td valign="top" align="right"
+                = number_to_currency(Pricing.price_per_serving(serving.quantity.to_i) * serving.quantity.to_i) rescue "N/A"
+- if @order.contains_pantry_items?
+    br
+    br
+    table align="center" border="1" cellpadding="10" cellspacing="0" width="600" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 140%;"
+      caption style="font-weight: bold;" Pantry Items and Staples<br><br>
+      tr
+          th width="350" Item Name
+          th width="75" Total
+      - @order.order_products.each do |pantry|
+          - if pantry.price
+            tr
+                td valign="top"
+                    = pantry.name
+                td valign="top" align="right"
+                    = number_to_currency(pantry.total_price)
+br
+br
+table align="center" border="0" cellpadding="0" cellspacing="0" width="600"
+    tr
+        td
+            table align="right" border="0" cellpadding="10" cellspacing="2" width="300" style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;"
+                tr
+                    td align="right"
+                        | Subtotal:
+                    td align="right"
+                        = @order.used_promo.blank? ? number_to_currency(@order.subtotal) : (number_to_currency(@order.price + @order.used_promo.discount))
+                - if @order.used_promo
+                    tr align="right"
+                        th Promo:
+                        td
+                            | -#{number_to_currency(@order.shopping_cart.discount_from_promo)}
+                tr
+                    td align="right"
+                        | Tax:
+                    td align="right"
+                        | #{number_to_currency(@order.shopping_cart.taxes)}
+                tr
+                    td align="right"
+                        | Delivery:
+                    td align="right"
+                        | FREE
+                tr
+                    td align="right" style="font-weight: bold;"
+                        | Grand Total:
+                    td align="right" style="font-weight: bold;"
+                        | #{number_to_currency(@order.price)}

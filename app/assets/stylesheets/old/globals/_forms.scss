@@ -1,0 +1,73 @@
+/* - FORMS
+------------------------------------------ */
+input, textarea, select{
+  width:100%;
+  margin:0 0 1em 0;
+  color:#999;
+  display:block;
+  border:1px solid #dddddd;
+  
+  border-radius:3px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05),inset 0 1px 0 rgba(0,0,0,0.03);
+  @include box-sizing(border-box);
+
+  &:focus {
+    color:#333;
+    outline:none;
+  }
+
+  &.required {
+    background: {
+      image: image-url('asterix.png');
+      repeat: no-repeat;
+      position: right 9px;
+    }
+  }
+}
+
+input[type=checkbox] {
+  &.large {
+    @include transform(scale(2));
+    padding: 10px;
+    margin: 10px;
+
+    @include respond-to(small) {
+      @include transform(scale(1));
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+}
+
+form {
+  &.error {
+    color:red;
+    font-style:italic;
+  }
+
+  label {
+    font-style:normal;
+    display:block;
+    margin:0 0 0.5em 0;
+    font-size:1.3em;
+  }
+
+  button {
+    display:block;
+
+    &:hover {
+      cursor:pointer;
+    };
+  } 
+
+  h1 {
+    input[type=text] {
+      height: 50px;
+      font-size: 30px;
+
+      @include placeholder {
+        padding-top: 8px;
+      }
+    }
+  }
+}

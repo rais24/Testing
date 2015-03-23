@@ -1,0 +1,18 @@
+.row-fluid
+  h1.zipcode= zipcode
+
+  p.lead
+    | Unfortunately, your 
+    span zipcode
+    |  is still locked.
+
+  p
+    | Please help us unlock it by sharing  
+    = facebook_link_to 'this link'
+    |  with your family and friends, and get entered to win an iPad!
+.row-fluid
+  .social
+    = render 'layouts/social_links'
+
+.row-fluid
+  = link_to 'View My Order As a Grocery List', shop_order_path(order), class: 'button-action'

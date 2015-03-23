@@ -1,0 +1,22 @@
+.content
+  - if notice.present? 
+    .alert= notice
+
+  = image_tag resource.logo.url
+
+  h1
+    = resource.name
+    small= link_to 'Edit', edit_resource_path(resource)
+
+  h3= resource.address
+
+
+  h3
+    | Promo Code: 
+    small= resource.promo_code
+
+  h3 Families
+  = render 'users/table', collection: resource.users
+
+  h3 Orders
+  = render resource.orders.checked_out

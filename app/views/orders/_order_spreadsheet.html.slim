@@ -1,0 +1,13 @@
+table.table.table-striped
+  tr
+    th
+    th #{order_spreadsheet.user_name} - Family of #{order_spreadsheet.user_family_size}
+  - %w(meats produce groceries).each do |category|
+    tr
+      th class=category #{category.titleize}
+      th
+
+    - order_spreadsheet.portions.send(category).each do |portion|
+      tr
+        th= portion.name.titleize
+        th= portion.to_display_amount

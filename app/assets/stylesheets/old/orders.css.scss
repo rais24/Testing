@@ -1,0 +1,526 @@
+$recipe-label-color: #0084CE;
+$cart-orange: #ff8752;
+
+.orders {
+  .order {
+    &:nth-child(odd) {
+      background-color: #F2F1EC;
+    }
+
+    &:nth-child(even) {
+      background-color: #ECE7DF;
+    }
+  }
+}
+
+.next-order {
+  .order {
+    background-color: #ECE7DF;
+  }
+}
+
+.order {
+  @extend .clearfix;
+
+  * {
+    display: inline;
+    margin: {
+      left: 5px;
+      right: 5px;
+    }
+  }
+}
+
+.order-date {
+
+}
+
+.order-user {
+
+}
+
+.order-item-count {
+
+}
+
+.order-destination {
+  img {
+    @extend .thumb;
+    @extend .img-circle;
+  }
+}
+
+.order-status {
+  &.charged {
+
+  }
+}
+
+.order-actions {
+
+}
+
+h1.order-title {
+  color: #00C124;
+  font-family: $font-thin;
+}
+
+h2.order-instructions {
+  color: #C90012;
+  font-family: $font-light;
+}
+
+.portion-list {
+  overflow: auto;
+  max-height: 600px;
+
+  @include respond-to(medium) {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+.checkout-servings {
+  @extend .clearfix;
+  
+  .cart-item {
+    img {
+      @include size(75);
+
+      @include respond-to(small) {
+        @include size(40);
+      }
+    }
+
+    .cart-item-name {
+      font-size: 24px;
+
+      @include respond-to(small) {
+        font-size: 14px;
+      }
+    }
+
+    .cart-action {
+      @include size(60);
+
+      @include respond-to(small) {
+        @include size(30);
+      }
+    }
+  }
+}
+
+.line-items {
+  .line-item {
+    &:nth-child(odd) {
+      background-color: #F2F1EC;
+    }
+
+    &:nth-child(even) {
+      background-color: #ECE7DF;
+    }
+  }
+}
+
+.line-item {
+  @extend .clearfix;
+  text-align: center;
+  clear: both;
+
+  * {
+    display: inline;
+  }
+
+  .line-item-thumb {
+    float: left;
+  }
+
+  .line-item-name {
+    display: inline-block;
+  }
+
+  .line-item-quantity {
+    float: right;
+  }
+
+  .line-item-name,
+  .line-item-quantity {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include respond-to(small) {
+      margin: 15px 5px;
+    }
+  }
+}
+
+.line-item-thumb {
+  img {
+    @extend .img-circle;
+    @include size(75 auto);
+    margin: 5px;
+
+    @include respond-to(small) {
+      width: 35px;
+      margin: 10px 5px;
+    }
+  }
+}
+
+.line-item-header {
+  background-color: #85C190;
+
+  h1 {
+    @extend .center;
+    color: #fff;
+    font: {
+      family: $font-light;
+      size: 28px;
+    }
+  }
+}
+
+.line-item-name {
+  @extend .center;
+  font: {
+    size: 22px;
+    family: $font-thin;
+  }
+
+  @include respond-to(small) {
+    font-size: 16px;
+  }
+}
+
+.line-item-quantity {
+  @extend .center;
+  font: {
+    size: 22px;
+    family: $font-thin;
+  }
+
+  margin: 5px;
+
+  @include respond-to(small) {
+    font-size: 16px;
+  }
+}
+
+#checkout {
+  $size: 24px;
+
+  @extend .button-action;
+  @extend .button-fill;
+  
+  margin: 0;
+  margin-top: 15px;
+
+  padding: $size;
+  font-size: $size;
+
+  @media (max-width: $break-large-portrait) {
+    margin-top: 5px;
+  }
+}
+
+.checkout-btn {
+  width: 300px;
+  padding: 25px;
+  margin: auto;
+}
+
+ul {
+  .cart {
+    min-width: 400px;
+  }
+}
+
+.recipe-item {
+  $recipe-padding: 9px;
+  
+  position: relative;
+  padding: $recipe-padding;
+
+  font-size: 16px;
+  text-align: center;
+
+  @media (max-width: $break-large-portrait) {
+    font-size: 32px;
+    margin-bottom: 1em;
+  }
+
+  a {
+    display: block;
+    line-height: normal;
+
+    &.recipe-name {
+      padding: 5px;
+      margin: auto;
+      @media (max-width: $break-large-portrait) {
+          max-width: 85%;
+        }
+      $recipe-label-radius: 6px;
+      border-bottom-right-radius: $recipe-label-radius;
+      border-bottom-left-radius: $recipe-label-radius;
+      color: #000;
+    }
+  }
+
+  .name {
+    font-size: 16px;
+    text-align: left;
+    font-family: $font-thin;
+  }
+
+  .add, .remove {
+    position: absolute;
+    top: $recipe-padding;
+    right: $recipe-padding;
+
+    input[type=submit] {
+      font-family: $font-bold;
+      font-size: 26px;
+      padding: 18px 12px;
+
+      @media (min-width: $break-small-landscape) and (max-width: $break-large-portrait) {
+        font-size: 100px;
+        padding: 44px 16px;
+      }
+
+      @media (max-width: $break-small-landscape) {
+        font-size: 64px;
+        padding: 34px 18px;
+      }
+    }
+  }
+}
+
+.sticky-bottom {
+  position:fixed;
+  bottom: 0;
+  z-index:99999;
+}
+
+.holder {
+  background:#e7e7e7;
+  padding: 10px;
+
+  form {
+    margin: 0;
+    display: inline;
+  }
+}
+
+.cart {
+  width: 100%;
+  font-family: $font-light;
+  border-radius: 6px;
+  text-align: center;
+
+  @media (min-width: $break-large-portrait) {
+    text-align: center;
+    padding: 20px;
+  }
+
+  input[type=button] {
+    padding: 18px;
+    font-size: 16px;
+  }
+
+
+  .thumb {
+    @include size(75 auto);
+  }
+
+  table {
+    text-align: left;
+    line-height: 1px;
+    width: 100%;
+  }
+
+  .name {
+    font-family: $font-light;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: left;
+  }
+  
+  input[type=submit] {
+    &.button-danger {
+      font-family: $font-bold;
+      padding: 15px 10px;
+      font-size: 24px;
+
+      @media (max-width: $break-small-landscape) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.cart-size {
+  $pad: 6px;
+
+  @extend .badge;
+
+  margin-left: 4px;
+  background-color: #F38766;
+
+  padding: {
+    left: $pad;
+    right: $pad;
+  }
+}
+
+.empty {
+  @include transition(all, 0.5s);
+
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.checkout-portions {
+  .empty {
+    &,
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+}
+
+.cart-item {
+  $image-size: 30px;
+  line-height: $image-size;
+
+  clear: both;
+  font-size: 14px;
+
+  @include respond-to(medium) {
+    font-size: 16px;
+  }
+
+  * {
+    display: inline !important;
+  }
+
+  a:hover {
+    background-color: none !important;
+  }
+
+  label {
+    @include respond-to(small) {
+      font-size: 14px;
+    }
+  }
+
+  input[type=submit].button {
+    padding: 10px 6px;
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  form {
+    margin-bottom: 0;
+  }
+
+  img {
+    @include size($image-size);
+    @extend .img-circle;
+    float: left;
+    margin: {
+      left: 5px;
+      right: 5px;
+    }
+  }
+
+  .add-to-cart,
+  .remove-from-cart {
+    float: right;
+  }
+}
+
+.cart-title {
+  font-family: $font-light;
+  font-size: 18px;
+
+  span {
+    background-color: $theme-color;
+    color: #fff;
+    font-size: 20px;
+    margin: auto 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+}
+
+a.cart-title {
+  font-family: $font-light;
+  font-size: 15px;
+  display: block;
+  padding: 5px;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: #f7f7f7;
+  }
+
+  span {
+    background-color: $cart-orange;
+    color: #fff;
+    font-size: 20px;
+    margin: auto 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+}
+
+.cart-window {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  @include transition(all 0.5s);
+
+  .thumb {
+    @include size(50 auto);
+  }
+
+  form {
+    margin: 0;
+  }
+}
+
+.cart-window:target {
+  opacity: 1;
+  pointer-events: auto;
+  height: auto;
+  overflow: visible;
+
+  table {
+    max-height: 200px;
+    height: 200px;
+  }
+}
+
+a#closebtn {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+
+  font: {
+    size: 14px;
+    align: center;
+  }
+
+  padding: 4px 2px;
+  background-color: #F7F7F7;
+  border-radius: 10px;
+  width: 30px;
+  text-decoration: none;
+}

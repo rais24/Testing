@@ -1,0 +1,108 @@
+nav#breadcrumbs
+    ul
+        li
+            a href="/" title="Go to the home page."
+                | Home
+            ul
+                li
+                    a href="/recipes" title="Go back to the recipe list."
+                        | Recipes
+                    ul
+                        li = resource.name
+section#hero class=(resource.is_new? ? 'new' : '')
+    h1
+        = resource.name
+    noscript data-small=resource.photo(:small_hi_dpi) data-medium=resource.photo(:medium) data-large=resource.photo(:large_hi_dpi) data-xlarge=resource.photo(:extra_large)
+        = image_tag resource.photo(:medium), alt: resource.name
+section#summary
+    ul.stats
+        li.prep-time
+            | <span class="value">#{resource.prep_time + resource.cook_time} minutes</span> from prep to plate
+        li.calories
+            | <span class="value">#{resource.calories}</span> calories
+        li.fat
+            | <span class="value">#{resource.fat}</span> fat
+        li.carbs
+            | <span class="value">#{resource.carbs}</span> carbs
+    p.description
+        - if resource.description.length > 0
+            = resource.description
+        - else
+            | This recipe needs a brief description. This text is here as a placeholder. Lorem ipsum dolor somet, blah blah blah yackety schmackety.
+section#cart-form
+    .recipe-form
+        = form_tag shopping_cart_items_path do
+            input type="hidden" value="#{resource.id}" name="shopping_cart_item[recipe_id]"
+            fieldset
+                legend Purchase Ingredients
+                ul.data style="width: 270px;"
+                    li.input.select.quantity.required
+                        label for="shopping_cart_item_quantity"
+                            | Plates:
+                        = select_tag "shopping_cart_item[quantity]", serving_quantities, style: "width: 180px; margin: 0"
+                    li.total
+                        span.label Total:
+                        span.price = show_total_cart_price(cart)
+            ul.actions
+                li.primary
+                    input type="submit" value="Add to cart"
+        p
+            | The more you buy, the lower your price per serving. <a href="/pages/pricing">Learn more about pricing</a>.
+section#ingredients
+    section#included-items
+        h2 What's included:
+        - if resource.portions.excluded.empty?
+            p
+                | Everything you need for this recipe is included with your order.
+        ul
+          - resource.portions.included.each do |ingredient|
+            li= ingredient.name
+    section#pantry-items
+        h2 Other ingredients:
+        - if resource.portions.excluded.empty?
+            p
+                | Everything you need for this recipe is included with your order!
+        - else
+            p
+                | We keep our prices low and minimize packaging waste by making certain ingredients an optional purchase&mdash;things that you probably have on hand like salt, pepper, or cooking spray. You’ll be shown a list of these items during checkout, at which point you can add them to your order if you're running low.
+section#preparation data-prepview="#{params[:prepview]}"
+    h2 Preparation
+    - if !params[:prepview]
+        p If you've placed an order for this recipe, please see your <a href="/orders">order history</a> or order confirmation e-mail to view the complete preparation instructions.
+    - elsif current_user
+        p
+            | <strong>Total time:</strong> #{resource.prep_time + resource.cook_time} minutes
+            br
+            | <strong>Plates:</strong> 4
+        p Ingredient quantities and preparation instructions accommodate 4 plates. Small adjustments to ingredient proportions or cooking times may be required for more servings. If you have any questions, please contact us at 1(844) GET-FITLY (348-3485) or email us at holler@fitly.com
+        section#measurements
+            h3 Ingredients:
+            ul.ingredients
+                - resource.portions.sort_by{ |x| x.order.blank? ? x.quantity : x.order}.each do |ingredient|
+                    li = show_ingredient_string(ingredient)
+        section#instructions
+            h3 Cooking Instructions:
+            ul.instructions
+                - resource.steps.each do |step|
+                    li = step
+    - else
+        p Please login to access this page. 
+
+section#nutrition
+    h2 Nutrition Facts (Per Plate)
+    table
+        / TODO: Need to come up with a way to group output because some recipes have multiple sets of
+        / nutrition facts for each portion of the meal ("Ravioli" and "Zucchini").
+        - resource.facts.each do |fact|
+            tr
+                th = fact.split(" ")[1]
+                td = fact.split(" ")[0]
+
+section#categories
+    h2 Categories
+    ul
+        - resource.all_tags.each do |tag|
+            li
+                = link_to tag, recipes_path(tags: tag), alt: "View all recipes in the #{tag} category"
+- if can? :edit, @recipe
+    a.action href=edit_recipe_path(@recipe) Edit

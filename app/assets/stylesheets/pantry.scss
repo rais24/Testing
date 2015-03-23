@@ -1,0 +1,116 @@
+/*----------------------
+Checkout - Pantry Items
+----------------------*/
+@import '_variables';
+
+form.pantry-items {
+    padding: 0;
+
+    ul.data {
+        border-top: 2px solid rgb(102,100,83);
+        border-bottom: 1px solid rgb(102,100,83);
+
+        li.input {
+            border-bottom: 1px solid rgb(102,100,83);
+
+            &.checkbox {
+                margin: 0;
+                padding: 20px 15px 20px 60px;
+
+                input {
+                    top: 10px;
+                    left: 15px;
+                }
+                label {
+                    padding: 0;
+
+                    span.price {
+                        position: absolute;
+                        right: 15px;
+                        font-family: LatoBold;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+    ul.actions {
+        padding: 0 15px;
+
+        &:first-child {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+
+
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 500px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 500px ) {
+    #pantry-items p {
+        max-width: 400px;
+        margin: 15px auto;
+    }
+
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    #pantry-items {
+        p {
+            max-width: 630px;
+        }
+    }
+    form.pantry-items {
+        max-width: 500px;
+        
+        ul.data li.input.checkbox {
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            input {
+                top: 20px;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+
+
+
+}

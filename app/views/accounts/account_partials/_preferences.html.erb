@@ -1,0 +1,45 @@
+<% if @user.dietary_preferences_list.empty? %>
+  <div class="leftcontainer1 floatleft2">
+    <h1>PREFERENCES</h1>
+    <div class="border-line"></div>
+    <div class="myplanimg1"><img src="/assets/set-preferences.png" alt=""/></div>
+    <div class="headigntext">Customize your meal plan by setting your dietary preferences!</div>
+    <div class="choosebtn">
+      <%= link_to "Set Preferences", edit_account_path(page_type: "needs") %>
+    </div>
+  </div>
+<% else %>
+  <div class="leftcontainer1 floatleft2">
+    <h1>PREFERENCES</h1>
+    <div class="border-line"></div>
+    <div class="preferences">
+      <h1>Dietary Needs</h1>
+      <ul>
+        <% @user.dietary_needs_list.each do |need,val| %>
+          <li><%= need.to_s.humanize %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="preferences">
+      <h1>Dietary Preferences</h1>
+      <ul>
+        <% @user.dietary_preferences_list.each do |pref,val| %>
+          <li><%= pref.to_s.humanize %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="preferences">
+      <h1>Dietary Dislikes</h1>
+      <ul>
+        <% @user.dietary_dislikes_list.each do |dislike,val| %>
+          <li><%= dislike.to_s.humanize %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% if @user == current_user %>
+      <div class="choosebtn choosebtn-right">
+        <%= link_to "Edit Preferences", edit_account_path(page_type: "needs") %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

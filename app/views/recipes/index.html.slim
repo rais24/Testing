@@ -1,0 +1,57 @@
+#recipe-list
+    h1 Recipes
+    = render 'user_groups/welcome_greeting'
+    section#filters
+        / h2 Search Filters
+        - if @filters.empty?
+            p.intro
+                - if flash[:availability]
+                    = flash[:availability]
+                - else
+                    | Now showing all available recipes.
+                |  You can <span class="edit-filters">filter your recipes</span> by main dish, prep time, and more.
+        - else
+            p.results
+                / TODO: Logic to drive filter messaging when filters are enabled. Example:
+                = "We have #{@counter} recipes that match your criteria."
+
+        / = form_tag search_recipes_path, method: "GET", id: "filters"
+        = form_tag "/recipes", method: "GET", id: "filter-form"
+            .fieldsets
+                fieldset
+                    legend
+                        | Main Dish
+                    ul.data
+                        - Recipe.main_dish_counts.each_with_index do |tag, index|
+                          li.input.checkbox
+                            label for="filter_main_dish_#{index}"
+                                = tag.name.titleize
+                            = check_box_tag "filter[main_dish][#{index}]", "#{tag.name}"
+
+                fieldset
+                    legend
+                        | Diet Type
+                    ul.data
+                        - Recipe.diet_type_counts.each_with_index do |tag, index|
+                          li.input.checkbox
+                            label for="filter_diet_type_#{index}"
+                                = tag.name.titleize
+                            = check_box_tag "filter[diet_type][#{index}]", "#{tag.name}"
+
+                fieldset
+                    legend
+                        | Preparation
+                    ul.data
+                        li.input.checkbox
+                            label for="filter_prep_1"
+                                | 30 minutes or less
+                            = check_box_tag "filter[prep][1]", "30 minutes or less"
+
+            ul.actions
+                li.primary
+                    = submit_tag "Update filters"
+    section#recipes
+        / TODO: This <h2> should be the category name when we start using categories again ("Dinner", "Dessert", etc.).
+        / It's currently hidden with CSS.
+        h2 Recipes
+        = render 'recipes/categorized_recipes', recipes: @recipes

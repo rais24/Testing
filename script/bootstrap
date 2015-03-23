@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# bootstrap
+
+set -e
+
+mkdir -p tmp
+
+echo "Setting up your environment..."
+
+for gemName in bundle; do
+  if [ -z "$(which $gemName)" ]; then
+    gem install $gemName > /dev/null 2>&1
+  fi
+done
+
+case `uname` in
+  Darwin)
+    [ -z "$(which brew)" ] && echo "Failed to bootstrap! Please install homebrew!" && exit 1
+
+    [ -z "$(brew list | grep imagemagick)" ] && brew install imagemagick
+    [ -z "$(brew list | grep libtool)" ] && brew install libtool --universal
+    ;;
+  *)
+	  [ -z "$(which identify)" ] && echo "Failed to bootstrap! Please install imagemagick!" && exit 1
+  ;;
+esac
+
+! ([ -f zeus.json ] || [ -f custom_plan.rb ]) && zeus init > /dev/null 2>&1
+
+bundle --binstubs --without production --quiet
+
+echo "Running your migrations..."
+
+# run you migrations
+bin/rake db:migrate
+
+echo "Done!"

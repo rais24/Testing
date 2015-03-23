@@ -1,0 +1,8 @@
+.ie6, .ie7, .ie8, .ie9 {
+	//do something
+	input {
+		&[type=text], &[type=email], &[type=password], &[type=number] {
+			height:30px;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+.content
+  h1
+    | Listing order substitutions (#{collection.size})
+    = link_to 'New Substitution', new_resource_path, class: 'button-action'
+
+  - if collection.size > 0  
+    table.table.table-hover.stores
+      tr
+        th Order
+        th Requested SKU
+        th Substituted SKU
+        th Substituted Product Name
+        th Substituted Product Quantity
+        th
+      - collection.each do |order_sub|
+        tr
+          td.rip= order_sub.order_id
+          td.rip= order_sub.original_sku
+          td.rip= order_sub.substituted_sku
+          td.rip= order_sub.substituted_confirmation_name
+          td.rip= order_sub.quantity
+          td.rip
+  - else
+    h3= "No susbstitutions" 
+    
+  = link_to 'New Substitution', new_resource_path

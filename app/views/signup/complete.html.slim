@@ -1,0 +1,10 @@
+section.signup-form
+    h1
+        | Fitly is available in your area!
+    p
+        | Would you like to create an account?
+    div.skip
+    	a class="action primary with-prompt" href="/recipes"
+        	| Take me to the recipes!<br><span class="exit">I'll create an account later.</span>
+	= simple_form_for @user, url: signup_path, method: 'PUT' do |f|
+    	= render "signup/signup_form", :f => f

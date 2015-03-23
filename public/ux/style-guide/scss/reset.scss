@@ -1,0 +1,66 @@
+/*-------------------
+CSS Resets
+-------------------*/
+@import '_variables';
+
+html {
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after { 
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+img {
+    display: block;
+    -ms-interpolation-mode: bicubic;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+}
+
+q:before,
+q:after {
+    content: '';
+}
+
+input,
+textarea {
+    -webkit-appearance: none;
+    outline: none;
+    @include borderRadius(0);
+}

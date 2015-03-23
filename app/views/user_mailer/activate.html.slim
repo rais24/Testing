@@ -1,0 +1,78 @@
+link rel=:stylesheet href="email/email.css"
+table#content cellpadding="0" cellspacing="0"
+  tr
+    td height="20px"
+  tr
+    td.body align="center"
+      / Render the Header
+      = render "emails/header"
+
+      / the Content
+      table border="0" cellpadding="50px" cellspacing="0"
+        tr
+          td align="left" width="520px"
+            - if @user.eligible?
+              h1.copy.left= "Congratulations, #{@user.name_or_email}!"
+
+              p 
+                | You've qualified for the 
+                span= @site.name
+                |  Fitly Beta program. This program is a great opportunity for 
+                | the both of us, as we depart on a journey together to change 
+                | the face of meal planning &amp; grocery shopping forever!
+
+              p 
+                | Our mission is to bring the supermarket directly to you at 
+                span= @site.name
+                | , preventing stress and saving you time and energy.
+
+              p 
+                | Sit tight, we'll contact you when the pilot officially launches.
+
+              p 
+                | In the meantime, read about all the benefits of a healthy diet from 
+                = harvard_link_to
+                |  and the 
+                = usda_link_to
+                | , and don't forget to check us out on the social media outlet of your choosing.
+
+            - else 
+              h1.copy.left= "#{@user.name_or_email}" 
+              p 
+                strong Thank you for your interest in our pilot program.
+
+              p We'll contact you when we are ready to go. Stay tuned!
+
+              p 
+                | In the mean time, we encourage you to learn more about a healthy diet by reading about  
+                = usda_link_to
+                | , 
+                = harvard_link_to
+                |  and 
+                = harvard_usda_comparison_link_to "how they compare"
+                | . We also want to hear your thoughts, so 
+                = facebook_link_to "Like us"
+                | , 
+                = twitter_link_to "Tweet us"
+                | , 
+                = pinterest_link_to "Pin us"
+                | , or check out our 
+                = instagram_link_to
+                |  .
+
+            p 
+              | Have any questions? We invite you to contact us at 
+              = link_to "contact@fitly.org", "mail:contact@fitly.org"
+              |.
+
+            p Sincerely,
+
+            h3.copy.left The Fitly Family
+        tr
+          td align="center"
+            = render "user_mailer/social"
+
+      / Render the Footer
+      = render "emails/footer"
+  tr
+    td height="20px"

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# replicate site
+
+until ! [ -z $SITE ]; do
+  echo "1) What's the DeliverySite's promo code?"
+  read SITE
+done
+
+DEFAULT=20
+
+if [ -z $LIMIT ]; then
+  echo "2) How many users/deliveries do you want? (defaults to $DEFAULT)"
+  read LIMIT
+fi
+
+[ -z $LIMIT ] && LIMIT=$DEFAULT
+
+echo "Replicating $LIMIT users/deliveries for $SITE..."
+
+dir=/mnt/fitly-production/current
+
+COMMAND=$(cat <<SSH 
+  . /etc/profile
+  . ~/.bashrc
+  SITE=$SITE LIMIT=$LIMIT replicate -r $dir/config/environment -d $dir/config/replicate/dump-site.rb
+SSH
+)
+
+ssh -i ~/.ec2/gsg-keypair ubuntu@fe02.fitly.org "$COMMAND" | replicate -r ./config/environment -l

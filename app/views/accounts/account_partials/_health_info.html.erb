@@ -1,0 +1,56 @@
+<h1>HEALTH INFORMATION</h1>
+<div class="border-line"></div>
+<% if @user.willingness_to_change.empty? %>
+  <div class="healthimg"><img src="/assets/health.png" width="72" height="84" alt=""/></div>
+  <div class="headigntext">Your health information helps your practitioner make accurate recommendations for you!</div>
+<% else %>
+  <p class="tittle1">My Willingness to Change (5 = very)</p>
+
+  <p class="tittle2">Significantly modify my diet:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "modify_diet"} %>
+
+  <p class="tittle2">Take nutritional supplements each day:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "nutritional_supplements"} %>
+
+  <p class="tittle2">Keep a record of everything I eat each day:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "daily_record"} %>
+
+  <p class="tittle2">Modify my lifestyle:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "modify_lifestyle"} %>
+
+  <p class="tittle2">Practice relaxation techniques:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "relaxation_techniques"} %>
+
+  <p class="tittle2">Engage in regular exercise/physical activity:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "regular_exercise"} %>
+
+  <p class="tittle2">Have periodic lab tests to assess your results:</p>
+  <%= render partial: "accounts/account_partials/willingness_rating_block", locals: {category: "periodic_tests"} %>
+
+  <% unless @user.medical_history_record.empty? %>
+    <p class="tittle1">Past Medical and Surgical History:</p>
+    <div class="ratingblock">
+      <ul>
+        <% @user.medical_history_record.each do |mhr,v| %>
+          <% if mhr == :other %>
+            <li><%= v %></li>
+          <% else %>
+            <li><%= mhr.to_s.humanize %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p class="tittle1">My Food/Nutrition-Related Goals:</p>
+  <p class="tittle3"><%= @user.nutrition_goals.present? ? @user.nutrition_goals : "N/A" %></p>
+
+<% end %>
+<% if @user == current_user %>
+  <div class="choosebtn">
+    <%= link_to "Edit Health Information", edit_account_path(page_type: "willingness") %>
+  </div>
+<% end %>
+
+
+
+

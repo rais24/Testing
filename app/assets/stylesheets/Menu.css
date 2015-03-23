@@ -1,0 +1,579 @@
+.pageHeader {
+    margin-top: 53px;
+    position: relative;
+    z-index: 1;
+}
+
+input[type="submit"].redButton.addButton {
+    font-size: 100%;
+    padding: 6.5px 14.5px 6.5px 24.5px;
+    background: url('/assets/Icon_Add.png') scroll no-repeat 10px center #e36967;
+}
+
+#filterModal.modalContainer .modal {
+    width: 622px;
+    height: 396px;
+}
+
+#filterModal.modalContainer .modalClose {
+    right: -590px;
+    top: -510px;
+}
+
+.filterGroup {
+    float: left;
+    margin-left: 15px;
+}
+
+    .filterGroup:first-child {
+        margin-left: 0;
+    }
+
+    .filterGroup .filterHeader {
+        font-size: 125%;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .filterGroup .filterOptions > div > div {
+        margin-top: 5px;
+    }
+
+        .filterGroup .filterOptions > div > div:first-child {
+            margin-top: 0;
+        }
+
+.filterCancelSubmit {
+    clear: both;
+    width: 318px;
+    margin: 20px auto 0 auto;
+}
+
+    .filterCancelSubmit a {
+        color: #e16a6a;
+        text-decoration: underline;
+        margin-left: 10px;
+        font-size: 112.5%;
+    }
+
+.menuFilterAndLegendSection {
+    margin: 30px auto 35px auto;
+    padding: 0 40px;
+    max-width: 1100px;
+    overflow: hidden;
+}
+
+    .menuFilterAndLegendSection .filterSection {
+        float: left;
+    }
+
+        .menuFilterAndLegendSection .filterSection .currentFilter {
+            font-size: 125%;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .menuFilterAndLegendSection .filterSection .filterTypes {
+            font-size: 125%;
+            margin-bottom: 15px;
+        }
+
+    .menuFilterAndLegendSection .menuIconLegend {
+        float: right;
+        background-color: #f3f3f3;
+        padding: 15px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+        .menuFilterAndLegendSection .menuIconLegend > div {
+            float: left;
+            margin-left: 20px;
+        }
+
+            .menuFilterAndLegendSection .menuIconLegend > div:first-child {
+                margin-left: 0;
+            }
+
+        .menuFilterAndLegendSection .menuIconLegend .glutenFreeLegend {
+            background: url('/assets/LegendIcon_GF.png') scroll no-repeat center left transparent;
+            height: 20px;
+            padding-left: 26px;
+        }
+
+        .menuFilterAndLegendSection .menuIconLegend .veganLegend {
+            background: url('/assets/LegendIcon_Vegan.png') scroll no-repeat center left transparent;
+            height: 20px;
+            padding-left: 26px;
+        }
+
+        .menuFilterAndLegendSection .menuIconLegend .paleoLegend {
+            background: url('/assets/LegendIcon_Paleo.png') scroll no-repeat center left transparent;
+            height: 20px;
+            padding-left: 26px;
+        }
+
+.menuList {
+    max-width: 1100px;
+    margin: 71px auto 50px auto;
+}
+
+    .menuList .menuRow {
+        margin-top: 71px;
+    }
+
+        .menuList .menuRow .menuItem {
+            position: relative;
+            width: 323px;
+            margin-left: 65px;
+            float: left;
+        }
+
+            .menuList .menuRow .menuItem:first-child {
+                margin-left: 0;
+            }
+
+            .menuList .menuRow .menuItem .newItemBanner {
+                display: none;
+            }
+
+            .menuList .menuRow .menuItem.new .newItemBanner {
+                display: block;
+                position: absolute;
+                background: url('/assets/NewBanner.png') scroll no-repeat center left transparent;
+                width: 129px;
+                height: 134px;
+                left: -35px;
+                top: -36px;
+                z-index: 1;
+            }
+
+            .menuList .menuRow .menuItem.new .menuItemPhoto .newItemBanner {
+                background: none;
+            }
+
+            .menuList .menuRow .menuItem .menuItemPhoto {
+                position: relative;
+                overflow: hidden;
+                height: 200px;
+            }
+
+                .menuList .menuRow .menuItem .menuItemPhoto img {
+                    width: 100%;
+                    height: 200px;
+                    transition: transform 1s;
+                }
+
+                .menuList .menuRow .menuItem .menuItemPhoto .menuPhotoOverlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background: url('/assets/MenuImageOverlay.png') scroll no-repeat top left transparent;
+                    width: 100%;
+                    height: 82px;
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                    filter: alpha(opacity=100);
+                    transition: opacity 1s;
+                }
+
+                .menuList .menuRow .menuItem .menuItemPhoto .menuItemDiet {
+                    position: absolute;
+                    left: 7px;
+                    bottom: 10px;
+                    opacity: 1;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                    filter: alpha(opacity=100);
+                    transition: opacity 1s;
+                }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto .menuItemDiet > div {
+                        display: none;
+                        float: left;
+                        margin-left: 3px;
+                    }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto .menuItemDiet .glutenFree {
+                        background: url('/assets/Icon_GF.png') scroll no-repeat center left transparent;
+                        width: 21px;
+                        height: 22px;
+                    }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto .menuItemDiet .vegan {
+                        background: url('/assets/Icon_Vegan.png') scroll no-repeat center left transparent;
+                        width: 21px;
+                        height: 22px;
+                    }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto .menuItemDiet .paleo {
+                        background: url('/assets/Icon_Paleo.png') scroll no-repeat center left transparent;
+                        width: 21px;
+                        height: 22px;
+                    }
+
+                .menuList .menuRow .menuItem .menuItemPhoto .viewDetails {
+                    opacity: 0;
+                    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                    filter: alpha(opacity=0);
+                    transition: opacity 1s, font-size 1s;
+                    position: absolute;
+                    width: 100%;
+                    height: 200px;
+                    background-color: rgb(94, 58, 86);
+                    background-color: rgba(94, 58, 86, .85);
+                    top: 0;
+                    display: block;
+                    text-align: center;
+                    line-height: 200px;
+                    font-size: 185.7%;
+                    text-decoration: none;
+                }
+
+                .menuList .menuRow .menuItem .menuItemPhoto:hover {
+                    cursor: pointer;
+                }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto:hover img {
+                        transform: scale3d(1.1,1.1,1);
+                    }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto:hover .menuPhotoOverlay {
+                        opacity: 0;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                        filter: alpha(opacity=0);
+                    }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto:hover .menuItemDiet {
+                        opacity: 0;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+                        filter: alpha(opacity=0);
+                    }
+
+                    .menuList .menuRow .menuItem .menuItemPhoto:hover .viewDetails {
+                        opacity: 1;
+                        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+                        filter: alpha(opacity=85);
+                        font-size: 125%;
+                    }
+
+            .menuList .menuRow .menuItem .menuItemDescription {
+                font-family: Rokkitt, serif;
+                font-size: 137.5%;
+            }
+
+            .menuList .menuRow .menuItem .menuItemDetails {
+                font-size: 87.5%;
+                color: #999;
+            }
+
+                .menuList .menuRow .menuItem .menuItemDetails table {
+                    width: 100%;
+                }
+
+            .menuList .menuRow .menuItem .menuItemAdd {
+                font-size: 87.5%;
+            }
+
+                .menuList .menuRow .menuItem .menuItemAdd table {
+                    width: 100%;
+                }
+
+                .menuList .menuRow .menuItem .menuItemAdd select {
+                    padding: 6.5px 7px;
+                    width: 130px;
+                    font-size: 75%;
+                }
+
+/*Tablet and small desktop*/
+@media(min-width: 768px)and (max-width:1190px) {
+    input[type="submit"].redButton.addButton {
+        line-height: 0;
+        font-size: 0;
+        height: 26px;
+        padding-left: 14.5px;
+    }
+
+    .menuFilterAndLegendSection .filterSection {
+        width: 360px;
+    }
+
+    .menuList {
+        width: 749px;
+    }
+
+        .menuList .menuRow {
+            padding: 0 32px;
+        }
+
+            .menuList .menuRow .clearFix {
+                clear: none !important;
+            }
+
+            .menuList .menuRow.oddRow .rowFirstItem, .menuList .menuRow.oddRow .rowSecondItem {
+                margin-top: 71px;
+            }
+
+            .menuList .menuRow.oddRow:first-child .rowFirstItem, .menuList .menuRow.oddRow:first-child .rowSecondItem {
+                margin-top: 0;
+            }
+
+            .menuList .menuRow.oddRow .rowThirdItem {
+                clear: left;
+                margin: 71px 0 0 0;
+            }
+
+            .menuList .menuRow.evenRow .menuItem:first-child {
+                margin: 71px 0 0 65px;
+            }
+
+            .menuList .menuRow.evenRow .rowSecondItem {
+                margin: 71px 0 0 0;
+                clear: left;
+            }
+
+            .menuList .menuRow.evenRow .rowThirdItem {
+                margin-top: 71px;
+            }
+
+            .menuList .menuRow .menuItem {
+                width: 310px;
+                margin-left: 65px;
+            }
+
+                .menuList .menuRow .menuItem .menuItemPhoto {
+                    height: 192px;
+                }
+}
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    input[type="submit"].redButton.addButton {
+        line-height: 0;
+        font-size: 0;
+        height: 26px;
+        padding-left: 14.5px;
+        background: url('/assets/Icon_Add.png') scroll no-repeat center center #e36967;
+    }
+
+    #filterModal.modalContainer .modal {
+        width: auto;
+        /*height: 356px;*/
+        height: 356px;
+        padding: 0;
+    }
+
+    .modalContainer .modal {
+        border-radius: 0;
+        top: auto;
+    }
+
+    #filterModal.modalContainer .modalClose {
+        left: auto;
+        top: auto;
+        bottom: 366px;
+        right: 10px;
+    }
+
+    .modal .previousFilterGroup {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+        width: 42px;
+        height: 54px;
+        text-indent: 110%;
+        overflow: hidden;
+        color: #fff;
+    }
+
+        .modal .previousFilterGroup:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 42px;
+            height: 54px;
+            font-family: "glyphs";
+            font-size: 58px;
+            text-indent: 0;
+            content: "\e6cd";
+        }
+
+        .modal .previousFilterGroup:hover {
+            cursor: pointer;
+        }
+
+    .modal .nextFilterGroup {
+        position: absolute;
+        right: 10px;
+        top: 0;
+        margin: 0;
+        width: 42px;
+        height: 54px;
+        text-indent: 110%;
+        overflow: hidden;
+        color: #fff;
+    }
+
+        .modal .nextFilterGroup:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 42px;
+            height: 54px;
+            font-family: "glyphs";
+            font-size: 58px;
+            text-indent: 0;
+            content: "\e6d0";
+        }
+
+        .modal .nextFilterGroup:hover {
+            cursor: pointer;
+        }
+
+    .modal .filterGroup .filterHeader {
+        background-color: #8d7d6d;
+        padding: 15px 0;
+        text-align: center;
+        color: #fff;
+    }
+
+        .modal .filterGroup .filterHeader.mntHeader {
+            font-size: 112.5%;
+        }
+
+    .modal .filterGroup {
+        display: none;
+        width: 100%;
+        margin-left: 0;
+    }
+
+        .modal .filterGroup:first-child {
+            display: block;
+        }
+
+        .modal .filterGroup .filterOptions {
+            overflow: hidden;
+            margin-left: 15px;
+        }
+
+            .modal .filterGroup .filterOptions > div {
+                float: left;
+                margin-left: 20px;
+                /*width: 130px;*/
+                width: 220px;
+            }
+
+                .modal .filterGroup .filterOptions > div:first-child {
+                    margin-left: 0;
+                }
+
+            .modal .filterGroup .filterOptions.mntOptions > div, .modal .filterGroup .filterOptions.preparationOptions > div {
+                width: auto;
+            }
+
+    .modal .filterCancelSubmit {
+        width: 284px;
+    }
+
+        .modal .filterCancelSubmit > input {
+            padding: 6px 18px;
+        }
+
+    .menuFilterAndLegendSection {
+        padding: 0 15px;
+    }
+
+        .menuFilterAndLegendSection .filterSection {
+            float: none;
+            text-align: center;
+        }
+
+        .menuFilterAndLegendSection .menuIconLegend {
+            float: none;
+            margin: 20px auto 0 auto;
+            max-width: 275px;
+        }
+
+            .menuFilterAndLegendSection .menuIconLegend .paleoLegend {
+                clear: left;
+                margin: 10px auto 0 auto;
+                width: 64px;
+            }
+
+        .menuFilterAndLegendSection .changeFilterButton {
+            width: 247px;
+            margin: 0 auto;
+        }
+
+    .menuList .menuRow {
+        margin-top: 0;
+    }
+
+        .menuList .menuRow .menuItem {
+            float: none;
+            margin: 30px auto 0 auto;
+            width: 260px;
+        }
+
+            .menuList .menuRow .menuItem:first-child {
+                margin: 30px auto 0 auto;
+            }
+
+        .menuList .menuRow:first-child .menuItem:first-child {
+            margin: 0 auto;
+        }
+
+        .menuList .menuRow .menuItem .menuItemPhoto {
+            height: 142px;
+        }
+
+        .menuList .menuRow .menuItem.new .newItemBanner {
+            display: block;
+            position: absolute;
+            background: url('/assets/NewBanner_Mobile.png') scroll no-repeat center left transparent;
+            width: 86px;
+            height: 88px;
+            left: -1px;
+            top: 0px;
+            z-index: 1;
+        }
+
+        .menuList .menuRow .menuItem .menuItemDetails {
+            font-size: 80.5%;
+        }
+
+        .menuList .menuRow .menuItem .menuItemPhoto .viewDetails {
+            font-size: 100%;
+            opacity: 1;
+            width: auto;
+            height: auto;
+            line-height: normal;
+            top: auto;
+            bottom: 10px;
+            right: 10px;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            padding: 2px;
+            background-color: transparent;
+        }
+
+        .menuList .menuRow .menuItem .menuItemPhoto:hover img {
+            transform: none;
+        }
+
+        .menuList .menuRow .menuItem .menuItemPhoto:hover .menuPhotoOverlay {
+            opacity: 1;
+        }
+
+        .menuList .menuRow .menuItem .menuItemPhoto:hover .menuItemDiet {
+            opacity: 1;
+        }
+
+        .menuList .menuRow .menuItem .menuItemPhoto:hover .viewDetails {
+            opacity: 1;
+            font-size: 100%;
+        }
+}

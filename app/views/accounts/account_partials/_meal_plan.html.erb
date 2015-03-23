@@ -1,0 +1,23 @@
+<% if @user != current_user %>
+  <h1><%= @user.first.upcase%>'S PLAN</h1>
+<% else %>
+  <h1>MY PLAN</h1>
+<% end %>
+<div class="border-line"></div>
+<% if @user.subscription %>
+  <div class="dayplanimg"><img src="/assets/dayplan.png" alt=""/></div>
+  <div class="dayplaninfo">
+    <h1>What’s Included</h1>
+    <ul>
+      <li>Free consultation with a registered dietitian</li>
+      <li>3 Meals (Breakfast, Lunch, Dinner, or any combo!)</li>
+      <li>2 Snacks (Midday Snacks or Desserts!)</li>
+    </ul>
+    <div class="vieworder"><a href="#">View Order History</a></div>
+    <div class="choosebtn choosebtn-right"><a href="#">Change Plan</a></div>
+  </div>
+<% else %>
+  <div class="myplanimg1"><img src="/assets/myplan.png" alt=""/></div>
+  <div class="headigntext">Choose a Fitly meal plan package to get started!</div>
+  <div class="choosebtn"><a href="#">Choose a Plan</a></div>
+<% end %>

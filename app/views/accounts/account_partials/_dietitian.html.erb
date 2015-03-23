@@ -1,0 +1,14 @@
+<% if @dietitian %>
+  <h1>MY Dietitian</h1>
+  <div class="border-line"></div>
+  <div class="dayplanimg"><img src="/assets/my-dietitian.png" alt=""/></div>
+  <div class="dayplaninfo">
+    <h1><%= @dietitian.name %>, <%= @dietitian.certificate_type %></h1>
+    <p>
+      Business name: <%= @dietitian.business_name %><br />
+      Address: <%= @dietitian.address.street1 %>, <%= @dietitian.address.city %>, <%= @dietitian.address.state %>, <%= @dietitian.address.zipcode %><br />
+      Phone: <%= @dietitian.address.phone %>
+    </p>
+    <div class="choosebtn choosebtn-right"><a href="#">Send Message</a></div>
+  </div>
+<% end %>

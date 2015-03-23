@@ -1,0 +1,5 @@
+section#login
+    - flash.each do |key, msg|
+      = content_tag :div, msg, :id => key
+
+    = render "sessions/login_form"

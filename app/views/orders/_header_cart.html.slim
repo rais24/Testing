@@ -1,0 +1,19 @@
+<div id="mini-cart">
+    <a href="/shopping_cart">Shopping Cart <span class="item-count">[insert item count]</span> Recipes</a>
+</div>
+
+/ a.dropdown-toggle#your-cart role="button" data-toggle="dropdown" data-target="#"
+/   | Your Cart
+/   - unless order.servings.select(&:persisted?).empty?
+/     span.cart-size=order.servings.select(&:persisted?).count
+/   b.caret
+/ ul.dropdown-menu.cart role="menu" aria-labelledby="your-cart"
+/   - order.servings.each do |serving|
+/     li
+/       = render serving
+/   li
+/     - if order.servings.empty?
+/       p Your Cart is Empty.
+/     - else
+/       = render 'orders/cart_total', order: order
+/       = render 'orders/checkout_button', order: order

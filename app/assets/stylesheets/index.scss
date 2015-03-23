@@ -1,0 +1,593 @@
+/*-------------------
+Index Styles
+-------------------*/
+@import '_variables';
+
+.signup-controller {
+    main {
+        padding-top: 0;
+    }
+    #splash {
+        position: relative;
+        height: 500px;
+        background: rgb(170,159,146) url('/assets/home-page-hero-10e.jpg') center center no-repeat;
+        background-size: cover;
+
+        img {
+            margin: 0 auto;
+            padding: 65px 0 10px;
+            width: 30%;
+        }
+        & > a {
+            display: block;
+            font-family: LatoRegular;
+            text-decoration: none;
+        }
+        a.redButton {
+            display: block;
+            font-family: Rokkitt, serif;
+            text-decoration: none;
+            background-color: #e36967;
+            border: 1px none #b02a27;
+            border-bottom: 3px solid #b02a27;
+            color: #fff;
+            margin: 0 auto;
+            font-size: 206.3%;
+            padding: 12px 35px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        aside {
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .get-started {
+            position: relative;
+            top: -30px;
+            bottom: 0;
+            @include linearGradient(none, bottom, rgba(50,50,50,0.9) 40%, rgba(50,50,50,0) 100%);
+        }
+    }
+    .get-started {
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 15px;
+
+        p {
+            clear: both;
+            margin: 15px 0 0;
+            font-size: 75%;
+            color: rgb(255,255,255);
+            text-align: center;
+
+            a {
+                font-weight: normal;
+                color: rgb(255,255,255);
+            }
+        }
+        p:first-child {
+            margin: 0 0 10px;
+            font-size: 110%;
+            font-family: LatoBold;
+            @include textShadow(0px 0px 3px rgb(0,0,0));
+        }
+        label {
+            position: absolute;
+            left: -100%;
+            color: rgb(255,255,255);
+        }
+        form {
+            max-width: 480px;
+            margin: 0px auto;
+            padding: 0px;
+            overflow: hidden;
+        }
+        fieldset {
+            text-align: center;
+        }
+        ul.data {
+            display: inline-block;
+            vertical-align: top;
+            width: 38%;
+            max-width: 140px;
+            margin-bottom: 0;
+
+            input {
+                margin-top: 0;
+            }
+        }
+        ul.actions {
+            display: inline-block;
+            vertical-align: top;
+            width: 57%;
+            max-width: 300px;
+            margin-top: 0;
+            margin-left: 14px;
+
+            li.primary {
+                margin-bottom: 0;
+            }
+            input {
+                font-size: 100%;
+                padding: 11px 0px;
+            }
+        }
+    }
+    h1 {
+        max-width: 300px;
+        margin: 0 auto;
+        padding-top: 70px;
+        background: none;
+        line-height: 1.5;
+        @include textShadow(0 0 4px rgb(0,0,0));
+    }
+    h2 {
+        padding: 20px 0 24px;
+        border-top: 1px solid #97948F;
+        border-bottom: 1px solid #97948F;
+        text-align: center;
+
+        span {
+            display: block;
+            text-align: center;
+            width: 260px;
+            margin: 0 auto;
+        }
+    }
+    h3 {
+        margin: 0 auto 16px;
+        font-size: 125%;
+        text-align: center;
+    }
+    #about {
+        background: rgb(255,255,255);
+    }
+    #steps {
+        ol {
+            li {
+                display: block;
+                padding: 28px 0 32px;
+                position: relative;
+                border-bottom: 1px solid #759197;
+                color: rgb(255,255,255);
+                text-shadow: 0px 1px 1px rgb(0,0,0);
+                @include linearGradient(#8BB1B9, top, #7297A0, #8BB1B9 80%);
+
+                &:nth-child(1) {
+                    padding-top: 25px;
+                }
+                &:before {
+                    display: block;
+                    margin: 0 auto 20px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 33px;
+                    text-align: center;
+                    font-size: 145%;
+                    border: 4px solid rgb(255,255,255);
+                    @include boxShadow("0px 1px 1px rgb(0,0,0), inset 0px 1px 1px rgb(0,0,0)");
+                    @include borderRadius(50%);
+                }
+                &:nth-child(1):before {
+                    content: '1';
+                }
+                &:nth-child(2):before {
+                    content: '2';
+                }
+                &:nth-child(3):before {
+                    content: '3';
+                }
+                &:nth-child(4):before {
+                    content: '4';
+                }
+                &:after {
+                    position: absolute;
+                    bottom: -11px;
+                    left: 50%;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: -10px;
+                    border-right: 1px solid #759197;
+                    border-bottom: 1px solid #759197;
+                    background: #8BB1B9;
+                    content: '';
+                    @include transform(rotate(45deg));
+                }
+                &:nth-child(1):after {
+                    z-index: 4;
+                }
+                &:nth-child(2):after {
+                    z-index: 3;
+                }
+                &:nth-child(3):after {
+                    z-index: 2;
+                }
+                p {
+                    width: 270px;
+                    margin: 0 auto;
+                    padding: 0;
+                    text-align: center;
+                }
+                a {
+                    font-weight: normal;
+                    color: rgb(255,255,255);
+                }
+            }
+        }
+    }
+    #benefits,
+    #steps {
+        .get-started {
+            padding-top: 0;
+            padding-bottom: 50px;
+
+            p {
+                display: none;
+            }
+        }
+        & > p {
+            font-family: LatoBold;
+            text-align: center;
+            margin: 0 auto;
+            padding: 50px 15px 10px;
+            color: rgb(75,51,49);
+            font-size: 125%;
+        }
+    }
+    #benefits {
+        & > ul {
+            li {
+                margin: 40px auto;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        h3 {
+            color: rgb(75,51,49);
+        }
+    }
+    #press {
+        background: rgb(255,255,255);
+
+        ul {
+            position: relative;
+            width: 100%;
+
+            li {
+                display: block;
+                margin: 20px auto;
+                width: 220px;
+                padding-left: 220px;
+                height: 60px;
+                background-position: center center;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                overflow: hidden;
+
+                &.venturebeat {
+                    background-image: url('/assets/press/venturebeat-logo.png');
+                }
+                &.medcity {
+                    width: 130px;
+                    padding-left: 130px;
+                    background-image: url('/assets/press/medcity-logo.png');
+                }
+                &.pbj {
+                    background-image: url('/assets/press/pbj-logo.png');
+                }
+                &.philly-dotcom {
+                    background-image: url('/assets/press/philly-dotcom-logo.png');
+                }
+                &.technically {
+                    height: 80px;
+                    background-image: url('/assets/press/technically-logo.png');
+                }
+            }
+        }
+    }
+
+    &.js {
+        header {
+            border: none;
+            @include boxShadow(none);
+            @include linearGradient(none, top, rgba(50,50,50,0.9), rgba(50,50,50,0));
+            @include transition(background 0.25s);
+
+            a.home {
+                position: absolute;
+                top: -100px;
+                @include transition(opacity 0.2s);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    .signup-controller {
+        h1 {
+            padding-top: 70px;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+    .signup-controller {
+        #splash {
+            img {
+                padding-bottom: 20px;
+            }
+        }
+        h1 {
+            max-width: 350px;
+            padding-top: 70px;
+        }
+        h2 {
+            span {
+                width: 320px;
+            }
+        }
+        #steps {
+            ol {
+                li {
+                    p {
+                        width: 320px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 480px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 480px ) and ( orientation: portrait ) {
+    .signup-controller {
+        #splash {
+            height: 700px;
+
+            img {
+                padding: 80px 0 20px;
+                width: 28%;
+            }
+            & > a {
+                max-width: 300px;
+                margin-top: 26px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            aside {
+                margin-top: 26px;
+                border: 2px solid rgb(98,92,133);
+                @include borderRadius(10px);
+                text-align: center;
+            }
+        }
+        h1 {
+            max-width: 350px;
+            font-size: 120%;
+            padding-top: 70px;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    .signup-controller {
+        #splash {
+            height: 900px;
+
+            img {
+                padding: 140px 0 50px;
+                width: 24%;
+            }
+            & > a {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            & > a {
+                aside {
+                    margin: 20px auto;
+                    font-size: 110%;
+
+                    span.price {
+                        font-family: LatoBold;
+                    }
+                }
+            }
+            .get-started {
+                padding-bottom: 40px;
+            }
+        }
+        .get-started {
+            ul.data {
+                input {
+                    font-size: 125%;
+                    padding: 19px 20px;
+                }
+            }
+            ul.actions {
+                margin-left: 25px;
+
+                input {
+                    font-size: 125%;
+                    padding: 20px 10px;
+                }
+            }
+        }
+        h1 {
+            max-width: 475px;
+            font-size: 150%;
+            padding-top: 70px;
+        }
+        h2 {
+            padding: 50px 0;
+
+            span {
+                width: 515px;
+            }
+        }
+        #benefits,
+        #steps {
+            & > p {
+                padding: 80px 15px 20px;
+            }
+            .get-started {
+                padding-bottom: 70px;
+            }
+        }
+        #steps {
+            ol {
+                li {
+                    padding: 56px 0 48px;
+
+                    &:first-child {
+                        padding-top: 38px;
+                    }
+                    &:before {
+                        width: 50px;
+                        height: 50px;
+                        line-height: 40px;
+                    }
+                    &:after {
+                        bottom: -21px;
+                        width: 40px;
+                        height: 40px;
+                        margin-left: -20px;
+                    }
+                    p {
+                        width: auto;
+                    }
+                }
+            }
+        }
+        #benefits {
+            & > ul {
+                margin: 0 7%;
+                li {
+                    margin: 70px 0;
+                }
+            }
+        }
+        #press {
+            ul {
+                padding: 40px 0;
+                text-align: center;
+
+                li {
+                    display: inline-block;
+                    margin: 0 40px;
+                    width: 180px;
+                    padding-left: 180px;
+                    vertical-align: middle;
+
+                    &.medcity {
+                        width: 110px;
+                        padding-left: 110px;
+                    }
+                    &.philly-dotcom,
+                    &.technically {
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    .signup-controller {
+        main {
+            max-width: none;
+        }
+        #splash {
+            padding-left: 50%;
+            height: 700px;
+            background-image: url('/assets/home-page-hero-10f.jpg');
+
+            img {
+                width: 160px;
+                padding-bottom: 30px;
+            }
+            .get-started {
+                position: relative;
+                padding-top: 30px;
+                background: none;
+            }
+        }
+        h1 {
+            padding-top: 70px;
+        }
+        h2 {
+            font-size: 130%;
+
+            span {
+                width: auto;
+            }
+        }
+        #benefits {
+            & > ul {
+                margin: 0 auto;
+                max-width: 670px;
+            }
+        }
+        #press {
+            ul {
+                max-width: 960px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media only screen and ( min-width: 1250px ) {
+    .signup-controller {
+        #press {
+            ul {
+                max-width: none;
+
+                li {
+                    &.philly-dotcom,
+                    &.technically {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.pre-content
+  h1.shopping-title #{@order.user_name_or_email.present? ? "#{@order.user_name_or_email}'s" : ""} Shopping List
+
+.content
+  .line-item-header
+    h1.center Meals
+  .line-items
+    = render partial: 'serving', collection: @order.servings
+
+  .line-item-header
+    h1.center Ingredients (#{@order.portions.included.count})
+  .line-items
+    = render partial: 'portion', collection: @order.portions.included
+    
+  = render 'edit_checkout', order: @order

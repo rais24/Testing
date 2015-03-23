@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('/assets/Lato-Regular.eot?#iefix') format('embedded-opentype'),  
+  url('/assets/Lato-Regular.woff') format('woff'), 
+  url('/assets/Lato-Regular.ttf')  format('truetype'), 
+  url('/assets/Lato-Regular.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Rokkitt';
+  src: url('/assets/Rokkitt.eot?#iefix') format('embedded-opentype'),  
+  url('/assets/Rokkitt.otf')  format('opentype'),
+  url('/assets/Rokkitt.woff') format('woff'), 
+  url('/assets/Rokkitt.ttf')  format('truetype'), 
+  url('/assets/Rokkitt.svg#Rokkitt') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: 'WolfintheCityLight';
+  src: url('/assets/WolfintheCityLight.eot?#iefix') format('embedded-opentype'),  
+  url('/assets/WolfintheCityLight.woff') format('woff'), 
+  url('/assets/WolfintheCityLight.ttf')  format('truetype'), 
+  url('/assets/WolfintheCityLight.svg#WolfintheCityLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

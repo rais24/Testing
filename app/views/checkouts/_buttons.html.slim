@@ -1,0 +1,4 @@
+.checkout-actions
+  = link_to submit_text, next_wizard_path, class: "button-action pull-right"
+  - unless step == :pantry
+    = link_to "Back", previous_wizard_path, class: "button-danger pull-right"

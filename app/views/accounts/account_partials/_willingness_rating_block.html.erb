@@ -1,0 +1,8 @@
+<div class="ratingblock"> 
+  <% @user.willingness_to_change[category.to_sym].to_i.times.each do %>
+	  <span class="span1"></span> 
+  <% end %>
+  <% (5-@user.willingness_to_change[category.to_sym].to_i).times.each do %>
+	  <span class="span2"></span> 
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+#menu 
+  ul
+    li= link_to "Home", admin_root_path
+    li= link_to "Orders", admin_order_details_path
+    li= link_to "Monthly Report", admin_monthly_report_path
+    li= link_to "Publish Recipes", admin_recipes_path
+    li= link_to "Products", products_path
+    li= link_to "Stores", stores_path
+    li= link_to "Ingredients", ingredients_path
+    li= link_to "Promos", admin_promos_path
+    li= link_to "Delivery Zones", admin_delivery_zones_path
+    li= link_to "Zip Codes", admin_zipcodes_path
+    li
+      = "Logged in as #{current_user.email} (#{current_user.id})"

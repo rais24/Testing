@@ -1,0 +1,14 @@
+h1 Unpublished Recipes
+
+p.intro
+    - if flash[:publish_status]
+        = flash[:publish_status]
+
+section#unpublished_recipes
+  = form_tag publish_admin_recipes_path do
+    p Select one or more recipes to publish from the list below. 
+    p
+      = select_tag "new_recipes", options_for_select(@unpublished_recipes.collect{ |x| [x.name, x.id]}), multiple: true, style: "width: 500px; height: 200px; margin: 0"
+
+    p
+      input.button-info.pull-left.action.primary type="submit" value="Publish"

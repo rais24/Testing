@@ -1,0 +1,17 @@
+$thumbSmallSize: 35px;
+$thumbSize: 50px;
+$thumbLargeSize: 100px;
+
+img {
+  &.thumb-small {
+    @include size(35 auto);
+  }
+
+  &.thumb-large {
+    @include size(100 auto);
+  }
+
+  &.thumb {
+    @include size(50 auto);
+  }
+}

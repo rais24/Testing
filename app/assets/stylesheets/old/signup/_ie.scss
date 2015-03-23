@@ -1,0 +1,51 @@
+.ie6, .ie7, .ie8, .ie9, .ie10 {
+	#visor {
+		.nav {
+			li {
+				a.copy {
+					color: $green;
+					&:hover {
+						color: $darkgreen;
+					}
+					&:visited {
+						color: $green;
+					}
+					&:visited:hover {
+						color: $darkgreen;
+					}
+				}
+			}
+		}
+		form.eventcode input{
+	        font-size:11px;
+			&.button {
+				padding:14px 15px 14px 15px;
+			    border-radius: 0 50px 50px 0;
+			    box-shadow:none;
+			    behavior: url(/assets/PIE.htc);
+			}
+
+		}
+	}
+
+	.cta {
+		background-color: $call-to-action;
+	}
+
+	input.button {
+	    border-radius: 0 50px 50px 0;
+		box-shadow:none;
+	    behavior: url(/assets/PIE.htc);
+	}
+
+	.carousel-indicators li {
+		border-radius:35px;
+		behavior: url(/assets/PIE.htc);
+	}
+
+	#how-it-works {
+		h2, p {
+			filter: dropshadow(enabled=false)
+		}
+	}
+}

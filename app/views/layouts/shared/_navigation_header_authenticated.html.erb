@@ -1,0 +1,51 @@
+  <!-- top header -->
+  <div class="topcontainer">
+    <div class="leftsocilicon">
+      <div><a href="#"><img src="/assets/f1.jpg" alt=""/></a></div>
+      <div><a href="#"><img src="/assets/tw2.jpg" alt=""/></a></div>
+      <div><a href="#"><img src="/assets/printrist.jpg" alt=""/></a></div>
+      <div><a href="#"><img src="/assets/instragram.jpg" alt=""/></a></div>
+    </div>
+        <div class="rightblock rightblock1">
+      <div class="callus callus1 callus2"><img src="/assets/call.jpg" alt=""/>CALL US  <span>: 1-844-GET-FITLY(438-3485)</span></div>
+    </div>
+
+  </div>
+  <!-- top header close --> 
+  <!-- menu link -->
+  <div id="menu">
+    <div class="logo"><a href="/"><img src="/assets/fitly-logo.jpg" alt=""/></a></div>
+    <div class="toprightiocns">
+      <div class="topicons"><img src="/assets/notifaction.png"  alt=""/></div>
+      <div class="topicons"><img src="/assets/setting.png" alt=""/></div>
+      <div class="topicons"><a href="/logout"><img src="/assets/icon1.png"  alt=""/></a></div>
+    </div>
+    <div class="menulinks menulinks1">
+      <ul>  
+        <% if current_user.is_specialist? %>      
+          <li><%= link_to "MY FITLY", show_patients_account_path %></li>
+        <% else %>
+          <li><a href="/account">MY FITLY</a></li>
+        <% end %> 
+        <li><a href="#">MESSAGES
+          <div>1</div>
+          </a></li>
+        <li><a href="/recipes">MENU</a></li>
+      </ul>
+    </div>
+    <!-- responsive menu -->
+       <div class="mobilemenu">
+         <img src="/assets/responsivemenuicon.png"  onClick="$('.menutoggle').slideToggle();" alt=""/>
+         <div class="menutoggle">
+    <ul>
+        <li><a href="/account">MY FITLY</a></li>
+        <li><a href="#">MESSAGES
+          <div>1</div>
+          </a></li>
+         <li><a href="/recipes">MENU</a></li>
+      </ul>
+      </div>
+    </div>
+    <!-- responsive menu close-->
+  </div>
+  <!-- menu link --> 

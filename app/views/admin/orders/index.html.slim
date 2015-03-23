@@ -1,0 +1,31 @@
+h1 Orders
+
+table
+  th id
+  th bpo processor
+  th recipes
+  th checked out?
+  th subtotal
+  th promo discount
+  th total
+  th created
+  th actions
+  
+  - @orders.each do |order|
+    tr
+      td= order.id
+      td= order.bpo_processor.email if order.bpo_processor
+      td= order.servings.map {|s| s.recipe.name }.join(", ")
+      td= order.checked_out.to_s
+      td= number_to_currency(order.subtotal)
+      td
+        - if order.used_promo && order.used_promo.discount
+          = number_to_currency(order.used_promo.discount)
+      td= number_to_currency(order.price)
+      td= order.created_at
+      td
+        = link_to( "reprint pdf", pdf_order_path(order), format: :pdf) << " "
+        = link_to( "check whole order", check_order_path(order)) << " "
+        = link_to( "resend bpo email", admin_order_resend_bpo_path(order)) << " "
+        = link_to( "resend bpo missing email", admin_order_resend_missing_path(order)) << " "
+        = link_to( "resend confirmation email", admin_order_resend_confirmation_path(order)) << " "

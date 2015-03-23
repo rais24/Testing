@@ -1,0 +1,10 @@
+-if current_user.billing
+  .row-fluid
+    .span5.pull-left
+        = link_to "Edit Order", new_order_path, class: "button-info button-large"
+    .span5.pull-right
+        = link_to "Checkout", new_billing_path, class: "button-action button-large"
+-else
+  .row-fluid
+    .span12.center
+        = link_to "Edit Cart", new_order_path, class: "button-info button-large"

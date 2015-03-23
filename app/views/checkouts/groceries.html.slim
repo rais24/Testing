@@ -1,0 +1,26 @@
+.content.checkout-portions
+  h1.font-light Your Pantry Items
+    
+  p.copy The recipes you've selected will require the following items.
+  p.copy Do you need any of the following?
+
+  .row-fluid
+    .span6.excluded
+      h2 Excluded
+      #excluded-portions.portion-list
+        - if groceries.excluded.empty?
+          p.empty All Groceries Have Been Added
+        - else
+          = render groceries.excluded
+
+    .span6.included
+      h2 
+        | Included 
+        i.icon-shopping-cart
+      #included-groceries.portion-list
+        - if groceries.included.empty?
+          p.empty No Groceries Have Been Added
+        - else
+          = render groceries.included
+
+  =render 'buttons'

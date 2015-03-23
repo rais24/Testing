@@ -1,0 +1,95 @@
+#order-detail
+    h1 Order Details - Order ##{@order.id}
+    p
+        | Placed on #{@order.updated_at.strftime("%m/%d/%y")}
+    - if current_user.is? :admin
+      p= link_to 'check order', check_order_path(@order)
+    section#order-status
+        - if (@order.charge)
+            h2
+                | Order Status: <span class="status">Payment Received</span>
+            p
+                | Your payment has been received and your order is being processed. If you need to make changes to this order, please contact customer service.
+        - else
+            h2
+                | Order Status: <span class="status">In Process</span>
+            p
+                | Your order has been placed with our grocer and is on schedule. If you have any questions or comments, please contact our customer service department.
+            dl
+                dt Phone:
+                dd 888-999-9999
+                dt E-mail:
+                dd <a href="mailto:customerservice@fitly.org">customerservice@fitly.org</a>
+        div.order-actions
+            a class="action primary print-receipt" href="javascript:window.print()"
+                | Print receipt
+            a class="action secondary print-prep" href="#{preparation_order_path(@order)}"
+                | Print recipe cards
+        p
+            | To print recipe cards for individual recipes, see each recipe below.
+    section#delivery-info
+        div.address
+            h2
+                | Delivery Address
+            p
+                = @order.address.name
+                br
+                = @order.address.street
+                br
+                = @order.address.city_line
+                br
+                = number_to_phone(@order.address.phone)
+        div.time
+            h2
+                | Delivery Time
+            p
+                = @order.delivery_time.date_and_time
+    section#recipes
+        h2 #{@order.servings.count} recipes (#{@order.serving_amount.to_i} total servings)
+        ul
+            - @order.servings.each do |serving|
+                li.recipe-summary
+                    h3 = serving.recipe.name
+                    ul
+                        li
+                            a href="/recipes/#{serving.recipe.slug}" View recipe details
+                        li
+                            a href="/recipes/#{serving.recipe.slug}?prepview=on" View prep instructions
+                    dl
+                        dt Servings:
+                        dd #{serving.quantity.to_i}
+                        dt Price per serving:
+                        dd #{number_to_currency(cart.current_price_per_serving)}
+                        dt Item total:
+                        dd #{number_to_currency(cart.current_price_per_serving * serving.quantity)}
+                    | <a class="action secondary" href="#">Print recipe card</a>
+                    = form_tag shopping_cart_items_path do
+                        fieldset
+                            input type="hidden" value="#{serving.recipe.id}" name="shopping_cart_item[recipe_id]"
+                            input type="hidden" value="#{serving.quantity.to_i}" name="shopping_cart_item[quantity]"
+                            ul.actions
+                                li.primary
+                                    button type="submit" class="with-prompt"
+                                        | Liked it? Reorder!<br><span class="exit">Add this recipe to your cart</span>
+    - if current_user.is? :admin
+      section#pantry-items
+          table.pantry-items
+              caption
+                  | Pantry Items
+              = render partial: 'checkouts/pantry', collection: @order.order_products
+    section#order-total
+        table.order-total
+            tr.subtotal
+                th Subtotal:
+                td = number_to_currency(@order.price)
+            tr.delivery
+                th Delivery:
+                td Free
+            tr.tax
+                th Tax:
+                td = number_to_currency(cart.taxes)
+            tr.grand-total
+                th Amount Charged:
+                td = number_to_currency(@order.price)
+    a class="action primary" href="javascript:window.print()"
+        | Print receipt

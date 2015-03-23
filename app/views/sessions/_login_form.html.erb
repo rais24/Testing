@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header" %>
+  
+  <!-- body container  -->
+  <div class="login-container">
+    <h1>Login to My Fitly</h1>
+    <%= form_tag sessions_path, method: :post, class: :login do %>
+      <div class="popupbox">
+        <h2>Don’t have an account? 
+          <%= link_to "Sign Up now!", subscription_index_path(user_type: params[:user_type]) %>
+        </h2>
+        <div class="textname">Email</div>
+        <div class="inputfield">
+          <input type="text" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="textname">Password</div>
+        <div class="inputfield">
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="forgotpass">
+          <div class="forgottext"><a href="/password_resets">Forgot password?</a></div>
+          <div class="loginbtn">
+            <input type="submit" value="Login">
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <!-- body container close --> 
+  
+  <%= render "layouts/shared/footer" %>
+  
+</div>
+</body>
+</html>

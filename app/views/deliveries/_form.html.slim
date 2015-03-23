@@ -1,0 +1,5 @@
+= simple_form_for [site, @delivery] do |f|
+  = f.error_notification
+  = f.date_select :scheduled_for
+  = f.input :delivered
+  = f.button :submit

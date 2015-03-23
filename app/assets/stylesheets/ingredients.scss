@@ -1,0 +1,34 @@
+// for ingredients form
+
+@import '_variables';
+
+form.ingredients {
+    padding: 0;
+    
+    ul.data {
+
+        li.input {
+
+            &.checkbox {
+                margin: 0;
+                padding: 20px 15px 20px 60px;
+
+                input {
+                    top: 10px;
+                    left: 15px;
+                }
+                label {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    ul.actions {
+        padding: 0 15px;
+
+        &:first-child {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+}

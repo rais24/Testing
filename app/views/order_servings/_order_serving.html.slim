@@ -1,0 +1,6 @@
+- if order_serving.persisted?
+  .cart-item id=dom_id(order_serving)
+    img src=order_serving.photo.url(:thumb)
+    
+    = show_serving_in_cart(order_serving)
+    = render 'order_servings/remove', order: order_serving.order, serving: order_serving

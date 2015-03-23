@@ -1,0 +1,184 @@
+﻿.pageHeader {
+    margin-top: 53px;
+}
+
+input[type=submit].blueButton {
+    padding: 12px 35px;
+    border-radius: 5px;
+    font-family: Rokkitt, serif;
+    font-size: 206.3%;
+    background-color: #8fc5d0;
+    border: 1px none #77a2ab;
+    border-bottom: 3px solid #77a2ab;
+    color: #fff;
+    margin: 0;
+}
+
+.pricingPageHeader {
+    background: url('/assets/Pricing_Bg.png') scroll no-repeat center center #fff;
+    background-size: cover;
+    height: 290px;
+    padding: 60px 20px;
+}
+
+    .pricingPageHeader .pricingPageHeaderText {
+        max-width: 940px;
+        margin: 0 auto;
+        color: #fff;
+        font-family: Rokkitt, serif;
+        font-size: 183.8%;
+        text-align: center;
+    }
+
+.pricingContainer {
+    position: relative;
+    width: 860px;
+    margin: -104px auto 0 auto;
+    padding-bottom: 60px;
+}
+
+    .pricingContainer .pricingSection {
+        width: 250px;
+        float: left;
+        margin-left: 55px;
+    }
+
+        .pricingContainer .pricingSection .pricingSectionHeader {
+            background-color: #f3ece2;
+            padding: 20px 23px;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+        }
+
+            .pricingContainer .pricingSection .pricingSectionHeader > div {
+                color: #6d6959;
+                font-size: 150%;
+            }
+
+                .pricingContainer .pricingSection .pricingSectionHeader > div:first-child {
+                    font-weight: 700;
+                    font-size: 187.5%;
+                }
+
+        .pricingContainer .pricingSection .pricingSectionPricesContainer {
+            border: 1px solid #aaa095;
+            border-bottom: 3px solid #aaa095;
+            border-top: 1px none #aaa095;
+            padding: 15px 10px 10px 10px;
+            margin-top: -1px;
+        }
+
+            .pricingContainer .pricingSection .pricingSectionPricesContainer .pricePerPlateSection {
+                margin-bottom: 15px;
+            }
+
+                .pricingContainer .pricingSection .pricingSectionPricesContainer .pricePerPlateSection.twoPlates {
+                    background: url('/assets/2Plates_ex.png') scroll no-repeat center center #fff;
+                    /*width: 221px;*/
+                    height: 547px;
+                }
+
+                .pricingContainer .pricingSection .pricingSectionPricesContainer .pricePerPlateSection.fourPlates {
+                    background: url('/assets/4Plates_ex.png') scroll no-repeat center center #fff;
+                    /*width: 218px;*/
+                    height: 451px;
+                }
+
+                .pricingContainer .pricingSection .pricingSectionPricesContainer .pricePerPlateSection.eightPlates {
+                    background: url('/assets/8Plates_ex.png') scroll no-repeat center center #fff;
+                    /*width: 221px;*/
+                    height: 408px;
+                }
+
+            .pricingContainer .pricingSection .pricingSectionPricesContainer .goodForSection {
+                border-top: 1px solid #aaa095;
+                border-bottom: 1px solid #aaa095;
+                margin: 0 -10px;
+                padding: 10px;
+            }
+
+                .pricingContainer .pricingSection .pricingSectionPricesContainer .goodForSection > div {
+                    text-align: center;
+                    color: #6d6959;
+                    font-size: 125%;
+                }
+
+                    .pricingContainer .pricingSection .pricingSectionPricesContainer .goodForSection > div:first-child {
+                        text-transform: uppercase;
+                    }
+
+            .pricingContainer .pricingSection .pricingSectionPricesContainer .totalSection {
+                padding: 10px 0 5px 0;
+            }
+
+                .pricingContainer .pricingSection .pricingSectionPricesContainer .totalSection > div:first-child {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #6d6959;
+                    font-size: 187.5%;
+                    margin-bottom: 5px;
+                }
+
+                .pricingContainer .pricingSection .pricingSectionPricesContainer .totalSection > div > input[type='submit'] {
+                    width: 214px;
+                    margin: 0 auto;
+                    display: block;
+                }
+
+        .pricingContainer .pricingSection.mostPopular {
+            position: relative;
+            margin-top: -35px;
+        }
+
+            .pricingContainer .pricingSection.mostPopular .pricingSectionPricesContainer {
+                border: 2px solid #8fc5d0;
+                border-bottom: 3px solid #8fc5d0;
+                border-top: 1px none #8fc5d0;
+                position: relative;
+                padding-top: 10px;
+            }
+
+                .pricingContainer .pricingSection.mostPopular .pricingSectionPricesContainer .mostPopularBanner {
+                    background: url('/assets/MostPopular_Banner.png') scroll no-repeat center center transparent;
+                    background-size: cover;
+                    width: 327px;
+                    height: 54px;
+                    position: relative;
+                    top: -10px;
+                    left: -54px;
+                }
+
+                .pricingContainer .pricingSection.mostPopular .pricingSectionPricesContainer .pricePerPlateSection {
+                    margin-top: -10px;
+                }
+
+                .pricingContainer .pricingSection.mostPopular .pricingSectionPricesContainer .goodForSection {
+                    border-top: 1px solid #8fc5d0;
+                    border-bottom: 1px solid #8fc5d0;
+                }
+
+        .pricingContainer .pricingSection:first-child {
+            margin-left: 0;
+        }
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    .pricingContainer {
+        width: auto;
+        padding: 30px 0;
+        margin: 0;
+    }
+
+        .pricingContainer .pricingSection {
+            float: none;
+            margin: 0 auto;
+        }
+
+            .pricingContainer .pricingSection:first-child {
+                margin: 0 auto;
+            }
+
+            .pricingContainer .pricingSection.mostPopular {
+                margin: 30px auto;
+            }
+}

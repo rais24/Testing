@@ -1,0 +1,24 @@
+#locked
+  .span5.offset1
+    = image_tag 'fitly-bag-groceries.png'
+  .span5.messaging
+    h1.centered
+      | Welcome, 
+      span = current_user.email
+      |!
+
+    p.lead To activate your account,
+
+    p
+      | Please check your inbox (
+      span = current_user.email
+      | ) for an email containing a confirmation link.
+
+    p
+      | Having trouble viewing our email? We can 
+      = link_to "send it again", welcome_user_path(current_user, auth_token: current_user.auth_token), remote: true
+      | .
+
+    p Thanks,
+
+    p.lead The Fitly Family

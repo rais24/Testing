@@ -1,0 +1,320 @@
+/*-------------------
+Shopping Cart Styles
+-------------------*/
+@import '_variables';
+
+#shopping_carts-show {
+
+    #shopping-cart {
+        overflow: hidden;
+    }
+
+    #cart-contents {
+        border-bottom: 2px solid rgb(172,170,163);
+
+        & > ul {
+            & > li {
+                &:last-child {
+                    border-bottom: none;
+                }
+                &.recipe-form {
+                    form {
+                        margin: 0;
+                    }
+                    legend {
+                        position: static;
+                        left: 0;
+                        margin: 0;
+                        text-align: left;
+                        font-family: $defaultFont;
+
+                        a {
+                            font-size: 100%;
+                        }
+                    }
+                    ul.data {
+                        margin-bottom: 10px;
+                    }
+                    ul.actions {
+                        li {
+                            margin-bottom: 0;
+
+                            &.primary {
+                                width: 40%;
+                                float: right;
+
+                                input {
+                                    margin: 0;
+                                    @include smallButton;
+                                }
+                            }
+                            &.secondary {
+                                padding-top: 10px;
+
+                                a {
+                                    @include iconBeforeText(2, '\e67e');
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        li.image {
+            display: none;
+        }
+        .promo {
+            border-top: 2px solid #666453;
+            padding: 30px 0;
+            h2 {
+                margin-bottom: 15px;
+            }
+            form {
+                margin: 0;
+            }
+            .data {
+                float: left;
+                width: 50%;
+                margin-bottom: 0;
+            }
+            .actions {
+                float: right;
+                width: 40%;
+                margin-top: 6px;
+                input {
+                    padding: 8px;
+                    font-size: 100%;
+                }
+            }
+            .applied-promos {
+                li {
+                    margin-bottom: 5px;
+                }
+                .code {
+                    padding: 15px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    section {
+        clear: both;
+        .actions {
+            margin: 15px 0;
+
+            a.action {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    footer {
+        clear: both;
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    #cart-contents {
+        form {
+            min-width: 100%;
+            padding: 0 15px;
+        }
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+///////                     Need this to match up                  ///////
+///////                     with the font size change              ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+    #shopping_carts-show #cart-contents {
+        .promo {
+            .actions {
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 500px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 500px ) {
+    #cart-contents {
+        table {
+            float: right;
+            margin: 20px 50px;
+            width: 260px;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    #shopping_carts-show {
+        #cart-contents {
+            &> ul > li.recipe-form {
+                min-height: 170px;
+
+                fieldset {
+                    position: relative;
+                    padding-left: 160px;
+                }
+                legend {
+                    padding-bottom: 20px;
+                }
+                ul.data {
+                    margin-bottom: 0;
+                    float: left;
+                    width: 70%;
+
+                    li {
+                        float: left;
+                        clear: none;
+                        padding-right: 12%;
+
+                        &.image {
+                            width: 140px;
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            padding: 0;
+
+                            img {
+                                width: 100%;
+                                border: 1px solid rgb(170, 159, 146);
+                            }
+                        }
+                    }
+                    .label,
+                    label {
+                        width: 100%;
+                        display: block;
+                        padding: 0;
+                        margin: 0;
+                        float: none;
+                        text-align: right;
+                        font-size: 75%;
+                    }
+                    select {
+                        width: 100%;
+                    }
+                }
+
+                ul.actions {
+                    float: right;
+                    width: 150px;
+                    margin-top: 0;
+                    li.primary {
+                        float: none;
+                        width: 100%;
+                    }
+                    li.secondary {
+                        text-align: center;
+                        font-size: 80%;
+                    }
+                }
+            }
+            .promo {
+                float: left;
+                width: 50%;
+                border: none;
+                padding-top: 20px;
+            }
+            table.order-total {
+                margin: 0;
+                width: 40%;
+
+                th,
+                td {
+                    padding: 15px 25px;
+                }
+            }
+        }
+        section.actions {
+            &.upper {
+                a {
+                    width: 50%;
+                    margin-bottom: 45px;
+                    &.primary {
+                        float: left;
+                        margin-left: 2em;
+                        margin-top: 115px;
+                    }
+                }
+                a.primary ~ a.secondary {
+                    float: right;
+                    margin-right: 2em;
+                    margin-top: 115px;
+                }
+                a.primary + p {
+                    position: absolute;
+                    width: 100%;
+                    max-width: none;
+                    margin-left: 0;
+                    margin-right: 0;
+                    padding: 0 12%;
+                }
+            }
+            &.lower.checkout {
+                float: right;
+                margin-right: 15px;
+                .primary {
+                    margin-top: 20px;
+                    & + .secondary {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    #shopping_carts-show {
+        #cart-contents {
+            .promo {
+                width: 35%;
+            }
+            li.image {
+                img {
+                    top: -80px;
+                }
+            }
+        }
+        section.actions.upper {
+            a.primary {
+               margin-left: 7em;
+            }
+            a.primary ~ a.secondary {
+                margin-right: 7em;
+            }
+        }
+    }
+}

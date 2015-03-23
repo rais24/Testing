@@ -1,0 +1,31 @@
+.content
+  h1 Listing Deliveries for #{@site.try(:name) || "All"}
+
+  table.table.table-hover
+    tr
+      th Date
+      th Price
+      th
+      th
+
+    - @deliveries.each do |delivery|
+      tr
+        td= delivery.scheduled_for
+        td= delivery.price
+        td= link_to 'Show', resource_path(site, delivery, site: params[:site])
+        td= link_to 'Edit', edit_resource_path(site, delivery)
+        td= link_to 'Destroy', [site, delivery], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    - @deliveries.each do |delivery|
+      - delivery.portions.each do |portion|
+        tr
+          td= portion.recipe
+          td= portion.quantity
+          td= portion.price
+          td= link_to 'Show', recipe
+          td= link_to 'Edit', edit_resource_path(recipe)
+          td= link_to 'Destroy', recipe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  br
+
+  = link_to 'New Delivery', new_resource_path

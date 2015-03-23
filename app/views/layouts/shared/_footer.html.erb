@@ -1,0 +1,63 @@
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-left">
+    <div class="logo"><img src="/assets/footer-logo.jpg" width="66" height="41" alt=""/></div>
+  </div>
+  <div class="footer-center">
+    <h4>Sign up for our newsletter:</h4>
+    <%= form_tag(signup_newsletter_signup_path, method: :get) do %>
+      <div class="signup">
+        <%= text_field_tag 'user[email]', nil, placeholder: "Email" %>
+      </div>
+      <div class="signupbtn">
+        <%= submit_tag "Sign Up", :class => "button"%>
+      </div>
+    <% end %>
+  </div>
+  <div class="footer-right">
+    <h4>We accept all major credit cards.</h4>
+    <div class="visacard">
+      <div class="visacard-div"><a href="#"><img src="/assets/PayPal.png"  alt=""/> </a></div>
+      <div class="visacard-div"><a href="#"><img src="/assets/Visa.png" alt=""/> </a></div>
+      <div class="visacard-div"><a href="#"><img src="/assets/MasterCard.png" alt=""/> </a></div>
+      <div class="visacard-div"><a href="#"><img src="/assets/Discover.png" alt=""/></a></div>
+    </div>
+    <div class="socilimg">
+      <h4>Stay connected with us!</h4>
+      <div class="socilimg-div">
+        <a href="https://www.facebook.com/pages/Fitly-The-best-way-to-eat-healthy/254561257918450?soft=side-area">
+          <img src="/assets/facebook.png"  alt=""/> 
+        </a>
+      </div>
+      <div class="socilimg-div">
+        <a href="https://twitter.com/fitlyfamily/">
+          <img src="/assets/twitter.png" alt=""/> 
+        </a>
+      </div>
+      <div class="socilimg-div">
+        <a href="http://www.pinterest.com/fitlyfamily/">
+          <img src="/assets/pinterest.png" alt=""/>
+        </a>
+      </div>
+      <div class="socilimg-div">
+        <a href="http://instagram.com/fitlyfoods">
+          <img src="/assets/instagram.png" alt=""/> 
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-left">
+    <div class="link">
+      <a href="/account">My Fitly</a> 
+      <a href="/mymessages">Messages</a> 
+      <%= link_to "Menu", recipes_path %>
+      <a href="#" class="inactivepipe">Settings</a> <br>
+      <%= link_to "FAQ", page_path('faqs') %>
+      <%= link_to "Testimonials", page_path('testimonials') %>
+      <%= link_to "Our Team", page_path('team') %>
+      <a href="https://fitlyfamily.blogspot.com/">Blog</a>
+    </div>
+    <div class="copyright">©2015 Fitly, Inc. All Rights Reserved.</div>
+  </div>
+</div>
+<!-- Footer close --> 

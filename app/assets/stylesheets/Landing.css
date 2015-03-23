@@ -1,0 +1,1010 @@
+﻿@font-face {
+    font-family: 'LatoRegular';
+    src: url('/assets/Lato/Lato-Reg-webfont.eot');
+    src: url('/assets/Lato/Lato-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lato/Lato-Reg-webfont.woff') format('woff'),
+         url('/assets/Lato/Lato-Reg-webfont.ttf') format('truetype'),
+         url('/assets/Lato/Lato-Reg-webfont.svg#LatoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.landingSplash {
+    background: url('/assets/home-page-hero-10f.jpg') scroll no-repeat center center #fff;
+    background-size: cover;
+    height: 700px;
+    position: relative;
+    z-index: 2;
+    -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .landingSplash .landingHeaderMenuContainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+        .landingSplash .landingHeaderMenuContainer .defaultHeaderBackground {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: -webkit-linear-gradient(top, rgba(50,50,50,0.9), rgba(50,50,50,0));
+            background-image: -moz-linear-gradient(top, rgba(50,50,50,0.9), rgba(50,50,50,0));
+            background-image: -ms-linear-gradient(top, rgba(50,50,50,0.9), rgba(50,50,50,0));
+            background-image: -o-linear-gradient(top, rgba(50,50,50,0.9), rgba(50,50,50,0));
+            background-image: linear-gradient(top, rgba(50,50,50,0.9), rgba(50,50,50,0));
+        }
+
+        .landingSplash .landingHeaderMenuContainer .scrollingHeaderBackground {
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: -webkit-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+            background-image: -moz-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+            background-image: -ms-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+            background-image: -o-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+            background-image: linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+            box-shadow: 0 -4px 4px 5px #333333;
+        }
+
+    .landingSplash .landingHeaderMenu {
+        position: relative;
+        padding: 15px 0;
+        width: 717px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+        .landingSplash .landingHeaderMenu a {
+            text-decoration: none;
+        }
+
+            .landingSplash .landingHeaderMenu a:hover {
+                color: #9c3d3e; 
+            }
+
+        .landingSplash .landingHeaderMenu.scrolling {
+            width: 656px;
+        }
+
+        .landingSplash .landingHeaderMenu .headerLogo {
+            display: inline-block;
+            position: absolute;
+            background: url('/assets/fitly-logo.png') scroll no-repeat center center transparent;
+            background-size: cover;
+            height: 38px;
+            width: 82px;
+            top: 8px;
+            left: -115px;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingSplash .landingHeaderMenu ul li {
+            list-style: none;
+            float: left;
+            margin-left: 25px;
+            color: #fff;
+            font-size: 118.8%;
+        }
+
+            .landingSplash .landingHeaderMenu ul li:first-child {
+                margin-left: 0;
+            }
+
+            .landingSplash .landingHeaderMenu ul li.signIn {
+                position: relative;
+            }
+
+                .landingSplash .landingHeaderMenu ul li.signIn .signInText {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                    .landingSplash .landingHeaderMenu ul li.signIn .signInText a:hover {
+                        color: #fff;
+                    }
+
+                .landingSplash .landingHeaderMenu ul li.signIn .signInBackground {
+                    background-color: #9c3d3e;
+                    position: absolute;
+                    top: -15px;
+                    left: -10px;
+                    z-index: 0;
+                    width: 75px;
+                    height: 53px;
+                }
+
+            .landingSplash .landingHeaderMenu ul li.defaultCart {
+                position: absolute;
+                background: url('/assets/Icon_Cart.png') top left no-repeat transparent;
+                width: 25px;
+                height: 24px;
+                top: 13px;
+                right: 19px;
+            }
+
+                .landingSplash .landingHeaderMenu ul li.defaultCart:hover {
+                    cursor: pointer;
+                }
+
+            .landingSplash .landingHeaderMenu ul li.scrollingCart {
+                display: none;
+                position: absolute;
+                background: url('/assets/Icon_Cart_Large.png') top left transparent;
+                width: 36px;
+                height: 38px;
+                top: 7px;
+                right: -100px;
+            }
+
+                .landingSplash .landingHeaderMenu ul li.scrollingCart:hover {
+                    cursor: pointer;
+                }
+
+    .landingSplash .getStartedSection {
+        position: absolute;
+        /*top: 115px;*/
+        top: 180px;
+        left: 52%;
+        color: #fff;
+        width: 505px;
+    }
+
+        .landingSplash .getStartedSection > div {
+            margin-top: 15px;
+        }
+
+        .landingSplash .getStartedSection .logo {
+            background: url('/assets/fitly-logo.png') no-repeat top left;
+            background-size: cover;
+            width: 163px;
+            height: 75px;
+            margin: 0 auto;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingSplash .getStartedSection .sectionHeaderText {
+            /*font-family: Rokkitt, serif;
+            font-size: 280%;*/
+            font-family: LatoBold;
+            font-size: 275%;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .landingSplash .getStartedSection .sectionSubHeaderText {
+            font-size: 130%;
+            text-align: center;
+        }
+
+        .landingSplash .getStartedSection .asLowAs {
+            background-color: rgb(94, 58, 86);
+            opacity: .8;
+            background-color: rgba(94, 58, 86, .8);
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+            filter: alpha(opacity=80);
+            padding: 15px;
+            border-radius: 5px;
+            width: 352px;
+            margin: 30px auto 0 auto;
+            font-size: 193.8%;
+        }
+
+        .landingSplash .getStartedSection .getCookingSection {
+            width: 382px;
+            margin: 30px auto 0 auto;
+        }
+
+            .landingSplash .getStartedSection .getCookingSection form input[type=text] {
+                width: 80px;
+                margin: 0;
+                float: left;
+            }
+
+            .landingSplash .getStartedSection .getCookingSection form input[type=submit] {
+                margin-top: 0;
+                float: right;
+            }
+
+.landingSectionHeader {
+    background-color: #5e3a56;
+    color: #fff;
+    text-align: center;
+}
+
+    .landingSectionHeader.rokkit {
+        font-family: Rokkitt, serif;
+        font-size: 168.8%;
+        padding: 15px;
+    }
+
+    .landingSectionHeader.pacifico {
+        font-family: Pacifico, serif;
+        font-size: 225%;
+        padding: 0 0;
+    }
+
+.asSeenInSection {
+    width: 1050px;
+    margin: 0 auto;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+    .asSeenInSection > div {
+        float: left;
+        margin-left: 50px;
+    }
+
+        .asSeenInSection > div:first-child {
+            margin-left: 0;
+        }
+
+        .asSeenInSection > div > div {
+            float: left;
+            margin-left: 50px;
+        }
+
+            .asSeenInSection > div > div:first-child {
+                margin-left: 0;
+            }
+
+    .asSeenInSection .ventureBeat {
+        background: url('/assets/press/venturebeat-logo.png') no-repeat top left;
+        background-size: 100%;
+        width: 180px;
+        height: 23px;
+        margin-top: 28.5px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .asSeenInSection .medCityNews {
+        background: url('/assets/press/medcity-logo.png') no-repeat top left;
+        background-size: 100%;
+        width: 130px;
+        height: 60px;
+        margin-top: 10px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .asSeenInSection .philadelphiaBusinessJournal {
+        background: url('/assets/press/pbj-logo.png') no-repeat top left;
+        background-size: 100%;
+        width: 180px;
+        height: 32px;
+        margin-top: 24px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .asSeenInSection .phillyDotCom {
+        background: url('/assets/press/philly-dotcom-logo.png') no-repeat top left;
+        background-size: 100%;
+        width: 180px;
+        height: 34px;
+        margin-top: 23px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .asSeenInSection .technically {
+        background: url('/assets/press/technically-logo.png') no-repeat top left;
+        background-size: 100%;
+        width: 180px;
+        height: 80px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+.landingSectionScrollPosition {
+    position: relative;
+    top: -53px;
+    height: 0;
+}
+
+.howItWorksContainer {
+    position: relative;
+    z-index: 1;
+    background: url('/assets/HowitWorks_Bg.png') scroll no-repeat center center #fff;
+    background-size: cover;
+    height: 700px;
+    -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .howItWorksContainer .howItWorksSection {
+        background: url('/assets/HowitWorks_Play.png') no-repeat center center;
+        background-size: auto 700px;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+        .howItWorksContainer .howItWorksSection .howItWorksPlayVideo {
+            position: absolute;
+            left: -29px;
+            right: 0;
+            top: -34px;
+            bottom: 0;
+            margin: auto;
+            width: 121px;
+            height: 123px;
+            background-color: #fff;
+            opacity: 0;
+            filter: alpha(opacity=1);
+        }
+
+            .howItWorksContainer .howItWorksSection .howItWorksPlayVideo:hover {
+                cursor: pointer;
+            }
+
+    .howItWorksContainer .howItWorksModalContainer {
+        display: none;
+        /*position: fixed;*/
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 1;
+    }
+
+        .howItWorksContainer .howItWorksModalContainer .howItWorksModalClose {
+            background: url('/assets/ModalX27px.png') scroll no-repeat center center;
+            width: 27px;
+            height: 27px;
+            /*position: fixed;*/
+            position: absolute;
+            left: 0;
+            right: -568px;
+            top: -462px;
+            bottom: 0;
+            margin: auto;
+        }
+
+            .howItWorksContainer .howItWorksModalContainer .howItWorksModalClose:hover {
+                cursor: pointer;
+            }
+
+        .howItWorksContainer .howItWorksModalContainer .howItWorksModal {
+            background-color: #fff;
+            width: 600px;
+            height: 348px;
+            padding: 10px;
+            /*position: fixed;*/
+            position: absolute;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            top: -37px;
+            bottom: 0;
+            margin: auto;
+        }
+
+.landingStepsSection {
+    padding: 60px 0;
+    width: 727px;
+    margin: 0 auto;
+}
+
+    .landingStepsSection > div {
+        height: 80px;
+        padding: 14px 0 0 105px;
+        margin-top: 50px;
+    }
+
+        .landingStepsSection > div:first-child {
+            margin-top: 0;
+        }
+
+    .landingStepsSection .stepOne {
+        background: url('/assets/HowitWorks_Step1.png') no-repeat 11px 0;
+        background-size: contain;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingStepsSection .stepTwo {
+        background: url('/assets/HowitWorks_Step2.png') no-repeat 0 0;
+        background-size: contain;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingStepsSection .stepThree {
+        background: url('/assets/HowitWorks_Step3.png') no-repeat 4px 0;
+        background-size: contain;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingStepsSection .stepFour {
+        background: url('/assets/HowitWorks_Step4.png') no-repeat 0 0;
+        background-size: contain;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingStepsSection > div > div {
+        font-size: 125%;
+    }
+
+        .landingStepsSection > div > div:first-child {
+            font-family: Rokkitt, serif;
+            font-size: 168.8%;
+        }
+
+.landingBenefitsSection {
+    padding: 60px 0;
+    width: 700px;
+    margin: 0 auto;
+}
+
+    .landingBenefitsSection > div {
+        min-height: 110px;
+        padding: 0 0 0 145px;
+        margin-top: 50px;
+    }
+
+        .landingBenefitsSection > div:first-child {
+            margin-top: 0;
+        }
+
+    .landingBenefitsSection .saveTime {
+        background: url('/assets/HowitWorks_Benefit1.png') no-repeat center left;
+        background-size: auto 110px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingBenefitsSection .discoverNewRecipes {
+        background: url('/assets/HowitWorks_Benefit2.png') no-repeat center left;
+        background-size: auto 110px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingBenefitsSection .eatHealthier {
+        background: url('/assets/HowitWorks_Benefit3.png') no-repeat center left;
+        background-size: auto 110px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingBenefitsSection .saveMoney {
+        background: url('/assets/HowitWorks_Benefit4.png') no-repeat center left;
+        background-size: auto 110px;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }
+
+    .landingBenefitsSection > div > div {
+        font-size: 125%;
+    }
+
+        .landingBenefitsSection > div > div:first-child {
+            font-family: Rokkitt, serif;
+            font-size: 168.8%;
+        }
+
+.landingGetStartedPromptSection {
+    background: url('/assets/CTA_bgimage.png') fixed no-repeat center center transparent;
+    background-size: cover;
+    padding: 20px 0 40px 0;
+    -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .landingGetStartedPromptSection > div {
+        width: 397px;
+        margin: 0 auto;
+    }
+
+    .landingGetStartedPromptSection .getStartedText {
+        font-family: Pacifico, serif;
+        font-size: 287.5%;
+        color: #fff;
+        width: auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .landingGetStartedPromptSection > div input[type='text'] {
+        width: 80px;
+        margin-right: 15px;
+    }
+
+/*Tablet*/
+@media(min-width: 768px)and (max-width:1024px) {
+    .landingSplash {
+        background: url('/assets/home-page-hero-10e.jpg') scroll no-repeat center center #fff;
+    }
+
+        .landingSplash .getStartedSection {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+    .asSeenInSection {
+        width: auto;
+    }
+
+        .asSeenInSection > div {
+            float: none;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+            .asSeenInSection > div.firstGroup {
+                margin: 0 auto;
+                width: 670px;
+            }
+
+        .asSeenInSection .secondGroup {
+            width: 450px;
+            margin-top: 30px;
+        }
+
+        .asSeenInSection > div > div {
+            margin-left: 90px;
+        }
+}
+
+/*Tablet*/
+@media(min-width: 768px)and (max-width:940px) {
+    .landingSplash .landingHeaderMenu.scrolling {
+        width: 705px;
+    }
+
+    .landingSplash .landingHeaderMenu .headerLogo {
+        display: none !important;
+    }
+
+    .landingSplash .landingHeaderMenu ul li.scrollingCart {
+        right: 0;
+    }
+}
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    .landingSplash {
+        background: url('/assets/home-page-hero-10e.jpg') scroll no-repeat center center #fff;
+        height: 650px;
+    }
+
+        .landingSplash .getStartedSection {
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: auto;
+            padding: 0 15px;
+        }
+
+            .landingSplash .getStartedSection .sectionSubHeaderText {
+                text-align: center;
+            }
+
+        .landingSplash .landingHeaderMobileMenu {
+            height: 50px;
+        }
+
+            .landingSplash .landingHeaderMobileMenu .menuExpandCollapse {
+                position: absolute;
+                display: block;
+                margin: 0;
+                width: 31px;
+                height: 30px;
+                text-indent: 110%;
+                overflow: hidden;
+                text-decoration: none;
+                line-height: 33px;
+                top: 10px;
+                left: 30px;
+            }
+
+                .landingSplash .landingHeaderMobileMenu .menuExpandCollapse:before {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -15px;
+                    left: 50%;
+                    margin-left: -19px;
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    font-family: "glyphs";
+                    font-size: 38px;
+                    text-indent: 0;
+                    content: "\e696";
+                    color: #fff;
+                }
+
+                .landingSplash .landingHeaderMobileMenu .menuExpandCollapse:hover {
+                    cursor: pointer;
+                }
+
+            .landingSplash .landingHeaderMobileMenu .headerLogo {
+                display: inline-block;
+                position: absolute;
+                background: url('/assets/fitly-logo.png') scroll no-repeat center center transparent;
+                background-size: cover;
+                height: 38px;
+                width: 82px;
+                top: 8px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+            }
+
+            .landingSplash .landingHeaderMobileMenu .cart {
+                position: absolute;
+                background: url('/assets/Icon_Cart_Large.png') top left transparent;
+                width: 36px;
+                height: 38px;
+                top: 6px;
+                right: 30px;
+                z-index: 1;
+            }
+
+                .landingSplash .landingHeaderMobileMenu .cart:hover {
+                    cursor: pointer;
+                }
+
+    .landingHeaderMobileExpandedMenu {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+
+        .landingHeaderMobileExpandedMenu .expandedMenuOverlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .6);
+            z-index: 0;
+        }
+
+        .landingHeaderMobileExpandedMenu .expandedMenu {
+            position: relative;
+            background-color: #9c3d3e;
+            width: 70%;
+            height: 100%;
+            color: #fff;
+            z-index: 1;
+            left: -335px;
+        }
+
+            .landingHeaderMobileExpandedMenu .expandedMenu > ul > li {
+                border-bottom: 1px solid #7C3132;
+            }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li > a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 14px 16px 14px 24px;
+                    font-size: 112.5%;
+                    line-height: 29px;
+                }
+
+                    .landingHeaderMobileExpandedMenu .expandedMenu > ul > li > a:before {
+                        vertical-align: top;
+                        width: 29px;
+                        height: 29px;
+                        padding-right: 15px;
+                        font-family: "glyphs";
+                        font-size: 29px;
+                        content: "";
+                    }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.home > a:before {
+                    content: '\e622';
+                }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.howItWorks {
+                    background: url('/assets/MobileMenu_HowItWorks.png') scroll no-repeat 26px center transparent;
+                }
+
+                    .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.howItWorks a {
+                        padding-left: 54px;
+                    }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.benefits {
+                    background: url('/assets/MobileMenu_Benefits.png') scroll no-repeat 22px center transparent;
+                }
+
+                    .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.benefits a {
+                        padding-left: 54px;
+                    }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.pricing > a:before {
+                    content: '\e62d';
+                }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.menu > a:before {
+                    content: '\e638';
+                }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.signUp > a:before {
+                    content: '\e60f';
+                }
+
+                .landingHeaderMobileExpandedMenu .expandedMenu > ul > li.signIn > a:before {
+                    content: '\e60d';
+                }
+
+    .asSeenInSection {
+        width: auto;
+    }
+
+        .asSeenInSection > div {
+            float: none;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+            .asSeenInSection > div.firstGroup {
+                width: 360px;
+                margin: 0 auto;
+            }
+
+        .asSeenInSection .secondGroup {
+            width: 410px;
+        }
+
+            .asSeenInSection .secondGroup > div {
+                float: none;
+                overflow: hidden;
+                margin-left: 0;
+            }
+
+                .asSeenInSection .secondGroup > div:first-child {
+                    margin: 30px 0;
+                }
+
+                    .asSeenInSection .secondGroup > div:first-child > div {
+                        float: left;
+                        margin-left: 50px;
+                    }
+
+                        .asSeenInSection .secondGroup > div:first-child > div:first-child {
+                            margin-left: 0;
+                        }
+
+        .asSeenInSection .technically {
+            margin: 0 auto;
+        }
+
+    .howItWorksContainer {
+        height: 400px;
+        position: relative;
+    }
+
+        .howItWorksContainer .howItWorksModalContainer {
+            display: block;
+            position: absolute;
+            background-color: transparent;
+            z-index: 0;
+        }
+
+            .howItWorksContainer .howItWorksModalContainer .howItWorksModal {
+                position: absolute;
+                width: 400px;
+                height: 227px;
+                padding: 0;
+            }
+
+                .howItWorksContainer .howItWorksModalContainer .howItWorksModal > iframe {
+                    width: 400px;
+                    height: 227px;
+                }
+
+    .landingStepsSection {
+        width: auto;
+        text-align: center;
+        padding: 60px 15px 145px 15px;
+    }
+
+        .landingStepsSection .stepOne {
+            background: url('/assets/HowitWorks_Step1.png') no-repeat center top;
+            background-size: contain;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingStepsSection .stepTwo {
+            background: url('/assets/HowitWorks_Step2.png') no-repeat center top;
+            background-size: contain;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingStepsSection .stepThree {
+            background: url('/assets/HowitWorks_Step3.png') no-repeat center top;
+            background-size: contain;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingStepsSection .stepFour {
+            background: url('/assets/HowitWorks_Step4.png') no-repeat center top;
+            background-size: contain;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingStepsSection > div {
+            padding-left: 0;
+            margin-top: 130px;
+        }
+
+            .landingStepsSection > div > div {
+                position: relative;
+                top: 90px;
+            }
+
+    .landingBenefitsSection {
+        width: auto;
+        text-align: center;
+        padding: 60px 15px 180px 15px;
+    }
+
+        .landingBenefitsSection .saveTime {
+            background: url('/assets/HowitWorks_Benefit1.png') no-repeat center top;
+            background-size: auto 110px;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingBenefitsSection .discoverNewRecipes {
+            background: url('/assets/HowitWorks_Benefit2.png') no-repeat center top;
+            background-size: auto 110px;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingBenefitsSection .eatHealthier {
+            background: url('/assets/HowitWorks_Benefit3.png') no-repeat center top;
+            background-size: auto 110px;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingBenefitsSection .saveMoney {
+            background: url('/assets/HowitWorks_Benefit4.png') no-repeat center top;
+            background-size: auto 110px;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .landingBenefitsSection > div {
+            padding-left: 0;
+            margin-top: 170px;
+        }
+
+            .landingBenefitsSection > div > div {
+                position: relative;
+                top: 130px;
+            }
+}
+
+/*Mobile breakpoint*/
+@media all and (max-width: 500px) {
+    .howItWorksContainer {
+        height: 300px;
+    }
+
+        .howItWorksContainer .howItWorksModalContainer .howItWorksModal {
+            width: 290px;
+            height: 163px;
+        }
+
+            .howItWorksContainer .howItWorksModalContainer .howItWorksModal > iframe {
+                width: 290px;
+                height: 163px;
+            }
+}
+
+/*Mobile breakpoint*/
+@media all and (max-width: 450px) {
+    .landingSplash .getStartedSection {
+        top: 40px;
+    }
+
+        .landingSplash .getStartedSection .logo {
+            width: 120px;
+            height: 55px;
+        }
+
+        .landingSplash .getStartedSection .sectionHeaderText {
+            margin-top: 30px;
+        }
+
+        .landingSplash .getStartedSection .getCookingSection {
+            margin-top: 15px;
+            width: auto;
+        }
+
+            .landingSplash .getStartedSection .getCookingSection form input[type='text'],
+            .landingSplash .getStartedSection .getCookingSection form input[type='submit'] {
+                float: none;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .landingSplash .getStartedSection .getCookingSection form input[type='submit'] {
+                margin-top: 15px;
+            }
+
+        .landingSplash .getStartedSection .asLowAs {
+            font-size: 131.3%;
+            text-align: center;
+            width: auto;
+            margin-top: 15px;
+        }
+
+    .asSeenInSection > div.firstGroup, .asSeenInSection > div.secondGroup {
+        width: auto;
+    }
+
+    .asSeenInSection > div > div {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .asSeenInSection > div > div:first-child {
+            margin-left: auto;
+        }
+
+    .asSeenInSection .secondGroup > div:first-child > div {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+        .asSeenInSection .secondGroup > div:first-child > div:first-child {
+            margin-left: auto;
+        }
+
+    .asSeenInSection .secondGroup > div:first-child {
+        margin: 50px 0;
+    }
+
+    .asSeenInSection .ventureBeat {
+        margin-top: 0;
+    }
+
+    .asSeenInSection .medCityNews {
+        margin-top: 50px;
+    }
+
+    .asSeenInSection .phillyDotCom {
+        margin-top: 0;
+    }
+
+    .asSeenInSection .philadelphiaBusinessJournal {
+        margin-top: 50px;
+    }
+
+    .landingGetStartedPromptSection > div {
+        width: auto;
+    }
+
+        .landingGetStartedPromptSection > div input[type='text'],
+        .landingGetStartedPromptSection > div input[type='submit'] {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .landingGetStartedPromptSection > div input[type='text'] {
+            margin: 15px auto;
+        }
+
+    .landingStepsSection > div {
+        margin-top: 160px;
+    }
+    .landingSplash .getStartedSection .sectionHeaderText {
+        font-size: 130%;
+    }
+    .landingSplash .getStartedSection .sectionSubHeaderText {
+        font-family: Rokkitt, serif;
+        font-size: 140%;
+    }
+
+}

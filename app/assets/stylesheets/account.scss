@@ -1,0 +1,83 @@
+/*-------------------
+My Account Styles
+-------------------*/
+@import '_variables';
+
+.accounts-controller.show-action {
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    .accounts-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+    .accounts-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 480px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 480px ) and ( orientation: portrait ) {
+    .accounts-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    .accounts-controller.show-action {
+        #account {
+            overflow: hidden;
+        }
+        #order-history {
+            width: 50%;
+            float: left;
+        }
+        #profile {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    .accounts-controller.show-action {
+
+    }
+}

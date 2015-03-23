@@ -1,0 +1,95 @@
+#shopping-cart
+    h1
+        | Shopping Cart - #{pluralize(cart.meals, "Recipe")}<br>
+        span.exit
+            | #{number_to_currency(cart.total)} total
+    - flash.each do |key, msg|
+      = content_tag :div, msg, :id => key
+    - if current_user.is? :admin
+      p
+        = link_to 'check this order', check_order_path(@order)
+    section.actions.upper
+        - if cart.can_checkout?
+            a class="action primary" href="#{checkout_path(:pantry)}"
+                | Checkout
+            p
+                = add_more_text( cart )
+        - else
+            p
+                | There is an <strong>8 plate minimum</strong> required for each order. Please add at least <strong>#{cart.servings_needed_to_checkout} more plates</strong> of any recipe to check out and complete your order.
+        - if cart.total_unique_items < 20
+            a class="action secondary with-prompt" href="/recipes"
+                | Keep shopping<br><span class="exit">Add more plates and save up to $40.00!</span>
+        - else
+            a class="action secondary" href="/recipes"
+                | Keep shopping
+    - if cart.total_unique_items > 0
+        section#cart-contents
+            h2 #{cart.meals} Recipes (#{cart.total_unique_items} total plates)
+            ul
+                - cart.recipe_items.each do |recipe_item|
+                    li.recipe-form
+                        = form_tag "/shopping_cart_items/#{recipe_item.id}", method: :patch do
+                            fieldset
+                                legend
+                                    = link_to recipe_item.item.name, recipe_path(recipe_item.item)
+                                input type="hidden" value="#{cart.current_price_per_serving}" name="shopping_cart_item[price]"
+                                ul.data
+                                    li.image
+                                        noscript data-small=recipe_item.item.photo.url(:thumb) data-medium=recipe_item.item.photo.url(:medium) data-large=recipe_item.item.photo.url(:extra_large)
+                                            = image_tag recipe_item.item.photo.url(:small), alt: recipe_item.item.name
+                                    li.input.select.quantity.required
+                                        label for="shopping_cart_item_quantity"
+                                            | Plates:
+                                        = select_tag "shopping_cart_item[quantity]", serving_quantities(recipe_item.quantity)
+                                    li.price
+                                        span.label Price per plate:
+                                        span.price = display_price_per_serving(recipe_item.quantity)
+                                    li.total
+                                        span.label Item total:
+                                        span.price = display_item_total(recipe_item.quantity)
+                                ul.actions
+                                    li.primary
+                                        input type="submit" value="Update"
+                                    li.secondary
+                                        = link_to "Remove", shopping_cart_item_path(recipe_item), method: 'DELETE'
+            div.promo    
+                = form_tag promos_path
+                  fieldset
+                    h2 Have a promo code?
+                    ul.data
+                      li.input.code.required
+                        = text_field_tag "promo[code]"
+                    ul.actions
+                        li.primary
+                            input type="submit" value="Apply"
+                - if cart.used_promo
+                  ul.applied-promos
+                    li.applied-promo
+                        span.code= "Promo Code: #{cart.used_promo.code}"
+
+
+            - if cart.can_checkout?
+                table.order-total
+                    tr.subtotal
+                        th Subtotal:
+                        td = number_to_currency(cart.subtotal)
+                    tr.delivery
+                        th Delivery:
+                        td Free
+                    tr.tax
+                        th Tax:
+                        td = number_to_currency(cart.taxes)
+                    - if cart.used_promo
+                      tr.delivery
+                        th Promo:
+                        td= "-#{number_to_currency(cart.discount_from_promo)}"
+                    tr.grand-total
+                        th Grand Total:
+                        td = number_to_currency(cart.total)
+        -if cart.can_checkout?
+            section.actions.lower.checkout
+                = render 'cart_buttons'
+        -else
+            section.actions.lower
+                = render 'cart_buttons'

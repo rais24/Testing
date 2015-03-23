@@ -1,0 +1,18 @@
+.content
+  h1 Zip Codes
+  = link_to "Add New Code", new_admin_zipcode_path
+
+  table.table.table-hover.zip_codes
+    tr
+      th Name
+      th Code
+      th Delivery Zone
+      th 
+      th
+    - @zipcodes.each do |zip|
+      tr
+        td= zip.name rescue "N/A"
+        td= zip.code rescue "N/A"
+        td= delivery_zone_for_zipcode(zip) rescue "N/A"
+        td= link_to 'Edit', edit_admin_zipcode_url(zip) rescue "N/A"
+        td= link_to 'Destroy', [:admin, zip], method: :delete, data: { confirm: 'Are you sure?' } rescue "N/A"

@@ -1,0 +1,1447 @@
+/*-------------------
+Global Styles
+-------------------*/
+@import '_variables';
+
+
+// Typefaces
+
+@font-face {
+    font-family: 'glyphs';
+    src: url('/assets/glyphs/icomoon.eot');
+    src: url('/assets/glyphs/icomoon.eot?#iefix') format('embedded-opentype'),
+         url('/assets/glyphs/icomoon.woff') format('woff'),
+         url('/assets/glyphs/icomoon.ttf') format('truetype'),
+         url('/assets/glyphs/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// @font-face {
+//  font-family: 'LatoBlackItalic';
+//  src: url('/assets/Lato/Lato-BlaIta-webfont.eot');
+//  src: url('/assets/Lato/Lato-BlaIta-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-BlaIta-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-BlaIta-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-BlaIta-webfont.svg#LatoBlackItalic') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+// @font-face {
+//  font-family: 'LatoBlack';
+//  src: url('/assets/Lato/Lato-Bla-webfont.eot');
+//  src: url('/assets/Lato/Lato-Bla-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-Bla-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-Bla-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-Bla-webfont.svg#LatoBlack') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+// @font-face {
+//  font-family: 'LatoBoldItalic';
+//  src: url('/assets/Lato/Lato-BolIta-webfont.eot');
+//  src: url('/assets/Lato/Lato-BolIta-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-BolIta-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-BolIta-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-BolIta-webfont.svg#LatoBoldItalic') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+@font-face {
+    font-family: 'LatoBold';
+    src: url('/assets/Lato/Lato-Bol-webfont.eot');
+    src: url('/assets/Lato/Lato-Bol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lato/Lato-Bol-webfont.woff') format('woff'),
+         url('/assets/Lato/Lato-Bol-webfont.ttf') format('truetype'),
+         url('/assets/Lato/Lato-Bol-webfont.svg#LatoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoItalic';
+    src: url('/assets/Lato/Lato-RegIta-webfont.eot');
+    src: url('/assets/Lato/Lato-RegIta-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lato/Lato-RegIta-webfont.woff') format('woff'),
+         url('/assets/Lato/Lato-RegIta-webfont.ttf') format('truetype'),
+         url('/assets/Lato/Lato-RegIta-webfont.svg#LatoItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('/assets/Lato/Lato-Reg-webfont.eot');
+    src: url('/assets/Lato/Lato-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lato/Lato-Reg-webfont.woff') format('woff'),
+         url('/assets/Lato/Lato-Reg-webfont.ttf') format('truetype'),
+         url('/assets/Lato/Lato-Reg-webfont.svg#LatoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// @font-face {
+//  font-family: 'LatoLightItalic';
+//  src: url('/assets/Lato/Lato-LigIta-webfont.eot');
+//  src: url('/assets/Lato/Lato-LigIta-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-LigIta-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-LigIta-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-LigIta-webfont.svg#LatoLightItalic') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+// @font-face {
+//  font-family: 'LatoLight';
+//  src: url('/assets/Lato/Lato-Lig-webfont.eot');
+//  src: url('/assets/Lato/Lato-Lig-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-Lig-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-Lig-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-Lig-webfont.svg#LatoLight') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+// @font-face {
+//  font-family: 'LatoHairlineItalic';
+//  src: url('/assets/Lato/Lato-HaiIta-webfont.eot');
+//  src: url('/assets/Lato/Lato-HaiIta-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-HaiIta-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-HaiIta-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-HaiIta-webfont.svg#LatoHairlineItalic') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+// @font-face {
+//  font-family: 'LatoHairline';
+//  src: url('/assets/Lato/Lato-Hai-webfont.eot');
+//  src: url('/assets/Lato/Lato-Hai-webfont.eot?#iefix') format('embedded-opentype'),
+//       url('/assets/Lato/Lato-Hai-webfont.woff') format('woff'),
+//       url('/assets/Lato/Lato-Hai-webfont.ttf') format('truetype'),
+//       url('/assets/Lato/Lato-Hai-webfont.svg#LatoHairline') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+// }
+
+html {
+    // sticky footer:
+    height: 100%;
+}
+
+body {
+    font-family: $defaultFont;
+    text-rendering: optimizeLegibility;
+    background: rgb(255, 255, 255) url('/assets/bg.jpg') top left repeat;
+    // sticky footer:
+    min-height: 100%;
+    position: relative;
+}
+
+#to-the-top {
+    position: fixed;
+    right: 6px;
+    bottom: 6px;
+    z-index: 1000;
+    display: block;
+    padding-left: 60px;
+    width: 60px;
+    height: 50px;
+    text-decoration: none;
+    overflow: hidden;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,0.8);
+    @include borderRadius(8px);
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        display: block;
+        width: 60px;
+        height: 50px;
+        line-height: 50px;
+        font-family: $glyphs;
+        content: '\e6cf';
+        font-size: 48px;
+        color: rgb(255,255,255);
+    }
+}
+
+a.home {
+    display: block;
+    width: 70px;
+    height: 34px;
+    background: url('/assets/fitly-logo-white.svg') top left no-repeat;
+    background-size: 100%;
+    text-indent: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    color: rgb(255,255,255);
+}
+
+///////////////////////////////
+///////  Header Styles  ///////
+///////////////////////////////
+header,
+.signup-controller.js header.full {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    width: 100%;
+    @include boxShadow(0 -4px 4px 5px #333);
+    // border-bottom: 1px solid rgb(105, 98, 89);
+    background: rgb(170,159,146);
+    background: rgba(170,159,146,0.97);
+    @include transition(background 0.25s);
+    font-family: $brandFont;
+
+    nav {
+        position: relative;
+        width: 100%;
+        min-height: 50px;
+    }
+    a {
+        color: rgb(255,255,255);
+        text-decoration: none;
+    }
+    a.home {
+        position: static;
+        top: 0;
+        margin: 0 auto;
+        padding-top: 10px;
+        height: 42px;
+        background-position: bottom left;
+        @include transition(opacity 0.35s);
+        opacity: 1.0;
+    }
+}
+header nav img {
+    width: 80px;
+    padding-top: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: 60px;
+}
+
+#mini-cart {
+    top: 10px;
+    right: 17px;
+
+    &.empty {
+        @include icon(2.8, '\e667');
+        position: absolute;
+    }
+    &.populated {
+        @include iconAfterText(2.8, '\e667');
+        position: absolute;
+
+        span.mini-cart-label {
+            position: absolute;
+            top: -100px;
+        }
+        span.item-label {
+            position: absolute;
+            top: -100px;
+        }
+        span.item-count {
+            font-size: 20px;
+        }
+    }
+}
+
+// Header/nav styles for mobile/small tablets
+// (Normally, I'd overwrite this at larger sizes,
+// but these are almost entirely unique to small
+// devices.)
+@media only screen and ( max-width: 739px ) {
+
+    .js {
+        body {
+            &.menu-open {
+                main,
+                footer {
+                    z-index: 0;
+                }
+            }
+        }
+        header {
+            ul.content {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                z-index: 1102;
+                width: 70%;
+                height: 600px;
+                background: rgb(156,61,62);
+                background: rgba(156,61,62,0.93);
+                @include transition(left 0.3s);
+
+                &.open {
+                    left: 0;
+                    @include transition(left 0.3s);
+                    @include boxShadow(0 -4px 8px 1px #000);
+                }
+                li {
+                    display: block;
+                    border-bottom: 1px solid rgba(124,49,50,0.93);
+
+                    &.logout {
+                        border-bottom: none;
+                    }
+                    &.my-account ul {
+                        position: absolute;
+                        left: -100%;
+                    }
+                    a {
+                        display: block;
+                        padding: 14px 16px 14px 24px;
+                        color: rgb(245,245,245);
+                        @include iconBeforeText(2.4, '');
+                    }
+                    a:before {
+                        padding-right: 16px;
+                    }
+                    &.home a:before {
+                        content: '\e622';
+                    }
+                    &.recipes a:before {
+                        content: '\e638';
+                    }
+                    &.my-account a:before {
+                        content: '\e60d';
+                    }
+                    &.sign-up a:before {
+                        content: '\e60f';
+                    }
+                    &.pricing a:before {
+                        content: '\e62d';
+                    }
+                    &.faqs a:before {
+                        content: '\e686';
+                    }
+                    &.contact a:before {
+                        content: '\e604';
+                    }
+                    &.log-out a:before {
+                        content: '\e675';
+                    }
+                }
+            }
+        }
+        #menu-toggle {
+            @include icon(3.4, '\e696');
+            position: absolute;
+            top: 7px;
+            left: 15px;
+            z-index: 1100;
+            color: rgb(245,245,245);
+            cursor: pointer;
+        }
+        #nav-close {
+            a {
+                @include iconAfterText(1.8, '\e67e');
+            }
+        }
+    }
+
+}
+
+.js {
+    .darken {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        z-index: 0;
+        background: rgb(0,0,0);
+        opacity: 0;
+        @include transition(opacity 0.3s); // this timing should match the setTimeout functions in FIT.global.menu()
+
+        &.transitioning {
+            z-index: 1101;
+            height: 100%;
+        }
+        &.on {
+            z-index: 1101;
+            height: 100%;
+            opacity: 0.8;
+            @include transition(opacity 0.3s); // this timing should match the setTimeout functions in FIT.global.menu()
+        }
+    }
+}
+
+
+main {
+    position: relative;
+    z-index: 1000;
+    padding-top: 50px;
+    display: block; // IE11 is a joke
+    // sticky footer:
+    padding-bottom: 330px;
+
+    // Clearfix
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    a {
+        font-weight: bold;
+        color: rgb(156,61,62);
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+        &.action {
+            width: auto;
+            margin: 0 15px;
+
+            &.primary {
+                @include primaryButton;
+                width: auto;
+            }
+            &.secondary {
+                @include secondaryButton;
+                width: auto;
+            }
+        }
+    }
+    p {
+        margin: 15px 15px 20px;
+        line-height: 1.6;
+    }
+    h1 {
+        margin: 0;
+        padding: 10px;
+        width: 100%;
+        font-size: 120%;
+        font-family: LatoBold;
+        text-align: center;
+        line-height: 1.2;
+        color: rgb(255,255,255);
+        @include textShadow(0 0px 2px rgb(0,0,0));
+        background: rgb(109,106,88);
+
+        span.exit {
+            display: block;
+            padding-top: 4px;
+            font-family: LatoRegular;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+    h2 {
+        padding: 8px 15px;
+        line-height: 1.5;
+        font-size: 120%;
+        font-family: LatoBold;
+        color: rgb(242,236,225);
+        // background: rgb(90,81,75);
+        background: rgb(94,58,86);
+    }
+    h3, h4, h5, h6 {
+        margin: 0px 15px;
+        font-family: LatoBold;
+    }
+    aside {
+        margin: 10px auto;
+        padding: 10px 15px;
+        border-top: 2px solid rgb(112,69,103);
+        border-bottom: 2px solid rgb(112,69,103);
+        background: rgba(94,58,86,0.9);
+        text-shadow: 0px 0px 5px rgb(72,68,96);
+        color: rgb(255,255,255);
+        line-height: 1.4;
+
+        p {
+            margin: 0px 0px 20px;
+        }
+        a {
+            color: rgb(255,255,255);
+        }
+    }
+}
+
+#breadcrumbs {
+    position: relative;
+    padding: 12px 20px;
+
+    a {
+        font-weight: normal;
+    }
+    ul {
+        display: inline-block;
+
+        li {
+            display: inline-block;
+
+            ul {
+                padding-left: 6px;
+
+                li {
+                    @include iconBeforeText(2, '\e6cc');
+                    @include iconAfterText(2, '\e6cc');
+                    color: rgb(156,61,62);
+
+                    ul {
+                        position: absolute;
+                        top: -200px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/////////////////////////////////////
+///////  General Form Styles  ///////
+/////////////////////////////////////
+form {
+    display: block;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+    position: relative;
+
+    fieldset {
+        legend {
+            margin: 20px auto;
+            font-family: LatoBold;
+            font-size: 20px;
+            text-align: center;
+            color: #6f6f6f;
+        }
+        p {
+            margin: 0 0 25px;
+        }
+        ul.data {
+            margin-bottom: 30px;
+
+            li.input {
+                margin-bottom: 25px;
+                display: block;
+                position: relative;
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                label {
+                    display: block;
+                }
+                &.required {
+                    label {
+                        font-family: LatoBold;
+                    }
+                }
+                &.checkbox {
+                    label {
+                        padding-top: 10px;
+                    }
+                }
+                p.label-note {
+                    margin: 0;
+                    font-size: 14px;
+                    color: #666;
+                }
+                input,
+                // select,
+                textarea {
+                    width: 100%;
+                    border: 1px solid rgb(200, 200, 200);
+                    margin-top: 4px;
+                    padding: 10px 14px;
+                    font-family: $defaultFont;
+                    font-size: 100%;
+                    @include borderRadius(3px);
+                    // @include boxShadow(inset 0px 2px 6px -1px hsl(0, 0%, 80%));
+                }
+                select {
+                    height: 40px;
+                    min-height: 40px;
+                    padding: 8px 0 8px 8px;
+                    border: 1px solid rgb(200, 200, 200);
+                    font-family: $defaultFont;
+                    font-size: 100%;
+                    @include borderRadius(3px);
+
+                }
+
+                &.checkbox {
+                    padding-left: 40px;
+
+                    input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid rgb(200, 200, 200);
+                        @include borderRadius(4px);
+                        background: rgb(255,253,250);
+
+                        &:checked {
+                            &:after {
+                                position: absolute;
+                                display: block;
+                                width: 30px;
+                                height: 30px;
+                                top: 0;
+                                left: 0;
+                                font-family: $glyphs;
+                                content: '\e677';
+                                font-size: 24px;
+                                line-height: 30px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul.actions {
+        margin-top: 30px;
+
+        li {
+            margin-bottom: 15px;
+
+            &.primary {
+                a.submit,
+                button,
+                input {
+                    @include primaryButton;
+                }
+            }
+            &.secondary {
+                a.submit,
+                button,
+                input {
+                    @include secondaryButton;
+                }
+            }
+            &.tertiary {
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &.error {
+        fieldset {
+            p.error {
+                padding: 10px 15px;
+                background: $red;
+                color: rgb(255,255,255);
+            }
+            ul.data {
+                li.error {
+                    label {
+                        color: $red;
+                    }
+                    input,
+                    select {
+                        border-color: #6f6f6f;
+                        background: $red;
+                        color: rgb(255,255,255);
+                        @include boxShadow(inset 0px 2px 6px -1px #7E7E7E);
+                    }
+                }
+            }
+        }
+        ul.actions {
+
+        }
+    }
+    p.legal {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+main a.action,
+main a.submit,
+form ul.actions li.primary input,
+form ul.actions li.secondary input,
+form ul.actions li.primary button,
+form ul.actions li.secondary button,
+form ul.actions li.primary a,
+form ul.actions li.secondary a {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 290px;
+    font-weight: normal;
+    font-family: LatoBold;
+
+    &.with-prompt {
+        padding: 10px;
+    }
+    span {
+        display: block;
+        font-family: LatoRegular;
+        font-size: 65%;
+        text-align: center;
+
+        &.intro {
+            padding-bottom: 4px;
+        }
+        &.exit {
+            padding-top: 4px;
+        }
+    }
+}
+
+main a.action,
+main a.submit {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/////////////////////////////////////////
+///////  Recipe Form and Summary  ///////
+/////////////////////////////////////////
+.recipe-form,
+.recipe-summary {
+    form {
+        margin-top: 15px;
+    }
+    legend {
+        position: absolute;
+        top: -100%;
+    }
+    ul.data {
+        li.quantity {
+            margin-bottom: 0;
+
+            label {
+                float: left;
+                padding: 13px 0;
+            }
+            select {
+                float: right;
+                width: 20%;
+            }
+        }
+        li.price,
+        li.total {
+            overflow: hidden;
+            clear: both;
+
+            span {
+                display: block;
+
+                &.label {
+                    float: left;
+                }
+                &.price {
+                    float: right;
+                }
+            }
+        }
+        li.price {
+            margin-bottom: 10px;
+        }
+    }
+    ul.actions {
+        margin-top: 0;
+    }
+}
+.recipe-summary {
+    padding: 15px 15px 20px;
+
+    h3 {
+        margin: 0 0 15px;
+    }
+    ul.data {
+        li.quantity {
+            margin-bottom: 10px;
+            overflow: hidden;
+            clear: both;
+
+            span {
+                display: block;
+
+                &.label {
+                    float: left;
+                }
+                &.quantity {
+                    float: right;
+                }
+            }
+        }
+    }
+    dl {
+        margin: 15px 0;
+    }
+}
+li.recipe-form {
+    padding: 15px 0px 20px;
+    width: 800px;
+}
+li.recipe-form,
+.recipe-summary {
+    border-bottom: 1px solid rgb(172,170,163);
+}
+
+//////////////////////////////
+///////  Address Form  ///////
+//////////////////////////////
+form.address {
+    li {
+        &.city {
+            width: 70%;
+            float: left;
+        }
+        &.state {
+            width: 25%;
+            float: right;
+        }
+        &.zipcode {
+            clear: both;
+        }
+    }
+}
+
+//////////////////////////////////
+///////  Definition Lists  ///////
+//////////////////////////////////
+dl {
+    margin: 15px;
+    overflow: hidden;
+
+    dt {
+        float: left;
+        clear: left;
+        margin-bottom: 10px;
+        font-family: LatoBold;
+    }
+    dd {
+        float: right;
+        clear: right;
+        margin-bottom: 10px;
+    }
+}
+
+//////////////////////////////
+///////  Table Styles  ///////
+//////////////////////////////
+table {
+    width: 100%;
+    border-top: 2px solid rgb(102,100,83);
+    border-bottom: 2px solid rgb(102,100,83);
+
+    caption {
+        padding: 8px 15px;
+        line-height: 1.5;
+        font-size: 18px;
+        background: rgb(172,170,163);
+        color: rgb(255,255,255);
+    }
+    thead {
+        tr {
+            background: rgb(102,100,83);
+
+            th {
+                width: auto;
+                font-family: LatoBold;
+                color: rgb(255,255,255);
+            }
+        }
+    }
+    tfoot {
+        td {
+            padding-bottom: 8px;
+            background: rgb(102,100,83);
+            color: rgb(255,255,255);
+        }
+    }
+    tr {
+        // border-bottom: 1px solid rgb(102,100,83);
+        background: rgb(231,211,176);
+
+        &:nth-child(even) {
+            background: rgb(242,236,225);
+        }
+        > th {
+            font-family: LatoBold;
+        }
+    }
+    td,
+    th {
+        padding: 10px 15px;
+    }
+    th {
+        width: 35%;
+    }
+}
+
+////////////////////////////////////////////////////////////////
+///////  Totals Table Styles (cart, order review, etc.)  ///////
+////////////////////////////////////////////////////////////////
+table.order-total {
+    th,
+    td {
+        font-weight: normal;
+        text-align: right;
+    }
+    th {
+        width: 70%;
+    }
+    tr {
+        &.delivery {
+            td {
+                text-transform: uppercase;
+            }
+        }
+        &.grand-total {
+            th,
+            td {
+                font-family: LatoBold;
+            }
+        }
+    }
+}
+
+table.pantry-items,
+table.cashback-items {
+    th {
+        width: 70%;
+        padding: 20px 15px;
+        font-weight: normal;
+    }
+    td {
+        padding: 20px 15px;
+        font-family: LatoBold;
+        text-transform: uppercase;
+        text-align: right;
+    }
+}
+
+////////////////////////////
+///////  Social Nav  ///////
+////////////////////////////
+main nav.social {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    ul {
+        clear: left;
+        float: left;
+        position: relative;
+        left: 50%;
+
+        li {
+            display: block;
+            float: left;
+            position: relative;
+            right: 50%;
+            padding: 0px 15px;
+
+            a {
+                @include icon(4, '');
+            }
+            &.facebook a:before {
+                content: '\e6f7';
+            }
+            &.twitter a:before {
+                content: '\e6f5';
+            }
+            &.pinterest a:before {
+                content: '\e6fc';
+            }
+            &.instagram a:before {
+                content: '\e70c';
+            }
+        }
+    }
+}
+
+////////////////////////////
+///////     FAQs     ///////
+////////////////////////////
+#questions {
+    p {
+        margin: 15px 35px;
+    }
+    ul li ul {
+        list-style: disc;
+        margin: 15px 75px;
+        li ul {
+            list-style: circle;
+            margin: 0px 25px;
+        }
+    }
+    span {
+        font-weight: bold;
+    }
+}
+////////////////////////////
+///////     Team     ///////
+////////////////////////////
+#team-members {
+    ul {
+        p {
+            margin: 10px 35px 35px;
+        }
+    }
+}
+////////////////////////////
+/////// Testimonials ///////
+////////////////////////////
+#testimonials {
+    ul {
+        list-style: decimal;
+
+        li {
+            margin: 20px 50px;
+        }
+    }
+}
+////////////////////////////
+///////  Contact Us  ///////
+////////////////////////////
+#contactUs {
+    p {
+        margin-bottom: 25px;
+    }
+    ul {
+        margin: 25px auto 35px;
+        padding: 0 25px;
+        max-width: 630px;
+
+        li {
+            margin: 10px 0;
+        }
+    }
+}
+///////////////////////////////
+///////  Footer Styles  ///////
+///////////////////////////////
+footer {
+    padding: 25px;
+    font-family: $brandFont;
+    color: rgb(255,255,255);
+    // background: rgb(98,54,86);
+    background: rgb(90,81,75);
+    // sticky footer:
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+
+    a {
+        color: rgb(255,255,255);
+    }
+    a.home {
+        margin: 0;
+    }
+    nav {
+        a {
+            text-decoration: none;
+        }
+    }
+    nav.site {
+        padding-top: 15px;
+        overflow: hidden;
+
+        li {
+            h3 {
+                position: absolute;
+                left: -100%;
+            }
+            li {
+                margin: 15px 0;
+            }
+        }
+        li.services {
+            float: left;
+            width: 50%;
+        }
+        li.about {
+            float: left;
+        }
+    }
+    nav.social {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+
+        li {
+            float: left;
+            margin-left: 20px;
+
+            a {
+                @include icon(3, '');
+            }
+            &.facebook a:before {
+                content: '\e6f7';
+            }
+            &.twitter a:before {
+                content: '\e6f5';
+            }
+            &.pinterest a:before {
+                content: '\e6fc';
+            }
+            &.instagram a:before {
+                content: '\e70c';
+            }
+        }
+    }
+    p.copyright {
+        clear: both;
+        margin-top: 15px;
+        font-size: 12px;
+        text-align: center;
+        color: rgb(220,220,220);
+
+        a {
+            color: rgb(220,220,220);
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+
+    main a.action,
+    main a.submit,
+    form ul.actions li.primary input,
+    form ul.actions li.secondary input,
+    form ul.actions li.primary button,
+    form ul.actions li.secondary button,
+    form ul.actions li.primary a,
+    form ul.actions li.secondary a {
+        max-width: 300px;
+    }
+
+    form {
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    header nav img {
+        margin-left: 60px;
+    }    
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+
+    html {
+        font-size: 75%;
+    }
+    header,
+    .signup-controller.js header.full {
+        nav {
+            min-height: 58px;
+            font-size: 95%;
+        }
+
+        a.home {
+            width: 82px;
+            height: 48px;
+            padding-top: 12px;
+        }
+    }
+    .js {
+        #menu-toggle {
+            @include icon(3, '\e696');
+            position: absolute;
+            top: 10px;
+            left: 18px;
+        }
+    }
+    #mini-cart {
+        top: 13px;
+        right: 20px;
+    }
+    #mini-cart,
+    #mini-cart.populated {
+        @include iconAfterText(2.6, '\e667');
+        position: absolute;
+    }
+    #breadcrumbs {
+        padding: 16px 24px;
+    }
+    main {
+        padding-top: 58px;
+    }
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////             Huge Phones/Small Tablets: > 480px             ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 480px ) and ( min-height: 480px ) {
+
+    main {
+        padding-bottom: 400px;
+
+        aside {
+            max-width: 400px;
+            padding: 15px 20px;
+            border: 2px solid rgb(112,69,103);
+            @include borderRadius(10px);
+        }
+    }
+    footer {
+        font-size: 90%;
+
+        a.home {
+            margin: 20px auto 0;
+            width: 140px;
+            height: 70px;
+        }
+        nav {
+            &.site {
+
+                li {
+                    &.services,
+                    &.about {
+                        float: none;
+                        width: auto;
+                    }
+                    ul {
+                        text-align: center;
+                    }
+                    li {
+                        display: inline-block;
+                        margin: 15px;
+                    }
+                }
+            }
+            &.social {
+                position: static;
+                margin: 15px auto 25px;
+
+                ul {
+                    text-align: center;
+                }
+                li {
+                    float: none;
+                    display: inline-block;
+                    margin: 0 15px;
+
+                    a {
+                        @include icon(5, '');
+                        height: 54px;
+                        height: 5.4rem;
+                    }
+                }
+            }
+        }
+        p.copyright {
+            font-size: 16px;
+        }
+    }
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                   Large Tablets: > 740px                   ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    html {
+        font-size: 80%;
+    }
+    header,
+    .signup-controller.js header.full {
+        a.home {
+            margin: auto;
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            height: 38px;
+        }
+        nav {
+            min-height: 74px;
+
+            ul.content {
+                padding-top: 20px;
+                text-align: center;
+                display: inline-block;
+                margin-left: 200px;
+
+                li {
+                    display: inline-block;
+                    margin: 0 8px;
+
+                    @media only screen and ( max-width: 959px ) {
+                        &.home,
+                        &.contact {
+                            position: absolute;
+                            top: -100px;
+                        }
+                    }
+                    &.my-account ul {
+                        position: absolute;
+                        top: -100px;
+                        @include transition(opacity 0.25s);
+                        opacity: 0;
+                    }
+                    a {
+                        display: block;
+                        padding: 6px 10px 8px;
+                        @include borderRadius(4px);
+
+                        &:hover {
+                            background: rgb(156,61,62);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sessions-controller.new-action header nav ul li.log-in,
+    .signup-controller.new-action header nav ul li.sign-up,
+    .signup-controller.create-action header nav ul li.sign-up,
+    .signup-controller.complete-action header nav ul li.sign-up,
+    .signup-controller.queue_signup_inquiry-action header nav ul li.sign-up,
+    .recipes-controller.index-action header nav ul li.recipes,
+    .recipes-controller.show-action header nav ul li.recipes,
+    .accounts-controller.show-action header nav ul li.my-account,
+    .orders-controller.index-action header nav ul li.my-account {
+        a {
+            background: rgb(156,61,62);
+        }
+    }
+
+    #mini-cart {
+        top: 20px;
+        right: 25px;
+
+        span.mini-cart-label {
+            position: absolute;
+            top: -80px;
+        }
+    }
+    #breadcrumbs {
+        font-size: 80%;
+        padding: 18px 28px;
+
+        ul li ul li {
+            &:before,
+            &:after {
+                font-size: 1.6rem;
+            }
+            &:after {
+                display: none;
+            }
+            ul {
+                position: static;
+
+                li {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    main {
+        padding-top: 74px;
+
+        h1 {
+            padding: 15px;
+        }
+        h3 {
+            margin: 0 25px;
+        }
+        p {
+            margin: 25px 25px 35px;
+
+            strong {
+                font-family: $defaultFont;
+                font-weight: bold;
+            }
+        }
+        & > p,
+        section > p {
+            margin: 25px auto 35px;
+            padding: 0 25px;
+            max-width: 630px;
+        }
+    }
+    main a.action,
+    main a.action.primary,
+    main a.action.secondary,
+    main a.submit,
+    form ul.actions li.primary input,
+    form ul.actions li.secondary input,
+    form ul.actions li.primary button,
+    form ul.actions li.secondary button,
+    form ul.actions li.primary a,
+    form ul.actions li.secondary a {
+        font-size: 110%;
+    }
+
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                      Desktop: > 960px                      ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+
+    header nav,
+    main {
+        max-width: 1100px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #breadcrumbs {
+        padding: 30px;
+    }
+    header nav img {
+        margin-left: -60px;
+    }
+}
+
+// @media only screen and ( min-width: 1150px ) {
+
+//     header {
+//         a.home {
+//             left: 0;
+//         }
+//     }
+//     #mini-cart {
+//         right: 0;
+//     }
+
+// }

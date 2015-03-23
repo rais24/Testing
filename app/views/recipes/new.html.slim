@@ -1,0 +1,11 @@
+- content_for :header do
+  = stylesheet_link_tag 'recipe-form'
+.content
+  = render 'layouts/form_errors', resource: @recipe
+  .row-fluid.recipe
+    .span4
+      img.center.img-circle src=@recipe.photo(:medium) alt=@recipe.name
+      - if @recipe.source.present?
+        a.source href=@recipe.source Source
+    .span8
+      = render 'form'

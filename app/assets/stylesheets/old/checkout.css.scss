@@ -1,0 +1,30 @@
+/* ---------------- Checkout ------------------ */
+
+$light-grey: #f5f5f5;
+$included-color: #CAF0E6;
+$included-evens: #D7FFF5;
+
+.included {
+	padding: 20px;
+	border-radius: 30px;
+	background: $included-color;
+	@include transition( all 0.3s );
+
+	.cart-item:nth-child(even) {
+		background: #D7FFF5;
+	}
+
+	&:hover {	
+		box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	}
+}
+
+.excluded {
+	padding: 20px;
+	border-radius: 30px;
+	background: $light-grey;
+	@include transition( all 0.3s );
+	&:hover {	
+		box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+	}
+}

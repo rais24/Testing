@@ -1,0 +1,56 @@
+.row-fluid.recipe-wrap
+  .span6
+    ul#recipe-tabs.nav.nav-tabs.recipe-wrap
+      li.active
+        a href="#preparation" data-toggle="tab" Preparation
+      li
+        a href="#ingredients" data-toggle="tab" Ingredients
+      li
+        a href="#nutrition" data-toggle="tab" Nutrition
+    .tab-content
+      #preparation.tab-pane.active
+        - recipe.steps.each do |step|
+          p.step= step
+      #ingredients.tab-pane.active
+        table.table.table-condensed.table-hover.recipe-portions
+            thead
+              tr
+                th
+                th Included
+                th
+            = render 'recipes/portions', portions: recipe.portions.included
+        table.table.table-condensed.table-hover.recipe-portions
+            thead
+              tr
+                th
+                th Excluded
+                th
+            = render 'recipes/portions', portions: recipe.portions.excluded
+
+      #nutrition.tab-pane.print-hide
+        - recipe.facts.each do |fact|
+          - if  (fact =~ /\d/)
+            li.p.nutrition=fact
+          - else
+            p
+            p.nutrition=fact
+  .span6
+    ul#recipe-tabs.nav.nav-tabs.recipe-wrap
+      li.active
+        a href="#add-to-cart" data-toggle="tab" Checkout
+    .tab-content
+      #add-to-cart.tab-pane.active
+        = form_tag shopping_cart_items_path do
+          input type="hidden" value="#{recipe.id}" name="shopping_cart_item[recipe_id]"
+          p
+            strong
+              | Price per Serving:
+              = number_to_currency( cart.current_price_per_serving )
+              input type="hidden" value="#{cart.current_price_per_serving}" name="shopping_cart_item[price]"
+          p
+            label style="float: left; padding: 5px 5px 5px 0;"
+              | Number of servings:
+            = select_tag "shopping_cart_item[quantity]", serving_quantities, style: "width: 50px; margin: 0"
+
+          p
+            input.button-info.pull-left type="submit" value="Add to cart"

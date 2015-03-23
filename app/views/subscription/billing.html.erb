@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <%= javascript_include_tag "rails.validations", "rails.validations.simple_form" %>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <h1>Get Started with Fitly!</h1>
+    <div class="contentcontainer">
+      <div class="tab">
+        <div class="tab1"><a href="<%= wizard_path(:signup) %>" class="rightactive">1. <span>Sign Up</span></a></div>
+        <div class="tab1"><a href="<%= wizard_path(:billing) %>" class="active">2. <span>Billing Information</span></a></div>
+        <div class="tab1"><a href="<%= wizard_path(:delivery_address) %>">3. <span>Delivery Information</span></a></div>
+      </div>
+      <!-- Billing Information -->
+      <%= simple_form_for @signup_request, :as => :signup_request, url: subscription_path(:billing), :validate => true, :method => "PUT" do |f| %>
+        <%= f.error_notification %>
+        <div class="innerbody">
+            <div class="billing-container">
+              <h1>Card on file:</h1>
+              <div class="cardfile">
+                <div class="cardnumaber">
+                  <%= f.input_field :card_number, placeholder: "1234123412341234" %>
+                  <span><img src="/assets/mc_vs_accpt_h_023_gif.gif"/></span> </div>
+                <div class="exdate">
+                  <%= f.input_field :expiration_date, placeholder: "Expiration (mm/YYYY)" %>
+                </div>
+                <div class="ccvnum">
+                  <%= f.input_field :card_code, placeholder: "CVV" %>  
+                </div>
+              </div>
+              <div class="cardname">
+                <%= f.input_field :name, placeholder: "Name on Card" %>  
+              </div>
+              <h1>Have a promo code?:</h1>
+              <div class="cardname">
+                <%= f.input_field :promo_code, placeholder: "Promo code" %>  
+              </div>
+              <h1>Billing Address:</h1>
+              <div class="cardname">
+                <%= f.input_field :street, placeholder: "Address" %>  
+              </div>
+              <div class="cardname">
+                <%= f.input_field :city, placeholder: "City" %>  
+              </div>
+              <div class="styled-select short-catg">
+                <%= select_tag "signup_request[state]", options_for_select(us_states, @signup_request.state) %>
+              </div>
+              <div class="zipcode">
+                <%= f.input_field :zipcode, placeholder: "Zip code" %>  
+              </div>
+            </div>
+        </div>
+        <div class="back-nextbtn">
+          <div class="backbtn"><%= link_to "Back", previous_wizard_path %></div>
+          <input type="submit" class="nextbtn" value="Next">
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %>
+</div>
+</body>
+</html>

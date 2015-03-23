@@ -1,0 +1,33 @@
+.content
+  - if notice.present?
+    .alert
+      a href="#" class=:close data-dismiss=:alert
+        | &times;
+      = notice
+
+  h1
+    =resource.name
+    small= resource.email
+    - if can? :update, resource
+      small= link_to 'Edit', edit_resource_path(resource)
+
+  - if resource.site.present?
+    h2 
+      | At:
+      = link_to resource.site.name, resource.site
+
+  - if resource.role.present?
+    h3 = resource.role.humanize
+
+  p
+    b Family size:
+    = resource.family_size
+
+
+  p= resource.zipcode
+
+  = link_to "Resend Activation Email", resend_activation_user_path(resource)
+
+  br/
+
+  = link_to 'Back', collection_path

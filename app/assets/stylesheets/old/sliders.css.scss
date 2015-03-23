@@ -1,0 +1,49 @@
+.scrollbar {
+  display: block;
+  height: 2px;
+  background: #ccc;
+  line-height: 0;
+  margin: {
+    top: 0;
+    right: 0;
+    bottom: 1em;
+    left: 0;
+  }
+
+  .handle {
+    @include size(100px 100%);
+    display: block;
+    background: #292a33;
+    cursor: pointer;
+  }
+}
+
+.frame {
+  height: 400px;
+  line-height: 250px;
+  overflow: hidden;
+
+  ul {
+    @extend .clearfix;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 50px;
+  }
+
+  li {
+    float: left;
+    width: 275px;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+
+    margin: {
+      top: 0;
+      right: 10px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}

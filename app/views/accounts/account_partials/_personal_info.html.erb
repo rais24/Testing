@@ -1,0 +1,33 @@
+<h1>PERSONAL INFORMATION</h1>
+<div class="border-line"></div>
+<div class="maincontainer">
+  <div class="leftname">
+    <div class="fristname">Full Name:</div>
+    <span class="lastname"><%= @user.name %></span></div>
+  <div class="leftname">
+    <div class="fristname">Email:</div>
+    <span class="lastname"><%= @user.email %></span></div>
+  <div class="leftname">
+    <div class="fristname">Invite Code:</div>
+    <span class="lastname"><%= @user.invite_code %></span></div>
+  <div class="leftname">
+    <div class="fristname">Practitioner Code:</div>
+    <span class="lastname"><%= @user.practitioner_code %></span></div>
+  <div class="leftname">
+    <div class="fristname">Height:</div>
+    <span class="lastname"><%= display_user_height(@user) %></span></div>
+  <div class="leftname">
+    <div class="fristname">Weight:</div>
+    <span class="lastname"><%= @user.weight %> lbs</span></div>
+  <div class="leftname">
+    <div class="fristname">DOB:</div>
+    <span class="lastname"><%= display_user_age_dob(@user) %></span></div>
+  <div class="leftname">
+    <div class="fristname">Gender:</div>
+    <span class="lastname"><%= display_user_gender(@user) %></span></div>
+  <% if @user == current_user %>
+    <div class="choosebtn">
+      <%= link_to "Edit Personal Information", edit_account_path(user_id: @user.id, page_type: "user_info") %>
+    </div>
+  <% end %>
+</div>

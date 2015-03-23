@@ -1,0 +1,109 @@
+$featurette-margin-top: 40px;
+$featurette-gutter: 40px;
+
+$link-color:#FCFF99;
+$link-color-hover:#FDFFC2;
+
+.featurette {
+  padding-top: $featurette-margin-top; /* Vertically center images part 1: add padding above and below text. */
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+
+  @media (max-width: $break-large-landscape) {
+    height: auto;
+    padding: 0;
+  }
+
+  @media (max-width: $break-large-landscape) {
+    .lead {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    padding: 25px;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: #fff;
+    text-shadow: 1px 1px 0 #4baa88;
+    filter: dropshadow(color=#4baa88, offx=1, offy=1);
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  a {
+    color:#ECF71B;
+    text-decoration:none;
+
+    &:hover {
+      color:#ECF71B;
+      text-decoration:underline;
+    }
+  }
+}
+
+.featurette-divider {
+  /* Space out the Bootstrap <hr> more */
+  @media (min-width: $break-small-portait) {
+    margin-top: 20px;
+  }
+  @media (min-width: $break-large-landscape) {
+    margin-top: 30px;
+  }
+  @media (min-width: $break-large-landscape) {
+    margin-top: 40px;
+  }
+
+  height: 0;
+  border: 0;
+}
+
+.featurette-image {
+  /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+  height: auto;
+  padding-bottom: 60px;
+
+  @media (max-width: $break-small-portait) {
+    @include size(400 auto);
+    padding-bottom: 15px;
+  }
+  @media (max-width: $break-large-landscape) {
+    @include size(400 auto);
+  }
+  @media (min-width: $break-large-landscape) {
+    @include size(400 auto);
+  }
+
+  /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+  &.pull-left {
+    margin-right: $featurette-gutter;
+  }
+
+  &.pull-right {
+    margin-left: $featurette-gutter;
+  }
+
+  &.pull-left,
+  &.pull-right {
+    @media (max-width: $break-large-landscape) {
+      display: block;
+      float: none;
+      // max-width: 50%;
+      margin: 0 auto 20px;
+    }
+  }
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+
+  @media (max-width: $break-large-landscape) {
+    font-size: 30px;
+  }
+}

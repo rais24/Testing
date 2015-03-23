@@ -1,0 +1,11 @@
+- if percentage_of(40) >= 1
+    = ""
+- elsif percentage_of(40) > 0.75
+  h1.pull-right.green
+    = "#{(40 - eligible_users.count)} users until unlocked"
+- elsif percentage_of(40) > 0.50
+  h1.pull-right.orange
+    = "#{(40 - eligible_users.count)} users until unlocked"
+- else
+  h1.pull-right.red
+    = "#{(40 - eligible_users.count)} users until unlocked"

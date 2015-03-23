@@ -1,0 +1,17 @@
+= form_tag sessions_path, method: :post, class: :login do
+	fieldset
+		legend Sign In
+		ul.data
+			li.input.email.required
+				label for="email"
+					| E-mail Address <abbr title="(Required)">*</abbr>
+		        = email_field_tag :email, "", class: "required"
+		    li.input.password.required
+		    	label for="password"
+		    		| Password <abbr title="(Required)">*</abbr>
+		        = password_field_tag :password, "", class: "required"
+		ul.actions
+			li.tertiary
+				| <a href="/password_resets">I forgot my login info.</a>
+			li.primary
+		       = submit_tag "Sign In"

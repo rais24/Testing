@@ -1,0 +1,52 @@
+.content  
+  h1
+    | For
+    = @delivery.site.try(:name)
+
+
+  h2.choices Choices
+
+  table.table.table-hover
+    tr
+      th Monday
+      th Tuesday
+      th Wednesday
+      th Thursday
+      th Friday
+    tr
+      - @delivery.choices.each do |choice|
+        td
+          = link_to image_tag(choice.photo(:medium), class: "img-circle"), choice
+
+  h2.orders Orders
+
+  table.table.table-hover
+    tr
+      th For
+      th Price
+      th
+
+    - @delivery.orders.each do |order|
+      tr
+        td= link_to order.user.name, order.user
+        td= number_to_currency(order.price)
+        td= link_to "Show", order
+
+  h2.orders Ingredient Portions
+
+  / - DeliveryPortionsWorker.new.perform(@delivery.id)#perform_async(@delivery.id)
+
+  table.table.table-hover
+    tr
+      th Ingredient
+      th Quantity
+      th
+
+
+    - @delivery.portions.each do |portion|
+      tr
+        td= portion.name
+        td= portion.quantity
+
+  = link_to 'Edit', edit_resource_path(@delivery)
+  = link_to 'Back', collection_path

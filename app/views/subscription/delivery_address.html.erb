@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <%= javascript_include_tag "rails.validations", "rails.validations.simple_form" %>
+  <script type="text/javascript">
+      $(function(){
+      
+        $('input:radio').screwDefaultButtons({
+          image: 'url("/assets/radiovSmall.jpg")',
+          width: 25,
+          height: 25
+        });
+        
+         
+      });
+  </script>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <h1>Get Started with Fitly!</h1>
+    <div class="contentcontainer">
+      <div class="tab">
+        <div class="tab1"><a href="<%= wizard_path(:signup) %>" class="rightactive">1. <span>Sign Up</span></a></div>
+        <div class="tab1"><a href="<%= wizard_path(:billing) %>" class="rightactive">2. <span>Billing Information</span></a></div>
+        <div class="tab1"><a href="<%= wizard_path(:delivery_address) %>" class="active">3. <span>Delivery Information</span></a></div>
+      </div>
+      <%= simple_form_for @signup_request, :as => :signup_request, url: subscription_path(:delivery_address), :validate => true, :method => "PUT" do |f| %>
+        <%= f.error_notification %>
+        <!-- Billing Information -->
+        <div class="innerbody">
+            <div class="delvinf-container">
+              <h1>Select your weekly delivery day and time:</h1>
+              
+              <div class="leftdiv">
+                <div class="heading">DELIVERY DAY</div>
+                  <div class="selectday">
+               
+                    <div class="styled-select short-catg selectweek">
+                      <%= delivery_day_selector(@signup_request) %>
+                    </div>
+                  </div>
+              </div>
+              <div class="leftdiv">
+                <div class="heading">DELIVERY TIME</div>
+                <%= time_slot_selector(@signup_request) %>
+            
+              <div class="textarea">
+                <textarea rows="5" name="signup_request[delivery_instructions]" placeholder="Delivery Instructions(”Use the side door”,“beware of dog”,etc.)"></textarea>
+              </div>
+            </div>
+        </div>
+        <!-- Billing Information -->
+        <div class="back-nextbtn">
+          <div class="backbtn"><%= link_to "Back", previous_wizard_path %></div>
+          <input type="submit" class="nextbtn" value="Next">
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %>
+  
+</div>
+</body>
+</html>

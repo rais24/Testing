@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fitly® - Delicious. Delivered.™</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link href="/assets/fonts.css" rel="stylesheet" type="text/css">
+    <link href="/assets/boilerplate.css" rel="stylesheet" type="text/css">
+    <link href="/assets/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/media.css" rel="stylesheet" type="text/css">
+    <link href="/assets/Shared.css" rel="stylesheet" type="text/css">
+    <link href="/assets/Landing.css" rel="stylesheet" type="text/css">
+
+    <!--[if IE]>
+        <script src="/assets/html5.js"></script>
+        <link href="/assets/ie.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/assets/IEFixes.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/assets/IE7And8Fixes.css" />
+    <![endif]-->
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="/assets/IE7Fixes.css" />
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/assets/placeholders.min.js"></script>
+    <script src="/assets/jquery.screwdefaultbuttonsV2.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 650) {
+                    $(".backToTop").fadeIn(300);
+                }
+                else {
+                    $(".backToTop").fadeOut(300);
+                }
+
+                if ($(this).scrollTop() > 50) {
+                    $(".scrollingHeaderBackground").fadeIn(400);
+                    $(".defaultHeaderBackground").fadeOut(400);
+
+                    $(".headerLogo").fadeOut(400);
+
+                    $(".scrollingCart").fadeIn(400);
+                    $(".defaultCart").hide();
+
+                    $(".landingHeaderMenu").addClass("scrolling");
+                }
+                else {
+                    $(".defaultHeaderBackground").fadeIn(400);
+                    $(".scrollingHeaderBackground").fadeOut(400);
+
+                    $(".headerLogo").fadeIn(400);
+
+                    $(".defaultCart").fadeIn(400);
+                    $(".scrollingCart").hide();
+
+                    $(".landingHeaderMenu").removeClass("scrolling");
+                }
+            });
+        });
+
+        function scrollToTop() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        }
+
+        function scrollToHowItWorks() {
+            $("html, body").animate({
+                scrollTop: $("#howItWorks").offset().top
+            }, 500);
+        }
+
+        function mobileScrollToHowItWorks() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: $("#howItWorks").offset().top + 3
+            }, 500);
+        }
+
+        function scrollToBenefits() {
+            $("html, body").animate({
+                scrollTop: $("#benefits").offset().top
+            }, 700);
+        }
+
+        function mobileScrollToBenefits() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: $("#benefits").offset().top + 3
+            }, 700);
+        }
+
+        function hideMobileMenu() {
+            if ($(".landingHeaderMobileExpandedMenu").is(":visible")) {
+                $(".landingHeaderMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".landingHeaderMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+
+        function toggleMobileMenu() {
+            if (!$(".landingHeaderMobileExpandedMenu").is(":visible")) {
+                $(".landingHeaderMobileExpandedMenu").toggle();
+                $(".landingHeaderMobileExpandedMenu .expandedMenu").animate({ left: 0 }, 200);
+            }
+            else {
+                $(".landingHeaderMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".landingHeaderMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+
+        function toggleVideoModal() {
+            $(".howItWorksModalContainer").toggle();
+
+            if ($(".howItWorksModalContainer").is(":visible")) {
+                $(".howItWorksContainer").css("z-index", "2");
+                $("#videoplay")[0].src += "&autoplay=1";
+            }
+            else {
+                $(".howItWorksContainer").css("z-index", "1");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container"> 
+        <div class="backToTop" onclick="scrollToTop();">
+        </div>
+        <%= render "layouts/shared/navigation_header" %>
+    </div>
+    <div class="landingSplash">
+        <div class="getStartedSection">
+            <div class="sectionHeaderText">
+                The world's first, fresh meal kit solution for people who need to <span class="boldLato">Lose Weight & Prevent</span> or manage <span class="boldLato">Type 2 Diabetes</span>.
+            </div>
+            <div class="sectionSubHeaderText">
+                Cooking made easy, delicious and affordable.
+            </div>
+            <div class="clearFix">
+            </div>
+            <div class="getCookingSection">
+                <%= render "signup/getcooking" %>
+            </div>
+        </div>
+    </div>
+    <div class="landingSectionHeader rokkit">
+        As seen in:
+    </div>
+    <div class="asSeenInSection">
+        <div class="firstGroup">
+            <div class="ventureBeat">
+            </div>
+            <div class="medCityNews">
+            </div>
+            <div class="philadelphiaBusinessJournal hideOnMobile">
+            </div>
+        </div>
+        <div class="secondGroup">
+            <div>
+                <div class="phillyDotCom">
+                </div>
+                <div class="philadelphiaBusinessJournal hideOnDesktop hideOnTablet">
+                </div>
+            </div>
+            <div>
+                <div class="technically">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="howItWorks" class="landingSectionScrollPosition">
+    </div>
+    <div class="landingSectionHeader pacifico">
+        how it works
+    </div>
+    <div class="howItWorksContainer">
+        <div class="howItWorksSection hideOnMobile">
+            <div class="howItWorksPlayVideo" onclick="toggleVideoModal();">
+            </div>
+        </div>
+        <div class="howItWorksModalContainer">
+            <div class="howItWorksModalClose hideOnMobile" onclick="toggleVideoModal();">
+            </div>
+            <div class="howItWorksModal">
+                <iframe src="//player.vimeo.com/video/103147602?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" id="videoplay" width="600" height="348" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="modalBackground">
+            </div>
+        </div>
+    </div>
+    <div class="landingSectionHeader rokkit">
+        Personalized. Dietitian-approved. Evidence-based.
+    </div>
+    <div class="landingStepsSection">
+        <div class="stepOne">
+            <div>
+                Choose Delicious Recipes
+            </div>
+            <div>
+                Select from a variety of tasty recipes that your entire family will love.
+            </div>
+        </div>
+        <div class="stepTwo">
+            <div>
+                Schedule a Delivery Time
+            </div>
+            <div>
+                Pick a convenient delivery window that works with your busy schedule.
+            </div>
+        </div>
+        <div class="stepThree">
+            <div>
+                Receive Fresh Ingredients
+            </div>
+            <div>
+                Get hand-selected, guaranteed fresh ingredients from your local grocer.
+            </div>
+        </div>
+        <div class="stepFour">
+            <div>
+                Cook and Enjoy! :)
+            </div>
+            <div>
+                Prepare an amazing meal and watch your family make it disappear.
+            </div>
+        </div>
+    </div>
+    <div class="landingGetStartedPromptSection">
+        <div class="getStartedText">
+            let's get cooking!
+        </div>
+        <div>
+            <%= render "signup/getcooking" %>
+        </div>
+    </div>
+    <div id="benefits" class="landingSectionScrollPosition">
+    </div>
+    <div class="landingSectionHeader pacifico">
+        benefits
+    </div>
+    <div class="landingBenefitsSection">
+        <div class="saveTime">
+            <div>
+                Save Time
+            </div>
+            <div>
+                Take fewer trips to the grocery store by letting us do all the heavy lifting.
+                Literally. We help you plan what to cook for the week, do the grocery shopping for you,
+                and then deliver everything right to your home.
+            </div>
+        </div>
+        <div class="discoverNewRecipes">
+            <div>
+                Discover New Recipes
+            </div>
+            <div>
+                Every week Fitly introduces exclusive, chef-designed recipes that are guaranteed fresh,
+                delicious, and nutritious. Our recipes will delight you, your friends and your loved ones.
+            </div>
+        </div>
+        <div class="eatHealthier">
+            <div>
+                Eat Healthier
+            </div>
+            <div>
+                Our recipes are designed to deliver the most delicious, flavorful and nutrient-rich meals
+                on the planet. By sourcing the freshest, local and seasonal ingredients whenever possible.
+                We guarantee this.
+            </div>
+        </div>
+        <div class="saveMoney">
+            <div>
+                Save Money
+            </div>
+            <div>
+                Getting take-out every day can get expensive. With Fitly, you can have dinner on the table
+                faster than you can say "fast food is no friend of mine" and for nearly half the price too!
+                Seriously.
+            </div>
+        </div>
+    </div>
+    <div class="landingGetStartedPromptSection">
+        <div class="getStartedText">
+            start living Fitly!
+        </div>
+        <div>
+            <%= render "signup/getcooking" %>
+        </div>
+    </div>
+    <%= render "layouts/shared/footer" %>
+</body>
+</html>

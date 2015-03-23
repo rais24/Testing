@@ -1,0 +1,14 @@
+.get-started
+    = simple_form_for @signup_inquiry, url: signup_path do |f|
+        = if @signup_inquiry.validation_error
+            p.error
+                = @signup_inquiry.validation_error
+        fieldset
+            ul.data
+                li.input.zipcode.required
+                    label for="signup_inquiry_zipcode"
+                        | Zip Code <abbr title="(Required)">*</abbr>
+                    = f.input_field :zipcode, value: params[:zip], placeholder: 'zip code'
+            ul.actions
+                li.primary
+                    = f.submit 'Get Started'

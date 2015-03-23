@@ -1,0 +1,7 @@
+.row-fluid
+  .span4
+    = link_to "View This Week's Order", order_path(next_order), class: "button-danger"
+  .span4
+    = link_to "Shop This Week's Order", shop_order_path(next_order), class: "button-info"
+  .span4
+    = link_to "Checkout", checkout_path(:pantry), class: "button-action"

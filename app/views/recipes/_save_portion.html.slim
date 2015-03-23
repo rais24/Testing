@@ -1,0 +1,6 @@
+= simple_form_for recipe do |f|
+  = f.simple_fields_for :portions, portion do |p|
+    = p.input :ingredient_id, as: :hidden, input_html: { value: portion.ingredient.id }
+    img.thumb.img-circle src=portion.photo(:medium) alt=portion.name
+    = p.input :quantity, label: false
+    = p.submit '✓', class: "button-action button-small js-click-lock"

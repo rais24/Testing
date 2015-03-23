@@ -1,0 +1,12 @@
+p
+  | We offer a weekly subscription service. You will be charged for 
+  | the meals you purchase, in portions based on your 
+  = link_to "family size", registration_path(id: :family)
+  | .
+
+p
+  | As always, delivery is FREE, and you can cancel your subscription 
+  | at any time.
+
+#subscribe
+  = render 'form', form_method: :POST, label: 'Subscribe', classes: %w(button-large button-fill)

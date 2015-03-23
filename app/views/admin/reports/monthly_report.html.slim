@@ -1,0 +1,25 @@
+- content_for :header do
+  = javascript_include_tag "//www.google.com/jsapi", "chartkick"
+  
+h1 Registrations and Purchases Reports 
+
+table
+  th Month
+  th New Registrations
+  th % Change
+  th New Customers
+  th % Change
+  th Repeat Customers
+  th % Change
+  th Total Orders
+  th % Change
+  th Gross Revenue
+  th % Change
+  th Gross Promo
+  th % Change
+  th Revenue after Promo
+  th % Change
+  
+  - @monthly_statistics.each do |m,d|
+    tr= display_monthly_user_report_row(m,d)      
+  tr= display_monthly_user_report_totals

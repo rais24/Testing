@@ -1,0 +1,18 @@
+table border="0" cellpadding="20" cellspacing="0"
+  - recipes.each_with_index do |recipe, index|
+    tr
+      td.left-column width="180px"
+        = image_tag recipe.photo(:medium), height: 150, width: 180, alt: recipe.name
+      td width="360px"
+        h2
+          = link_to recipe.name.titleize, recipe_url(recipe)
+        h4 20 minutes
+        button Print
+        button SMS
+        h2 Ingredients
+        ul
+          - recipe.portions.each do |portion|
+            li= "#{portion.units} #{portion.ingredient.name}"
+        h2 Instructions
+        - recipe.steps.each do |step|
+          p= step

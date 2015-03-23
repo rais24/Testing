@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <script src="/assets/modal.jquery.js"></script>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header" %>
+
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <div style="width:100%; height:5px;"> </div>
+    <h1 class="h1-float-left">Get Started with Fitly!</h1>
+    <div class="profile-complete"></div>
+    <div class="contentcontainer" style="margin-bottom:20px;">
+      <div class="tab">
+        <div class="tab1"><a href="#" class="rightactive">1. <span>Dietary Needs</span></a></div>
+        <div class="tab1"><a href="#" class="rightactive">2. <span>Dietary Preferences</span></a></div>
+        <div class="tab1"><a href="#" class="active">3. <span>Dietary Dislikes</span></a></div>
+      </div>
+      <%= form_tag(account_path, :method => :put) do %>
+        <div class="spacer"></div>
+        <div class="innerbody innerbody-extra-width">
+          <div class="delvinf-container delvinf-container-extra-width">
+             
+            <h1 class="lineheight">
+              Tell us what foods/ingredients you dislike to avoid menu items that contain them!
+            </h1>
+            <div style="width:100%;">
+              <textarea name="user[dietary_dislikes]" class="textarea1" onClick="if(this.value=='other allergies/preferences (please specify)') this.value='';" onBlur="if(this.value=='') this.value='other allergies/preferences (please specify)';" ><%= @user.dietary_dislikes.present  ? ? @user.dietary_dislikes : "other allergies/preferences (please specify)" %></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="back-nextbtn2">
+          <div class="backbtn">
+            <input type="submit" id="savebtn" value="Save Personal Information" />
+          </div>
+          <div class="canclebtn"> <a href="/account">Cancel</a></div>
+        </div>
+      <% end %>
+    </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %> 
+  
+</div>
+</body>
+</html>

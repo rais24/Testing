@@ -1,0 +1,20 @@
+= simple_form_for @order, url: wizard_path, :method => "PUT" do |f|
+    = f.fields_for :delivery_time, @order.delivery_time do |del|
+        fieldset
+            ul.data
+                li.input.select.date.required
+                    label for="order_delivery_time_delivery_date"
+                        | Delivery Date
+                    = del.select :delivery_date, delivery_dates(@zone)
+                li.input.select.time.required
+                    label for="order_delivery_time_time_slot"
+                        | Delivery Time
+                    = del.text_field :time_slot, value: current_user.user_group.delivery_times, :readonly => true
+                li.input.textarea.comments.optional
+                    label for="order_comments"
+                        | Delivery Instructions / Comments
+                    p.label-note Use the side door, beware of dog, etc.
+                    = f.text_area :comments, value: current_user.user_group.delivery_instructions.html_safe, rows: 5
+            ul.actions
+                li.primary
+                    = submit_tag "Next Step: Payment Info"

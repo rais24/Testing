@@ -1,0 +1,9 @@
+.recipe-item id=dom_id(choice.recipe)
+  = link_to choice.recipe do
+    img src=choice.photo(:medium_thumb)
+  = link_to choice.name, choice.recipe, class: "recipe-name"
+  
+  - if choice.quantity <= 0
+    = render 'order_servings/add', label: '+',order: @order, serving: choice
+  - else
+    = render 'order_servings/remove', label: '-', order: @order, serving: choice

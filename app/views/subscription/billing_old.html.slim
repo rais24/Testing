@@ -1,0 +1,46 @@
+#checkout-payment
+    h1
+        | Payment Info <span>- Step 3 of 5</span>
+    section#payment-form
+        = form_tag subscription_path(:billing), method: 'PUT', id: 'stripeForm' do
+            fieldset
+                ul.data
+                    li.input.card-number.required
+                        label for="card_number"
+                            | Credit Card Number
+                        = text_field_tag :card_number, nil, name: "billing[card_number]"
+                    li.input.card-expiration.required
+                        label for="card_month"
+                            | Expiration Date
+                        = select_month nil, {add_month_numbers_true: true}, {name: "billing[expiration_month]", id: "card_month"}
+                        = select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: "billing[expiration_year]", id: "card_year"}
+                    li.input.cvv.required
+                        label for="card_code"
+                            | CVC
+                        = text_field_tag :card_code, nil, name: "billing[card_code]", "data-stripe" => 'cvc'
+                    li.input.name-of-card.required
+                        label for="name_on_card"
+                            | Name on Credit Card
+                        = text_field_tag :name_on_card, nil, name: "billing[name]", value: @user.name
+                h2 
+                  | Billing Address
+                ul.data
+                    li.input.billing_street1.required
+                        label for="billing_street1"
+                            | Address
+                        = text_field_tag :required, nil, name: "billing[street1]", value: @user.address.street1
+                    li.input.billing_city.required
+                        label for="billing_city"
+                            | City
+                        = text_field_tag :billing_city, nil, name: "billing[city]", value: @user.address.city
+                    li.input.billing_state.required
+                        label for="billing_state"
+                            | State
+                        = text_field_tag :billing_state, nil, name: "billing[state]", value: @user.address.state
+                    li.input.billing_zipcode.required
+                        label for="billing_zipcode"
+                            | Zipcode
+                        = text_field_tag :billing_zipcode, nil, name: "billing[zipcode]", value: @user.address.zipcode
+                ul.actions
+                    li.primary
+                        = submit_tag "Review your order"

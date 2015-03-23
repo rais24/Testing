@@ -1,0 +1,21 @@
+#preload
+.pre-content
+  h1 Listing zipcodes
+.content
+  table
+    tr
+      th Name
+      th
+      th
+      th
+
+    - @zipcodes.each do |zipcode|
+      tr
+        td = zipcode.name rescue "N/A"
+        td = link_to 'Show', zipcode
+        td = link_to 'Edit', edit_admin_zipcode_path(zipcode)
+        td = link_to 'Destroy', zipcode, :confirm => 'Are you sure?', :method => :delete
+
+  br
+
+  = link_to 'New Zipcode', new_admin_zipcode_path

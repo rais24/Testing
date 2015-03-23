@@ -1,0 +1,7 @@
+.content
+  - recipes = Recipe.all
+
+  = render 'recipes/recipe_row', recipes: recipes.dinners, id: 'dinners', label: 'Dinners'
+
+  .checkout-btn
+  	= link_to 'Checkout', checkout_path(:pantry), class: 'button-action button-fill hidden-phone'

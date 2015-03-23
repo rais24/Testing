@@ -1,0 +1,5 @@
+= simple_form_for recipe do |f|
+  = f.simple_fields_for :portions, portion do |p|
+    = p.input :ingredient_id, as: :hidden, input_html: { value: portion.ingredient.id }
+    = p.input :_destroy, as: :hidden, input_html: { value: true }
+    = p.submit '×', class: "button-danger button-small js-click-lock"

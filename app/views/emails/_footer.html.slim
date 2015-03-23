@@ -1,0 +1,23 @@
+/ separator
+table border="0" cellpadding=cellpadding cellspacing="0" width=width
+  tr
+    td height=filler_height width=filler_width
+      = image_tag "border-top.png", height: 4, width: 600
+/ Footer
+table#footer border="0" cellpadding=cellpadding cellspacing="0" width=width
+  tr
+    td align="center"
+      | You're receiving this email because you are a subscriber to the 
+      = link_to "Fitly®", root_url
+      | newsletter. Having trouble reading this email? 
+      = link_to "View it in your browser", "#"
+      | Not interested anymore? 
+      = link_to "Unsubscribe", "#"
+/ Rounded corners
+table.corners border="0" cellpadding="0" cellspacing="0" width=full_width
+  tr
+    td height=corner_height width=corner_width
+      = image_tag "email/bottom-left.gif", class: "corner"
+    td height=filler_height width=filler_width
+    td height=corner_height width=corner_width
+      = image_tag "email/bottom-right.gif", class: "corner"

@@ -1,0 +1,7 @@
+table
+  - servings.reject(&:new_record?).each do |serving|
+    tr id=dom_id(serving)
+      th= link_to serving.recipe do
+          img.thumb.img-circle src=serving.photo(:medium)
+      th= link_to serving.name, serving.recipe, class: 'name'
+      th= render 'order_servings/remove', label: 'x', order: @order, serving: serving

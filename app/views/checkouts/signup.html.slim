@@ -1,0 +1,6 @@
+div.login
+	= render "sessions/login_form"
+
+div.signup
+	= simple_form_for @user, url: wizard_path, method: 'PUT' do |f|
+		= render "signup/signup_form", :f => f

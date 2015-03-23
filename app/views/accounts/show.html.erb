@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <script src="/assets/popupwindow.js"></script>
+  <script src="/assets/demo.js"></script> 
+</head>
+
+<body>
+<div id="container">   
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+
+  <!-- Get Started container  -->   
+  <div class="welcomecontainer">
+   <div style="width:100%; height:5px;"> </div>
+    <div class="heading">
+      <%= display_user_greeting %>
+    </div>
+    <div class="profilecomplete" style="visibility:hidden;">
+      <br><br> 
+    </div>
+    <!-- body container -->
+    <div class="leftcontainer"> 
+      <!-- block1-->
+      <%= render "accounts/account_partials/patient_actions" %>
+      <div class="leftcontainer1">
+        <%= render "accounts/account_partials/meal_plan" %>
+        <%= render "accounts/account_partials/dietitian" %>
+      </div>
+      <!-- block1 close--> 
+      
+      <!-- block2-->
+      <%= render "accounts/account_partials/preferences" %>
+      <!-- block2 close--> 
+      
+      <!-- block3-->
+      <%= render "accounts/account_partials/progress" %>
+      <!-- block3 close--> 
+      
+    </div>
+    <div class="rightcontainer">
+      <%= render "accounts/account_partials/personal_info" %>
+      <%= render "accounts/account_partials/health_info" %>
+    </div>
+    <div style="clear:both;"></div>
+    <!-- body container close --> 
+    
+  </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %>  
+  
+</div>
+</body>
+</html>

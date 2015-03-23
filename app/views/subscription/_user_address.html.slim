@@ -1,0 +1,40 @@
+= simple_form_for @user, url: wizard_path, html: { class: "address delivery-address" }, :method => "PUT" do |f|
+    fieldset
+        ul.data
+            = f.fields_for :address, @user.address do |addr|
+                li.input.first-name
+                    label for="order_address_first_name"
+                        | First Name
+                    = addr.text_field :first_name
+                li.input.last-name
+                    label for="order_address_last_name"
+                        | Last Name 
+                    = addr.text_field :last_name
+                li.input.address-1
+                    label for="order_address_street1"
+                        | Address 1 
+                    = addr.text_field :street1, value: ''
+                li.input.address-2.optional
+                    label for="order_address_street2"
+                        | Address 2
+                    = addr.text_field :street2, value: ''
+                li.input.city
+                    label for="order_address_city"
+                        | City 
+                    = addr.text_field :city, value: ''
+                li.input.state
+                    label for="order_address_state"
+                        | State 
+                    = addr.text_field :state, value: ''
+                li.input.zipcode
+                    label for="order_address_zipcode"
+                        | Zip Code 
+                    = addr.text_field :zipcode
+                li.input.phone
+                    label for="order_address_phone"
+                        | Phone Number 
+                    p.label-note In case we need to call you about the delivery
+                    = addr.text_field :phone, value: ''
+        ul.actions
+            li.primary
+                = submit_tag "Next Step: Delivery Time"

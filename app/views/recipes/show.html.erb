@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fitly® - Delicious. Delivered.™</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/assets/Shared.css" />
+    <link rel="stylesheet" href="/assets/Recipe.css" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/assets/IEFixes.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/assets/IE7And8Fixes.css" />
+    <![endif]-->
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="/assets/IE7Fixes.css" />
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="/assets/jquery.placeholder.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.shopping_cart_item_quantity').on('change', priceCalculator);
+
+            //$('#hero').append('<img data-js="true" src="' + $('#hero noscript').attr('data-' + FIT.params.device.relativeSize) + '">');
+
+            if ( $('#preparation-view').data('prepview') === 'on' ) {
+                prepview();
+            }                   
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 400) {
+                    $(".backToTop").fadeIn(300);
+                }
+                else {
+                    $(".backToTop").fadeOut(300);
+                }
+            });
+        });
+
+        function prepview() {
+            var prepview;
+
+            var base_url = window.location.href.replace("prepview=on", "");
+
+            $('<div id="prepview" data-js="true"><ul class="actions"><li class="print"><a class="recipe-print" class="action primary" href="javascript:window.print()">Print</a></li><li class="close"><a class="prepview-close" href="' + base_url + '">Close</a></li></ul></div>').insertBefore(".footer");
+            prepview = $('#prepview');
+
+            $("#prepview").append($(".recipeDetails .recipeInformationSection .recipeName"));
+            
+
+            var image_url = $(".recipePhoto").attr("data");
+            $("#prepview").append('<img id="previewRecipePhoto" src="' + image_url + '">');
+
+            $(".recipeSection").toggle();
+            $(".nutritionSection").toggle();
+            $(".categoriesSection").toggle();
+            $(".backToMenuLink a").toggle();
+
+            prepview.append('<div id="stats">' + $('.recipeInformation').html() + '</div>');
+            $("#preparation-view > p:gt(0)").clone().attr("id", "prepview_instr").appendTo(prepview);
+            prepview.append('<div class="measurements">' + $('#measurements').html() + '</div>');
+            prepview.append('<div class="instructions">' + $('#instructions').html() + '</div>');
+            prepview.append('<ul class="actions"><li class="print"><a class="recipe-print" class="action primary" href="javascript:window.print()">Print</a></li><li class="close"><a class="prepview-close" href="' + base_url + '">Close</a></li></ul>');
+
+            $('#preparation-view h2').append('<a class="prepview-open action primary" href="#" data-js="true">Prep view</a>');
+            
+            $('#preparation-view h2 a.prepview-open').on('click.prepviewopen', function (e) {
+                e.preventDefault();
+               $('html, body').scrollTop(0);
+                $('#prepview').addClass('on');
+            });
+
+            $('#prepview').addClass('on');
+        }
+
+        function priceCalculator() {
+            var total_amount = $(this).find("option:selected").attr("data");
+            $('#subtotal').text("$"+total_amount);
+        }
+
+        function scrollToTop() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        }
+
+        function toggleMobileMenu() {
+            if (!$(".headerMobileExpandedMenu").is(":visible")) {
+                $(".headerMobileExpandedMenu").toggle();
+                $(".headerMobileExpandedMenu .expandedMenu").animate({ left: 0 }, 200);
+            }
+            else {
+                $(".headerMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".headerMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="backToTop" onclick="scrollToTop();">
+    </div>
+    <%= render "layouts/shared/navigation" %>
+    <div class="backToMenuLink">
+        <a href="/recipes">Back to The Menu</a>
+    </div>
+    <%= render "layouts/shared/navigation_mobile" %>
+    <div class="recipeSection">
+        <div class="recipeDetails new">
+            <div class="recipePhoto" style="background-image: url('<%= resource.photo(:large_hi_dpi)%>');" data="<%= resource.photo(:large_hi_dpi)%>">
+                <% if resource.is_new? %>
+                    <div class="newItemBanner">
+                    </div>
+                <% end %>
+                <div class="recipeOverlay">
+                </div>
+                <div class="recipeDiet">
+                    <% if resource.diet_type_list.include?("gluten free") %>
+                        <div class="glutenFree" style="display: block;">
+                        </div>
+                    <% end %>
+                    <% if resource.diet_type_list.include?("Vegan") || resource.diet_type_list.include?("vegan") %>
+                        <div class="vegan" style="display: block;">
+                        </div>
+                    <% end %>
+                    <% if resource.diet_type_list.include?("paleo") %>
+                        <div class="paleo" style="display: block;">
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="recipeInformationSection">
+                <div class="recipeName">
+                    <%= resource.name %>
+                </div>
+                <div class="recipeInformation hideOnMobile">
+                    <div class="prepTime">
+                        <%= resource.prep_time + resource.cook_time %> mins from prep to plate
+                    </div>
+                    <table class="recipeBasicNutrition">
+                        <tr>
+                            <td>
+                                <%= resource.calories %> calories
+                            </td>
+                            <td>
+                                <%= resource.fat %> fat
+                            </td>
+                            <td>
+                                <%= resource.carbs %> carbs
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <%= form_tag shopping_cart_items_path do %>
+                    <input type="hidden" value="<%=resource.id%>" name="shopping_cart_item[recipe_id]" />
+                    <div class="priceSelectionContainer">
+                        <div class="priceSelection selectContainer">
+                            <label />
+                            <%= select_tag "shopping_cart_item[quantity]", serving_quantities, {class: "shopping_cart_item_quantity" } %>
+                        </div>
+                        <div class="totalPrice">
+                            Total: <span id="subtotal"><%=show_total_cart_price(cart)%></span>
+                        </div>
+                        <div class="clearFix">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="submit" class="redButton addButton" value="Add Recipe To Cart" />
+                    </div>
+                <% end %>
+                <div class="clearFix hideOnDesktop hideOnTablet">
+                </div>
+                <div class="recipeInformation hideOnDesktop hideOnTablet">
+                    <div class="prepTime">
+                        <%= resource.prep_time + resource.cook_time %> mins from prep to plate
+                    </div>
+                    <table class="recipeBasicNutrition">
+                        <tr>
+                            <td>
+                                <%= resource.calories %> calories
+                            </td>
+                            <td>
+                                <%= resource.fat %> fat
+                            </td>
+                            <td>
+                                <%= resource.carbs %> carbs
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="clearFix">
+            </div>
+        </div>
+        <div class="recipeDescription">
+            <div>
+                <%= resource.description %>
+            </div>
+            <div>
+                Preparation instructions are accessible in your <a href="/orders">order history</a> and in your confirmation email after purchase.
+            </div>
+        </div>
+        <div class="meetTheChefSection">
+            <div class="meetTheChefTitle">
+                Meet the Chef
+            </div>
+            <div class="chefInformationSection">
+                <div class="chefPictureContainer">
+                    <div class="chefPicture">
+                    </div>
+                </div>
+                <div class="chefInformation">
+                    <div class="chefName">
+                        Jennifer Iserloh
+                    </div>
+                    <div class="chefDescription">
+                        Classically Trained Chef
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearFix">
+        </div>
+    </div>
+    <div class="nutritionSection">
+        <div class="nutritionSectionContainer">
+            <div class="whatsIncludedSection">
+                <div class="header">
+                    What's Included
+                </div>
+                <div class="headerDivider">
+                </div>
+                <ul>
+                    <% resource.portions.included.each do |ingredient| %>
+                        <li><%= ingredient.name %></li>
+                    <% end %>
+                </ul>
+                <div class="whatsIncludedText">
+                    This recipe will be shipped in a 16oz box.
+                </div>
+            </div>
+            <div class="nutritionDetailsSection">
+                <div class="header">
+                    Nutrition Facts
+                </div>
+                <div class="headerDivider">
+                </div>
+                <ul>
+                    <% resource.facts.each do |fact| %>
+                        <li>
+                            <div>
+                                <%= fact.split(" ")[1] %>
+                            </div>
+                            <div>
+                                <%= fact.split(" ")[0] %>
+                            </div>
+                        </li>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="otherIngredientsSection">
+                <div class="header">
+                    Other Ingredients
+                </div>
+                <div class="headerDivider">
+                </div>
+                <div class="otherIngredientsThingsLike">
+                    Things like:
+                </div>
+                <ul>
+                    <% resource.portions.excluded.each do |pantry| %>
+                        <li>
+                            <%= pantry.name %>
+                        </li>
+                    <% end %>
+                </ul>
+                <div class="otherIngredientsRunningLow">
+                    If you're running low on an item you can easily add it on to your order later.
+                </div>
+            </div>
+            <div class="clearFix">
+            </div>
+        </div>
+    </div>
+    <div class="categoriesSection">
+        <div class="categoriesHeader">
+            Categories
+        </div>
+        <div class="categories">
+            <% resource.dietary_need_list.each do |tag| %>
+                <%= link_to tag, recipes_path(filter: {dietary_need: {"1" => tag}}), alt: "View all recipes in the #{tag} category"%>
+            <% end %>
+            <% resource.main_dish_list.each do |tag| %>
+                <%= link_to tag, recipes_path(filter: {main_dish: {"1" => tag}}), alt: "View all recipes in the #{tag} category"%>
+            <% end %>
+        </div>
+        <p></p>
+    </div>
+    <section id="preparation-view" data-prepview="<%=params[:prepview]%>">
+        <h2>Preparation</h2>
+        <% if !params[:prepview] %>
+            <p>If you've placed an order for this recipe, please see your <a href="/orders">order history</a> or order confirmation e-mail to view the complete preparation instructions.</p>
+        <% elsif current_user %>
+            <p><strong>Total time:</strong> <%= resource.prep_time + resource.cook_time %> minutes
+                <br />
+                <strong>Plates:</strong> 4
+            </p>
+            <p>Ingredient quantities and preparation instructions accommodate 4 plates. Small adjustments to ingredient proportions or cooking times may be required for more servings. If you have any questions, please contact us at 1(844) GET-FITLY (348-3485) or email us at holler@fitly.com
+            </p>
+            <section id="measurements">
+                <h3> Ingredients:</h3>
+                <ul class="ingredients">
+                    <% resource.portions.sort_by{ |x| x.order.blank? ? x.quantity : x.order}.each do |ingredient| %>
+                        <li><%= show_ingredient_string(ingredient) %></li>
+                    <% end %>
+                </ul>
+            </section>
+            <section id="instructions">
+                <h3>Cooking Instructions:</h3>
+                <ul class="instructions">
+                    <% resource.steps.each do |step| %>
+                        <li><%= step %></li>
+                    <% end %>
+                </ul>
+            </section>
+        <% else %>
+            <p>Please login to access this page. </p>
+        <% end %>
+    </section>
+
+    <%= render "layouts/shared/footer" %>
+</body>
+</html>

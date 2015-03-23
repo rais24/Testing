@@ -1,0 +1,72 @@
+#account
+    - if @current_user
+      h1
+          | My Account
+      h2= @current_user
+    - flash.each do |key, msg|
+      = content_tag :div, msg, :id => key
+    section#order-history
+        h2 Order History
+        p
+          a href="/orders" View your complete order history
+        h2 Profile, Preferences, Needs and Dislikes
+        p= "Discuss with Dietician: #{@user.ok_to_discuss_with_dietician}"
+        p
+          - @user.dietary_needs_list.each do |k,v|
+            = "#{k.titleize}: #{v}"
+            br /
+          = link_to "Edit Needs", edit_account_url(page_type: "needs")
+        p
+          - @user.dietary_preferences_list.each do |k,v|
+            = "#{k.titleize}: #{v}"
+            br /
+          = link_to "Edit Preferences", edit_account_url(page_type: "preferences")
+        p
+          = @user.dietary_dislikes
+          br /
+          = link_to "Edit Dislikes", edit_account_url(page_type: "dislikes")
+    section#profile
+        h2 Profile
+        p
+          - if @user && @user.errors
+            - @user.errors.full_messages.each do |msg|
+              = msg
+              br/
+        = simple_form_for @user, url: account_path, html: { class: "user-account" }, :method => "PUT" do |f|
+
+            fieldset
+              ul.data
+                li.input.first.required
+                  label for="user_first_name"
+                    | First Name
+                    = f.text_field :first, value: @user.first, required: true
+                li.input.last.required
+                  label for="user_last_name"
+                    | Last Name
+                    = f.text_field :last, value: @user.last, required: true
+
+                li.input.invite_code
+                  label for="user_invite_code"
+                    | Invite Code
+                    = f.text_field :invite_code, value: @user.invite_code, required: false
+
+                li.input.email.required
+                  label for="user_email"
+                    | Email
+                    = f.text_field :email, value: @user.email, required: true
+
+
+                li.input.password.required
+                    label for="user_password"
+                        | Password
+                    p.label-note
+                        | 8 to 20 letters or numbers, at least 1 number
+                    = f.input_field :password, as: :password, required: true
+                li.input.password-confirmation.required
+                    label for="user_password_confirmation"
+                        | Verify Password
+                    = f.input_field :password_confirmation, as: :password, required: true
+
+              ul.actions
+                li.primary
+                  = submit_tag "Update"

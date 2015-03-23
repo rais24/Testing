@@ -1,0 +1,56 @@
+header
+    nav
+        a class="home" href="/"
+            | Fitly
+        - if cart.empty?
+            a id="mini-cart" class="empty" href="/shopping_cart"
+                | Shopping Cart
+        - else
+            a id="mini-cart" class="populated" href="/shopping_cart"
+                span.mini-cart-label
+                    | Shopping Cart: 
+                span.item-count
+                    | #{cart.meals}
+                span.item-label
+                    - if cart.meals != 1
+                        |  Recipes
+                    - else
+                        |  Recipe
+        ul.content
+            li.home
+                a href="/"
+                    | Home
+            li.recipes
+                a href="/recipes"
+                    | Recipes
+            li.my-account
+                a href="/account"
+                    - if current_user
+                        | My&nbsp;Account
+                    - else
+                        | Sign&nbsp;In
+                ul
+                    li.profile
+                        a href="/account"
+                            | Profile
+                    li.order-history
+                        a href="/orders"
+                            | Order History
+                    - if current_user && !current_user.guest?
+                        li.log-out
+                            a href="/logout"
+                                | Log Out
+            - if !current_user || current_user.guest?
+                li.sign-up
+                    a href="/signup/zipcode_check"
+                        | Sign&nbsp;Up
+            li.pricing
+                = link_to "Pricing", page_path('pricing')
+            li.faqs
+                = link_to "FAQs", page_path('faqs')
+            li.contact
+                = link_to "Contact", page_path('contact')
+            - if current_user && !current_user.guest?
+                li.log-out
+                    a href="/logout"
+                        | Log&nbsp;Out

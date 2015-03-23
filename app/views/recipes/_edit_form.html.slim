@@ -1,0 +1,42 @@
+.recipe
+  .row-fluid
+    .span4
+      img.center.img-circle src=@recipe.photo(:medium) alt=@recipe.name
+      - if @recipe.source.present?
+        a.source href=@recipe.source Source
+
+      = form_tag recipe_recipe_portions_path(@recipe), method: :post do
+        .fieldset
+          ul.data
+            li.input
+              h4 Ingredient
+              = select("portion", "ingredient_id", Ingredient.all.collect {|p| [ "#{p.name} (#{p.unit})", p.id ] })
+              h4 Quantity
+              = number_field_tag "portion[quantity]", 'Quantity', step: 0.25, style: 'margin-right: 15px; border: 1px solid black;'
+              = select("portion", "measure", %w[cup lb oz tbsp tsp unit].collect{ |q| [ "#{q}", q] })
+              h4 Additional Instructions
+              = text_field_tag "portion[additional_instructions]", nil, style: 'border: 1px solid black; width: 300px'
+              h4 Order
+              = number_field_tag "portion[order]", 'Order', step: 1, style: 'margin-right: 15px; border: 1px solid black;'
+              br
+              = submit_tag 'Create Portion', class: 'button-action button-fill button-action'
+      = link_to 'Destroy Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button-danger'
+      br/
+      = link_to 'View Ingredients', recipe_recipe_portions_path(@recipe)
+      br/
+      = link_to 'Remove Ingredients', clear_portions_recipe_path(@recipe), method: :delete, data: {confirm: 'Are you sure?  This will remove ingredients from the recipe'}
+    .span8
+      = render 'form'
+
+    .span8
+      img src=@recipe.photo(:small_low_dpi)
+      br/
+      img src=@recipe.photo(:small_hi_dpi)
+      br/
+      img src=@recipe.photo(:medium_hi_dpi)
+      br/
+      img src=@recipe.photo(:large_hi_dpi)
+      br/
+      img src=@recipe.photo(:xlarge_hi_dpi)
+
+        

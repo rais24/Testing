@@ -1,0 +1,29 @@
+#order-history
+    h1 Order History
+    - if @orders.empty?
+        p No orders have been placed. 
+    - else
+        ul.orders
+            - @orders.each do |order|
+                li
+                    h2 = link_to "Order ##{order.id}", order_path(order)
+                    dl
+                        dt Placed On:
+                        dd #{order.updated_at}
+                        dt Scheduled for Delivery:
+                        dd #{order.delivery_time ? order.delivery_time.date_and_time : ''}
+                        dt Status:
+                        dd #{(order.charge ? 'Charged' : 'In Process')}
+                        dt Total:
+                        dd #{number_to_currency(order.calculate_price)}
+                        dt Recipes:
+                        dd.recipes
+                            ul
+                                - order.servings.each do |serving|
+                                    li
+                                        = serving.recipe.name
+                                        ul
+                                            li
+                                                a href="/recipes/#{serving.recipe.slug}" View recipe details
+                                            li
+                                                a href="/recipes/#{serving.recipe.slug}?prepview=on" View prep instructions

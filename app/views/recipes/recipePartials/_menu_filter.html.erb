@@ -1,0 +1,23 @@
+<div id="filterModal" class="modalContainer">
+    <%= form_tag "/recipes", method: "GET", id: "filter-form" do %>
+        <div class="modalClose" onclick="toggleFilterModal();">
+        </div>
+        <div class="modal">
+            <%= render "recipes/recipePartials/menu_filter_dietary_need" %> 
+            <%= render "recipes/recipePartials/menu_filter_main_dish" %> 
+            <%= render "recipes/recipePartials/menu_filter_prep" %> 
+            <div class="clearFix">
+            </div>
+            <div class="filterCancelSubmit">
+                <input type="submit" class="redButton" value="Update Filters" />
+                <a href="#" onclick="toggleFilterModal(); return false;">Cancel</a>
+            </div>
+            <div class="hideOnDesktop hideOnTablet previousFilterGroup" onclick="showPreviousFilterGroup();">
+                Previous
+            </div>
+            <div class="hideOnDesktop hideOnTablet nextFilterGroup" onclick="showNextFilterGroup();">
+                Next
+            </div>
+        </div>
+    <% end %>
+</div>

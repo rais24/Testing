@@ -1,0 +1,12 @@
+.content
+  h1 
+    | Editing
+    p
+    = link_to "#{resource.name_or_email}", resource_path(resource)
+
+  = render 'form'
+
+  .container-fluid
+    .row-fluid
+      .span12.center
+    			= button_to 'Delete User', resource, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"

@@ -1,0 +1,6 @@
+.cart-item id=dom_id(meal)
+  img src=meal.photo.url(:thumb)
+
+  = link_to meal.name.titleize, meal, class: 'cart-item-name'
+  br/
+  = number_to_currency( Money.new(next_order.price_per_serving) * 4) + " (#{number_to_currency( Money.new(next_order.price_per_serving) )} per plate)"

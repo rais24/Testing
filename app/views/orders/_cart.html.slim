@@ -1,0 +1,5 @@
+h1.cart-title
+  | Your Cart 
+  span= servings.count
+
+= render 'orders/recipe_table', servings: servings

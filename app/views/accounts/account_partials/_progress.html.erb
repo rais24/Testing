@@ -1,0 +1,29 @@
+<div class="leftcontainer1 leftcontainer1">
+  <h1>PROGRESS</h1>
+  <div class="border-line"></div>
+  <% if @user.targets_list.empty? %>
+    <div class="myplanimg1"><img src="/assets/set-track.png" alt=""/></div>
+    <% if @user == current_user %>
+      <div class="headigntext">Set your Target Weight and Glucose Level to see your<br>progress each week!</div>
+    <% end %>
+  <% else %>
+    <div class="progressleft">Target Weight: <%= @user.targets_list[:weight] %> lbs</div>
+    <div class="progresright">Target Glucose Level: <%= @user.targets_list[:glucose] %> mg/dL</div>
+  <% end %>
+  <% if @user.progress_history_list.empty? %>
+    <div class="choosebtn">
+      <%= link_to "Set & Track Your Progress!", edit_account_path(page_type: "progress_tracking") %>
+    </div>
+  <% else %>
+    <div style="font-size:14px;">
+      <%= render "accounts/account_partials/progress_history" %>
+    </div>
+    <% if @user == current_user %>
+      <div class="choosebtn choosebtn-right">
+        <%= link_to "Set & Track Your Progress!", edit_account_path(page_type: "progress_tracking") %>
+      </div>
+    <% end %>
+  <% end %>
+  <br>
+  <br>
+</div>

@@ -1,0 +1,18 @@
+h1 Reset Password
+section#login
+  - flash.each do |key, msg|
+    = content_tag :div, msg, :id => key
+
+  p
+    | Enter your email address and we'll send you a link to reset your password.
+
+  = form_tag password_resets_path, method: :post, class: :login do
+    fieldset
+      ul.data
+        li.input.email.required
+          label for="email"
+            | E-mail Address <abbr title="(Required)">*</abbr>
+            = email_field_tag :email
+      ul.actions
+        li.primary
+             = submit_tag "Reset Password"

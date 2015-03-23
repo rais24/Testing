@@ -1,0 +1,18 @@
+.pre-content
+  = render "registrations/progress"
+
+.content
+  .row-fluid
+    .span3
+      = render "registrations/registration", user: current_user
+
+    .span9
+      h1.center
+        i.icon-user
+        | &nbsp; Your Profile
+
+      h2.registration-title Is There Anything Your Family Can't Eat?
+      
+      = simple_form_for current_user, url: wizard_path, html: { class: "form-horizontal registration registration-allergies" } do |f|
+        = f.association :allergies, as: :check_boxes, label_method: :titleize
+        = render "registrations/buttons", f: f

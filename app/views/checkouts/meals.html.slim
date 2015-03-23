@@ -1,0 +1,38 @@
+.content
+  h1.font-light Your Meals
+
+  p.copy
+    | Are these the meals you want? If not, 
+    = link_to 'click here', new_order_path
+    |  to pick other meals. Otherwise,  
+    = link_to 'click next', next_wizard_path
+    | .
+  
+  h1.font-light.center Dinners
+  table.table
+    tr
+      th Item
+      th Servings
+      th Price
+      th Total
+    - next_order.servings.each do |serving|
+      tr
+        td.cart-item
+          img src=serving.recipe.photo.url(:thumb)
+          = link_to serving.recipe.name.titleize, serving.recipe, class: 'cart-item-name'
+        td
+          = serving.quantity.round(0)
+        td
+          = number_to_currency( Money.new(next_order.price_per_serving) )
+        td
+          = number_to_currency( serving.total_price )
+    tr
+      td Total
+      td =next_order.servings.map(&:quantity).inject(:+).round(0)
+      td &nbsp;
+      td
+        = number_to_currency(next_order.price)
+
+  
+  
+  = render 'buttons'

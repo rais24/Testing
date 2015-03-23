@@ -1,0 +1,8 @@
+.scrollbar id="#{id}-scroll"
+  .handle
+
+.frame id=id
+  ul
+    - recipes.each do |recipe|
+      li.slidee
+        = render recipe

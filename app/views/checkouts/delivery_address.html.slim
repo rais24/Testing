@@ -1,0 +1,25 @@
+#checkout-delivery-address
+    h1
+        | Delivery Info <span> - Step 2 of 5</span>
+    p
+      - if @address && @address.errors
+        - @address.errors.full_messages.each do |msg|
+          = msg
+          br/
+
+    p
+      - if flash[:alert].present?
+        .alert.alert-danger
+          a href="#" class=:close data-dismiss=:alert
+            | &times;
+          strong= flash[:alert]
+    p
+        - if @user.address
+            | We can deliver to the same address as last time, or you can enter a different one below.
+        - else
+            | Tell us where you’d like your ingredients delivered.
+    - if current_user && current_user.user_group
+      = render 'user_group_address'
+    - else
+      = render 'user_address'
+

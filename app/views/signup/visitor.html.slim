@@ -1,0 +1,7 @@
+p.intro
+    - if flash[:availability]
+        = flash[:availability]
+
+div.signup
+	= simple_form_for @user, url: signup_path, method: 'PUT' do |f|
+		= render "signup/signup_form", :f => f

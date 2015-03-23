@@ -1,0 +1,28 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="35%" style="color:#a7a9ac;">DATE</td>
+      <td width="35%" style="color:#a7a9ac;">WEIGHT (LBS)</td>
+      <td width="30%" style="color:#a7a9ac;">GLUCOSE LEVEL (MG/DL)</td>
+    </tr>
+    <tr>
+      <td colspan="3"><div class="border-line border-line2"></div></td>
+    </tr>
+	<% @user.progress_history_list.reject{ |a,b| a.blank? }.sort_by{ |a,b| Date.strptime(a, "%m-%d-%Y") }.reverse.each do |x,v| %>
+		<% unless x.blank? %>
+		   	<tr>
+		     	<td height="20" style="font-size:12px; text-align:left;"><%= x %></td>
+		     	<td height="20" style="font-size:12px; text-align:center;"><%= v["weight"]%></td>
+		     	<td height="20" style="font-size:12px; text-align:right;"><%= v["glucose"]%></td>         
+		   	</tr>
+		<% else %>
+			<tr>
+				<td colspan="3">There is no history.</td>
+			</tr>
+	   	<% end %>
+	<% end %>
+  </tbody>
+</table>

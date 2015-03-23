@@ -1,0 +1,23 @@
+.well.hidden-phone
+  - if user.name.present?
+    h1.registration-name= user.name
+
+
+  h1.registration-email
+    = user.email
+    - unless user.active?
+      small 
+        p="inactive"
+
+  p
+    =user.adults
+    = ' Adult'.pluralize(user.adults)
+    | , 
+    = user.children
+    = ' Child'.pluralize(user.children)
+
+  - if user.allergies.present?
+    h2.registration-allergies Allergies
+    ul
+      - user.allergies.each do |allergy|
+        li= allergy.titleize

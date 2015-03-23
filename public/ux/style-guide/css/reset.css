@@ -1,0 +1,74 @@
+/*-------------------
+CSS Resets
+-------------------*/
+/*-------------------
+Variables
+-------------------*/
+/*-------------------
+Mixins
+-------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\000036}}
+html {
+  font-size: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000312}}
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000324}}
+body {
+  font-size: 16px;
+  font-size: 1.6rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000329}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000334}}
+strong {
+  font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000338}}
+em {
+  font-style: italic; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000342}}
+img {
+  display: block;
+  -ms-interpolation-mode: bicubic; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000348}}
+ol,
+ul {
+  list-style: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000352}}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000357}}
+q:before,
+q:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Volumes\/Projects\/fitly\/fitly-rails\/public\/ux\/style-guide\/scss\/reset\.scss}line{font-family:\0000362}}
+input,
+textarea {
+  -webkit-appearance: none;
+  outline: none;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0; }

@@ -1,0 +1,90 @@
+/*-------------------
+Static Page Styles
+-------------------*/
+@import '_variables';
+
+.pages-controller.show-action {
+    #pricing {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////  First Breakpoint (anything larger than a phone): > 330px  ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 330px ) {
+    .pages-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////                     Big Phones: > 380px                    ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 380px ) {
+    .pages-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Second Breakpoint (small tablet): > 480px         ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 480px ) and ( orientation: portrait ) {
+    .pages-controller.show-action {
+
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////          Third Breakpoint (large tablet): > 740px          ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 740px ) {
+    .pages-controller.show-action {
+        #pricing {
+            p {
+                max-width: 630px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            ul {
+                max-width: 630px;
+                margin-left: auto;
+                margin-right: auto;
+
+                li {
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+///////            Fourth Breakpoint (desktop): > 960px            ///////
+//////////////////////////////////////////////////////////////////////////
+
+@media only screen and ( min-width: 960px ) {
+    .pages-controller.show-action {
+
+    }
+}

@@ -1,0 +1,47 @@
+link rel=:stylesheet href="email/email.css"
+table#content cellpadding="0" cellspacing="0" width=full_width
+  tr
+    td height=filler_height
+  tr
+    td width=width align="center"
+      / Render the Header
+      = render "emails/header"
+
+      / the Content
+      table border="0" cellpadding=cellpadding cellspacing="0" width=width
+        tr
+          td align="left"
+            h1.copy.left Welcome to The Fitly Family
+            p 
+              | Thank you for subscribing to our newsletter. Fitly® is a new 
+              | organization dedicated to finding ways to make meal planning 
+              | and grocery shopping easier and more enjoyable.
+            p
+              | We will do our best to keep you updated with our progress. We 
+              | have big plans moving forward including a pilot program 
+              | launch, Kickstarter launch, and articles on healthy living. 
+              strong Share us 
+              | with enough of your friends and we will come to your office or 
+              | gym.
+            p 
+              | We are so excited to start this journey with you, and we will 
+              | do our best to you up-to-date with informative, 
+              | not-too-frequent emails.
+
+            - if @user.locked?
+              p
+                span
+                  = link_to "Click here", @unlock_link
+                |  to activate your account!
+
+            p Sincerely,
+
+            h3.copy The Fitly Family
+        tr
+          td align="center"
+            = render "user_mailer/social"
+
+      / Render the Footer
+      = render "emails/footer"
+  tr
+    td height=filler_height

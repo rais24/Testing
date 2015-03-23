@@ -1,0 +1,29 @@
+.content
+  h1
+    | Listing ingredients (#{collection.size})
+    = link_to 'New Ingredient', new_resource_path, class: 'button-action'
+
+  table.table.table-hover.ingredients
+    tr
+      th Name
+      th style="width: 20px" Unit
+      th style="width: 40px;"Category
+      th style="width: 20px;" Pantry?
+      th style="width: 20px;" Cash Back?
+      th Product Mapped?
+      th Measurement Type
+      th
+    - collection.each do |ingredient|
+      tr
+        td= ingredient.name
+        td= ingredient.unit
+        td= ingredient.category.titleize
+        td= ingredient.pantry.to_s
+        td= ingredient.cash_back.to_s
+        td= !ingredient.products.empty?
+        td= ingredient.measurement_type
+        td
+          = link_to('Edit', edit_ingredient_path(ingredient)) << " "
+          = link_to('Delete', ingredient_path(ingredient), method: 'DELETE')
+
+  = link_to 'New Ingredient', new_resource_path

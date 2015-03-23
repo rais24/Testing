@@ -1,0 +1,18 @@
+.order data-id=dom_id(order)
+  .order-destination
+    - if order.site
+      = link_to order.site do
+        img src=order.site.logo(:thumb) alt=order.site_name
+        
+  span.order-date
+    = link_to order.line_item_date, order
+
+  span.order-item-count #{order.portions.count} items
+
+  span.order-user
+    = link_to order.user_name, order.user
+
+  .order-status class=(order.charge ? 'charged' : '')
+
+  .order-actions
+    = link_to 'View', order

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <script type="text/javascript">
+  		$(function(){
+  		
+  			$('input:radio').screwDefaultButtons({
+  				image: 'url("images/radiovSmall.jpg")',
+  				width: 25,
+  				height: 25
+  			});
+  			
+  			 
+  		});
+  </script>
+</head>
+
+<body>
+<div id="container"> 
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+    <h1>Get Started with Fitly!</h1>
+    <div class="contentcontainer">
+      <div class="tab">
+        <div class="tab1"><a href="#" class="rightactive">1. <span>Sign Up</span></a></div>
+        <div class="tab1"><a href="#" class="rightactive">2. <span>Billing Information</span></a></div>
+        <div class="tab1"><a href="#" class="active">3. <span>Delivery Information</span></a></div>
+      </div>
+      <%= form_tag(account_path, id:'delivery_addr_form', :method => :put) do %>
+        <div class="innerbody">
+            <div class="delvinf-container">
+              <h1>Select your weekly delivery day and time:</h1>
+              
+             	<div class="leftdiv">
+              	<div class="heading">DELIVERY DAY</div>
+                  <div class="selectday">
+               
+                <div class="styled-select short-catg selectweek">
+                  <%= delivery_day_selector(@user.weekly_delivery_schedule) %>
+                </div>
+              </div>
+              </div>
+              
+              <div class="leftdiv">
+              	<div class="heading">DELIVERY TIME</div>
+                <%= time_slot_selector(@user.weekly_delivery_schedule) %>
+              </div>
+              <div class="textarea">
+                <textarea rows="5" placeholder="Delivery Instructions(”Use the side door”,“beware of dog”,etc.)" value="<%= @user.weekly_delivery_schedule.delivery_instructions %>"></textarea>
+              </div>
+            </div>
+        </div>
+        <!-- Billing Information -->
+        <div class="back-nextbtn">
+          <div class="backbtn"><%= link_to "Back", edit_account_path(page_type: "billing") %></div>
+          <div class="nextbtn"><input type="submit" class="nextbtn" value="Next" /></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- Get Started container close --> 
+  
+  <%= render "layouts/shared/footer" %>
+  
+</div>
+</body>
+</html>

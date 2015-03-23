@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fitly® - Delicious. Delivered.™</title>
+
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/assets/Shared.css" />
+    <link rel="stylesheet" href="/assets/Pricing30DayTrial.css" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/assets/IEFixes.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="/assets/IE7And8Fixes.css" />
+    <![endif]-->
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="/assets/IE7Fixes.css" />
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="/assets/jquery.placeholder.js"></script>
+
+    <script type="text/javascript">
+        function getStarted() {
+            location.href = "/signup/zipcode_check";
+        }
+
+        $(document).ready(function () {
+            $(".redButton").on("click", getStarted);
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 400) {
+                    $(".backToTop").fadeIn(300);
+                }
+                else {
+                    $(".backToTop").fadeOut(300);
+                }
+            });
+        });
+
+        function scrollToTop() {
+            hideMobileMenu();
+
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        }
+
+        function scrollToWhatYouGet() {
+            $("html, body").animate({
+                scrollTop: $("#whatYouGet").offset().top
+            }, 500);
+        }
+
+        function toggleMobileMenu() {
+            if (!$(".headerMobileExpandedMenu").is(":visible")) {
+                $(".headerMobileExpandedMenu").toggle();
+                $(".headerMobileExpandedMenu .expandedMenu").animate({ left: 0 }, 200);
+            }
+            else {
+                $(".headerMobileExpandedMenu .expandedMenu").animate(
+                    { left: -335 },
+                    {
+                        duration: 100,
+                        complete: function () {
+                            $(".headerMobileExpandedMenu").toggle();
+                        }
+                    });
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="backToTop" onclick="scrollToTop();">
+    </div>
+    <%= render "layouts/shared/navigation" %>
+    <%= render "layouts/shared/navigation_mobile" %>
+    <div class="pageHeader">
+        Pricing
+    </div>
+    <div class="pricingTrialSection">
+        <div>
+            <div class="trialBadge">
+            </div>
+            <div class="trialText">
+                30-Day Risk Free Trial!
+            </div>
+            <div class="noFutureCommittmentText hideOnMobile">
+                No future committment or subscription required!
+            </div>
+            <div class="seeWhatYouGet hideOnMobile" onclick="scrollToWhatYouGet();">
+                See What You Get
+            </div>
+            <div class="divider hideOnMobile">
+            </div>
+            <div class="getStartedText">
+                Just enter your email address and zip code to get started!
+            </div>
+            <div class="whatYouGetMobileText hideOnDesktop hideOnTablet">
+                <div>
+                    No future committment or subscription required.
+                </div>
+                <div>
+                    <a href="#" onclick="scrollToWhatYouGet(); return false;">What You Get &#9660;</a>
+                </div>
+            </div>
+            <div class="getStartedInputSection">
+                <span class="email">
+                    <input type="text" placeholder="email" />
+                </span>
+                <div>
+                    <span class="zipCode">
+                        <input type="text" placeholder="zip code" />
+                    </span>
+                    <span>
+                        <input type="submit" class="redButton" value="Start Trial!" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trialPricesSection">
+        <div class="pricingColumn">
+            <div class="pricingDescriptionSection">
+                <div class="platesPerRecipe">
+                    2 plates/recipe
+                </div>
+                <div class="divider">
+                </div>
+                <div class="originalPrice">
+                    Original: $9.99 per plate
+                </div>
+                <div class="trialPrice">
+                    Now: <span class="boldLato">$4.99</span> per plate
+                </div>
+                <div class="goodForText">
+                    GOOD FOR
+                </div>
+                <div class="goodForPeopleText">
+                    One or two people!
+                </div>
+                <div class="pricingDescriptionBackground">
+                </div>
+            </div>
+            <div class="priceTotalSection">
+                <div class="totalText">
+                    TOTAL: <span class="strikethrough">$79.92</span> <span class="boldLato">$39.92*</span>
+                </div>
+                <div class="howIsThisCalculated">
+                    <a href="#" onclick="$('.twoPlatesModal').show(); return false;">How is this calculated?</a>
+                </div>
+            </div>
+            <div class="modalContainer twoPlatesModal">
+                <div class="modalClose hideOnMobile" onclick="$('.twoPlatesModal').hide(); return false;">
+                </div>
+                <div class="modal">
+                    <div class="modalClose hideOnDesktop hideOnTablet" onclick="$('.twoPlatesModal').hide(); return false;">
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pricingColumn mostPopular">
+            <div class="mostPopularHeader">
+                Most Popular
+            </div>
+            <div class="pricingDescriptionSection">
+                <div class="platesPerRecipe">
+                    4 plates/recipe
+                </div>
+                <div class="divider">
+                </div>
+                <div class="originalPrice">
+                    Original: $6.99 per plate
+                </div>
+                <div class="trialPrice">
+                    Now: <span class="boldLato">$4.99</span> per plate
+                </div>
+                <div class="goodForText">
+                    GOOD FOR
+                </div>
+                <div class="goodForPeopleText">
+                    Families and couples who want to cook once and eat twice!
+                </div>
+                <div class="pricingDescriptionBackground">
+                </div>
+            </div>
+            <div class="priceTotalSection">
+                <div class="totalText">
+                    TOTAL: <span class="strikethrough">$67.92</span> <span class="boldLato">$39.92*</span>
+                </div>
+                <div class="howIsThisCalculated">
+                    <a href="#" onclick="$('.fourPlatesModal').show(); return false;">How is this calculated?</a>
+                </div>
+            </div>
+            <div class="modalContainer fourPlatesModal">
+                <div class="modalClose hideOnMobile" onclick="$('.fourPlatesModal').hide(); return false;">
+                </div>
+                <div class="modal">
+                    <div class="modalClose hideOnDesktop hideOnTablet" onclick="$('.fourPlatesModal').hide(); return false;">
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pricingColumn">
+            <div class="pricingDescriptionSection">
+                <div class="platesPerRecipe">
+                    8 plates/recipe
+                </div>
+                <div class="divider">
+                </div>
+                <div class="originalPrice">
+                    Original: $5.99 per plate
+                </div>
+                <div class="trialPrice">
+                    Now: <span class="boldLato">$4.99</span> per plate
+                </div>
+                <div class="goodForText">
+                    GOOD FOR
+                </div>
+                <div class="goodForPeopleText">
+                    Fun dinner parties or events with family and friends!
+                </div>
+                <div class="pricingDescriptionBackground">
+                </div>
+            </div>
+            <div class="priceTotalSection">
+                <div class="totalText">
+                    TOTAL: <span class="strikethrough">$47.92</span> <span class="boldLato">$39.92*</span>
+                </div>
+                <div class="howIsThisCalculated">
+                    <a href="#" onclick="$('.eightPlatesModal').show(); return false;">How is this calculated?</a>
+                </div>
+            </div>
+            <div class="modalContainer eightPlatesModal">
+                <div class="modalClose" onclick="$('.eightPlatesModal').hide(); return false;">
+                </div>
+                <div class="modal">
+                    <div class="modalClose hideOnDesktop hideOnTablet" onclick="$('.eightPlatesModal').hide(); return false;">
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearFix">
+        </div>
+        <div class="trialDisclaimerText">
+            *Limited to three 8 plate orders within the 30 days. Limited to one trial per household or office.
+        </div>
+    </div>
+    <div id="whatYouGet" class="whatYouGetScrollPosition">
+    </div>
+    <div class="sectionHeader pacifico">
+        what you get
+    </div>
+    <div class="whatYouGetSection">
+        <div>
+            <div class="weeklyMenu">
+                New weekly menu of original, chef-designed recipes-sent right to your inbox!
+            </div>
+            <div class="freeDelivery">
+                Free delivery of guaranteed fresh ingredients delivered right to your door at no extra cost
+            </div>
+            <div class="clearFix">
+            </div>
+        </div>
+        <div>
+            <div class="recipes">
+                Beautifully designed recipe cards to help you easily prepare each recipe you choose
+            </div>
+            <div class="additionalIngredients">
+                Additional pantry items delivered at a low cost!
+            </div>
+            <div class="clearFix">
+            </div>
+        </div>
+        <div class="clearFix">
+        </div>
+    </div>
+    <div class="getStartedPromptSection">
+        <div class="getStartedText">
+            get cooking!
+        </div>
+        <div class="emailInputSection">
+            <input type="text" placeholder="email" />
+        </div>
+        <div class="zipCodeStartSection">
+            <span>
+                <input type="text" placeholder="zip code" />
+            </span>
+            <span>
+                <input type="submit" class="redButton" value="Start Trial!" />
+            </span>
+        </div>
+    </div>
+    <%= render "layouts/shared/footer" %>
+</body>
+</html>

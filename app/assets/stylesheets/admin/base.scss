@@ -1,0 +1,99 @@
+main {
+    position: relative;
+    padding-top: 10px;
+		max-width: none;
+
+    section {
+        margin-bottom: 50px;
+
+        p {
+            margin: 20px 15px;
+            line-height: 1.6;
+
+            a {
+                font-weight: bold;
+                color: $dark-green;
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    h1 {
+        
+        font-family: asapbold;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+    }
+/*
+    h2 {
+        margin: 15px 0;
+        padding: 8px 15px;
+        line-height: 1.5;
+        font-family: asapbold;
+        font-size: 20px;
+        color: #fff;
+        background: $dark-green;
+    }*/
+}
+
+#menu {
+	ul {
+	}
+	li {
+		display: inline;
+		padding: 8px;
+	}
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-top: 2px solid $green;
+    border-bottom: 2px solid $green;
+
+    caption {
+        padding: none;
+        background: $green;
+        font-family: asapregular;
+        color: rgb(255,255,255);
+    }
+    thead {
+        tr {
+            background: $dark-green;
+
+            th {
+                width: auto;
+                font-family: asapbold;
+                color: rgb(255,255,255);
+            }
+        }
+    }
+    tfoot {
+        td {
+            padding-bottom: 8px;
+            background: $green;
+            color: rgb(255,255,255);
+        }
+    }
+    tr {
+        &:nth-child(even) {
+            background: rgb(235,235,235);
+        }
+        > th {
+            font-weight: bold;
+        }
+    }
+    td,
+    th {
+				padding: 0 5px;
+        font-size: 12px;
+    }
+    th {
+        width: auto;
+    }
+}

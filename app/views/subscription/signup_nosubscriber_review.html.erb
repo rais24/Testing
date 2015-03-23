@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+  <script type="text/javascript">
+  		$(function(){
+  		
+        $( ".modal" ).trigger( "click" );
+
+        $('.modal').modal({
+          'modal': 'modal-window',
+          'close': 'modal-close',
+          'closeText': 'Close',
+          'shade': 'modal-shade'
+        });
+
+  		});
+  </script>
+</head>
+
+<body>
+  <div id="container"> 
+    <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+    <a href="#" class="modal" data-content="<%= page_path("signed_up_noplan") %>" style="display:none;"></a>
+
+    <!-- Get Started container  -->
+    <div class="get-started-container">
+      <h1 class="paddingleft">Get Started with Fitly!</h1>
+      <div class="contentcontainer">
+        <% if params[:plan].present? %>
+          <div class="tab">
+            <div class="tab1"><a href="<%= wizard_path(:signup) %>" class="active">1. <span>Sign Up</span></a></div>
+            <div class="tab1"><a href="<%= wizard_path(:billing) %>">2. <span>Billing Information</span></a></div>
+            <div class="tab1"><a href="<%= wizard_path(:delivery_address) %>">3. <span>Delivery Information</span></a></div>
+          </div>
+        <% end %>
+        <div class="innerbody"><br /><div style="width:100%; height:1px;"></div>
+          <h1>Discover how Fitly can help you reach your health goals!</h1>
+          <% if params[:plan].present? %>
+            <h3>You’ve selected:</h3>
+            <div class="selecteddiv">
+              <%= meal_plan_description(@user) %>
+            </div>
+          <% end %>
+          <%= simple_form_for @user, url: wizard_path, html: { class: "login" }, :method => "PUT" do |f| %>
+            <%= subscription_type_tag(@user) %>
+            <div class="signuppage-form">
+              <div class="leftdetails">
+                <div class="textname">Full Name</div>
+                <div class="inputfield">
+                  <%= f.input_field :name, placeholder: "Jane Jackie Doe", value: @user.name, required: true %>
+                </div>
+                <div class="textname">Email</div>
+                <div class="inputfield">
+                  <%= f.input_field :email, placeholder: "jane.doe@email.com", required: true %>
+                </div>
+                <div class="textname">Password</div>
+                <div class="inputfield">
+                  <%= f.input_field :password, placeholder: "password", required: true, value: @user.password %>
+                </div>
+                <div class="textname">Confirm password</div>
+                <div class="inputfield">
+                  <%= f.input_field :password_confirmation, placeholder:"password",required:true, value: @user.password_confirmation %>
+                </div>
+                <div>Zip code</div>
+                <div class="inputfield">
+                  <%= f.input_field :zipcode, placeholder: "46201", required: true, value: @user.zipcode %>
+                </div>
+              </div>
+              <div class="rightdetails">
+                <div class="textname" >Height</div>
+                <div class="heightdiv">
+                  <div class="height">
+                    <%= f.input_field :height_ft, placeholder: "5", required: false, value: @user.height_in_feet %>
+                  </div>
+                  <div class="text">feet</div>
+                  <div class="height">
+                    <%= f.input_field :height_inch, placeholder: "8", required: false, value: @user.height_in_inches %>
+                  </div>
+                  <div class="text">inches</div>
+                </div>
+                <div class="weight-gender">
+                  <div class="innerdiv">
+                    <div class="text">Weight (in lbs)</div>
+                    <div class="weight">
+                      <%= f.input_field :weight, placeholder: "200", required: false, value: @user.weight %>
+                    </div>
+                  </div>
+                  <div class="innerdiv">
+                    <div class="text">Gender</div>
+                    <div>
+                      <input type="radio" name="user[gender]" id="male" checked>
+                      <label for="ex1_a">Male</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="user[gender]" id="female">
+                      <label for="ex1_b">Female</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="textname2">Date of Birth</div>
+                <div class="inputfield">
+                  <input type="text" name="user[dob]" placeholder="02/02/1960" value="01/01/1980" />
+                </div>
+                <div class="textname2">Invite code (optional)</div>
+                <div class="inputfield">
+                  <%= f.input_field :invite_code, placeholder: "76638", required: false %>
+                </div>
+                <div class="textname2">Practitioner code (optional)</div>
+                <div class="inputfield">
+                  <%= f.input_field :practitioner_code, placeholder: "183749", required: false %>
+                </div>
+              </div>
+              <div id="insurance_provider" style="text-align:left; font-size:16px; width:100%;display:inline-block;">
+                  <div>Insurance Provider*:</div>
+                  <div class="styled-select short-catg">
+                    <%= select_tag "user[insurer]", insurance_providers, style: "margin: 0" %>
+                  </div>
+              </div>
+              <div style="display: none" class="lasttop dietician_question">
+                Did you know you may be eligible for <span id="dietician_question_qty">6</span> dietitian visits 
+                with <span id="dietician_question_insurer"></span>?<br /> 
+                Would you be interested in speaking to a registered dietitian in your area?
+              </div>
+              <div class="lastbtn">
+                <div class="yes-no dietician_question" style="display: none">
+                  <input type="radio" name="user[ok_to_discuss_with_dietician]" id="ex1_a">
+                  <label for="ex1_a">Yes</label>
+                </div>
+                <div class="yes-no dietician_question" style="display: none">
+                  <input type="radio" name="user[ok_to_discuss_with_dietician]" id="ex1_b">
+                  <label for="ex1_b">No</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="user[ok_to_email]" id="ex2_a">
+                  <label for="ex2_a">Send me Fitly’s latest recipes each week!</label>
+                </div>
+              </div>
+            </div>
+          <div class="footertop"><b>* To take advantage of Fitly’s dietetic services, you must provide proof of insurance.</b> <br>
+            By creating an account, you confirm that you have read and agreed to our <a href="#">Terms of
+            Service</a>,<br>
+            which includes our <a href="#">Substitution Policy</a>, and our <a href="#">Privacy Policy</a>.
+          </div>
+          <% if params[:plan].present? %>
+            <div class="back-nextbtn">
+              <div class="backbtn" style="visibility:hidden;"><a href="#">Back</a></div>
+              <input type="submit" class="nextbtn" value="Next">
+            </div>
+          <% else %>
+            <div class="back-nextbtn">
+              <input type="submit" id="nextbtn-signup" class="nextbtn" value="Sign Up!" />
+              <div class="letterlink">
+                <%= link_to "Cancel", account_path %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <!-- Get Started container close --> 
+  
+    <%= render "layouts/shared/footer" %>  
+  </div>
+  <script>
+    $('.modal').modal({
+      'modal': 'modal-window',
+      'close': 'modal-close',
+      'closeText': 'X',
+      'shade': 'modal-shade'
+    });
+  </script>
+</body>
+</html>

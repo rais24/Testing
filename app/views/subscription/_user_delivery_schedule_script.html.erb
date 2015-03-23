@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+  function add_available_times(data) {
+		$.getJSON("<%=available_time_slots_url%>", data, function(response) {
+		  var deliveryTimesSelect = $('#subscription_weekly_delivery_schedule_attributes_time_slot').empty();
+		  $.each(response, function(i, j) {
+			  deliveryTimesSelect.append($('<option></option>').html(j));
+		  });
+		});
+  }
+
+	$(document).ready(function() {
+		var selected_day = $("#subscription_weekly_delivery_schedule_attributes_delivery_day").val().toLowerCase();
+		var data = "id=<%=@zone.id%>&selected_day=" + selected_day;
+		add_available_times(data);
+
+		$("#subscription_weekly_delivery_schedule_attributes_delivery_day").change( function() {
+			selected_day = $(this).val().toLowerCase();
+			data = "id=<%=@zone.id%>&selected_day=" + selected_day;		
+			add_available_times(data);
+		});		
+	});
+
+</script>

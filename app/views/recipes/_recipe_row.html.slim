@@ -1,0 +1,9 @@
+- unless recipes.empty?
+  .row-fluid
+    h1.font-thin.center= label
+  .row-fluid.visible-desktop
+    .span12
+      = grid_of_partial 'recipes/recipe', recipes, recipe_columns(recipes)
+
+  .row-fluid.hidden-desktop
+    = render "recipes/slider", recipes: recipes, id: id

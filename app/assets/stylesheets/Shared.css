@@ -1,0 +1,817 @@
+﻿@font-face {
+    font-family: 'glyphs';
+    src: url("/assets/glyphs/icomoon.eot");
+    src: url("/assets/glyphs/icomoon.eot?#iefix") format("embedded-opentype"),url("/assets/glyphs/icomoon.woff") format("woff"),url("/assets/glyphs/icomoon.ttf") format("truetype"),url("/assets/glyphs/icomoon.svg#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoBold';
+    src: url('/assets/Lato/Lato-Bol-webfont.eot');
+    src: url('/assets/Lato/Lato-Bol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/Lato/Lato-Bol-webfont.woff') format('woff'),
+         url('/assets/Lato/Lato-Bol-webfont.ttf') format('truetype'),
+         url('/assets/Lato/Lato-Bol-webfont.svg#LatoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Lato, serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+::selection {
+    background-color: #5e3a56;
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: #5e3a56;
+    color: #fff;
+}
+
+::-o-selection {
+    background-color: #5e3a56;
+    color: #fff;
+}
+
+::-ms-selection {
+    background-color: #5e3a56;
+    color: #fff;
+}
+
+::-webkit-selection {
+    background-color: #5e3a56;
+    color: #fff;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+}
+
+.boldLato {
+    font-family: LatoBold, serif;
+    font-weight: 700;
+}
+
+.boldRokkitt {
+    font-family: Rokkitt, serif;
+    font-weight: 700;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.clearFix {
+    clear: both !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+}
+
+.placeholder {
+    color: #aaa;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+    .fieldnotProvided {
+        background-color: red;
+    }
+    input[type="text"] {
+        padding: 19px 20px;
+        font-size: 125%;
+        border-radius: 5px;
+        outline: none;
+        -webkit-appearance: none;
+        border: 1px solid #c8c8c8;
+    }
+
+    input[type="submit"].redButton {
+        padding: 12px 35px;
+        border-radius: 5px;
+        font-family: Rokkitt, serif;
+        font-size: 206.3%;
+        background-color: #e36967;
+        border: 1px none #b02a27;
+        border-bottom: 3px solid #b02a27;
+        color: #fff;
+        margin: 0;
+    }
+
+        input[type="submit"].redButton:hover {
+            cursor: pointer;
+        }
+
+    input[type="checkbox"] {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #c8c8c8;
+        border-radius: 4px;
+        background: #fffdfa;
+        margin: 0;
+        padding: 0;
+    }
+
+        input[type="checkbox"]:checked:after {
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 30px;
+            top: 0;
+            left: 0;
+            font-family: "glyphs";
+            content: '\e677';
+            font-size: 24px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+.selectContainer select {
+    display: inline-block;
+    padding: 6.5px 7px;
+    width: 150px;
+    border: 1px solid #c8c8c8;
+}
+.selectContainer label {
+    position: relative;
+    display: inline-block;
+}
+    .selectContainer label:after {
+        content: '';
+        width: 23px;
+        height: 23px;
+        position: absolute;
+        display: inline-block;
+        top: 5px;
+        right: 1px;
+        background: url('/assets/Dropdown_Arrow.png') scroll no-repeat center left transparent;
+        pointer-events: none;
+    }
+.error input[type="text"] {
+    border: 2px solid #cf0000;
+}
+.error ::-webkit-input-placeholder {
+    color: #cf0000;
+}
+.error :-moz-placeholder {
+    color: #cf0000;
+}
+.error ::-moz-placeholder {
+    color: #cf0000;
+}
+.error :-ms-input-placeholder {
+    color: #cf0000;
+}
+.error .placeholder {
+    color: #cf0000;
+}
+
+label {
+    height: 30px;
+    line-height: 30px;
+}
+
+    label > input[type='checkbox'] {
+        vertical-align: bottom;
+        position: relative;
+        top: 0px;
+        *overflow: hidden;
+        margin-right: 15px;
+    }
+.pageHeader {
+    font-weight: 700;
+    background-color: #6d6a58;
+    color: #fff;
+    font-size: 156.3%;
+    text-align: center;
+    padding: 10px 15px;
+    /*max-width: 1070px;*/
+    margin: 0 auto;
+}
+.sectionHeader {
+    background-color: #5e3a56;
+    color: #fff;
+    text-align: center;
+}
+
+    .sectionHeader.rokkit {
+        font-family: Rokkitt, serif;
+        font-size: 168.8%;
+        padding: 15px;
+    }
+
+    .sectionHeader.pacifico {
+        font-family: Pacifico, serif;
+        font-size: 225%;
+        padding: 0 0 12px 0;
+        line-height: 49px;
+    }
+
+.backToTop {
+    display: none;
+    width: 60px;
+    height: 50px;
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    bottom: 6px;
+    right: 6px;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+    .backToTop:hover {
+        cursor: pointer;
+    }
+
+    .backToTop:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        display: block;
+        width: 60px;
+        height: 50px;
+        line-height: 50px;
+        font-family: "glyphs";
+        content: '\e6cf';
+        font-size: 48px;
+        color: #ffffff;
+    }
+
+.headerMenuContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+    .headerMenuContainer .headerBackground {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: -webkit-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+        background-image: -moz-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+        background-image: -ms-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+        background-image: -o-linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+        background-image: linear-gradient(top, rgba(170,159,146,0.97), rgba(170,159,146,0.97));
+        box-shadow: 0 -4px 4px 5px #333333;
+    }
+
+    .headerMenuContainer .headerMenu {
+        position: relative;
+        padding: 15px 0;
+        width: 656px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+        .headerMenuContainer .headerMenu a {
+            text-decoration: none;
+        }
+
+            .headerMenuContainer .headerMenu a:hover {
+                color: #9c3d3e;
+            }
+
+        .headerMenuContainer .headerMenu .headerLogo {
+            position: absolute;
+            background: url('/assets/fitly-logo.png') scroll no-repeat center center transparent;
+            background-size: cover;
+            height: 38px;
+            width: 82px;
+            top: 8px;
+            left: -115px;
+            /*
+             *
+             *   this path is relative to the HTML page location, not the CSS file
+             */
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .headerMenuContainer .headerMenu ul li {
+            list-style: none;
+            float: left;
+            margin-left: 25px;
+            color: #fff;
+            font-size: 118.8%;
+        }
+
+            .headerMenuContainer .headerMenu ul li:first-child {
+                margin-left: 0;
+            }
+
+            .headerMenuContainer .headerMenu ul li.signIn {
+                position: relative;
+            }
+
+                .headerMenuContainer .headerMenu ul li.signIn .signInText {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                    .headerMenuContainer .headerMenu ul li.signIn .signInText a:hover {
+                        color: #fff;
+                    }
+
+                .headerMenuContainer .headerMenu ul li.signIn .signInBackground {
+                    background-color: #9c3d3e;
+                    position: absolute;
+                    top: -15px;
+                    left: -10px;
+                    z-index: 0;
+                    width: 75px;
+                    height: 53px;
+                }
+
+            .headerMenuContainer .headerMenu ul li.cart {
+                position: absolute;
+                background: url('/assets/Icon_Cart_Large.png') top left transparent;
+                width: 36px;
+                height: 38px;
+                top: 7px;
+                right: -100px;
+            }
+
+                .headerMenuContainer .headerMenu ul li.cart:hover {
+                    cursor: pointer;
+                }
+
+.footer {
+    background-color: #5a514b;
+    color: #fff;
+    padding: 45px 0 25px 0;
+}
+
+    /*.footer .logo {
+        background: url('/assets/fitly-logo.png') scroll no-repeat center center transparent;
+        background-size: cover;
+        width: 152px;
+        height: 70px;
+        margin: 0 auto;
+        -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+    }*/
+
+    .footer .footerLinks {
+        margin: 30px auto 0 auto;
+    }
+
+        .footer .footerLinks a {
+            text-decoration: none;
+        }
+
+        .footer .footerLinks.firstLinkLine {
+            width: 568px;
+        }
+
+        .footer .footerLinks.secondLinkLine {
+            width: 435px;
+        }
+
+        .footer .footerLinks.thirdLinkLine {
+            width: 346px;
+        }
+
+        .footer .footerLinks > ul {
+            overflow: hidden;
+        }
+
+            .footer .footerLinks > ul > li {
+                list-style: none;
+                float: left;
+                font-size: 112.5%;
+                margin-left: 30px;
+            }
+
+                .footer .footerLinks > ul > li:first-child {
+                    margin-left: 0;
+                }
+
+        .footer .footerLinks.thirdLinkLine > ul > li > a {
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 64px;
+            height: 64px;
+            text-indent: 110%;
+            overflow: hidden;
+            text-decoration: none;
+            line-height: 55px;
+        }
+
+            .footer .footerLinks.thirdLinkLine > ul > li > a:before {
+                position: absolute;
+                top: 50%;
+                margin-top: -25px;
+                left: 50%;
+                margin-left: -31px;
+                display: block;
+                width: 64px;
+                height: 64px;
+                font-family: "glyphs";
+                font-size: 63px;
+                text-indent: 0;
+                content: "";
+            }
+
+        .footer .footerLinks.thirdLinkLine .facebook > a:before {
+            content: '\e6f7';
+        }
+
+        .footer .footerLinks.thirdLinkLine .twitter > a:before {
+            content: '\e6f5';
+        }
+
+        .footer .footerLinks.thirdLinkLine .pinterest > a:before {
+            content: '\e6fc';
+        }
+
+        .footer .footerLinks.thirdLinkLine .instagram > a:before {
+            content: '\e70c';
+        }
+
+    .footer .copyright {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+.modalContainer {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 2;
+}
+
+        .modalContainer .modalClose {
+            background: url('/assets/ModalX27px.png') scroll no-repeat center center;
+            width: 27px;
+            height: 27px;
+            position: fixed;
+            left: 0;
+            right: -568px;
+            top: -462px;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .modalContainer .modalClose:hover {
+            cursor: pointer;
+        }
+
+        .modalContainer .modal {
+            background-color: #fff;
+            width: 600px;
+            height: 348px;
+            padding: 10px;
+            position: fixed;
+            border-radius: 5px;
+            left: 0;
+            right: 0;
+            top: -37px;
+            bottom: 0;
+            margin: auto;
+        }
+
+
+/*Desktop*/
+@media(min-width: 1025px) {
+    .hideOnDesktop {
+        display: none;
+    }
+}
+
+/*Tablet*/
+@media(min-width: 768px)and (max-width:1024px) {
+    .hideOnTablet {
+        display: none;
+    }
+}
+
+/*Tablet*/
+@media(min-width: 768px)and (max-width:940px) {
+    .headerMenuContainer .headerMenu {
+        width: 705px;
+    }
+
+        .headerMenuContainer .headerMenu .headerLogo {
+            display: none !important;
+        }
+
+        .headerMenuContainer .headerMenu ul li.cart {
+            right: 0;
+        }
+}
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    .hideOnMobile {
+        display: none;
+    }
+
+    .headerMenuContainer .headerMobileMenu {
+        height: 53px;
+    }
+
+        .headerMenuContainer .headerMobileMenu .menuExpandCollapse {
+            position: absolute;
+            display: block;
+            margin: 0;
+            width: 31px;
+            height: 30px;
+            text-indent: 110%;
+            overflow: hidden;
+            text-decoration: none;
+            line-height: 33px;
+            top: 10px;
+            left: 30px;
+        }
+
+            .headerMenuContainer .headerMobileMenu .menuExpandCollapse:before {
+                position: absolute;
+                top: 50%;
+                margin-top: -15px;
+                left: 50%;
+                margin-left: -19px;
+                display: block;
+                width: 30px;
+                height: 30px;
+                font-family: "glyphs";
+                font-size: 38px;
+                text-indent: 0;
+                content: "\e696";
+                color: #fff;
+            }
+
+            .headerMenuContainer .headerMobileMenu .menuExpandCollapse:hover {
+                cursor: pointer;
+            }
+
+        .headerMenuContainer .headerMobileMenu .headerLogo {
+            display: none;
+            position: absolute;
+            background: url('/assets/fitly-logo.png') scroll no-repeat center center transparent;
+            background-size: cover;
+            height: 38px;
+            width: 82px;
+            top: 8px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+        }
+
+        .headerMenuContainer .headerMobileMenu .cart {
+            position: absolute;
+            background: url('/assets/Icon_Cart_Large.png') top left transparent;
+            width: 36px;
+            height: 38px;
+            top: 6px;
+            right: 30px;
+            z-index: 1;
+        }
+
+            .headerMenuContainer .headerMobileMenu .cart:hover {
+                cursor: pointer;
+            }
+
+    .headerMobileExpandedMenu {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+    }
+
+        .headerMobileExpandedMenu .expandedMenuOverlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .8);
+            z-index: 0;
+        }
+
+        .headerMobileExpandedMenu .expandedMenu {
+            position: relative;
+            background-color: #9c3d3e;
+            width: 70%;
+            height: 100%;
+            color: #fff;
+            z-index: 1;
+            left: -335px;
+        }
+
+            .headerMobileExpandedMenu .expandedMenu > ul > li {
+                border-bottom: 1px solid #7C3132;
+            }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li > a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 14px 16px 14px 24px;
+                    font-size: 112.5%;
+                    line-height: 29px;
+                }
+
+                    .headerMobileExpandedMenu .expandedMenu > ul > li > a:before {
+                        vertical-align: top;
+                        width: 29px;
+                        height: 29px;
+                        padding-right: 15px;
+                        font-family: "glyphs";
+                        font-size: 29px;
+                        content: "";
+                    }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.home > a:before {
+                    content: '\e622';
+                }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.howItWorks {
+                    background: url('/assets/MobileMenu_HowItWorks.png') scroll no-repeat 26px center transparent;
+                }
+
+                    .headerMobileExpandedMenu .expandedMenu > ul > li.howItWorks a {
+                        padding-left: 54px;
+                    }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.benefits {
+                    background: url('/assets/MobileMenu_Benefits.png') scroll no-repeat 22px center transparent;
+                }
+
+                    .headerMobileExpandedMenu .expandedMenu > ul > li.benefits a {
+                        padding-left: 54px;
+                    }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.pricing > a:before {
+                    content: '\e62d';
+                }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.menu > a:before {
+                    content: '\e638';
+                }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.signUp > a:before {
+                    content: '\e60f';
+                }
+
+                .headerMobileExpandedMenu .expandedMenu > ul > li.signIn > a:before {
+                    content: '\e60d';
+                }
+
+    .mobileFooter {
+        background-color: #5a514b;
+        color: #fff;
+        padding: 25px;
+        overflow: hidden;
+    }
+
+        .mobileFooter .topFooterIcons {
+            overflow: hidden;
+        }
+
+            .mobileFooter .topFooterIcons .logo {
+                background: url('/assets/fitly-logo.png') scroll no-repeat center center transparent;
+                background-size: cover;
+                width: 79px;
+                height: 36px;
+                float: left;
+                -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+            }
+
+            .mobileFooter .topFooterIcons .socialIcons {
+                float: right;
+            }
+
+                .mobileFooter .topFooterIcons .socialIcons > ul > li {
+                    list-style: none;
+                    float: left;
+                    font-size: 112.5%;
+                    margin-left: 30px;
+                }
+
+                    .mobileFooter .topFooterIcons .socialIcons > ul > li:first-child {
+                        margin-left: 0;
+                    }
+
+                    .mobileFooter .topFooterIcons .socialIcons > ul > li > a {
+                        position: relative;
+                        display: block;
+                        margin: 0;
+                        width: 36px;
+                        height: 36px;
+                        text-indent: 110%;
+                        overflow: hidden;
+                        text-decoration: none;
+                        line-height: 55px;
+                    }
+
+                        .mobileFooter .topFooterIcons .socialIcons > ul > li > a:before {
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -26px;
+                            left: 50%;
+                            margin-left: -18px;
+                            display: block;
+                            width: 36px;
+                            height: 36px;
+                            font-family: "glyphs";
+                            font-size: 35px;
+                            text-indent: 0;
+                            content: "";
+                        }
+
+                .mobileFooter .topFooterIcons .socialIcons .facebook > a:before {
+                    content: '\e6f7';
+                }
+
+                .mobileFooter .topFooterIcons .socialIcons .twitter > a:before {
+                    content: '\e6f5';
+                }
+
+                .mobileFooter .topFooterIcons .socialIcons .pinterest > a:before {
+                    content: '\e6fc';
+                }
+
+                .mobileFooter .topFooterIcons .socialIcons .instagram > a:before {
+                    content: '\e70c';
+                }
+
+        .mobileFooter .footerLinks {
+            clear: both;
+            margin-top: 30px;
+            overflow: hidden;
+        }
+
+            .mobileFooter .footerLinks a {
+                text-decoration: none;
+            }
+
+            .mobileFooter .footerLinks .leftFooterLinks {
+                float: left;
+                font-size: 118.8%;
+            }
+
+                .mobileFooter .footerLinks .leftFooterLinks ul > li {
+                    list-style: none;
+                    margin-top: 15px;
+                }
+
+                    .mobileFooter .footerLinks .leftFooterLinks ul > li:first-child {
+                        margin-top: 0;
+                    }
+
+            .mobileFooter .footerLinks .rightFooterLinks {
+                float: right;
+                font-size: 118.8%;
+            }
+
+                .mobileFooter .footerLinks .rightFooterLinks ul > li {
+                    list-style: none;
+                    margin-top: 15px;
+                }
+
+                    .mobileFooter .footerLinks .rightFooterLinks ul > li:first-child {
+                        margin-top: 0;
+                    }
+
+        .mobileFooter .copyright {
+            font-size: 68.8%;
+            text-align: center;
+            margin-top: 30px;
+        }
+}
+
+/*Mobile*/
+@media all and (max-width: 400px) {
+    .mobileFooter .topFooterIcons .socialIcons > ul > li {
+        margin-left: 5px;
+    }
+}

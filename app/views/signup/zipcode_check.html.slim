@@ -1,0 +1,21 @@
+h1 Sign up for Fitly!
+= render "signup/zipcode_inquiry"
+
+/ .content
+/   h1.center Sign up for Fitly!
+
+/   p
+/     | Enter your zip code and invite code to see if Fitly is available in your area.
+/   p
+/     = "Already have an account?  #{link_to 'Already have an account?  Log in and start shopping', '/login'}".html_safe
+
+/   = form_for @signup_inquiry, url: signup_path do |f|
+/     h3= @signup_inquiry.validation_error
+
+/     = f.label :zipcode
+/     = f.text_field :zipcode
+/     = f.label :invite_code
+/     = f.text_field :invite_code
+
+/     .checkout-btn
+/       = f.submit 'Get Started!'

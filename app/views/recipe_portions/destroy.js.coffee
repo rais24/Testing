@@ -1,0 +1,1 @@
+$('.portions table').find("#<%= dom_id resource %>").remove()

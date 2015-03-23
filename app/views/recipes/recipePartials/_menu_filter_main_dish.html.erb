@@ -1,0 +1,17 @@
+<div class="filterGroup">
+    <div class="filterHeader">
+        Preferences
+    </div>
+    <div class="filterOptions">
+        <div>
+            <% Recipe.main_dish_counts.each_with_index do |tag, index| %>
+                <div>
+                    <label>
+                        <%= check_box_tag "filter[main_dish][#{index}]", "#{tag.name}" %>
+                        <%= tag.name.titleize %>
+                    </label>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

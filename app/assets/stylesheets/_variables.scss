@@ -1,0 +1,244 @@
+/*-------------------
+Variables
+-------------------*/
+$version: '0.1';
+$defaultFont: Helvetica, Arial, sans-serif;
+$brandFont: LatoRegular;
+$glyphs: 'glyphs';
+$red: rgb(224, 77, 36);
+$orange: rgb(243, 160, 18);
+$light-green: rgb(91,201,46);
+$lighter-green: rgb(129, 218, 27);
+$green: rgb(105, 184, 20);
+$dark-green: rgb(21, 147, 38);
+
+/*-------------------
+Mixins
+-------------------*/
+
+// Button styles
+@mixin primaryButton {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 120%;
+    font-family: LatoBold;
+    text-align: center;
+    color: #fff;
+    @include borderRadius(4px);
+    cursor: pointer;
+    background: rgb(156,61,62);
+    @include linearGradient(rgb(156,61,62), top, rgb(156,61,62), rgb(137,54,55));
+    @include boxShadow('inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1)');
+    @include textShadow(0px 1px 2px #222);
+    border-top: 1px solid rgb(156,61,62);
+    border-right: 1px solid rgb(120,47,48);
+    border-bottom: 1px solid rgb(94,37,37);
+    border-left: 1px solid rgb(120,47,48);
+}
+
+@mixin circleButton ($size, $content) {
+    @include icon($size, $content);
+    color: #fff;
+    @include borderRadius(50%);
+    cursor: pointer;
+    background: rgb(156,61,62);
+    @include linearGradient(rgb(156,61,62), top, rgb(156,61,62), rgb(137,54,55));
+    @include boxShadow('inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1)');
+    @include textShadow(0px 1px 2px #222);
+    border-top: 1px solid rgb(156,61,62);
+    border-right: 1px solid rgb(120,47,48);
+    border-bottom: 1px solid rgb(94,37,37);
+    border-left: 1px solid rgb(120,47,48);
+}
+
+@mixin secondaryButton {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 120%;
+    font-family: LatoBold;
+    text-align: center;
+    color: #fff;
+    @include borderRadius(4px);
+    cursor: pointer;
+    background: rgb(156,61,62);
+    @include linearGradient(rgb(156,61,62), top, rgb(156,61,62), rgb(137,54,55));
+    @include boxShadow('inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1)');
+    @include textShadow(0px 1px 2px #222);
+    border-top: 1px solid rgb(156,61,62);
+    border-right: 1px solid rgb(120,47,48);
+    border-bottom: 1px solid rgb(94,37,37);
+    border-left: 1px solid rgb(120,47,48);
+}
+
+@mixin smallButton {
+    padding: 8px 12px;
+    font-size: 100%;
+}
+
+@mixin mediumButton {
+    padding: 12px;
+    font-size: 110%;
+}
+
+// Cross-browser animation
+@mixin animation ($params) {
+    -moz-animation: $params;
+    -ms-animation: $params;
+    -o-animation: $params;
+    -webkit-animation: $params;
+    animation: $params;
+}
+
+// Cross-browser border radius
+@mixin borderRadius ($radius) {
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// Cross-browser box shadow
+@mixin boxShadow ($params) {
+    -moz-box-shadow: #{$params};
+    -ms-box-shadow: #{$params};
+    -o-box-shadow: #{$params};
+    -webkit-box-shadow: #{$params};
+    box-shadow: #{$params};
+}
+
+// Cross-browser linear gradient
+@mixin linearGradient ($background, $position, $from, $to) {
+    background:       $background;
+    background-image: -webkit-linear-gradient($position, $from, $to);
+    background-image:    -moz-linear-gradient($position, $from, $to);
+    background-image:     -ms-linear-gradient($position, $from, $to);
+    background-image:      -o-linear-gradient($position, $from, $to);
+    background-image:         linear-gradient($position, $from, $to);
+}
+
+// Cross-browser text shadow
+@mixin textShadow ($params) {
+    -moz-text-shadow: #{$params};
+    -ms-text-shadow: #{$params};
+    -o-text-shadow: #{$params};
+    -webkit-text-shadow: #{$params};
+    text-shadow: #{$params};
+}
+
+// Cross-browser transform
+@mixin transform ($params) {
+    -moz-transform: $params;
+    -ms-transform: $params;
+    -o-transform: $params;
+    -webkit-transform: $params;
+    transform: $params;
+}
+
+// Cross-browser transform
+@mixin transformOrigin ($params) {
+    -moz-transform-origin: $params;
+    -ms-transform-origin: $params;
+    -o-transform-origin: $params;
+    -webkit-transform-origin: $params;
+    transform-origin: $params;
+}
+
+// Cross-browser transition
+@mixin transition ($params) {
+    -moz-transition: #{$params};
+    -ms-transition: #{$params};
+    -o-transition: #{$params};
+    -webkit-transition: #{$params};
+    transition: #{$params};
+}
+
+// Creates an icon by replacing text with a glyph
+@mixin icon ($iconSize, $content) {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0 0 0 #{$iconSize*10+'px'};
+    padding: 0 0 0 #{$iconSize+'rem'};
+    width: #{$iconSize*10+'px'};
+    width: #{$iconSize+'rem'};
+    height: #{$iconSize*10+'px'};
+    height: #{$iconSize+'rem'};
+    text-indent: 110%;
+    overflow: hidden;
+    text-decoration: none;
+    line-height: #{$iconSize*11+'px'};
+    line-height: #{$iconSize*1.1+'rem'};
+
+    &:before {
+        position: absolute;
+        top: 50%;
+        margin-top: -#{$iconSize*10/2+'px'};
+        margin-top: -#{$iconSize/2+'rem'};
+        left: 50%;
+        margin-left: -#{$iconSize*10/2+'px'};
+        margin-left: -#{$iconSize/2+'rem'};
+        display: block;
+        width: #{$iconSize*10+'px'};
+        width: #{$iconSize+'rem'};
+        height: #{$iconSize*10+'px'};
+        height: #{$iconSize+'rem'};
+        font-family: $glyphs;
+        font-size: #{$iconSize*10+'px'};
+        font-size: #{$iconSize+'rem'};
+        text-indent: 0;
+        content: $content;
+    }
+}
+
+// Adds an icon in front of an anchor's text
+@mixin iconBeforeText ($iconSize, $content) {
+    text-decoration: none;
+    line-height: #{$iconSize*10+'px'};
+    line-height: #{$iconSize+'rem'};
+    width: auto;
+    text-indent: 0;
+
+    &:before {
+        display: inline;
+        vertical-align: top;
+        width: #{$iconSize*10+'px'};
+        width: #{$iconSize+'rem'};
+        height: #{$iconSize*10+'px'};
+        height: #{$iconSize+'rem'};
+        padding-right: #{$iconSize*10/4+'px'};
+        padding-right: #{$iconSize/4+'rem'};
+        font-family: $glyphs;
+        font-size: #{$iconSize*10+'px'};
+        font-size: #{$iconSize+'rem'};
+        content: $content;
+
+    }
+}
+
+// Adds an icon after an anchor's text
+@mixin iconAfterText ($iconSize, $content) {
+    text-decoration: none;
+    line-height: #{$iconSize*10+'px'};
+    line-height: #{$iconSize+'rem'};
+    width: auto;
+
+    &:after {
+        display: inline;
+        vertical-align: top;
+        width: #{$iconSize*10+'px'};
+        width: #{$iconSize+'rem'};
+        height: #{$iconSize*10+'px'};
+        height: #{$iconSize+'rem'};
+        padding-left: #{$iconSize*10/4+'px'};
+        padding-left: #{$iconSize/4+'rem'};
+        font-family: $glyphs;
+        font-size: #{$iconSize*10+'px'};
+        font-size: #{$iconSize+'rem'};
+        content: $content;
+    }
+}

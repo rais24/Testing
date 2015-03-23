@@ -1,0 +1,5 @@
+tr
+    - if cashback.price
+      th = "#{cashback.name}"
+      td = "-#{number_to_currency(cashback.total_price.to_f/2)}"
+            

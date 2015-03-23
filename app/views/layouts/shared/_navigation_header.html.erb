@@ -1,0 +1,48 @@
+  <!-- top header -->
+  <div class="topcontainer">
+    <div class="leftsocilicon">
+      <div>
+        <a href="https://www.facebook.com/pages/Fitly-The-best-way-to-eat-healthy/254561257918450?soft=side-area">
+          <img src="/assets/f1.jpg" alt=""/>
+        </a>
+      </div>
+      <div>
+        <a href="https://twitter.com/fitlyfamily/">
+          <img src="/assets/tw2.jpg" alt=""/>
+        </a>
+      </div>
+      <div>
+        <a href="http://www.pinterest.com/fitlyfamily/">
+          <img src="/assets/printrist.jpg" alt=""/>
+        </a>
+      </div>
+      <div>
+        <a href="http://instagram.com/fitlyfoods">
+          <img src="/assets/instragram.jpg" alt=""/>
+        </a>
+      </div>
+    </div>
+    <div class="rightblock">
+      <div class="callus"><img src="/assets/call.jpg" alt=""/>CALL US<span class="none"> : 1-844-GET-FITLY(438-3485)</span></div>
+      <div class="signup-login">
+        <%= link_to "PRACTITIONER LOGIN/SIGN UP", account_path(user_type: :spec) %>
+      </div>
+    </div>
+  </div>
+  <!-- top header close --> 
+  <!-- menu link -->
+  <div id="menu">
+    <div class="logo"><a href="/"><img src="/assets/fitly-logo.jpg" alt=""/></a></div>
+    <div class="menulinks">
+      <%= render "layouts/shared/navigation_links" %>
+    </div>
+    
+    <!-- responsive menu -->
+    <div class="mobilemenu"> <img src="/assets/responsivemenuicon.png"  onClick="$('.menutoggle').slideToggle();" alt=""/>
+      <div class="menutoggle">
+        <%= render "layouts/shared/navigation_links" %>
+    </div>
+    </div>
+    <!-- responsive menu close--> 
+  </div>
+  <!-- menu link --> 

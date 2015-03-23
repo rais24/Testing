@@ -1,0 +1,24 @@
+﻿.headerMenuContainer .headerBackground {
+    background-color: rgba(170,159,146,0.97);
+    background-color: rgb(170,159,146);
+    zoom: 1;
+    filter: alpha(opacity=97);
+    opacity: 0.97;
+}
+
+
+.landingSplash .landingHeaderMenuContainer .defaultHeaderBackground {
+    background-color: rgba(50,50,50,0.3);
+    background-color: rgb(50,50,50);
+    zoom: 1;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.landingSplash .landingHeaderMenuContainer .scrollingHeaderBackground {
+    background-color: rgba(170,159,146,0.97);
+    background-color: rgb(170,159,146);
+    zoom: 1;
+    filter: alpha(opacity=97);
+    opacity: 0.97;
+}

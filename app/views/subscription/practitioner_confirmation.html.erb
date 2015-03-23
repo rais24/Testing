@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <%= render "layouts/shared/head_includes" %>
+</head>
+
+<body>
+<div id="container"> 
+
+  <%= render "layouts/shared/navigation_header_authenticated" %>
+  
+  <!-- Get Started container  -->
+  <div class="get-started-container">
+   	<h1 class="h1-float-left">Get Started with Fitly!</h1>
+    <div class="contentcontainer">
+     	 
+      <div class="innerbody"><br>
+      	<h1 style="line-height:25px;">
+          Thanks for your interest! A Fitly team member<br> will be in touch with you shortly.
+        </h1>
+      </div>
+      <div style="margin:0 auto; text-align:center;">
+        <br>
+        <div class="backbtn">
+          <%= link_to "Back to Home", show_patients_account_url(user: @user) %>
+        </div>
+        <div style="min-height:250px;"></div>
+      </div>
+    </div>
+    
+  </div>       
+   <!-- Get Started container close -->
+  
+  <%= render "layouts/shared/footer" %>  
+  
+</div>
+</body>
+</html>

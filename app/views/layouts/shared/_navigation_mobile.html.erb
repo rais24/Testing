@@ -1,0 +1,45 @@
+<div class="headerMenuContainer">
+    <div class="headerBackground">
+    </div>
+    <div class="headerMenu hideOnMobile">
+        <div class="headerLogo" onclick="window.location.href = '/';">
+        </div>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/#howItWorks">How It Works</a>
+            </li>
+            <li>
+                <a href="/#benefits">Benefits</a>
+            </li>
+            <li>
+                <%= link_to "Pricing", page_path('pricing') %>
+            </li>
+            <li>
+                <%= link_to "The Menu", recipes_path %>
+            </li>
+            <li>
+                <%= link_to "Sign Up", zipcode_check_signup_path %>
+            </li>
+            <li class="signIn">
+                <div class="signInText">
+                    <a href="/account">Sign In</a>
+                </div>
+            </li>
+            <li class="cart" onclick="window.location.href = '#';">
+            </li>
+        </ul>
+        <div class="clearFix">
+        </div>
+    </div>
+    <div class="headerMobileMenu hideOnDesktop hideOnTablet">
+        <div class="menuExpandCollapse" onclick="toggleMobileMenu();">
+        </div>
+        <div class="headerLogo" onclick="window.location.href = '/';">
+        </div>
+        <div class="cart" onclick="window.location.href = '#';">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+doctype html
+html class=html_class lang="en"
+  head
+    = csrf_meta_tags
+    meta charset="UTF-8"
+    meta name="description" content=""
+    meta name="keywords" content=""
+    meta name="author" content="Fitly Family"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+
+    meta property="og:title" content=""
+    meta property="og:type" content="company"
+    meta property="og:site_name" content=""
+    meta property="og:url" content="fitly.org"
+    meta property="og:image" content=""
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title Fitly™ - Making eating healthy fun for kids!
+
+    link rel="shortcut icon" href="favicon.ico"
+    = stylesheet_link_tag "landers/application", media: :all
+
+    = javascript_include_tag :application
+    = yield :head
+
+  body style=("background-image: url('" + image_path("signup/banner-1.jpg") + "')")
+
+    = yield

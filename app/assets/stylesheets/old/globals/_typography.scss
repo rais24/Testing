@@ -1,0 +1,114 @@
+
+/* - TYPOGRAPHY
+------------------------------------------ */
+@font-face {
+    font-family: $font-bold;
+    src: font-url('vagroundedstdbold.eot'),
+         font-url('vagroundedstdbold.eot?#iefix') format('embedded-opentype'),
+         font-url('vagroundedstdbold.woff') format('woff'),
+         font-url('vagroundedstdbold.ttf') format('truetype'),
+         font-url('vagroundedstdbold.svg#vagroundedstdbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: $font-light;
+    src: font-url('vagroundedstdlight.eot'),
+         font-url('vagroundedstdlight.eot?#iefix') format('embedded-opentype'),
+         font-url('vagroundedstdlight.woff') format('woff'),
+         font-url('vagroundedstdlight.ttf') format('truetype'),
+         font-url('vagroundedstdlight.svg#vagroundedstdlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} 
+@font-face {
+    font-family: $font-thin;
+    src: font-url('vagroundedstdthin.eot'),
+         font-url('vagroundedstdthin.eot?#iefix') format('embedded-opentype'),
+         font-url('vagroundedstdthin.woff') format('woff'),
+         font-url('vagroundedstdthin.ttf') format('truetype'),
+         font-url('vagroundedstdthin.svg#vagroundedstdthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+.slim {
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.font-light {
+  font-family: $font-light;
+}
+
+.font-thin {
+  font-family: $font-thin;
+}
+
+.font-bold {
+  font-family: $font-bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.legal-body {
+  margin: 20px;
+
+  font: {
+    family: $font-light;
+    size: 14px;
+  }
+}
+
+body, input, label, textarea, select{
+  font-family: $font-thin, "Open Sans","Helvetica","Arial";
+  font-size:100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight:900;
+  font-family:$font-light,"Open Sans","Helvetica","Arial";
+}
+
+.copy {
+  a {
+    color: $theme-color;
+
+    &:hover {
+      color: $light-theme-color
+    }
+  }
+}
+
+p {
+  font-family: $font-thin;
+
+  &.copy {
+    font-size: 16px;
+  }
+}
+
+a {
+  font-family: $font-light;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  span {
+    color: $theme-color;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}
+
+h1{
+  font-family:$font-bold,"Open Sans","Helvetica","Arial";
+}
+
+a{
+  color:#666;
+}

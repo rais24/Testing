@@ -1,0 +1,653 @@
+.pageHeader {
+    margin-top: 53px;
+    position: relative;
+    z-index: 1;
+}
+
+.pricingTrialSection {
+    background: url('/assets/Pricing30_Bg.png') scroll no-repeat center center #fff;
+    background-size: cover;
+    height: 580px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    margin-top: -53px;
+    -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .pricingTrialSection > div {
+        padding: 0 15px;
+    }
+
+    .pricingTrialSection .trialBadge {
+        background: url('/assets/Badge_Desktop.png') scroll no-repeat center center transparent;
+        width: 176px;
+        height: 177px;
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 775px;
+        top: 70px;
+        z-index: 0;
+    }
+
+    .pricingTrialSection .trialText {
+        font-family: Pacifico, serif;
+        font-size: 312.5%;
+        padding-top: 55px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .pricingTrialSection .noFutureCommittmentText {
+        font-size: 150%;
+        margin-top: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .pricingTrialSection .seeWhatYouGet {
+        font-size: 150%;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px auto 0 auto;
+        width: 192px;
+        position: relative;
+        z-index: 1;
+    }
+
+        .pricingTrialSection .seeWhatYouGet:hover {
+            cursor: pointer;
+        }
+
+    .pricingTrialSection .divider {
+        width: 65px;
+        height: 2px;
+        background-color: #fff;
+        margin: 30px auto;
+    }
+
+    .pricingTrialSection .getStartedText {
+        font-family: Rokkitt, serif;
+        font-size: 218.8%;
+    }
+
+    .pricingTrialSection .getStartedInputSection {
+        margin-top: 10px;
+    }
+
+        .pricingTrialSection .getStartedInputSection > div {
+            display: inline;
+        }
+
+        .pricingTrialSection .getStartedInputSection .email {
+            width: 400px;
+        }
+
+            .pricingTrialSection .getStartedInputSection .email input[type='text'] {
+                width: 360px;
+                margin-right: 15px;
+            }
+
+        .pricingTrialSection .getStartedInputSection .zipCode {
+            width: 120px;
+        }
+
+            .pricingTrialSection .getStartedInputSection .zipCode input[type='text'] {
+                width: 80px;
+                margin-right: 15px;
+            }
+
+
+.trialPricesSection {
+    width: 1061px;
+    position: relative;
+    margin: -30px auto 0 auto;
+    padding: 0 15px;
+}
+
+    .trialPricesSection .pricingColumn {
+        width: 265px;
+        border: 1px solid #c8c8c8;
+        border-bottom: 4px solid #c8c8c8;
+        border-radius: 5px;
+        text-align: center;
+        padding: 30px;
+        float: left;
+        margin-left: 40px;
+        background-color: #fff;
+    }
+
+        .trialPricesSection .pricingColumn:first-child {
+            margin-left: 0;
+        }
+
+        .trialPricesSection .pricingColumn .pricingDescriptionSection {
+            position: relative;
+        }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .platesPerRecipe {
+                font-family: Rokkitt, serif;
+                font-size: 187.5%;
+            }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .divider {
+                width: 90px;
+                height: 1px;
+                background-color: #c8c8c8;
+                margin: 30px auto;
+            }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .originalPrice {
+                font-size: 112.5%;
+                text-decoration: line-through;
+            }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .trialPrice {
+                font-size: 112.5%;
+                margin-bottom: 50px;
+            }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .goodForText {
+                font-size: 125%;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .goodForPeopleText {
+                font-size: 112.5%;
+            }
+
+            .trialPricesSection .pricingColumn .pricingDescriptionSection .pricingDescriptionBackground {
+                background: url('/assets/Icon_GoodForBg.png') scroll no-repeat center center transparent;
+                width: 84px;
+                height: 77px;
+                position: absolute;
+                bottom: -20px;
+                right: -15px;
+            }
+
+        .trialPricesSection .pricingColumn .priceTotalSection {
+            padding: 20px 40px;
+            margin: 20px -30px -30px -30px;
+            background-color: #f3f3f3;
+        }
+
+            .trialPricesSection .pricingColumn .priceTotalSection .totalText {
+                font-size: 137.5%;
+            }
+
+            .trialPricesSection .pricingColumn .priceTotalSection .howIsThisCalculated a {
+                color: #e36967;
+                text-decoration: none;
+            }
+
+        .trialPricesSection .pricingColumn.mostPopular {
+            border: 1px solid #85a5b4;
+            border-bottom: 4px solid #85a5b4;
+            margin-top: -50px;
+        }
+
+            .trialPricesSection .pricingColumn.mostPopular .mostPopularHeader {
+                background-color: #85a5b4;
+                font-size: 150%;
+                margin: -30px -30px 30px -30px;
+                padding: 10px;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+    .trialPricesSection .trialDisclaimerText {
+        font-size: 112.5%;
+        color: #999;
+        margin: 20px 0 60px 0;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+.twoPlatesModal .modalClose {
+    top: -436px;
+}
+
+.twoPlatesModal .modal {
+    width: 600px;
+    height: 318px;
+}
+
+    .twoPlatesModal .modal > div {
+        background: url('/assets/2ppr.png') scroll no-repeat center center transparent;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+.fourPlatesModal .modalClose {
+    top: -376px;
+}
+
+.fourPlatesModal .modal {
+    width: 600px;
+    height: 256px;
+}
+
+    .fourPlatesModal .modal > div {
+        background: url('/assets/4ppr.png') scroll no-repeat center center transparent;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+.eightPlatesModal .modalClose {
+    top: -406px;
+}
+
+.eightPlatesModal .modal {
+    width: 600px;
+    height: 289px;
+}
+
+    .eightPlatesModal .modal > div {
+        background: url('/assets/8ppr.png') scroll no-repeat center center transparent;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+.whatYouGetScrollPosition {
+    position: relative;
+    top: -53px;
+    height: 0;
+}
+
+.whatYouGetSection {
+    margin: 70px auto 40px auto;
+    width: 920px;
+}
+
+    .whatYouGetSection > div {
+        float: left;
+        margin-left: 40px;
+    }
+
+        .whatYouGetSection > div:first-child {
+            margin-left: 0;
+        }
+
+        .whatYouGetSection > div > div {
+            font-size: 125%;
+            text-align: center;
+            width: 200px;
+            padding-top: 160px;
+            float: left;
+            margin-left: 40px;
+        }
+
+            .whatYouGetSection > div > div:first-child {
+                margin-left: 0;
+            }
+
+    .whatYouGetSection .weeklyMenu {
+        background: url('/assets/WeeklyMenu.png') scroll no-repeat top center transparent;
+    }
+
+    .whatYouGetSection .freeDelivery {
+        background: url('/assets/Delivery.png') scroll no-repeat top center transparent;
+    }
+
+    .whatYouGetSection .recipes {
+        background: url('/assets/Recipes.png') scroll no-repeat top center transparent;
+    }
+
+    .whatYouGetSection .additionalIngredients {
+        background: url('/assets/Ingredients.png') scroll no-repeat top center transparent;
+    }
+
+    .whatYouGetSection .clearFix {
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+.getStartedPromptSection {
+    background: url('/assets/CTA_bgimage.png') fixed no-repeat center center transparent;
+    background-size: cover;
+    padding: 20px 0 40px 0;
+    -ms-behavior: url("/assets/polyfills/backgroundsize.min.htc");
+}
+
+    .getStartedPromptSection .getStartedText {
+        font-family: Pacifico, serif;
+        font-size: 287.5%;
+        color: #fff;
+        text-align: center;
+        width: 397px;
+        margin: 0 auto 20px auto;
+    }
+
+    .getStartedPromptSection .emailInputSection {
+        width: 400px;
+        margin: 0 auto 10px auto;
+    }
+
+        .getStartedPromptSection .emailInputSection input[type='text'] {
+            width: 360px;
+            margin-right: 15px;
+        }
+
+    .getStartedPromptSection .zipCodeStartSection {
+        width: 344px;
+        margin: 0 auto;
+    }
+
+        .getStartedPromptSection .zipCodeStartSection input[type='text'] {
+            width: 80px;
+            margin-right: 15px;
+        }
+
+/*Slightly above tablet*/
+@media(min-width: 768px) and (max-width:1090px) {
+    .pricingTrialSection {
+        height: 480px;
+    }
+
+    .trialPricesSection {
+        margin: 0;
+        width: auto;
+    }
+
+        .trialPricesSection .pricingColumn {
+            float: none;
+            margin: 40px auto 0 auto;
+        }
+
+            .trialPricesSection .pricingColumn:first-child {
+                margin: 40px auto 0 auto;
+            }
+
+            .trialPricesSection .pricingColumn.mostPopular {
+                margin: 40px auto 0 auto;
+            }
+}
+
+/*Tablet*/
+@media(min-width: 768px) and (max-width:1024px) {
+    .pricingTrialSection .trialBadge {
+        left: 15px;
+    }
+
+    .whatYouGetSection {
+        width: auto;
+    }
+
+        .whatYouGetSection > div {
+            float: none;
+            width: 440px;
+            margin: 40px auto 0 auto;
+        }
+
+            .whatYouGetSection > div:first-child {
+                margin: 0 auto;
+            }
+}
+
+/*Tablet*/
+@media (min-width: 768px) and (max-width: 930px) {
+    .pricingTrialSection {
+        height: 570px;
+    }
+
+        .pricingTrialSection .trialText {
+            width: 500px;
+            margin: 0 auto;
+        }
+}
+
+/*Small tablet and mobile*/
+@media all and (max-width: 830px) {
+    .pricingTrialSection {
+        height: 650px;
+    }
+
+        .pricingTrialSection .getStartedInputSection .email {
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+            .pricingTrialSection .getStartedInputSection .email input[type='text'] {
+                margin: 0;
+            }
+}
+
+/*Mobile*/
+@media all and (max-width: 767px) {
+    .pricingTrialSection {
+        height: 1080px;
+    }
+
+        .pricingTrialSection .trialBadge {
+            top: 100px;
+            left: 0;
+            right: 0;
+        }
+
+        .pricingTrialSection .trialText {
+            padding-top: 290px;
+            font-size: 162.5%;
+        }
+
+        .pricingTrialSection .getStartedText {
+            font-size: 125%;
+             margin: 5px 0;
+        }
+
+        .pricingTrialSection .whatYouGetMobileText {
+            font-size: 75%;
+        }
+
+            .pricingTrialSection .whatYouGetMobileText a {
+                text-decoration: none;
+                color: #e36967;
+            }
+
+        .pricingTrialSection .getStartedInputSection .email {
+            width: 270px;
+        }
+
+            .pricingTrialSection .getStartedInputSection .email input[type='text'] {
+                width: 225px;
+                margin: 0;
+            }
+
+        .pricingTrialSection .getStartedInputSection .zipCode {
+            display: block;
+            width: 120px;
+            margin: 0 auto 10px auto;
+        }
+
+            .pricingTrialSection .getStartedInputSection .zipCode input[type='text'] {
+                margin: 0;
+            }
+
+    .trialPricesSection {
+        margin: 0;
+        width: auto;
+    }
+
+        .trialPricesSection .pricingColumn {
+            float: none;
+            margin: 40px auto 0 auto;
+        }
+
+            .trialPricesSection .pricingColumn:first-child {
+                margin: 40px auto 0 auto;
+            }
+
+            .trialPricesSection .pricingColumn.mostPopular {
+                margin: 40px auto 0 auto;
+            }
+
+    .pricingTrialSection .trialBadge {
+        left: 15px;
+    }
+
+    .whatYouGetSection {
+        width: auto;
+    }
+
+        .whatYouGetSection > div {
+            float: none;
+            width: 440px;
+            margin: 40px auto 0 auto;
+        }
+
+            .whatYouGetSection > div:first-child {
+                margin: 0 auto;
+            }
+
+    .getStartedPromptSection .getStartedText {
+        width: 303px;
+    }
+
+    .getStartedPromptSection .emailInputSection {
+        width: 270px;
+    }
+
+        .getStartedPromptSection .emailInputSection input[type='text'] {
+            width: 225px;
+        }
+
+    .getStartedPromptSection .zipCodeStartSection {
+        width: auto;
+    }
+
+        .getStartedPromptSection .zipCodeStartSection > span {
+            display: block;
+            width: 203px;
+            margin: 10px auto 0 auto;
+        }
+
+            .getStartedPromptSection .zipCodeStartSection > span:first-child {
+                width: 122px;
+                margin: 0 auto;
+            }
+
+        .getStartedPromptSection .zipCodeStartSection input[type='text'] {
+            width: 80px;
+            margin-right: 0;
+        }
+
+    .modalContainer .modal {
+        top: auto;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .modalContainer .modal .modalClose {
+        background: url('/assets/ModalX27px.png') scroll no-repeat center center;
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        top: -40px;
+        right: 40px;
+        bottom: auto;
+        left: auto;
+    }
+
+    .twoPlatesModal .modal {
+        height: 250px;
+    }
+
+        .twoPlatesModal .modal > div {
+            background: url("/assets/2Plates_ex.png") scroll no-repeat center center transparent;
+            background-size: contain;
+        }
+
+        .fourPlatesModal .modal {
+        height: 250px;
+    }
+
+        .fourPlatesModal .modal > div {
+            background: url("/assets/4Plates_ex.png") scroll no-repeat center center transparent;
+            background-size: contain;
+        }
+
+        .eightPlatesModal .modal {
+        height: 250px;
+    }
+
+        .eightPlatesModal .modal > div {
+            background: url("/assets/8Plates_ex.png") scroll no-repeat center center transparent;
+            background-size: contain;
+        }
+}
+
+/*Mobile*/
+@media all and (max-width: 530px) {
+    .pricingTrialSection {
+        height: 510px;
+    }
+    
+        .pricingTrialSection .trialBadge {
+            background-size: cover;
+            width: 100px;
+            height: 101px;
+            top: 70px;
+        }
+
+        .pricingTrialSection .trialText {
+            padding-top: 175px;
+        }
+
+        .pricingTrialSection .getStartedInputSection > div {
+            display: block;
+            width: 244px;
+            margin: 0 auto;
+        }
+
+            .pricingTrialSection .getStartedInputSection > div > span {
+                float: left;
+            }
+
+        .pricingTrialSection .getStartedInputSection input[type='text'] {
+            padding: 10px;
+            font-size: 112.5%;
+        }
+
+        .pricingTrialSection .getStartedInputSection .zipCode {
+            margin: 0 10px 0 0;
+            width: auto;
+        }
+
+            .pricingTrialSection .getStartedInputSection .zipCode input[type='text'] {
+                width: 65px;
+                margin-top: 3px;
+            }
+
+        .pricingTrialSection .getStartedInputSection input[type="submit"] {
+            padding: 7px 15px;
+            font-size: 181.3%;
+        }
+
+    .whatYouGetSection > div {
+        width: 220px;
+    }
+
+        .whatYouGetSection > div > div {
+            float: none;
+            margin: 40px 0 0 0;
+        }
+
+            .whatYouGetSection > div > div:first-child {
+                margin: 0;
+            }
+}
+
+/*Mobile*/
+@media all and (max-width: 380px) {
+    .trialPricesSection .pricingColumn {
+        width: auto;
+    }
+}

@@ -1,0 +1,30 @@
+= form_for @promo, html: {class: 'recipe-form'} do |f|
+  fieldset
+    ul.data
+      li.input.code.required
+        = f.label :code
+        = f.text_field :code
+      li.input.starts_on.required
+        = f.label :starts_on
+        = f.date_field :starts_on
+      li.input.ends_on.required
+        = f.label :ends_on
+        = f.date_field :ends_on
+      li.input.quantity.required
+        = f.label :quantity
+        = f.text_field :quantity
+      li.input.checkbox.optional
+        = f.label :active
+        =label_tag "Active?"
+
+        = f.check_box :active
+      li.input.discount_cents.optional
+        = f.label :discount_cents
+        = f.text_field :discount_cents
+      li.input.discount_percent.optional
+        = f.label :discount_percent
+        = f.text_field :discount_percent
+
+    ul.actions
+      li.primary
+        = f.submit nil, class: "button-action button-fill"

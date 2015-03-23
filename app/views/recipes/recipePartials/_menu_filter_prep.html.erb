@@ -1,0 +1,17 @@
+<div class="filterGroup">
+    <div class="filterHeader">
+        Preparation
+    </div>
+    <div class="filterOptions">
+        <div>
+            <% Recipe.prep_counts.each_with_index do |tag, index| %>
+                <div>
+                    <label>
+                        <%= check_box_tag "filter[prep][#{index}]", "#{tag.name}" %>
+                        <%= tag.name.titleize %>
+                    </label>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
