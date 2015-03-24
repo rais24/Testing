@@ -12,8 +12,8 @@ development: &development
   adapter: mysql2
   database: fitlydevdb
   #database: fitlydb
-  username: frafi
-  password: adminuser
+  username: root
+  password: 
   host: localhost
   #socket: "/Applications/MAMP/tmp/mysql/mysql.sock"
   socket: /tmp/mysql.sock
