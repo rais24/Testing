@@ -10,15 +10,21 @@
 
 development: &development
   adapter: mysql2
-  database: fitlydevdb
+  #database: fitlydevdb
+  database: heroku_f89e00d991f5ff4
   #database: fitlydb
-  username: root
-  password: 
-  host: localhost
+  #username: root
+  username: bb6896badc3150
+  #password: 
+  password: 5d8f3e81
+  #host: localhost
+  host: us-cdbr-iron-east-02.cleardb.net
   #socket: "/Applications/MAMP/tmp/mysql/mysql.sock"
   socket: /tmp/mysql.sock
   #port: 8889
 port: 3306
+
+#mysql://bb6896badc3150:5d8f3e81@us-cdbr-iron-east-02.cleardb.net/heroku_f89e00d991f5ff4?reconnect=true
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
